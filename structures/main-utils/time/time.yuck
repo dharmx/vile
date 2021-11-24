@@ -1,0 +1,42 @@
+(defpoll HOUR :interval "60s" "date +%I")
+(defpoll MIN :interval "5s" "date +%M")
+(defpoll AMPM :interval "60s" "date +%p")
+(defpoll DAY :interval "3000s" "date +%A")
+
+(defwindow time
+           :monitor 0
+           :geometry (geometry :x "-134"
+                               :y "-298"
+                               :width "530"
+                               :height "240"
+                               :anchor "center")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (timeinfo))
+
+(defwidget timeinfo []
+  (box :orientation "h"
+       :space-evenly false
+       :class "time-parent"
+    (label :text "祥"
+           :class "time-icon"
+           :width 150)
+    (box :orientation "v"
+         :space-evenly false
+         :class "time-child time-child-left" 
+      (box :orientation "h"
+           :space-evenly false
+           :class "time-child time-child-right"
+        (label :text "${HOUR}"
+               :class "time-label time-label-hr")
+        (label :text ":"
+               :class "time-label time-label-sep")
+        (label :text "${MIN}"
+               :class "time-label time-label-min")
+        (label :text "${AMPM}"
+               :halign "end"
+               :class "time-label time-label-ampm"))
+      (label :text "${DAY}"
+             :class "time-label time-label-day"
+             :halign "center"))))

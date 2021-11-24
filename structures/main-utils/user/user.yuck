@@ -1,0 +1,29 @@
+;(deflisten PROFILE :initial "assets/shuffle/profiles/black-lambda.jpg"
+;  "scripts/randomize paths/profiles.txt")
+
+(defvar PROFILE "assets/shuffle/profiles/profile.jpg")
+
+(defwindow user
+           :monitor 0
+           :geometry (geometry :x "180"
+                               :y "-130"
+                               :width "247"
+                               :height "325"
+                               :anchor "bottom left")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (logo))
+
+(defwidget logo []
+  (box :orientation "v"
+       :halign "center"
+       :space-evenly false
+    (image :path "${PROFILE}"
+           :width 180
+           :class "logo-image")
+    (label :text "Keymaker"
+           :class "logo-label")
+    (label :text "maker@key-forgery"
+           :class "logo-hostname")))
+; vim: ft=lisp

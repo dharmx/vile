@@ -1,0 +1,23 @@
+; (deflisten BACKGROUND :initial "assets/shuffle/backgrounds/ign-0011.png"
+;  "scripts/randomize paths/backgrounds.txt")
+
+(defvar BACKGROUND "assets/shuffle/backgrounds/firewatch.png")
+
+(defwindow background
+           :monitor 0
+           :geometry (geometry :x "0"
+                               :y "0"
+                               :width "1920"
+                               :height "1080"
+                               :anchor "top left")
+           :stacking "bg"
+           :windowtype "normal"
+           :wm-ignore true
+  (wallpaper))
+
+(defwidget wallpaper []
+  (image :path "${BACKGROUND}"
+         :width 1980
+         :height 1080))
+
+; vim: ft=lisp

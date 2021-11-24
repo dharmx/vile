@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+## Files and cmd
+FILE="$XDG_CACHE_HOME/eww_launch_wallpaper.xyz"
+
+## Run eww daemon if not running already
+if [[ ! "$(pidof eww)" ]]; then
+  eww daemon
+  sleep 1
+fi
+
+## Open widgets 
+run_eww() {
+  eww open-many "wallpaper" "change" "backlightwallpaper" "titlebar" "wallpapertime"
+}
+
+## Launch or close widgets accordingly
+if [[ ! -f "$FILE" ]]; then
+  touch "$FILE"
+  run_eww
+else
+  eww close "wallpaper" "change" "backlightwallpaper" "titlebar" "wallpapertime"
+  rm "$FILE"
+fi

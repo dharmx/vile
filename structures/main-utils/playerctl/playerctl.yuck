@@ -1,0 +1,50 @@
+(defpoll ALBUMART :interval "1s" "scripts/albumart")
+(defpoll PLAYPAUSE :interval "1s" "scripts/playerstatus")
+(defpoll ARTIST :interval "1s" "playerctl metadata xesam:artist")
+(defpoll TITLE :interval "1s" "playerctl metadata xesam:title")
+
+(defwindow audio
+           :monitor 0
+           :geometry (geometry :x "-195"
+                               :y "-5"
+                               :width "653"
+                               :height "325"
+                               :anchor "center")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (player))
+
+(defwidget player []
+  (box :orientation "h"
+       :halign "center"
+       :space-evenly false
+    (image :path "${ALBUMART}"
+           :width 250)
+    (box :orientation "v"
+         :space-evenly false
+      (box :orientation "h"
+           :halign "center"
+           :space-evenly false
+        (button :onclick "playerctl previous"
+                :class "btn-previous"
+          (label :text " 玲"
+                 :class "label-media label-previous"))
+        (button :onclick "playerctl play-pause"
+                :class "btn-play-pause"
+          (label :text "${PLAYPAUSE}"
+                 :class "label-media label-play-pause"))
+        (button :onclick "playerctl next"
+                :class "btn-next"
+          (label :text "怜 "
+                 :class "label-media label-next")))
+       (label :text {"${ARTIST}" == "" ? "Offline" : "${ARTIST}"}
+              :class "label-artist"
+              :limit-width 21
+              :halign "center"
+              :hexpand true)
+       (label :text {"${TITLE}" == "" ? "Nothing is playing" : "${TITLE}"}
+              :class "label-title"
+              :limit-width 21
+              :halign "center"
+              :hexpand true))))

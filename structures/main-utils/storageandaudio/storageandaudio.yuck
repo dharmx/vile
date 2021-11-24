@@ -1,0 +1,190 @@
+(defvar SOURCEVOLUP "scripts/microphone --increase")
+(defvar SOURCEVOLDN "scripts/microphone --decrease")
+(defpoll SOURCEVOLSTATUS :interval "1s" "scripts/microphone --status")
+(defpoll SOURCEVOLLEVEL :interval "1s" "scripts/microphone --level")
+(defvar SOURCEVOLTOGGLE "scripts/microphone --toggle")
+(defvar SOURCEVOLSET "scripts/microphone --setlevel ")
+
+(defvar SINKVOLUP "scripts/volume --increase")
+(defvar SINKVOLDN "scripts/volume --decrease")
+(defpoll SINKVOLSTATUS :interval "1s" "scripts/volume --status")
+(defpoll SINKVOLLEVEL :interval "1s" "scripts/volume --level")
+(defvar SINKVOLTOGGLE "scripts/volume --toggle")
+(defvar SINKVOLSET "scripts/volume --setlevel ")
+
+(defvar MOUNTCELL "scripts/mount --cell")
+(defvar MOUNTSSD "scripts/mount --nvme")
+(defvar MOUNTSDB "scripts/mount --sdb")
+(defvar MOUNTSDC "scripts/mount --sdc")
+(defvar MOUNTSDD "scripts/mount --sdd")
+
+(defpoll ICONCELL :interval "1s" "scripts/mount --icon-cell")
+(defpoll ICONSSD :interval "1s" "scripts/mount --icon-nvme")
+(defpoll ICONSDB :interval "1s" "scripts/mount --icon-sdb")
+(defpoll ICONSDC :interval "1s" "scripts/mount --icon-sdc")
+(defpoll ICONSDD :interval "1s" "scripts/mount --icon-sdd")
+
+(defpoll ICONNIGHTMODESTATUS :interval "1s" "scripts/redshift --icon")
+(defvar NIGHTMODETOGGLE "scripts/redshift --toggle")
+
+(defpoll ICONBLUETOOTH :interval "1s" "scripts/bluetooth --status")
+(defvar BLUETOOTHTOGGLE "scripts/bluetooth --toggle")
+
+(defwindow audiocontrol
+           :monitor 0
+           :geometry (geometry :x "-195"
+                               :y "-130"
+                               :width "653"
+                               :height "240"
+                               :anchor "bottom center")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (audiocontroller)) 
+
+(defwidget audiocontroller []
+  (box :orientation "v"
+       :class "controller"
+       :space-evenly false
+       :class "audiocontroller-box"
+    (box :orientation "h"
+         :space-evenly false
+         :class "controller-box"
+         (bluetooth :icon_label_text {ICONBLUETOOTH}
+                    :onclick {BLUETOOTHTOGGLE})
+         (microphone :image {SOURCEVOLSTATUS}
+                     :value {SOURCEVOLLEVEL}
+                     :onchange {SOURCEVOLSET}
+                     :onclick {SOURCEVOLTOGGLE}
+                     :onmiddleclick {SOURCEVOLUP}
+                     :onrightclick {SOURCEVOLDN})
+         (volume :image {SINKVOLSTATUS}
+                 :value {SINKVOLLEVEL}
+                 :onchange {SINKVOLSET}
+                 :onclick {SINKVOLTOGGLE}
+                 :onmiddleclick {SINKVOLUP}
+                 :onrightclick {SINKVOLDN}))
+    (box :orientation "h"
+         :class "controller"
+         :space-evenly false
+         :class "audiocontroller-box storage-box"
+         (phone :icon_label_text {ICONCELL}
+                :volume_name_label_text "cell"
+                :onclick {MOUNTCELL})
+         (hdd :icon_label_text {ICONSSD}
+              :volume_name_label_text "nvme"
+              :onclick {MOUNTSSD})
+         (pendrive :icon_label_text {ICONSDB}
+                   :volume_name_label_text "sdb"
+                   :onclick {MOUNTSDB})
+         (pendrive :icon_label_text {ICONSDC}
+                   :volume_name_label_text "sdc"
+                   :onclick {MOUNTSDC})
+         (pendrive :icon_label_text {ICONSDD}
+                   :volume_name_label_text "sdd"
+                   :onclick {MOUNTSDD})
+         (nightmode :icon_label_text {ICONNIGHTMODESTATUS}
+                    :onclick {NIGHTMODETOGGLE}
+                    :name_label_text "night"))))
+
+(defwidget microphone [image value onchange onclick onmiddleclick onrightclick]
+  (box :orientation "h"
+       :class "control-box control-microphone"
+       :space-evenly false
+    (button :onclick onclick
+            :onmiddleclick onmiddleclick
+            :onrightclick onrightclick
+            :active true
+            :class "control-button control-microphone-button"
+      (label :text image
+             :class "control-label control-microphone-label"))
+    (scale :marks true
+           :value value
+           :active true
+           :min 0
+           :max 101
+           :class "volume-scale"
+           :onchange "${onchange} {}")))
+
+(defwidget volume [image value onchange onclick onmiddleclick onrightclick]
+  (box :orientation "h"
+       :class "control-box control-volume"
+       :space-evenly false
+    (button :onclick onclick
+            :onmiddleclick onmiddleclick
+            :onrightclick onrightclick
+            :active true
+            :class "control-button control-volume-button"
+      (label :text image
+             :class "control-label control-volume-label"))
+    (scale :marks false
+           :value value
+           :active true
+           :min 0
+           :max 101
+           :class "volume-scale"
+           :onchange "${onchange} {}")))
+
+(defwidget hdd [icon_label_text volume_name_label_text onclick]
+  (box :orientation "v"
+       :class "partition-box partition-hdd"
+       :space-evenly false
+    (button :onclick onclick
+            :active true
+            :class "partition-button partition-hdd-button"
+      (label :text icon_label_text
+             :class "partition-icon partition-hdd-icon"))
+    (label :text volume_name_label_text
+           :active true
+           :class "partition-label hdd-label")))
+
+(defwidget phone [icon_label_text volume_name_label_text onclick]
+  (box :orientation "v"
+       :class "partition-box partition-phone"
+       :space-evenly false
+    (button :onclick onclick
+            :active true
+            :class "partition-button partition-phone-button"
+      (label :text icon_label_text
+             :class "partition-icon partition-phone-icon"))
+    (label :text volume_name_label_text
+           :active true
+           :class "partition-label phone-label")))
+
+(defwidget pendrive [icon_label_text volume_name_label_text onclick]
+  (box :orientation "v"
+       :class "partition-box partition-pendrive"
+       :space-evenly false
+    (button :onclick onclick
+            :active true
+            :class "partition-button partition-pendrive-button"
+      (label :text icon_label_text
+             :class "partition-icon partition-pendrive-icon"))
+    (label :text volume_name_label_text
+           :active true
+           :class "partition-label pendrive-label")))
+
+(defwidget nightmode [icon_label_text name_label_text onclick]
+  (box :orientation "v"
+       :class "nightmode-box"
+       :space-evenly false
+    (button :onclick onclick
+            :active true
+            :class "nightmode-button"
+      (label :text icon_label_text
+             :class "nightmode-icon"))
+    (label :text name_label_text
+           :active true
+           :class "nightmode-label")))
+
+(defwidget bluetooth [icon_label_text onclick]
+  (box :orientation "h"
+       :class "bluetooth-box"
+       :space-evenly false
+    (button :onclick onclick
+            :active true
+            :class "bluetooth-button"
+      (label :text icon_label_text
+             :class "bluetooth-icon"))))
+
+; vim: ft=lisp

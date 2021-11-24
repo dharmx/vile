@@ -1,0 +1,105 @@
+; vim: ft=lisp
+(defwindow wreboot
+           :monitor 0
+           :geometry (geometry :x "714"
+                               :y "-223"
+                               :width "80"
+                               :height "100"
+                               :anchor "center")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (reboot))
+
+(defwindow wshutdown
+           :monitor 0
+           :geometry (geometry :x "714"
+                               :y "-82"
+                               :width "99"
+                               :height "100"
+                               :anchor "center")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (shutdown))
+
+(defwindow wlogout
+           :monitor 0
+           :geometry (geometry :x "714"
+                               :y "59"
+                               :width "141"
+                               :height "100"
+                               :anchor "center")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (logout))
+
+(defwindow wlock
+           :monitor 0
+           :geometry (geometry :x "715"
+                               :y "200"
+                               :width "142"
+                               :height "100"
+                               :anchor "center")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (lock))
+
+(defwindow wsuspend
+           :monitor 0
+           :geometry (geometry :x "715"
+                               :y "342"
+                               :width "142"
+                               :height "100"
+                               :anchor "center")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (suspend))
+
+(defwidget reboot []
+  (box :orientation "v"
+       :halign "center"
+       :space-evenly false
+       :class "box-reddit"
+    (button :onclick "reboot"
+      (label :text ""
+             :class "logo-reboot"))))
+
+(defwidget shutdown []
+  (box :orientation "v"
+       :halign "center"
+       :space-evenly false
+       :class "box-reddit"
+    (button :onclick "poweroff"
+      (label :text ""
+             :class "logo-shutdown"))))
+
+(defwidget logout []
+  (box :orientation "v"
+       :halign "center"
+       :space-evenly false
+       :class "box-reddit"
+    (button :onclick "killall bspwm"
+      (label :text "ﴚ"
+             :class "logo-logout"))))
+
+(defwidget lock []
+  (box :orientation "v"
+       :halign "center"
+       :space-evenly false
+       :class "box-reddit"
+    (button :onclick "betterlockscreen -l dim --off 5"
+      (label :text ""
+             :class "logo-lock"))))
+
+(defwidget suspend []
+  (box :orientation "v"
+       :halign "center"
+       :space-evenly false
+       :class "box-reddit"
+    (button :onclick "systemctl suspend"
+      (label :text ""
+             :class "logo-suspend"))))

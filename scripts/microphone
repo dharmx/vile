@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+## if the microphone is muted then this function will return an image path of a muted microphone icon
+## otherwise it'll return an image of an un-muted microphone
+status() {
+  MUTED=$(pacmd list-sources | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
+
+  if [ "$MUTED" = "yes" ]; then
+    echo " "
+  else
+    echo " "
+  fi
+}
+
+## returns the volume level of the microphone
+level() {
+    pacmd list-sources | grep "\* index:" -A 7 | grep volume | awk -F/ '{print $2}' | tr -d ' '  | sed 's/%$//'
+}
+
+## mutes/unmutes the microphone
+toggle() {
+  MUTED=$(pacmd list-sources | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
+  DEFAULT_SOURCE=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
+
+  if [ "$MUTED" = "yes" ]; then
+      pactl set-source-mute "$DEFAULT_SOURCE" 0
+  else
+      pactl set-source-mute "$DEFAULT_SOURCE" 1
+  fi
+}
+
+## set volume a specific level (0-100%) 
+## whatever you do, DO NOT pass floating point values
+setlevel() {
+  DEFAULT_SOURCE=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
+  pactl set-source-volume "$DEFAULT_SOURCE" "$(truncate "$1")%"
+}
+
+## increases the volume level of the microphone by 5%
+increase() {
+  DEFAULT_SOURCE=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
+  pactl set-source-volume "$DEFAULT_SOURCE" +5%
+}
+
+## decreases the volume level of the microphone by 5%
+decrease() {
+  DEFAULT_SOURCE=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
+  pactl set-source-volume "$DEFAULT_SOURCE" -5%
+}
+
+truncate() {
+  echo "${1%.*}"
+}
+
+case "$1" in
+    --toggle)
+        toggle
+        ;;
+    --increase)
+        increase
+        ;;
+    --decrease)
+        decrease
+        ;;
+    --status)
+        status
+        ;;
+    --level)
+        level
+        ;;
+    --setlevel)
+        setlevel "$2"
+        ;;
+    *)
+        echo "Invalid flag!"
+        ;;
+esac

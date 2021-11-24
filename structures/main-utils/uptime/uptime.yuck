@@ -1,0 +1,31 @@
+(defpoll SINCE :interval "60s" "uptime -s | awk '{print $2}'")
+(defpoll UPHOUR :interval "60s" "scripts/uphour --hour")
+(defpoll UPMIN :interval "60s" "scripts/uphour --min")
+
+(defwindow uptime
+           :monitor 0
+           :geometry (geometry :x "180"
+                               :y "122"
+                               :width "368"
+                               :height "240"
+                               :anchor "top left")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (uptimeinfo))
+
+(defwidget uptimeinfo []
+  (box :orientation "h"
+       :space-evenly false
+       :class "uptime-parent"
+    (label :text "羽"
+           :class "uptime-icon")
+    (box :orientation "v"
+         :space-evenly false
+         :class "uptime-child"
+         (label :text "${SINCE}"
+                :class "uptime-label uptime-label-top"
+                :halign "start")
+         (label :text "System Boot"
+                :class "doodle"
+                :halign "center"))))

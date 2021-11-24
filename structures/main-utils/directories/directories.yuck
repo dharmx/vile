@@ -1,0 +1,76 @@
+; vim: ft=lisp
+(defpoll FREE :interval "5000s" "scripts/free")
+
+(defwindow directories
+           :monitor 0
+           :geometry (geometry :x "-328"
+                               :y "-130"
+                               :width "488"
+                               :height "700"
+                               :anchor "bottom right")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (dirlist))
+
+(defwidget dirlist []
+  (box :orientation "v"
+       :halign "center"
+       :space-evenly false
+       :class "test"
+    (box :orientation "h"
+         :halign "center"
+         :space-evenly false
+         :class "free-box"
+      (label :text "  "
+             :class "free-label free-label-disk")
+      (label :text "|"
+             :class "free-label free-label-sep")
+      (label :text "${FREE} "
+             :class "free-label free-label-value"))
+    (button :onclick "scripts/opendir --path ~/Dotfiles" 
+            :class "btn-dotfiles"
+      (label :text "        ~/Dotfiles"
+             :halign "start"
+             :class "dirs dirs-dotfiles"))
+    (button :onclick "scripts/opendir --path ~/Torrents" 
+      (label :text "        ~/Torrents"
+             :halign "start"
+             :class "dirs dirs-torrents"))
+    (button :onclick "scripts/opendir --path ~/Documents" 
+            :class "btn-docs"
+      (label :text "        ~/Documents"
+             :halign "start"
+             :class "dirs dirs-docs"))
+    (button :onclick "scripts/opendir --path ~/Downloads" 
+      (label :text "        ~/Downloads"
+             :halign "start"
+             :class "dirs dirs-dwld"))
+    (button :onclick "scripts/opendir --path ~/Music" 
+      (label :text "        ~/Music"
+             :halign "start"
+             :class "dirs dirs-music"))
+    (button :onclick "scripts/opendir --path ~/Pictures" 
+      (label :text "        ~/Pictures"
+             :halign "start"
+             :class "dirs dirs-pics"))
+    (button :onclick "scripts/opendir --path ~/Templates" 
+      (label :text "        ~/Templates"
+             :halign "start"
+             :class "dirs dirs-templ"))
+    (button :onclick "scripts/opendir --path ~/Videos" 
+      (label :text "        ~/Videos"
+             :halign "start"
+             :class "dirs dirs-vids"))
+    (button :onclick "scripts/opendir --path ~/.config" 
+      (label :text "        ~/.config"
+             :halign "start"
+             :class "dirs dirs-cnf"))
+    (button :onclick "scripts/opendir --path ~/.local" 
+      (label :text "        ~/.local"
+             :halign "start"
+             :class "dirs dirs-loc"))
+    (button :onclick "scripts/opendir --path ~/.cache" 
+      (label :text "        ~/.cache"
+             :halign "start"
+             :class "dirs dirs-cache"))))

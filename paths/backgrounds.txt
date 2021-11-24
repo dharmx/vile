@@ -1,0 +1,4 @@
+assets/shuffle/backgrounds/background-valley.jpg
+assets/shuffle/backgrounds/background.jpg
+assets/shuffle/backgrounds/background_shifted_blur.jpg
+assets/shuffle/backgrounds/firewatch.png

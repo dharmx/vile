@@ -1,0 +1,77 @@
+(defpoll BATTERY :interval "30s"  "cat /sys/class/power_supply/$(ls /sys/class/power_supply | grep BAT | head -n 1)/capacity")
+(defpoll BACKLIGHT :interval "5s" "xbacklight -get")
+
+(defwindow system
+           :monitor 0
+           :geometry (geometry :x "-657"
+                               :y "-47"
+                               :width "200"
+                               :height "240"
+                               :anchor "center")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (sysinfo))
+
+(defwidget sysinfo []
+  (box :class "sysinfo" 
+       :orientation "v" 
+       :space-evenly true
+       :halign "center"
+    (ram :label "  "
+         :value {EWW_RAM.used_mem_perc}
+         :onchange ""
+         :class "")
+    (disk :label "  "
+          :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
+          :onchange "")
+    (bat :label "  "
+         :value {BATTERY}
+         :onchange "")
+    (blgt :label "盛  "
+          :value {BACKLIGHT}
+          :onchange "")))
+
+(defwidget ram [label value onchange]
+  (box :orientation "h"
+       :class "metric ram"
+       :space-evenly false
+    (box :class "label" label)
+    (scale :min 0
+           :max 101
+           :active false
+           :value value
+           :onchange onchange)))
+
+(defwidget disk [label value onchange]
+  (box :orientation "h"
+       :class "metric disk"
+       :space-evenly false
+    (box :class "label" label)
+    (scale :min 0
+           :max 101
+           :active false
+           :value value
+           :onchange onchange)))
+
+(defwidget bat [label value onchange]
+  (box :orientation "h"
+       :class "metric bat"
+       :space-evenly false
+    (box :class "label" label)
+    (scale :min 0
+           :max 101
+           :active false
+           :value value
+           :onchange onchange)))
+
+(defwidget blgt [label value onchange]
+  (box :orientation "h"
+       :class "metric blgt"
+       :space-evenly false
+    (box :class "label" label)
+    (scale :min 0
+           :max 101
+           :active true
+           :value value
+           :onchange "xbacklight -set {}")))

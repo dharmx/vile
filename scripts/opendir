@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ "$1" == "--path" ]]; then
+    xdg-open "file://$2"
+else
+    dunstify "No such option!"
+fi

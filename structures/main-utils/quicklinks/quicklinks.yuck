@@ -1,0 +1,66 @@
+; vim: ft=lisp
+(defwindow quicklinks
+           :monitor 0
+           :geometry (geometry :x "-176"
+                               :y "122"
+                               :width "100"
+                               :height "100"
+                               :anchor "top right")
+           :stacking "bg"
+           :windowtype "normal"
+           :wm-ignore true
+  (links))
+
+(defvar open_reddit "scripts/openlinks --reddit")
+(defvar open_gmail "scripts/openlinks --gmail")
+(defvar open_github "scripts/openlinks --github")
+(defvar open_manganelo "scripts/openlinks --manganelo")
+(defvar open_youtube "scripts/openlinks --youtube")
+
+(defvar image_reddit "assets/images/reddit.svg")
+(defvar image_gmail "assets/images/gmail.svg")
+(defvar image_github "assets/images/github.svg")
+(defvar image_manganelo "assets/images/manganelo.png")
+(defvar image_youtube "assets/images/youtube.svg")
+
+(defwidget links []
+  (box :orientation "h"
+       :halign "center"
+       :space-evenly false
+       :class "quick-links"
+    (link :box_class "reddit-box"
+          :button_class "reddit-button"
+          :image_class "reddit-logo"
+          :onclick "${open_reddit}"
+          :image_path "${image_reddit}")
+    (link :box_class "gmail-box"
+          :button_class "gmail-button"
+          :image_class "gmail-logo"
+          :onclick "${open_gmail}"
+          :image_path "${image_gmail}")
+    (link :box_class "github-box"
+          :button_class "github-button"
+          :image_class "github-logo"
+          :onclick "${open_github}"
+          :image_path "${image_github}")
+    (link :box_class "manganelo-box"
+          :button_class "manganelo-button"
+          :image_class "manganelo-logo"
+          :onclick "${open_manganelo}"
+          :image_path "${image_manganelo}")
+    (link :box_class "youtube-box"
+          :button_class "youtube-button"
+          :image_class "youtube-logo"
+          :onclick "${open_youtube}"
+          :image_path "${image_youtube}")))
+
+(defwidget link [?box_class ?button_class ?image_class onclick image_path]
+  (box :orientation "v"
+       :halign "center"
+       :space-evenly false
+       :class "box-class-all ${box_class}"
+    (button :onclick onclick
+            :class "button-class-all ${button_class}"
+      (image :path image_path
+             :width 97
+             :class "image-class-all ${image_class}"))))

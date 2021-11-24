@@ -1,0 +1,105 @@
+(defpoll SONG :interval "1s" "scripts/mpd --song")
+(defpoll ARTIST :interval "1s" "scripts/mpd --artist")
+(defpoll CURRENT :interval "1s" "scripts/mpd --time")
+(defpoll COVER :interval "1s" "scripts/mpd --cover")
+
+(defpoll CTIME :interval "1s" "scripts/mpd --ctime")
+(defpoll TTIME :interval "1s" "scripts/mpd --ttime")
+
+(defvar REPEAT "scripts/mpd --repeat")
+(defvar SHUFFLE "scripts/mpd --shuffle")
+(defvar SINGLE "scripts/mpd --single")
+
+(defpoll REPEATSTATUS :interval "1s" "scripts/mpd --repeat-status")
+(defpoll SHUFFLESTATUS :interval "1s" "scripts/mpd --shuffle-status")
+(defpoll SINGLESTATUS :interval "1s" "scripts/mpd --single-status")
+
+(defvar SEEKFORWARD "scripts/mpd --seek-forward")
+(defvar SEEKBACKWARD "scripts/mpd --seek-backward")
+(defvar PREV "scripts/mpd --prev")
+(defvar NEXT "scripts/mpd --next")
+(defvar TOGGLE "scripts/mpd --toggle")
+
+(defpoll STATUS :interval "1s" "scripts/mpd --status")
+
+(defwindow mpd
+           :monitor 0
+           :geometry (geometry :x "-195"
+                               :y "-5"
+                               :width "653"
+                               :height "325"
+                               :anchor "center")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (mpd-player))
+
+(defwidget mpd-player []
+  (box :orientation "h"
+       :halign "center"
+       :space-evenly false
+       :class "mpd-main-box"
+    (image :path "${COVER}"
+           :width 270)
+    (box :orientation "v"
+         :space-evenly false
+         :class "mpd-child-box"
+      (label :text "${ARTIST}"
+             :class "mpd-label-artist"
+             :limit-width 21
+             :halign "center"
+             :hexpand true)
+      (label :text "${SONG}"
+             :class "mpd-label-title"
+             :limit-width 26
+             :halign "center"
+             :hexpand true)
+      (box :orientation "h"
+           :halign "center"
+           :class "mpd-child-child-box"
+           :space-evenly false
+        (button :onclick "${SEEKBACKWARD}"
+                :class "mpd-btn-seekbackward"
+          (label :text ""
+                 :class "mpd-label-media mpd-label-seekbackward"))
+        (button :onclick "${PREV}"
+                :class "mpd-btn-previous"
+          (label :text " 玲"
+                 :class "mpd-label-media mpd-label-previous"))
+        (button :onclick "${TOGGLE}"
+                :class "mpd-btn-play-pause"
+                :active true
+          (label :text "${STATUS}"
+                 :class "mpd-label-media mpd-label-play-pause"))
+        (button :onclick "${NEXT}"
+                :class "mpd-btn-next"
+          (label :text "怜 "
+                 :class "mpd-label-media mpd-label-next"))
+        (button :onclick "${SEEKFORWARD}"
+                :active true
+                :class "mpd-btn-seekforward"
+          (label :text ""
+                 :class "mpd-label-media mpd-label-seekforward")))
+      (box :orientation "h"
+           :haligh "center"
+           :class "mpd-child-child-extra-controls"
+           :space-evenly false
+        (label :text "${TTIME}"
+               :class "mpd-label mpd-label-ttime")
+        (button :onclick "${SHUFFLE}"
+          (label :text "${SHUFFLESTATUS}"
+                 :class "mpd-label mpd-label-shuffle"))
+        (button :onclick "${REPEAT}"
+          (label :text "${REPEATSTATUS}"
+                 :class "mpd-label mpd-label-repeat"))
+        (button :onclick "${SINGLE}"
+          (label :text "${SINGLESTATUS}"
+                 :class "mpd-label mpd-label-single"))
+        (label :text "${CTIME}"
+               :class "mpd-label mpd-label-ctime"))
+      (eventbox :onscroll "mpc -q seek +1"
+        (scale :min 0
+               :active false
+               :draw-value false
+               :value "${CURRENT}"
+               :max 100)))))
