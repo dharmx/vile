@@ -1,19 +1,7 @@
 #!/usr/bin/env bash
 
-FILE="$XDG_CACHE_HOME/redshift_launch"
-
-toggle() {
-  if [[ ! -f "$FILE" ]]; then
-  	touch "$FILE"
-  	redshift &
-    exit 0
-  else
-  	rm "$FILE"
-    pkill redshift
-  fi
-}
-
 icon() {
+  FILE="$XDG_CACHE_HOME/redshift_launch"
   if [[ ! -f "$FILE" ]]; then
     echo ""
   else 
@@ -23,7 +11,7 @@ icon() {
 
 case "$1" in 
   --toggle)
-    toggle
+    eval "$XDG_CONFIG_HOME/eww/scripts/redshift-toggle"
     ;;
   --icon)
     icon
