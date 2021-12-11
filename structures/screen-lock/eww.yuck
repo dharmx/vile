@@ -1,6 +1,5 @@
 (include "user/user.yuck")
 (include "system/system.yuck")
 (include "time/time.yuck")
-(include "powermenu/powermenu.yuck")
 
 ; vim: ft=lisp

@@ -6,7 +6,7 @@
 (defwindow user
            :monitor 0
            :geometry (geometry :x "-235"
-                               :y "250"
+                               :y "360"
                                :width "260"
                                :height "335"
                                :anchor "center top")

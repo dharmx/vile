@@ -15,19 +15,13 @@ fi
 run_eww() {
   eww -c "$CONFIG" open-many "time"             \
 		             "user"             \
-		             "system" 	        \
-		             "wshutdown"        \
-		             "wreboot"          \
-		             "wsleep"        
+		             "system" 	        
 }
 
 close_eww() {
   eww -c "$CONFIG" close "time"           \
 	                 "user"	          \
-	                 "system" 	  \
-	                 "wshutdown"      \
-		         "wreboot"        \
-		         "wsleep"        
+	                 "system" 	  
 }
 
 lock() {

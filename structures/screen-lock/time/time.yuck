@@ -6,7 +6,7 @@
 (defwindow time
            :monitor 0
            :geometry (geometry :x "140"
-                               :y "-170"
+                               :y "-60"
                                :width "460"
                                :height "240"
                                :anchor "center")
