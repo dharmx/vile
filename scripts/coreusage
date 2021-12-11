@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 core_usr() {
     ACTUAL_CORE_NUMBER=$(( $2 + 4 ))

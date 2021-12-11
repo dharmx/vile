@@ -91,7 +91,7 @@
        :halign "center"
        :space-evenly false
        :class "box-reddit"
-    (button :onclick "betterlockscreen -l dim --off 5"
+    (button :onclick "locklauncher"
       (label :text ""
              :class "logo-lock"))))
 

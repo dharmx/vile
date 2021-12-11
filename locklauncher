@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+## Files and cmd
+FILE="$XDG_CACHE_HOME/eww_launch_lock.xyz"
+CONFIG="$XDG_CONFIG_HOME/eww/structures/screen-lock"
+LOCKSCREEN_WALL="$XDG_CONFIG_HOME/eww/structures/screen-lock/images/backgrounds/ign-cementary-res-blurred.png"
+
+## Run eww daemon if not running already
+if [[ ! "$(pidof eww)" ]]; then
+  eww daemon
+  sleep 1
+fi
+
+## Open widgets 
+run_eww() {
+  eww -c "$CONFIG" open-many "time"             \
+		             "user"             \
+		             "system" 	        \
+		             "wshutdown"        \
+		             "wreboot"          \
+		             "wsleep"        
+}
+
+close_eww() {
+  eww -c "$CONFIG" close "time"           \
+	                 "user"	          \
+	                 "system" 	  \
+	                 "wshutdown"      \
+		         "wreboot"        \
+		         "wsleep"        
+}
+
+lock() {
+  i3lock --beep                                 \
+         --image="$LOCKSCREEN_WALL"             \
+         --color=00000000                       \
+         --max                                  \
+         --pointer=default                      \
+         --ignore-empty-password                \
+         --show-failed-attempts                 \
+         --radius 40                            \
+         --{inside,ring}-color=00000000         \
+         --{inside,ring}wrong-color=BF616ADD    \
+         --line-color=00000000                  \
+         --{key,bs}hl-color=5E81ACEE            \
+         --{verif,wrong,modif}-color=2E3440DD   \
+         --separator-color=2E3440DD             \
+         --verif-text="" --wrong-text=\"\"      \
+         --lock-text="" --lockfailed-text=\"\"  \
+         --no-modkey-text                       \
+         --bar-indicator                        \
+         --bar-direction=2                      \
+         --bar-base-width 40                    \
+         --bar-color 81A1C120                   \
+         --bar-pos 0:1085                       \
+         --bar-count 10
+}
+
+## Launch or close widgets accordingly
+if [[ ! -f "$FILE" ]]; then
+  touch "$FILE"
+  lock
+  run_eww
+else
+  close_eww
+  rm "$FILE"
+fi

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 STATUS=$(playerctl status)
 if [[ "$STATUS" == "Playing" ]]; then

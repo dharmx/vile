@@ -1,0 +1,115 @@
+/* pointer to self: use path relative to the dotfiles and not the symlink */
+@import "../../colors.scss";
+
+* {
+  all: unset;
+  font-family: "Iosevka Nerd Font";
+  background-color: $background;
+}
+
+.logo-image {
+  margin-top: 25px;
+}
+
+.logo-label {
+  color: $color4;
+  margin-top: 15px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.logo-hostname {
+  color: $color6;
+  font-size: 16px;
+}
+
+.time-parent {
+    margin: 15px 30px 15px 20px;
+}
+
+.time-child-left {
+    padding-top: 5px;
+}
+
+.time-label {
+    font-weight: 700;
+}
+
+.time-label-ampm {
+    color: $color6;
+    font-size: 60px;
+    margin-left: 20px;
+}
+
+.time-label-day {
+    color: $color6;
+    font-size: 60px;
+}
+
+.time-label-hr, .time-label-min {
+    font-size: 60px;
+    color: $color4;
+}
+
+.time-label-sep {
+    font-size: 80px;
+    color: $color6;
+    padding-bottom: 10px;
+}
+
+.time-icon {
+    font-size: 120px;
+    padding-right: 2px;
+    color: $color6;
+}
+
+.pmenu-box {
+  font-size: 110px;
+  padding-left: 55px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.shutdown-box {
+  color: $color1;
+}
+
+.reboot-box {
+  color: $color2;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+.suspend-box {
+  color: $color3;
+}
+
+.sysinfo {
+  color: $color6;
+}
+
+.sysinfo .mem-box box label {
+  color: $color2;
+}
+
+.sysinfo .batt-box box label {
+  color: $color3;
+}
+
+.sysinfo .temp-box box label {
+  color: $color1;
+}
+
+.sysinfo .load-box box label {
+  color: $color5;
+  font-size: 25px;
+}
+
+.mem-box, 
+.batt-box, 
+.temp-box,  
+.load-box, {
+  font-size: 20px;
+  padding-right: 5px;
+  padding-left: 15px;
+}

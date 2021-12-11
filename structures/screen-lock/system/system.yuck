@@ -1,0 +1,43 @@
+(defpoll TEMP :interval "5s" "echo $(sensors | sed -n 21p | awk '{print $2}')\  $(sensors | sed -n 27p | awk '{print $2}')")
+(defpoll LOADAVG :interval "5s" "awk '{print $1 * 100}' /proc/loadavg")
+(defpoll FREE :interval "5s" "free -m | sed -n 2p | awk '{print $3}'")
+
+(defwindow system
+           :monitor 0
+           :geometry (geometry :x "140"
+                               :y "5"
+                               :width "460"
+                               :height "80"
+                               :anchor "center")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (sysinfo))
+
+(defwidget sysinfo []
+  (box :class "sysinfo" 
+       :orientation "h" 
+       :space-evenly false
+       :halign "center"
+    (metric :label " "
+            :text {FREE}
+            :class "mem-box")
+    (metric :label " "
+            :text "${EWW_BATTERY['BAT0'].capacity}%"
+            :class "batt-box")
+    (metric :label " "
+            :text {TEMP}
+            :class "temp-box")
+    (metric :label " "
+            :text "${LOADAVG}%"
+            :class "load-box")))
+
+(defwidget metric [label text ?class]
+  (box :orientation "h"
+       :class "metric ${class}"
+       :space-evenly false
+    (box :class "label"
+         (label :text label))
+    (label :text text)))
+
+; vim: ft=lisp

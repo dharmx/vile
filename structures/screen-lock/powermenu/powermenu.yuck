@@ -1,0 +1,86 @@
+(defwindow wshutdown
+           :monitor 0
+           :geometry (geometry :x "-264"
+                               :y "-284"
+                               :width "180"
+                               :height "180"
+                               :anchor "bottom center")
+           :stacking "bg"
+           :windowtype "normal"
+           :wm-ignore true
+  (pmenusd))
+
+(defvar SHUTDOWN "poweroff")
+
+(defwidget pmenusd []
+  (box :orientation "h"
+       :halign "center"
+       :space-evenly true
+       :class "pmenu-box"
+    (power :box_class "shutdown-box"
+           :button_class "shutdown-button"
+           :label_class "shutdown-logo"
+           :onclick "${SHUTDOWN}"
+           :text " ")))
+
+(defwindow wreboot
+           :monitor 0
+           :geometry (geometry :x "4"
+                               :y "-284"
+                               :width "300"
+                               :height "180"
+                               :anchor "bottom center")
+           :stacking "bg"
+           :windowtype "normal"
+           :wm-ignore true
+  (pmenurb))
+
+(defvar REBOOT "reboot")
+
+(defwidget pmenurb []
+  (box :orientation "h"
+       :halign "center"
+       :space-evenly true
+       :class "pmenu-box"
+    (power :box_class "reboot-box"
+           :button_class "reboot-button"
+           :label_class "reboot-logo"
+           :onclick "${REBOOT}"
+           :text " ")))
+
+(defwindow wsleep
+           :monitor 0
+           :geometry (geometry :x "270"
+                               :y "-284"
+                               :width "180"
+                               :height "180"
+                               :anchor "bottom center")
+           :stacking "bg"
+           :windowtype "normal"
+           :wm-ignore true
+  (pmenusp))
+
+(defvar SUSPEND "systemctl suspend")
+
+(defwidget pmenusp []
+  (box :orientation "h"
+       :halign "center"
+       :space-evenly true
+       :class "pmenu-box"
+    (power :box_class "suspend-box"
+           :button_class "suspend-button"
+           :label_class "suspend-logo"
+           :onclick "${SUSPEND}"
+           :text " ")))
+
+(defwidget power [?box_class ?button_class ?label_class onclick text]
+  (box :orientation "v"
+       :halign "center"
+       :space-evenly false
+       :class "box-class-all ${box_class}"
+    (button :onclick onclick
+            :class "button-class-all ${button_class}"
+      (label :text text
+             :class "label-class-all ${label_class}"))))
+
+; vim: ft=lisp

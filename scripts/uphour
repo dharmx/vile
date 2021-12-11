@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 hour=$(uptime -p | awk '{print $2 " " $3}' | sed 's/,//g')
 min=$(uptime -p | awk '{print $4 " " $5}')

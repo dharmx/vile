@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 ## globals
 # all of the image URL will be saved/overwritten here

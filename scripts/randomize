@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 line_count () {
     echo -n $(wc -l < "$1")
