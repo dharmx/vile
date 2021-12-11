@@ -100,6 +100,6 @@
        :halign "center"
        :space-evenly false
        :class "box-reddit"
-    (button :onclick "systemctl suspend"
+    (button :onclick "systemctl suspend; locklauncher"
       (label :text ""
              :class "logo-suspend"))))
