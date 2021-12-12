@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
 
+source "$XDG_CONFIG_HOME/eww/colors.sh"
+
 ## Files and cmd
 FILE="$XDG_CACHE_HOME/eww_launch_lock.xyz"
 CONFIG="$XDG_CONFIG_HOME/eww/structures/screen-lock"
 LOCKSCREEN_WALL="$XDG_CONFIG_HOME/eww/structures/screen-lock/images/backgrounds/ign-cementary-res-blurred.png"
+
+DEFAULT_DPMS=$(xset q | awk '/^[[:blank:]]*DPMS is/ {print $(NF)}')
+LOCK_TIMEOUT=5 ### In Seconds
+DUNST_INSTALLED=false && [[ -e "$(command -v dunstctl)" ]] && DUNST_INSTALLED=true
+DUNST_IS_PAUSED=false && [[ "$DUNST_INSTALLED" == "true" ]] && DUNST_IS_PAUSED=$(dunstctl is-paused)
+
 
 ## Run eww daemon if not running already
 if [[ ! "$(pidof eww)" ]]; then
@@ -24,6 +32,16 @@ close_eww() {
 	                 "system" 	  
 }
 
+prelock() {
+  if [ "$DEFAULT_DPMS" == "Enabled" ]; then
+    xset dpms "$LOCK_TIMEOUT"
+  fi
+
+  if [[ "$DUNST_INSTALLED" == "true" && "$DUNST_IS_PAUSED" == "false" ]]; then
+    dunstctl set-paused true
+  fi
+}
+
 lock() {
   i3lock --beep                                 \
          --image="$LOCKSCREEN_WALL"             \
@@ -33,29 +51,53 @@ lock() {
          --ignore-empty-password                \
          --show-failed-attempts                 \
          --radius 40                            \
-         --{inside,ring}-color=00000000         \
-         --{inside,ring}wrong-color=BF616ADD    \
-         --line-color=00000000                  \
-         --{key,bs}hl-color=5E81ACEE            \
+         --{key,bs}hl-color="$color4"EE         \
          --{verif,wrong,modif}-color=2E3440DD   \
-         --separator-color=2E3440DD             \
+         --separator-color="$color0"DD          \
          --verif-text="" --wrong-text=\"\"      \
          --lock-text="" --lockfailed-text=\"\"  \
+         --wrong-text=" "                      \
+         --wrong-color="$color1"AA              \
+         --wrong-font="Iosevka Nerd Font"       \
+         --wrong-pos 955:200                    \
+         --wrong-size="100"                     \
+         --greeter-color="$color12"EE           \
+         --greeter-text=" "                    \
+         --greeter-font="Iosevka Nerd Font"     \
+         --greeter-size="80"                    \
          --no-modkey-text                       \
          --bar-indicator                        \
          --bar-direction=2                      \
          --bar-base-width 40                    \
          --bar-color 81A1C120                   \
          --bar-pos 0:1085                       \
-         --bar-count 10
+         --bar-count 10                         \
+         --pass-media-keys                      \
+         --pass-screen-keys                     \
+         --pass-volume-keys                     \
+         --pass-power-keys                      
+}
+
+postlock() {
+  if [ "$DEFAULT_DPMS" == "Enabled" ]; then
+    xset dpms 0
+  fi
+
+  if [[ "$DUNST_INSTALLED" == "true" && "$DUNST_IS_PAUSED" == "false" ]]; then
+    dunstctl set-paused false
+  fi
 }
 
 ## Launch or close widgets accordingly
 if [[ ! -f "$FILE" ]]; then
   touch "$FILE"
+  mpc pause
+  playerctl pause
+  prelock
   lock
-  run_eww
+  run_eww 
 else
   close_eww
+  postlock
   rm "$FILE"
 fi
