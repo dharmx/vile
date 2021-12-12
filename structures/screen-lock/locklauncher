@@ -54,10 +54,8 @@ lock() {
          --{key,bs}hl-color="$color4"EE         \
          --{verif,wrong,modif}-color=2E3440DD   \
          --separator-color="$color0"DD          \
-         --verif-text="" --wrong-text=\"\"      \
-         --lock-text="" --lockfailed-text=\"\"  \
          --wrong-text=" "                      \
-         --wrong-color="$color1"AA              \
+         --wrong-color="$color1"EE              \
          --wrong-font="Iosevka Nerd Font"       \
          --wrong-pos 955:200                    \
          --wrong-size="100"                     \
@@ -65,6 +63,7 @@ lock() {
          --greeter-text=" "                    \
          --greeter-font="Iosevka Nerd Font"     \
          --greeter-size="80"                    \
+         --greeter-pos 955:950                  \
          --no-modkey-text                       \
          --bar-indicator                        \
          --bar-direction=2                      \
@@ -83,7 +82,7 @@ postlock() {
     xset dpms 0
   fi
 
-  if [[ "$DUNST_INSTALLED" == "true" && "$DUNST_IS_PAUSED" == "false" ]]; then
+  if [[ "$DUNST_INSTALLED" == "true" && "$DUNST_IS_PAUSED" == "true" ]]; then
     dunstctl set-paused false
   fi
 }

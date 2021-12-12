@@ -1,4 +1,5 @@
-(defpoll TEMP :interval "5s" "echo $(sensors | sed -n 21p | awk '{print $2}')\  $(sensors | sed -n 27p | awk '{print $2}')")
+(defpoll TEMP :interval "5s" 
+  "echo $(sensors pch_cannonlake-virtual-0 | sed -n 3p | awk '{print $2}') $(sensors nouveau-pci-0100 | sed -n 3p | awk '{print $2}')")
 (defpoll LOADAVG :interval "5s" "awk '{print $1 * 100}' /proc/loadavg")
 (defpoll FREE :interval "5s" "free -m | sed -n 2p | awk '{print $3}'")
 

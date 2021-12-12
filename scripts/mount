@@ -10,7 +10,7 @@ mount_nvme() {
     STATE=$(udisks2_is_mounted nvme0n1p1)
     if [ "$STATE" == "" ]; then
         ICON_MOUNTED_PATH=$(readlink -f assets/images/hdd-mount.svg)
-        eval "$DUNST $ICON_MOUNTED_PATH 'Mounting...' 'Enter password for mounting nvme0n1p1'"
+        eval "$DUNST $ICON_MOUNTED_PATH 'Mounting...' 'Mounting nvme0n1p1'"
         kitty udisksctl mount -b /dev/nvme0n1p1 
     else
         ICON_UNMOUNTED_PATH=$(readlink -f assets/images/hdd-unmount.svg)
