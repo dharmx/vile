@@ -93,5 +93,3 @@ After installing EWW briefly look at their documentations and use `eww help` to 
 - This configuration was written in the early stages of `yuck` and at that time there were no comprehensive and detailed information about the `MAGIC VARIABLES` feature, which makes few of the scripts redundant. I will be refactoring such scripts later...
 
 - I also plan to write a monolithic launcher with flags like `--main`, `--wallpaper`, etc. And, will move `mainlauncher` and `wallpaperlauncher` to a new directory called `launchers`.
-
-- Lastly, if you decide to install this in your own preferred directory then use `eww -c /path/to/custom_dir`.
