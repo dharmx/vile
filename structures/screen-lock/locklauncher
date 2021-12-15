@@ -95,8 +95,14 @@ if [[ ! -f "$FILE" ]]; then
   prelock
   lock
   run_eww 
+
+  if [[ "$1" == "--no-screen-off" ]]; then 
+    xset dpms 0
+  fi
 else
   close_eww
   postlock
   rm "$FILE"
 fi
+
+# vin: ft=bash
