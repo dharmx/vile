@@ -95,7 +95,7 @@ if [[ ! -f "$FILE" ]]; then
   prelock
   lock
   run_eww 
-
+  
   if [[ "$1" == "--no-screen-off" ]]; then 
     xset dpms 0
   fi
@@ -105,4 +105,4 @@ else
   rm "$FILE"
 fi
 
-# vin: ft=bash
+# vim: ft=bash
