@@ -1,4 +1,3 @@
-; vim: ft=lisp
 (defwindow quicklinks
            :monitor 0
            :geometry (geometry :x "-176"
@@ -64,3 +63,5 @@
       (image :path image_path
              :width 97
              :class "image-class-all ${image_class}"))))
+
+; vim: ft=lisp

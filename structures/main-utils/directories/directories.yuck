@@ -1,4 +1,3 @@
-; vim: ft=lisp
 (defpoll FREE :interval "5000s" "scripts/free")
 
 (defwindow directories
@@ -74,3 +73,5 @@
       (label :text "        ~/.cache"
              :halign "start"
              :class "dirs dirs-cache"))))
+
+; vim: ft=lisp

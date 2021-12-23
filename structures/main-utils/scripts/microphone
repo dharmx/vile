@@ -75,3 +75,5 @@ case "$1" in
         echo "Invalid flag!"
         ;;
 esac
+
+# vim:ft=bash:nowrap

@@ -10,3 +10,5 @@ elif [[ "$1" == "--min" ]]; then
 else
     echo "No such option!"
 fi
+
+# vim:ft=bash:nowrap

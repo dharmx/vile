@@ -11,7 +11,7 @@ icon() {
 
 case "$1" in 
   --toggle)
-    eval "$XDG_CONFIG_HOME/eww/scripts/redshift-toggle"
+    eval "$XDG_CONFIG_HOME/eww/structures/main-utils/scripts/redshift-toggle"
     ;;
   --icon)
     icon
@@ -20,3 +20,5 @@ case "$1" in
     echo "Invalid Option!"
     ;;
 esac
+
+# vim:ft=bash:nowrap

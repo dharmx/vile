@@ -127,3 +127,5 @@ case "$1" in
         echo Invalid choice!
         ;;
 esac
+
+# vim:ft=bash:nowrap

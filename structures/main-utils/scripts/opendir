@@ -5,3 +5,5 @@ if [[ "$1" == "--path" ]]; then
 else
     dunstify "No such option!"
 fi
+
+# vim:ft=bash:nowrap

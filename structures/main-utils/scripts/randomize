@@ -14,3 +14,4 @@ random_path () {
 
 echo -n $(random_path "$1")
 
+# vim:ft=bash:nowrap

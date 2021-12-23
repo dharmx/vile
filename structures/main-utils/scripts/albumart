@@ -2,9 +2,9 @@
 
 ## globals
 # all of the image URL will be saved/overwritten here
-SAVE_PATH=cache/eww-album-art.png
+SAVE_PATH="cache/eww-album-art.png"
 # if no players are running, the following image will be displayed instead
-DEFAULT_SAVE_PATH=cache/eww-album-art-default.svg
+DEFAULT_SAVE_PATH="cache/eww-album-art-default.svg"
 STATUS=$(playerctl status)
 
 # if status is playing then albumart will be fetched and displayed
@@ -17,3 +17,5 @@ else
     curl "$(playerctl metadata mpris:artUrl)" > "$SAVE_PATH"
     echo "$SAVE_PATH"
 fi
+
+# vim:ft=bash:nowrap

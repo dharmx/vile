@@ -103,3 +103,5 @@
                :draw-value false
                :value "${CURRENT}"
                :max 100)))))
+
+; vim:ft=lisp:nowrap

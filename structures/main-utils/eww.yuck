@@ -1,0 +1,14 @@
+(include "user/user.yuck")
+(include "system/system.yuck")
+(include "time/time.yuck")
+(include "uptime/uptime.yuck")
+(include "background/background.yuck")
+(include "quicklinks/quicklinks.yuck")
+(include "directories/directories.yuck")
+(include "powermenu/powermenu.yuck")
+(include "playerctl/playerctl.yuck")
+(include "storageandaudio/storageandaudio.yuck")
+(include "mpd/mpd.yuck")
+
+; disable noclobber by "set +o noclobber" first
+; vim: ft=lisp

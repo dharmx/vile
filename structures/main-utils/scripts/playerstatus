@@ -8,3 +8,5 @@ elif [[ "$STATUS" == "Paused" ]]; then
 else
     echo " "
 fi
+
+# vim:ft=bash:nowrap

@@ -163,3 +163,5 @@ elif [[ "$1" == "--seek-forward" ]]; then
 elif [[ "$1" == "--seek-backward" ]]; then
 	exec mpc -q seek -5 &> /dev/null
 fi
+
+# vim:ft=bash:nowrap

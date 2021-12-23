@@ -1,10 +1,15 @@
-/* pointer to self: use path relative to the dotfiles and not the symlink */
 @import "../../colors.scss";
 
 * {
-  all: unset;
-  font-family: "Iosevka Nerd Font";
-  background-color: $background;
+    all: unset;
+    font-family: "Iosevka Nerd Font", 
+                 "JetBrainsMono Nerd Font", 
+                 "Material Icons", 
+                 "Material Design Icons", 
+                 "Material", 
+                 "Material-Design-Iconic-Font", 
+                 "Unifont";
+    background-color: $background;
 }
 
 .logo-image {

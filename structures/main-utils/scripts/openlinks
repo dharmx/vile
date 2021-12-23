@@ -16,3 +16,4 @@ else
     echo "No such option!"
 fi
 
+# vim:ft=bash:nowrap

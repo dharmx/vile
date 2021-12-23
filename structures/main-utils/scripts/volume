@@ -75,3 +75,5 @@ case "$1" in
         listen
         ;;
 esac
+
+# vim:ft=bash:nowrap
