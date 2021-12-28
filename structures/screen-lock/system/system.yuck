@@ -4,7 +4,7 @@
 
 (defwindow system
            :monitor 0
-           :geometry (geometry :x "140"
+           :geometry (geometry :x "145"
                                :y "115"
                                :width "470"
                                :height "80"
