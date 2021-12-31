@@ -26,7 +26,8 @@
             :text "${EWW_BATTERY['BAT0'].capacity}%"
             :class "batt-box")
     (metric :label " "
-            :text "${EWW_TEMPS.core_1}"
+            ;:text "${EWW_TEMPS['cores']}"
+            :text "${TEMP}"
             :class "temp-box")
     (metric :label " "
             :text "${round(EWW_RAM['used_mem_perc'], 0)}%"
