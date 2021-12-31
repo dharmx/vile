@@ -1,15 +1,15 @@
 ;(deflisten PROFILE :initial "assets/shuffle/profiles/black-lambda.jpg"
 ;  "scripts/randomize paths/profiles.txt")
 
-(defvar PROFILE "images/profiles/profile.png")
+(defvar PROFILE "assets/shuffle/profiles/profile.png")
 
 (defwindow user
            :monitor 0
-           :geometry (geometry :x "-235"
-                               :y "360"
-                               :width "260"
-                               :height "335"
-                               :anchor "center top")
+           :geometry (geometry :x "180"
+                               :y "-130"
+                               :width "247"
+                               :height "325"
+                               :anchor "bottom left")
            :stacking "fg"
            :windowtype "normal"
            :wm-ignore true
@@ -20,7 +20,7 @@
        :halign "center"
        :space-evenly false
     (image :path "${PROFILE}"
-           :width 210
+           :image-width 180
            :class "logo-image")
     (label :text "Keymaker"
            :class "logo-label")

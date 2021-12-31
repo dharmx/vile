@@ -14,8 +14,8 @@
 
 (defwidget picture []
   (image :path "${WALLPAPER}"
-         :width 1980
-         :height 1080))
+         :image-width 1980
+         :-image-height 1080))
 
 (defwindow change
            :monitor 0

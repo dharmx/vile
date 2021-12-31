@@ -1,0 +1,593 @@
+@import "../../colors.scss";
+
+* {
+  all: unset;
+  font-family: "Iosevka Nerd Font", "JetBrainsMono Nerd Font", "Material Icons",
+    "Material Design Icons", "Material", "Material-Design-Iconic-Font",
+    "Unifont";
+  background-color: $background;
+}
+
+.label-media {
+  font-size: 80px;
+  padding: 20px;
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+
+.label-title,
+.label-artist {
+  font-size: 30px;
+  padding-left: 40px;
+}
+
+.label-artist {
+  font-weight: 600;
+  color: $color8;
+}
+
+.label-title {
+  font-weight: 700;
+  color: $color4;
+}
+
+.label-previous {
+  color: $color7;
+  padding-left: 45px;
+}
+
+.label-next {
+  padding-right: 0px;
+  color: $color7;
+}
+
+.label-play-pause {
+  color: $color15;
+}
+
+.mpd-label-media {
+  font-size: 65px;
+}
+
+.mpd-label-artist {
+  font-size: 22px;
+  font-weight: 700;
+  color: $color8;
+  margin-top: 40px;
+  margin-left: 15px;
+}
+
+.mpd-label-title {
+  font-weight: 500;
+  color: $color4;
+  padding-bottom: 20px;
+  font-size: 19px;
+  margin-left: 20px;
+}
+
+.mpd-label-previous {
+  color: $color7;
+}
+
+.mpd-label-next {
+  color: $color7;
+}
+
+.mpd-label-play-pause {
+  color: $color4;
+  padding-right: 10px;
+  padding-left: 12px;
+}
+
+.mpd-main-box scale {
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.mpd-main-box scale trough {
+  background-color: $color8;
+  border-radius: 50px;
+  min-height: 20px;
+  min-width: 70px;
+}
+
+.mpd-main-box scale trough highlight {
+  background-color: $color5;
+  color: $color0;
+  border-radius: 50px;
+}
+
+.mpd-child-child-box {
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.mpd-child-child-extra-controls {
+  padding-left: 20px;
+}
+
+.mpd-label {
+  font-size: 12px;
+  font-weight: 900;
+  padding: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 15px;
+}
+
+.mpd-label-single,
+.mpd-label-repeat,
+.mpd-label-shuffle {
+  font-size: 20px;
+  padding-right: 25px;
+  padding-left: 20px;
+  background-color: $color8;
+  color: $color7;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.mpd-label-ttime,
+.mpd-label-ctime {
+  color: $color6;
+}
+
+.mpd-label-ttime {
+  padding-left: 12px;
+}
+
+.mpd-label-seekforward,
+.mpd-label-seekbackward {
+  font-size: 30px;
+  color: $color4;
+}
+
+.mpd-label-seekbackward {
+  margin-left: 15px;
+  padding-right: 2px;
+  padding-left: 10px;
+}
+
+.mpd-label-seekforward {
+  padding-right: 10px;
+}
+
+.bluetooth-box {
+  padding-top: 30px;
+  padding-left: 40px;
+}
+
+.bluetooth-icon {
+  font-size: 30px;
+  border-radius: 20px;
+  background-color: $color4;
+  padding: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.controller-box {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.control-label {
+  font-size: 45px;
+  color: $color4;
+}
+
+.control-microphone {
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.control-box {
+  margin-top: 30px;
+  font-size: 50px;
+}
+
+.control-box scale trough highlight {
+  border-radius: 50px;
+}
+
+.control-volume scale trough highlight {
+  background-color: $color4;
+}
+
+.control-microphone scale trough highlight {
+  background-color: $color4;
+}
+
+.control-box scale trough {
+  all: unset;
+  background-color: $color8;
+  border-radius: 50px;
+  min-height: 20px;
+  min-width: 165px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.partition-box {
+  font-size: 15px;
+  font-weight: 900;
+  color: $color7;
+}
+
+.partition-icon {
+  font-size: 50px;
+  padding-left: 40px;
+  padding-right: 42px;
+}
+
+.partition-label {
+  padding-left: 35px;
+  padding-right: 20px;
+  color: $color6;
+}
+
+.partition-hdd-icon {
+  color: $color6;
+}
+
+.partition-phone-icon {
+  color: $color6;
+}
+
+.partition-pendrive-icon {
+  color: $color6;
+}
+
+.nightmode-box {
+  font-weight: 900;
+  padding-left: 30px;
+  padding-right: 20px;
+}
+
+.nightmode-icon {
+  font-size: 50px;
+  color: $color4;
+}
+
+.nightmode-label {
+  font-size: 15px;
+  color: $color4;
+  padding-left: 5px;
+}
+
+.free-label {
+  font-size: 77px;
+  background-color: $color8;
+  margin-top: 25px;
+  font-weight: 700;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: $background;
+}
+
+.free-label-sep {
+  font-size: 65px;
+  font-weight: 700;
+  padding-right: 16px;
+  color: $color0;
+}
+
+.free-label-disk {
+  padding-left: 20px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.free-label-value {
+  padding-right: 20px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.dirs {
+  font-size: 29px;
+  font-weight: 600;
+  margin: 3px;
+  margin-left: 70px;
+}
+
+.btn-dotfiles {
+  margin-top: 25px;
+}
+
+.dirs-dotfiles {
+  color: $color4;
+}
+
+.dirs-docs {
+  color: $color4;
+}
+
+.dirs-torrents {
+  color: $color4;
+}
+
+.dirs-cache {
+  color: $color4;
+}
+
+.dirs-dwld {
+  color: $color4;
+}
+
+.dirs-music {
+  color: $color4;
+}
+
+.dirs-pics {
+  color: $color4;
+}
+
+.dirs-templ {
+  color: $color4;
+}
+
+.dirs-vids {
+  color: $color4;
+}
+
+.dirs-cnf {
+  color: $color6;
+}
+
+.dirs-loc {
+  color: $color6;
+}
+
+.dirs-cache {
+  color: $color6;
+}
+
+.logo-reboot,
+.logo-shutdown,
+.logo-logout,
+.logo-lock,
+.logo-suspend {
+  font-size: 90;
+  padding: 11px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.logo-reboot {
+  color: $color4;
+}
+
+.logo-shutdown {
+  color: $color4;
+}
+
+.logo-logout {
+  color: $color4;
+}
+
+.logo-lock {
+  color: $color6;
+}
+
+.logo-suspend {
+  color: $color6;
+}
+
+.quick-links {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.box-class-all {
+  margin-left: 10px;
+}
+
+.image-class-all {
+  padding-left: 10px;
+  padding-right: 9px;
+}
+
+.gmail-logo {
+  background-color: #81a1c1;
+}
+
+.github-logo {
+  background-color: #81a1c1;
+}
+
+.manganelo-logo {
+  background-color: #97c4e8;
+}
+
+.youtube-logo {
+  background-color: #81a1c1;
+}
+
+.reddit-logo {
+  background-color: #81a1c1;
+}
+
+.sysinfo {
+  padding: 15px 10px 15px 25px;
+  font-size: 23px;
+}
+
+.metric scale trough highlight {
+  all: unset;
+  background-color: $color6;
+  color: $color0;
+  border-radius: 10px;
+}
+
+.ram scale trough highlight {
+  all: unset;
+  background-color: $color6;
+  color: $color0;
+  border-radius: 10px;
+}
+
+.ram {
+  color: $color6;
+}
+
+.disk scale trough highlight {
+  all: unset;
+  background-color: $color6;
+  color: $color0;
+  border-radius: 10px;
+}
+
+.disk {
+  color: $color6;
+}
+
+.bat scale trough highlight {
+  all: unset;
+  background-color: $color6;
+  color: $color0;
+  border-radius: 10px;
+}
+
+.bat {
+  color: $color6;
+}
+
+.blgt scale trough highlight {
+  all: unset;
+  background-color: $color6;
+  color: $color0;
+  border-radius: 10px;
+}
+
+.blgt {
+  color: $color6;
+}
+
+.metric scale trough {
+  background-color: $color8;
+  border-radius: 50px;
+  min-height: 20px;
+  min-width: 150px;
+  margin-left: 5px;
+  margin-right: 12px;
+}
+
+.usage-scale trough {
+  background-color: $color0;
+  border-radius: 50px;
+  min-height: 20px;
+  min-width: 300px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.usage-scale trough highlight {
+  background-color: $color0;
+  color: $color6;
+  border-radius: 10px;
+}
+
+.label-usage,
+.label-usage-header {
+  font-family: "Iosevka";
+  font-weight: 600;
+  font-size: 20px;
+  color: $color4;
+  min-width: 20px;
+}
+
+.usage-scale-all {
+  min-width: 680px;
+}
+
+.usage-box {
+  padding: 5px;
+}
+
+.time-parent {
+  margin: 15px 30px 15px 20px;
+}
+
+.time-child-left {
+  padding-top: 5px;
+}
+
+.time-label {
+  font-weight: 700;
+}
+
+.time-label-ampm {
+  color: $color6;
+  font-size: 80px;
+  margin-left: 20px;
+}
+
+.time-label-day {
+  color: $color6;
+  font-size: 60px;
+}
+
+.time-label-hr,
+.time-label-min {
+  font-size: 80px;
+  color: $color4;
+}
+
+.time-label-sep {
+  font-size: 80px;
+  color: $color6;
+  padding-bottom: 15px;
+}
+
+.time-icon {
+  font-size: 150px;
+  padding-right: 2px;
+  color: $color6;
+}
+
+.uptime-label {
+  font-size: 50px;
+  font-weight: 800;
+  color: $color4;
+}
+
+.uptime-icon {
+  font-size: 140px;
+  margin-left: 35px;
+  margin-bottom: 0px;
+  color: $color6;
+}
+
+.uptime-child {
+  margin-top: 70px;
+  padding-left: 25px;
+}
+
+.doodle {
+  font-family: "Iosevka Nerd Font";
+  font-size: 30px;
+  font-weight: 900;
+  color: $color6;
+}
+
+.logo-label {
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  color: $color4;
+}
+
+.logo-image {
+  margin-top: 34px;
+}
+
+.logo-hostname {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: $color6;
+}

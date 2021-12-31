@@ -2,7 +2,7 @@
 
 ## Files and cmd
 FILE="$XDG_CACHE_HOME/launch_wallpaper.eww"
-CONFIG="$XDG_CONFIG_HOME/eww/structures/wallpaper"
+CONFIG="$XDG_CONFIG_HOME/eww/structs/wallpaper"
 
 run_eww() {
   eww -c "$CONFIG" open-many "wallpaper"                \

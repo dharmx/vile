@@ -40,7 +40,7 @@
        :space-evenly false
        :class "mpd-main-box"
     (image :path "${COVER}"
-           :width 270)
+           :image-width 270)
     (box :orientation "v"
          :space-evenly false
          :class "mpd-child-box"

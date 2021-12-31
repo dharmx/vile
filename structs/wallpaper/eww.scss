@@ -1,36 +1,33 @@
-@import "../../colors.scss";
+@import "colors.scss";
 
 * {
-    all: unset;
-    font-family: "Iosevka Nerd Font", 
-                 "JetBrainsMono Nerd Font", 
-                 "Material Icons", 
-                 "Material Design Icons", 
-                 "Material", 
-                 "Material-Design-Iconic-Font", 
-                 "Unifont";
-    background-color: $background;
+  all: unset;
+  font-family: "Iosevka Nerd Font", "JetBrainsMono Nerd Font", "Material Icons",
+    "Material Design Icons", "Material", "Material-Design-Iconic-Font",
+    "Unifont";
+  background-color: $background;
 }
 
-.nav-label-next, .nav-label-prev {
-    font-size: 50px;
-    color: $color6;
+.nav-label-next,
+.nav-label-prev {
+  font-size: 50px;
+  color: $color6;
 }
 
 .nav-label-prev {
-    padding-left: 35px;
+  padding-left: 35px;
 }
 
 .nav-label-next {
-    padding-right: 30px;
+  padding-right: 30px;
 }
 
 .nav-label-apply {
-    margin-left: 35px;
-    margin-right: 35px;
-    color: $color4;
-    font-size: 50px;
-    font-weight: 900;
+  margin-left: 35px;
+  margin-right: 35px;
+  color: $color4;
+  font-size: 50px;
+  font-weight: 900;
 }
 
 .backlight scale trough {
@@ -55,9 +52,9 @@
 }
 
 .label-backlight {
-    font-size: 20;
-    padding-left: 20px;
-    padding-right: 10px;
+  font-size: 20;
+  padding-left: 20px;
+  padding-right: 10px;
 }
 
 .title-label {
@@ -100,12 +97,11 @@
 }
 
 .btn-nav-next {
-    padding-left: 15px;
-    margin-right: 15px;
+  padding-left: 15px;
+  margin-right: 15px;
 }
 
 .btn-nav-prev {
-    padding-right: 10px;
-    margin-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
 }
-

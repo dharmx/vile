@@ -6,7 +6,7 @@
            :monitor 0
            :geometry (geometry :x "140"
                                :y "115"
-                               :width "462"
+                               :width "461"
                                :height "80"
                                :anchor "center")
            :stacking "fg"
@@ -26,10 +26,10 @@
             :text "${EWW_BATTERY['BAT0'].capacity}%"
             :class "batt-box")
     (metric :label " "
-            :text {TEMP}
+            :text "${EWW_TEMPS.core_1}"
             :class "temp-box")
     (metric :label " "
-            :text "${LOADAVG}"
+            :text "${round(EWW_RAM['used_mem_perc'], 0)}%"
             :class "load-box")))
 
 (defwidget metric [label text ?class]

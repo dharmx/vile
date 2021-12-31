@@ -61,7 +61,7 @@
     (button :onclick onclick
             :class "button-class-all ${button_class}"
       (image :path image_path
-             :width 97
+             :image-width 97
              :class "image-class-all ${image_class}"))))
 
 ; vim: ft=lisp
