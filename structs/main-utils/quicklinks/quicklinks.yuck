@@ -10,11 +10,11 @@
            :wm-ignore true
   (links))
 
-(defvar open_reddit "scripts/openlinks --reddit")
-(defvar open_gmail "scripts/openlinks --gmail")
-(defvar open_github "scripts/openlinks --github")
-(defvar open_manganelo "scripts/openlinks --manganelo")
-(defvar open_youtube "scripts/openlinks --youtube")
+(defvar open_reddit "scripts/openlinks.bash --reddit")
+(defvar open_gmail "scripts/openlinks.bash --gmail")
+(defvar open_github "scripts/openlinks.bash --github")
+(defvar open_manganelo "scripts/openlinks.bash --manganelo")
+(defvar open_youtube "scripts/openlinks.bash --youtube")
 
 (defvar image_reddit "assets/images/reddit.svg")
 (defvar image_gmail "assets/images/gmail.svg")

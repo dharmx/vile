@@ -1,26 +1,26 @@
-(defpoll SONG :interval "1s" "scripts/mpd --song")
-(defpoll ARTIST :interval "1s" "scripts/mpd --artist")
-(defpoll CURRENT :interval "1s" "scripts/mpd --time")
-(defpoll COVER :interval "1s" "scripts/mpd --cover")
+(defpoll SONG :interval "1s" "scripts/mpd.bash --song")
+(defpoll ARTIST :interval "1s" "scripts/mpd.bash --artist")
+(defpoll CURRENT :interval "1s" "scripts/mpd.bash --time")
+(defpoll COVER :interval "1s" "scripts/mpd.bash --cover")
 
-(defpoll CTIME :interval "1s" "scripts/mpd --ctime")
-(defpoll TTIME :interval "1s" "scripts/mpd --ttime")
+(defpoll CTIME :interval "1s" "scripts/mpd.bash --ctime")
+(defpoll TTIME :interval "1s" "scripts/mpd.bash --ttime")
 
-(defvar REPEAT "scripts/mpd --repeat")
-(defvar SHUFFLE "scripts/mpd --shuffle")
-(defvar SINGLE "scripts/mpd --single")
+(defvar REPEAT "scripts/mpd.bash --repeat")
+(defvar SHUFFLE "scripts/mpd.bash --shuffle")
+(defvar SINGLE "scripts/mpd.bash --single")
 
-(defpoll REPEATSTATUS :interval "1s" "scripts/mpd --repeat-status")
-(defpoll SHUFFLESTATUS :interval "1s" "scripts/mpd --shuffle-status")
-(defpoll SINGLESTATUS :interval "1s" "scripts/mpd --single-status")
+(defpoll REPEATSTATUS :interval "1s" "scripts/mpd.bash --repeat-status")
+(defpoll SHUFFLESTATUS :interval "1s" "scripts/mpd.bash --shuffle-status")
+(defpoll SINGLESTATUS :interval "1s" "scripts/mpd.bash --single-status")
 
-(defvar SEEKFORWARD "scripts/mpd --seek-forward")
-(defvar SEEKBACKWARD "scripts/mpd --seek-backward")
-(defvar PREV "scripts/mpd --prev")
-(defvar NEXT "scripts/mpd --next")
-(defvar TOGGLE "scripts/mpd --toggle")
+(defvar SEEKFORWARD "scripts/mpd.bash --seek-forward")
+(defvar SEEKBACKWARD "scripts/mpd.bash --seek-backward")
+(defvar PREV "scripts/mpd.bash --prev")
+(defvar NEXT "scripts/mpd.bash --next")
+(defvar TOGGLE "scripts/mpd.bash --toggle")
 
-(defpoll STATUS :interval "1s" "scripts/mpd --status")
+(defpoll STATUS :interval "1s" "scripts/mpd.bash --status")
 
 (defwindow mpd
            :monitor 0

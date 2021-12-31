@@ -1,6 +1,6 @@
 (defpoll SINCE :interval "60s" "uptime -s | awk '{print $2}'")
-(defpoll UPHOUR :interval "60s" "scripts/uphour --hour")
-(defpoll UPMIN :interval "60s" "scripts/uphour --min")
+(defpoll UPHOUR :interval "60s" "scripts/uphour.bash --hour")
+(defpoll UPMIN :interval "60s" "scripts/uphour.bash --min")
 
 (defwindow uptime
            :monitor 0

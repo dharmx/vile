@@ -1,4 +1,4 @@
-(defpoll WALLPAPER :interval "1s" "scripts/wallpaper -c")
+(defpoll WALLPAPER :interval "1s" "scripts/wallpaper.bash -c")
 
 (defwindow wallpaper
            :monitor 0

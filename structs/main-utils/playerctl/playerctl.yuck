@@ -1,5 +1,5 @@
-(defpoll ALBUMART :interval "1s" "scripts/albumart")
-(defpoll PLAYPAUSE :interval "1s" "scripts/playerstatus")
+(defpoll ALBUMART :interval "1s" "scripts/albumart.bash")
+(defpoll PLAYPAUSE :interval "1s" "scripts/playerstatus.bash")
 (defpoll ARTIST :interval "1s" "playerctl metadata xesam:artist")
 (defpoll TITLE :interval "1s" "playerctl metadata xesam:title")
 

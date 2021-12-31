@@ -82,7 +82,7 @@
        :halign "center"
        :space-evenly false
        :class "box-reddit"
-    (button :onclick "killall bspwm"
+    (button :onclick "bspc quit"
       (label :text "ﴚ"
              :class "logo-logout"))))
 
