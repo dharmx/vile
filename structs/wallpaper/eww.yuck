@@ -27,9 +27,9 @@
            :stacking "fg"
            :windowtype "normal"
            :wm-ignore true
-  (navigator :next "scripts/wallpaper --next-path"
-             :previous "scripts/wallpaper --previous-path"
-             :apply "scripts/wallpaper --apply-wallpaper"))
+  (navigator :next "scripts/wallpaper.bash --next-path"
+             :previous "scripts/wallpaper.bash --previous-path"
+             :apply "scripts/wallpaper.bash --apply-wallpaper"))
 
 (defwidget navigator [next previous apply]
   (box :orientation "h"
