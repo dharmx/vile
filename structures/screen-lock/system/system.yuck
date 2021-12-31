@@ -4,9 +4,9 @@
 
 (defwindow system
            :monitor 0
-           :geometry (geometry :x "145"
+           :geometry (geometry :x "140"
                                :y "115"
-                               :width "470"
+                               :width "462"
                                :height "80"
                                :anchor "center")
            :stacking "fg"
