@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
 icon() {
-  FILE="$XDG_CACHE_HOME/redshift_launch.bash"
+  FILE="$XDG_CACHE_HOME/redshift_launch"
   if [[ ! -f "$FILE" ]]; then
     echo ""
-  else 
+  else
     echo ""
   fi
 }
 
-case "$1" in 
+case "$1" in
   --toggle)
-    eval "$XDG_CONFIG_HOME/eww/structures/main-utils/scripts/redshift-toggle.bash"
+    eval "$XDG_CONFIG_HOME/eww/scripts/redshift-toggle.bash"
     ;;
   --icon)
     icon

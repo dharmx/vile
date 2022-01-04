@@ -1,0 +1,7 @@
+(defwidget notifications [text onclick]
+    (button :onclick onclick
+            :active true
+      (label :text text)))
+
+
+; vim:ft=yuck:nowrap

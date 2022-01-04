@@ -1,0 +1,14 @@
+(defwindow sidecard :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "0%"
+                               :width "24%"
+                               :height "100%"
+                               :anchor "top left")
+           :stacking "fg"
+           :wm-ignore false
+           :windowtype "dock"
+  (layout))
+
+(include "layout.yuck")
+
+; vim:ft=yuck:nowrap

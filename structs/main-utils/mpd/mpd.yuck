@@ -59,11 +59,13 @@
            :class "mpd-child-child-box"
            :space-evenly false
         (button :onclick "${SEEKBACKWARD}"
+                :active true
                 :class "mpd-btn-seekbackward"
           (label :text ""
                  :class "mpd-label-media mpd-label-seekbackward"))
         (button :onclick "${PREV}"
                 :class "mpd-btn-previous"
+                :active true
           (label :text " 玲"
                  :class "mpd-label-media mpd-label-previous"))
         (button :onclick "${TOGGLE}"
@@ -73,6 +75,7 @@
                  :class "mpd-label-media mpd-label-play-pause"))
         (button :onclick "${NEXT}"
                 :class "mpd-btn-next"
+                :active true
           (label :text "怜 "
                  :class "mpd-label-media mpd-label-next"))
         (button :onclick "${SEEKFORWARD}"
@@ -87,12 +90,15 @@
         (label :text "${TTIME}"
                :class "mpd-label mpd-label-ttime")
         (button :onclick "${SHUFFLE}"
+                :active true
           (label :text "${SHUFFLESTATUS}"
                  :class "mpd-label mpd-label-shuffle"))
         (button :onclick "${REPEAT}"
           (label :text "${REPEATSTATUS}"
+                 :active true
                  :class "mpd-label mpd-label-repeat"))
         (button :onclick "${SINGLE}"
+                :active true
           (label :text "${SINGLESTATUS}"
                  :class "mpd-label mpd-label-single"))
         (label :text "${CTIME}"
@@ -104,4 +110,4 @@
                :value "${CURRENT}"
                :max 100)))))
 
-; vim:ft=lisp:nowrap
+; vim:ft=yuck:nowrap

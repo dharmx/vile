@@ -1,0 +1,32 @@
+(defpoll time
+         :interval "30s"
+         :initial "date +%H:%M"
+         :run-while true
+  "date +%H:%M")
+
+(defpoll date
+         :interval "30s"
+         :initial "date '+%e %B %Y'"
+         :run-while true
+  "date '+%e %B %Y'")
+
+(defpoll nightmodeicon
+         :interval "1s"
+         :initial "scripts/redshift.bash --icon"
+         :run-while true
+  "scripts/redshift.bash --icon")
+
+(defvar nightmodetoggle
+  "scripts/redshift.bash --toggle")
+
+(defpoll notificon
+         :interval "1s"
+         :initial "scripts/dunst.bash --icon"
+         :run-while true
+  "scripts/dunst.bash --icon")
+
+
+(defvar notiftoggle
+  "scripts/dunst.bash --toggle")
+
+; vim:ft=yuck:nowrap

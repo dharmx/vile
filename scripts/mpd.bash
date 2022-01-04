@@ -2,10 +2,11 @@
 
 ## Get data
 STATUS="$(mpc status)"
-COVER="/tmp/.music_cover.jpg"
-SHUFFLESTATUS=$(mpc | tail -n1 | awk '{print $5}')
-REPEATSTATUS=$(mpc | tail -n1 | awk '{print $3}')
-SINGLESTATUS=$(mpc | tail -n1 | awk '{print $7}')
+COVER="$XDG_CACHE_HOME/mpd/art.jpg"
+DEFAULT="$XDG_CONFIG_HOME/mpd/default-art.jpg"
+SHUFFLESTATUS=$(mpc | tail -n1 | awk -F '   ' '{print $3}' | awk '{print $2}')
+REPEATSTATUS=$(mpc | tail -n1 | awk -F '   ' '{print $2}' | awk '{print $2}')
+SINGLESTATUS=$(mpc | tail -n1 | awk -F '   ' '{print $4}' | awk '{print $2}')
 
 ## Get status
 get_status() {
@@ -23,7 +24,7 @@ get_song() {
 		echo "Offline"
 	else
 		echo "$song"
-	fi	
+	fi
 }
 
 ## Get artist
@@ -33,7 +34,7 @@ get_artist() {
 		echo "Offline"
 	else
 		echo "$artist"
-	fi	
+	fi
 }
 
 ## Get time
@@ -43,7 +44,7 @@ get_time() {
 		echo "0"
 	else
 		echo "$time"
-	fi	
+	fi
 }
 
 get_ctime() {
@@ -52,7 +53,7 @@ get_ctime() {
 		echo "0:00"
 	else
 		echo "$ctime"
-	fi	
+	fi
 }
 
 get_ttime() {
@@ -61,7 +62,7 @@ get_ttime() {
 		echo "0:00"
 	else
 		echo "$ttime"
-	fi	
+	fi
 }
 
 ## Get cover
@@ -69,11 +70,11 @@ get_cover() {
 	ffmpeg -i "${XDG_MUSIC_DIR}/$(mpc current -f %file%)" "${COVER}" -y &> /dev/null
 	STATUS=$?
 
-	# Check if the file has a embbeded album art
+	# Check if the file has a embedded album art
 	if [ "$STATUS" -eq 0 ];then
 		echo "$COVER"
 	else
-		echo "assets/images/albumart.jpg"
+		echo "$DEFAULT"
 	fi
 }
 
@@ -86,41 +87,41 @@ toggle_shuffle() {
 }
 
 shuffle_status() {
-	if [ "$SHUFFLESTATUS" == "off" ]; then 
+	if [ "$SHUFFLESTATUS" == "off" ]; then
 		echo "劣"
-	else 
+	else
 		echo "列"
 	fi
 }
 
 toggle_single() {
-	if [ "$SINGLESTATUS" == "off" ]; then 
+	if [ "$SINGLESTATUS" == "off" ]; then
 		mpc single 1 &> /dev/null
-	else 
+	else
 		mpc single 0 &> /dev/null
 	fi
 }
 
 single_status() {
-	if [ "$SINGLESTATUS" == "off" ]; then 
+	if [ "$SINGLESTATUS" == "off" ]; then
 		echo "凌"
-	else 
+	else
 		echo "稜"
 	fi
 }
 
 toggle_repeat() {
-	if [ "$REPEATSTATUS" == "off" ]; then 
+	if [ "$REPEATSTATUS" == "off" ]; then
 		mpc repeat 1 &> /dev/null
-	else 
+	else
 		mpc repeat 0 &> /dev/null
 	fi
 }
 
 repeat_status() {
-	if [ "$REPEATSTATUS" == "off" ]; then 
+	if [ "$REPEATSTATUS" == "off" ]; then
 		echo ""
-	else 
+	else
 		echo "綾"
 	fi
 }

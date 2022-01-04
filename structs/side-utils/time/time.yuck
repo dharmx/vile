@@ -1,0 +1,22 @@
+(defwidget time [timetext datetext]
+           (button :onclick "dunstify -u critical '${timetext}'"
+                   :onmiddleclick ""
+                   :onmiddleclick ""
+                   :onrightclick ""
+                   (box :spacing 0
+                        :orientation "vertical"
+                        :space-evenly false
+                        (label :text timetext
+                               :limit-width 9
+                               :show_truncated false
+                               :markup true
+                               :wrap false
+                               :angle 0.0)
+                        (label :text datetext
+                               :limit-width 20
+                               :show_truncated false
+                               :markup true
+                               :wrap false
+                               :angle 0.0))))
+
+; vim:ft=yuck:nowrap

@@ -40,7 +40,7 @@
            :stacking "fg"
            :windowtype "normal"
            :wm-ignore true
-  (audiocontroller)) 
+  (audiocontroller))
 
 (defwidget audiocontroller []
   (box :orientation "v"
@@ -187,4 +187,4 @@
       (label :text icon_label_text
              :class "bluetooth-icon"))))
 
-; vim: ft=lisp
+; vim:ft=yuck

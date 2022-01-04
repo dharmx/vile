@@ -1,0 +1,6 @@
+(dwfwidget meters [value]
+           (circular-progress :value value
+                              :start-angle 0
+                              :thickness 5
+                              :clockwise true))
+; vim:ft=yuck:nowrap

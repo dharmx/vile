@@ -1,0 +1,3 @@
+(defwidget weather []
+           ())
+; vim:ft=yuck:nowrap

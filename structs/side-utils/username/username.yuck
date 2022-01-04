@@ -1,0 +1,12 @@
+(defwidget username [text]
+           (button :onclick "dunstify -u critical Keymaker"
+                   :onmiddleclick ""
+                   :active true
+                   :onrightclick ""
+					         (label :text text
+                          :limit-width 10
+                          :show_truncated false
+                          :wrap false
+                          :angle 0.0)))
+
+; vim:ft=yuck:nowrap

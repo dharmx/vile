@@ -1,6 +1,4 @@
 (defpoll TEMP :interval "10s" "scripts/temp.bash")
-(defpoll LOADAVG :interval "5s" "awk '{print $1}' /proc/loadavg")
-(defpoll FREE :interval "5s" "free -m | sed -n 2p | awk '{print $3}'")
 
 (defwindow system
            :monitor 0
@@ -20,13 +18,12 @@
        :space-evenly false
        :halign "center"
     (metric :label " "
-            :text {FREE}
+            :text "${round(EWW_CPU['avg'], 2)}"
             :class "mem-box")
     (metric :label " "
             :text "${EWW_BATTERY['BAT0'].capacity}%"
             :class "batt-box")
     (metric :label " "
-            ;:text "${EWW_TEMPS['cores']}"
             :text "${TEMP}"
             :class "temp-box")
     (metric :label " "

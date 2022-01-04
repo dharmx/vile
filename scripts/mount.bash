@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 DUNST="dunstify -u normal -i"
+ICON_MOUNTED_PATH="$XDG_CONFIG_HOME/eww/assets/images/hdd-mount.svg"
+ICON_UNMOUNTED_PATH="$XDG_CONFIG_HOME/eww/assets/images/hdd-unmount.svg"
 
 udisks2_is_mounted() {
     udisksctl info -b /dev/"$1" | grep MountPoints: | awk '{print $2}'
@@ -9,11 +11,9 @@ udisks2_is_mounted() {
 mount_nvme() {
     STATE=$(udisks2_is_mounted nvme0n1p1)
     if [ "$STATE" == "" ]; then
-        ICON_MOUNTED_PATH=$(readlink -f assets/images/hdd-mount.svg)
         eval "$DUNST $ICON_MOUNTED_PATH 'Mounting...' 'Mounting nvme0n1p1'"
-        kitty udisksctl mount -b /dev/nvme0n1p1 
+        kitty udisksctl mount -b /dev/nvme0n1p1
     else
-        ICON_UNMOUNTED_PATH=$(readlink -f assets/images/hdd-unmount.svg)
         eval "$DUNST $ICON_UNMOUNTED_PATH 'Unmounting...' 'nvme0n1p1 is being un-mounted'"
         udisksctl unmount -b /dev/nvme0n1p1
     fi
@@ -22,12 +22,10 @@ mount_nvme() {
 mount_sdb() {
     STATE=$(udisks2_is_mounted sdb1)
     if [ "$STATE" == "" ]; then
-        ICON_MOUNTED_PATH=$(readlink -f assets/images/hdd-mount.svg)
         eval "$DUNST $ICON_MOUNTED_PATH 'Mounting...' 'sdb1 is being mounted'"
         udisksctl mount -b /dev/sdb1
     else
-        ICON_UNMOUNTED_PATH=$(readlink -f assets/images/hdd-unmount.svg)
-        eval "$DUNST $ICON_UNMOUNTED_PATH 'Unmounting...' 'sdb1 is being unmounted'" 
+        eval "$DUNST $ICON_UNMOUNTED_PATH 'Unmounting...' 'sdb1 is being unmounted'"
         udisksctl unmount -b /dev/sdb1
     fi
 }
@@ -35,11 +33,9 @@ mount_sdb() {
 mount_sdc() {
     STATE=$(udisks2_is_mounted sdc1)
     if [ "$STATE" == "" ]; then
-        ICON_MOUNTED_PATH=$(readlink -f assets/images/hdd-mount.svg)
         eval "$DUNST $ICON_MOUNTED_PATH 'Mounting...' 'sdc1 is being mounted'"
         udisksctl mount -b /dev/sdc1
     else
-        ICON_UNMOUNTED_PATH=$(readlink -f assets/images/hdd-unmount.svg)
         eval "$DUNST $ICON_UNMOUNTED_PATH 'Unmounting...' 'sdc1 is being unmounted'"
         udisksctl unmount -b /dev/sdc1
     fi
@@ -48,11 +44,9 @@ mount_sdc() {
 mount_sdd() {
     STATE=$(udisks2_is_mounted sdd1)
     if [ "$STATE" == "" ]; then
-        ICON_MOUNTED_PATH=$(readlink -f assets/images/hdd-mount.svg)
         eval "$DUNST $ICON_MOUNTED_PATH 'Mounting...' 'sdd1 is being mounted'"
         udisksctl mount -b /dev/sdd1
     else
-        ICON_UNMOUNTED_PATH=$(readlink -f assets/images/hdd-unmount.svg)
         eval "$DUNST $ICON_UNMOUNTED_PATH 'Unmounting...' 'sdd1 is being unmounted'"
         udisksctl unmount -b /dev/sdd1
     fi
@@ -60,11 +54,9 @@ mount_sdd() {
 
 mount_cell() {
     if [ -z "$(ls -A "$HOME"/Phone)" ]; then
-        ICON_MOUNTED_PATH=$(readlink -f assets/images/phone-mount.svg)
         eval "$DUNST $ICON_MOUNTED_PATH 'Mounting...' 'cell is being mounted'"
         kitty go-mtpfs "$HOME"/Phone
     else
-        ICON_UNMOUNTED_PATH=$(readlink -f assets/images/phone-unmount.svg)
         eval "$DUNST $ICON_UNMOUNTED_PATH 'Unmounting...' 'cell is being unmounted'"
         fusermount -u "$HOME"/Phone
     fi
@@ -114,21 +106,21 @@ icon_sdd() {
     fi
 }
 
-case "$1" in 
+case "$1" in
     --nvme) mount_nvme;;
     --cell) mount_cell;;
-    
+
     --sdb) mount_sdb;;
     --sdc) mount_sdc;;
     --sdd) mount_sdd;;
-    
+
     --icon-cell) icon_cell;;
     --icon-nvme) icon_nvme;;
-    
+
     --icon-sdb) icon_sdb;;
     --icon-sdc) icon_sdc;;
     --icon-sdd) icon_sdd;;
-    
+
     *) echo Invalid Option!;;
 esac
 

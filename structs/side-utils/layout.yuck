@@ -1,0 +1,31 @@
+(defwidget layout []
+          (box :spacing 0
+               :orientation "vertical"
+               :space-evely false
+            (time :timetext "${time}"
+                  :datetext "${date}")
+            (box :spacing 0
+                 :orientation "horizontal"
+                 :space-evenly false
+                 (profile :path "assets/shuffle/profiles/profile-side.jpg"
+                          :size 50)
+            (box :spacing 0
+                 :orientation "vertical"
+                 :space-evenly false
+              (username :text "Keymaker")
+              (box :spacing 0
+                   :orientation "horizontal"
+                   :space-evenly false
+                (notifications :text "${nightmodeicon}"
+                               :onclick "${nightmodetoggle}")
+                (notifications :text "${notificon}"
+                               :onclick "${notiftoggle}"))))))
+
+(include "fields.yuck")
+
+(include "time/time.yuck")
+(include "profile/profile.yuck")
+(include "username/username.yuck")
+(include "notifications/notifications.yuck")
+
+; vim:ft=yuck:nowrap
