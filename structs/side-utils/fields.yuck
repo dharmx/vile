@@ -29,4 +29,10 @@
 (defvar notiftoggle
   "scripts/dunst.bash --toggle")
 
+(defvar weathericon
+  "scripts/weather.py today icon")
+
+(defvar weathertemp
+  "scripts/weather.py today temp")
+
 ; vim:ft=yuck:nowrap

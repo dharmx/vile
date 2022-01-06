@@ -1,0 +1,12 @@
+(defwidget power [onclick onmiddleclick onrightclick text]
+           (button :onclick onclick
+                   :onmiddleclick onmiddleclick
+                   :onrightclick onmiddleclick
+                   :timeout "1s"
+                   (label :text text
+                          :limit-width 3
+                          :show_truncated false
+                          :wrap false
+                          :angle 0.0)))
+
+; vim:ft=yuck:nowrap

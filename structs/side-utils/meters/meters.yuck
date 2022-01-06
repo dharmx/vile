@@ -1,6 +1,17 @@
-(dwfwidget meters [value]
+(defwidget radialmeter [value]
            (circular-progress :value value
                               :start-angle 0
                               :thickness 5
-                              :clockwise true))
+
+(defwidget scalemeter [value min max onchange]
+           (scale :value value
+                  :orientation "vertical"
+                  :flipped false
+                  :marks ""
+                  :draw-value false
+                  :min min
+                  :max max
+                  :timeout "1s"
+                  :onchange onchange))
+
 ; vim:ft=yuck:nowrap

@@ -19,11 +19,35 @@
                 (notifications :text "${nightmodeicon}"
                                :onclick "${nightmodetoggle}")
                 (notifications :text "${notificon}"
-                               :onclick "${notiftoggle}"))))))
+                               :onclick "${notiftoggle}"))))
+            (box :spacing 0
+                 :orientation "horizontal"
+                 :space-evenly false
+                 (weather :path "${weathericon}"
+                          :width 50
+                          :height 30
+                          :text "${weathertemp}")
+                 (box :spacing 0
+                      :orientation "vertical"
+                      :space-evenly false
+                   (power :onclick "poweroff"
+                          :onmiddleclick ""
+                          :onrightclick ""
+                          :text "")
+                   (power :onclick "reboot"
+                          :onmiddleclick ""
+                          :onrightclick ""
+                          :text "")
+                   (power :onclick "systemctl suspend"
+                          :onmiddleclick ""
+                          :onrightclick ""
+                          :text "")))))
 
 (include "fields.yuck")
 
 (include "time/time.yuck")
+(include "weather/weather.yuck")
+(include "power/power.yuck")
 (include "profile/profile.yuck")
 (include "username/username.yuck")
 (include "notifications/notifications.yuck")
