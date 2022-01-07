@@ -26,4 +26,5 @@
            :class "logo-label")
     (label :text "maker@key-forgery"
            :class "logo-hostname")))
-; vim: ft=lisp
+
+; vim:ft=yuck:nowrap

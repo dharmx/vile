@@ -3,14 +3,14 @@
 (defpoll SOURCEVOLSTATUS :interval "1s" "scripts/microphone.bash --status")
 (defpoll SOURCEVOLLEVEL :interval "1s" "scripts/microphone.bash --level")
 (defvar SOURCEVOLTOGGLE "scripts/microphone.bash --toggle")
-(defvar SOURCEVOLSET "scripts/microphone.bash --setlevel ")
+(defvar SOURCEVOLSET "scripts/microphone.bash --setlevel")
 
 (defvar SINKVOLUP "scripts/volume.bash --increase")
 (defvar SINKVOLDN "scripts/volume.bash --decrease")
 (defpoll SINKVOLSTATUS :interval "1s" "scripts/volume.bash --status")
 (defpoll SINKVOLLEVEL :interval "1s" "scripts/volume.bash --level")
 (defvar SINKVOLTOGGLE "scripts/volume.bash --toggle")
-(defvar SINKVOLSET "scripts/volume.bash --setlevel ")
+(defvar SINKVOLSET "scripts/volume.bash --setlevel")
 
 (defvar MOUNTCELL "scripts/mount.bash --cell")
 (defvar MOUNTSSD "scripts/mount.bash --nvme")

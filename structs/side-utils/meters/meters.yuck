@@ -1,12 +1,13 @@
 (defwidget radialmeter [value]
            (circular-progress :value value
                               :start-angle 0
-                              :thickness 5
+                              :thickness 20))
 
-(defwidget scalemeter [value min max onchange]
+(defwidget scalemeter [value min max onchange active]
            (scale :value value
+                  :active active
                   :orientation "vertical"
-                  :flipped false
+                  :flipped true
                   :marks ""
                   :draw-value false
                   :min min

@@ -64,6 +64,11 @@ def cacheweather(prepared: str) -> None:
 def init() -> None:
     """Driver function"""
     args: list = sys.argv[1:]
+
+    if not args:
+        print("No option given!")
+        return
+
     match args[0]:
         case "today":
             match args[1]:
@@ -99,6 +104,10 @@ def init() -> None:
                 case "json":
                     with open(f"{cache}/weather-{date}.json", encoding="utf-8") as file:
                         print(loads(file.read()))
+                case _:
+                    print("Invalid Option!")
+        case _:
+            print("Invalid Option!")
 
 
 if __name__ == "__main__":

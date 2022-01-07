@@ -1,10 +1,13 @@
 (defwidget weather [path width height text]
-           (image :path path
-                  :image-width width
-                  :image-height height
-                  (label :text text
-                         :limit-width 5
-                         :show_truncated false
-                         :wrap false
-                         :angle 0.0)))
+           (box :spacing 0
+                :orientation "vertical"
+                :space-evenly false
+                (image :path path
+                       :image-width width
+                       :image-height height)
+                (label :text text
+                       :limit-width 5
+                       :show_truncated false
+                       :wrap false
+                       :angle 0.0)))
 ; vim:ft=yuck:nowrap

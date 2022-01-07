@@ -29,10 +29,48 @@
 (defvar notiftoggle
   "scripts/dunst.bash --toggle")
 
-(defvar weathericon
+(defpoll weathericon
+        :interval "1h"
+        :initial "scripts/weather.py today icon"
+        :run-while true
   "scripts/weather.py today icon")
 
-(defvar weathertemp
+(defpoll weathertemp
+        :interval "1h"
+        :initial "scripts/weather.py today temp"
+        :run-while true
   "scripts/weather.py today temp")
+
+(defpoll homefree
+        :interval "5h"
+        :initial "scripts/free-perc-df.bash /home/maker"
+        :run-while true
+  "scripts/free-perc-df.bash /home/maker")
+
+(defpoll configfree
+        :interval "5h"
+        :initial "scripts/free-perc-df.bash /run"
+        :run-while true
+  "scripts/free-perc-df.bash /run")
+
+(defpoll loadavg
+        :interval "3s"
+        :initial "grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage}'"
+        :run-while true
+  "grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage}'")
+
+(defpoll sourcevollevel
+  :interval "1s"
+  "scripts/microphone.bash --level")
+
+(defvar sourcevolset
+  "scripts/microphone.bash --setlevel")
+
+(defpoll sinkvollevel
+  :interval "1s"
+  "scripts/volume.bash --level")
+
+(defvar sinkvolset
+  "scripts/volume.bash --setlevel")
 
 ; vim:ft=yuck:nowrap

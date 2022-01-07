@@ -1,7 +1,7 @@
 (defwidget layout []
           (box :spacing 0
                :orientation "vertical"
-               :space-evely false
+               :space-evenly false
             (time :timetext "${time}"
                   :datetext "${date}")
             (box :spacing 0
@@ -23,10 +23,6 @@
             (box :spacing 0
                  :orientation "horizontal"
                  :space-evenly false
-                 (weather :path "${weathericon}"
-                          :width 50
-                          :height 30
-                          :text "${weathertemp}")
                  (box :spacing 0
                       :orientation "vertical"
                       :space-evenly false
@@ -41,7 +37,43 @@
                    (power :onclick "systemctl suspend"
                           :onmiddleclick ""
                           :onrightclick ""
-                          :text "")))))
+                          :text ""))
+                   (weather :path "${weathericon}"
+                          :width 50
+                          :height 30
+                          :text "${weathertemp}°C"))
+            (box :spacing 0
+                 :orientation "horizontal"
+                 :space-evenly false
+                 (box :spacing 0
+                      :orientation "vertical"
+                      :space-evenly false
+                      (radialmeter :value "${100 - EWW_DISK["/"]["used_perc"]}")
+                      (radialmeter :value "${homefree}")
+                      (radialmeter :value "${configfree}"))
+                 (box :spacing 0
+                      :orientation "horizontal"
+                      :space-evenly false
+                      (scalemeter :value "${sourcevollevel}"
+                                  :min 0
+                                  :max 101
+                                  :active true
+                                  :onchange "${sourcevolset} {}")
+                      (scalemeter :value "${sinkvollevel}"
+                                  :min 0
+                                  :max 101
+                                  :active true
+                                  :onchange "${sinkvolset} {}")
+                      (scalemeter :value "${round(EWW_RAM["used_mem_perc"], 0)}"
+                                  :min 0
+                                  :max 101
+                                  :active false
+                                  :onchange "")
+                      (scalemeter :value "${round(loadavg, 0)}"
+                                  :min 0
+                                  :max 101
+                                  :active false
+                                  :onchange "")))))
 
 (include "fields.yuck")
 
@@ -50,6 +82,7 @@
 (include "power/power.yuck")
 (include "profile/profile.yuck")
 (include "username/username.yuck")
+(include "meters/meters.yuck")
 (include "notifications/notifications.yuck")
 
 ; vim:ft=yuck:nowrap

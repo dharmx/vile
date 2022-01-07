@@ -14,7 +14,7 @@
 
 (defwidget wallpaper []
   (image :path "${BACKGROUND}"
-         :width 1980
-         :height 1080))
+         :image-width 1980
+         :image-height 1080))
 
-; vim: ft=lisp
+; vim:ft=yuck:nowrap
