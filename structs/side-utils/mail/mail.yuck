@@ -8,7 +8,7 @@
             (button :onclick onclick
                     :onmiddleclick onmiddleclick
                     :onrightclick onrightclick
-                    :timeout "1s"
+                    :timeout "1m"
                     (label :text text
                            :limit-width 5
                            :show_truncated false

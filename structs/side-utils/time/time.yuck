@@ -3,6 +3,7 @@
                    :onmiddleclick ""
                    :onmiddleclick ""
                    :onrightclick ""
+                   :class "time"
                    (box :spacing 0
                         :orientation "vertical"
                         :space-evenly false
@@ -11,12 +12,14 @@
                                :show_truncated false
                                :markup true
                                :wrap false
+                               :class "time-label"
                                :angle 0.0)
                         (label :text datetext
                                :limit-width 20
                                :show_truncated false
                                :markup true
                                :wrap false
+                               :class "date-label"
                                :angle 0.0))))
 
 ; vim:ft=yuck:nowrap

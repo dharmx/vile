@@ -1,6 +1,7 @@
 (defwidget profile [path size]
            (image :path path
                   :image-width size
-                  :image-height size))
+                  :image-height size
+                  :class "profile"))
 
 ; vim:ft=yuck:nowrap

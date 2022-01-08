@@ -13,9 +13,9 @@ case "$1" in
 	;;
 --icon)
 	if [[ "$paused" == "true" ]]; then
-		echo ""
+		echo ""
 	else
-		echo ""
+		echo ""
 	fi
 	;;
 esac

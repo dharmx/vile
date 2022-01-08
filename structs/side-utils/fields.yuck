@@ -1,8 +1,8 @@
 (defpoll time
          :interval "30s"
-         :initial "date +%H:%M"
+         :initial "date '+%H %M'"
          :run-while true
-  "date +%H:%M")
+  "date '+%H %M'")
 
 (defpoll date
          :interval "30s"
@@ -72,5 +72,14 @@
 
 (defvar sinkvolset
   "scripts/volume.bash --setlevel")
+
+(defvar gmail
+  "scripts/openlinks.bash --gmail")
+
+(defpoll gmailinbox
+         :interval "3h"
+         :initial "scripts/gmail.py"
+         :run-while true
+  "scripts/gmail.py")
 
 ; vim:ft=yuck:nowrap

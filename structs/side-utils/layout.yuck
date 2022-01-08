@@ -2,45 +2,52 @@
           (box :spacing 0
                :orientation "vertical"
                :space-evenly false
+               :class "main-box"
             (time :timetext "${time}"
                   :datetext "${date}")
             (box :spacing 0
                  :orientation "horizontal"
                  :space-evenly false
-                 (profile :path "assets/shuffle/profiles/profile-side.jpg"
-                          :size 50)
+                 (profile :path "assets/shuffle/profiles/profile-side.png"
+                          :size 150)
             (box :spacing 0
                  :orientation "vertical"
                  :space-evenly false
+                 :class "uname-box"
               (username :text "Keymaker")
               (box :spacing 0
                    :orientation "horizontal"
                    :space-evenly false
+                   :class "notif-box"
                 (notifications :text "${nightmodeicon}"
-                               :onclick "${nightmodetoggle}")
+                               :onclick "${nightmodetoggle}"
+                               :class "nightmode")
                 (notifications :text "${notificon}"
                                :onclick "${notiftoggle}"))))
             (box :spacing 0
                  :orientation "horizontal"
                  :space-evenly false
+                 :class "pow-wea-box"
                  (box :spacing 0
                       :orientation "vertical"
                       :space-evenly false
-                   (power :onclick "poweroff"
-                          :onmiddleclick ""
-                          :onrightclick ""
-                          :text "")
-                   (power :onclick "reboot"
-                          :onmiddleclick ""
-                          :onrightclick ""
-                          :text "")
-                   (power :onclick "systemctl suspend"
-                          :onmiddleclick ""
-                          :onrightclick ""
-                          :text ""))
-                   (weather :path "${weathericon}"
-                          :width 50
-                          :height 30
+                      :class "power-box"
+                      (power :onclick "poweroff"
+                             :onmiddleclick ""
+                             :onrightclick ""
+                             :text ""
+                             :class "poweroff")
+                      (power :onclick "reboot"
+                             :onmiddleclick ""
+                             :onrightclick ""
+                             :text "")
+                      (power :onclick "systemctl suspend"
+                             :onmiddleclick ""
+                             :onrightclick ""
+                             :text ""))
+                 (weather :path "${weathericon}"
+                          :width 130
+                          :height 130
                           :text "${weathertemp}°C"))
             (box :spacing 0
                  :orientation "horizontal"
@@ -57,27 +64,39 @@
                       (scalemeter :value "${sourcevollevel}"
                                   :min 0
                                   :max 101
+                                  :text ""
                                   :active true
                                   :onchange "${sourcevolset} {}")
                       (scalemeter :value "${sinkvollevel}"
                                   :min 0
                                   :max 101
+                                  :text ""
                                   :active true
                                   :onchange "${sinkvolset} {}")
                       (scalemeter :value "${round(EWW_RAM["used_mem_perc"], 0)}"
                                   :min 0
                                   :max 101
+                                  :text ""
                                   :active false
                                   :onchange "")
                       (scalemeter :value "${round(loadavg, 0)}"
                                   :min 0
                                   :max 101
+                                  :text ""
                                   :active false
-                                  :onchange "")))))
+                                  :onchange "")))
+            (mail :onclick "${gmail}"
+                  :onmiddleclick ""
+                  :onrightclick ""
+                  :text "${gmailinbox}"
+                  :path "assets/images/gmail.svg"
+                  :width 100
+                  :height 50)))
 
 (include "fields.yuck")
 
 (include "time/time.yuck")
+(include "mail/mail.yuck")
 (include "weather/weather.yuck")
 (include "power/power.yuck")
 (include "profile/profile.yuck")

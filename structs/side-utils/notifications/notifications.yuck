@@ -1,7 +1,9 @@
-(defwidget notifications [text onclick]
+(defwidget notifications [text onclick ?class]
     (button :onclick onclick
             :active true
-      (label :text text)))
+            :class "notif-btn"
+      (label :text text
+             :class "notif-label ${class}")))
 
 
 ; vim:ft=yuck:nowrap

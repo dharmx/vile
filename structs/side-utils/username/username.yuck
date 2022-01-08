@@ -3,10 +3,12 @@
                    :onmiddleclick ""
                    :active true
                    :onrightclick ""
+                   :class "uname-btn"
 					         (label :text text
                           :limit-width 10
                           :show_truncated false
                           :wrap false
+                          :class "uname-btn-label"
                           :angle 0.0)))
 
 ; vim:ft=yuck:nowrap

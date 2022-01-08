@@ -2,12 +2,15 @@
            (box :spacing 0
                 :orientation "vertical"
                 :space-evenly false
+                :class "weather-sm-box"
                 (image :path path
                        :image-width width
+                       :class "weather-image"
                        :image-height height)
                 (label :text text
                        :limit-width 5
                        :show_truncated false
+                       :class "weather-label"
                        :wrap false
                        :angle 0.0)))
 ; vim:ft=yuck:nowrap

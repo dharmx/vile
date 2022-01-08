@@ -1,11 +1,13 @@
-(defwidget power [onclick onmiddleclick onrightclick text]
+(defwidget power [onclick onmiddleclick onrightclick text ?class]
            (button :onclick onclick
                    :onmiddleclick onmiddleclick
                    :onrightclick onmiddleclick
+                   :class "power-btn ${class}"
                    :timeout "1s"
                    (label :text text
                           :limit-width 3
                           :show_truncated false
+                          :class "power-label"
                           :wrap false
                           :angle 0.0)))
 

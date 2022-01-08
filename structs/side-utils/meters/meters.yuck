@@ -3,16 +3,23 @@
                               :start-angle 0
                               :thickness 20))
 
-(defwidget scalemeter [value min max onchange active]
-           (scale :value value
-                  :active active
-                  :orientation "vertical"
-                  :flipped true
-                  :marks ""
-                  :draw-value false
-                  :min min
-                  :max max
-                  :timeout "1s"
-                  :onchange onchange))
+(defwidget scalemeter [value min max onchange active text]
+           (box :spacing 0
+                :orientation "vertical"
+                (scale :value value
+                       :active active
+                       :orientation "vertical"
+                       :flipped true
+                       :marks ""
+                       :draw-value false
+                       :min min
+                       :max max
+                       :timeout "1s"
+                       :onchange onchange)
+                (label :text text
+                       :limit-width 2
+                       :show_truncated false
+                       :wrap false
+                       :angle 0.0)))
 
 ; vim:ft=yuck:nowrap
