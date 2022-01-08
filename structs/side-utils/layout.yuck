@@ -4,7 +4,7 @@
                :space-evenly false
                :class "main-box"
             (time :timetext "${time}"
-                  :datetext "${date}")
+                  :datetext "─────────────────────${date} ─────────────────────")
             (box :spacing 0
                  :orientation "horizontal"
                  :space-evenly false
@@ -48,55 +48,70 @@
                  (weather :path "${weathericon}"
                           :width 130
                           :height 130
-                          :text "${weathertemp}°C"))
+                          :text "${weathertemp}°C"
+                          :type "${weathertype}"
+                          :feels "${weatherfeels}°C"
+                          :min "${weathermin}°C"
+                          :max "${weathermax}°C"
+                          :city "${weathercity}"))
             (box :spacing 0
                  :orientation "horizontal"
                  :space-evenly false
                  (box :spacing 0
                       :orientation "vertical"
                       :space-evenly false
-                      (radialmeter :value "${100 - EWW_DISK["/"]["used_perc"]}")
-                      (radialmeter :value "${homefree}")
-                      (radialmeter :value "${configfree}"))
+                      :class "radial-main-box"
+                      (radialmeter :value "${100 - EWW_DISK["/"]["used_perc"]}"
+                                   :text "")
+                      (radialmeter :value "${round(EWW_RAM["used_mem_perc"], 0)}"
+                                   :text ""
+                                   :class "ram-radial")
+                      (radialmeter :value "${round(loadavg, 0)}"
+                                   :text ""))
                  (box :spacing 0
                       :orientation "horizontal"
                       :space-evenly false
+		      :class "scale-main-box"
                       (scalemeter :value "${sourcevollevel}"
                                   :min 0
-                                  :max 101
+                                  :max 100
                                   :text ""
                                   :active true
                                   :onchange "${sourcevolset} {}")
                       (scalemeter :value "${sinkvollevel}"
                                   :min 0
-                                  :max 101
+                                  :max 100
                                   :text ""
                                   :active true
                                   :onchange "${sinkvolset} {}")
-                      (scalemeter :value "${round(EWW_RAM["used_mem_perc"], 0)}"
+                      (scalemeter :value "${configfree}"
                                   :min 0
-                                  :max 101
-                                  :text ""
+                                  :max 100
+                                  :text ""
                                   :active false
                                   :onchange "")
-                      (scalemeter :value "${round(loadavg, 0)}"
+                      (scalemeter :value "${homefree}"
                                   :min 0
-                                  :max 101
-                                  :text ""
+                                  :max 100
+                                  :text ""
                                   :active false
                                   :onchange "")))
             (mail :onclick "${gmail}"
                   :onmiddleclick ""
                   :onrightclick ""
                   :text "${gmailinbox}"
+                  :onclickalt "locklauncher"
+                  :onmiddleclickalt ""
+                  :onrightclickalt ""
+                  :textalt ""
                   :path "assets/images/gmail.svg"
-                  :width 100
-                  :height 50)))
+                  :width 70
+                  :height 70)))
 
 (include "fields.yuck")
 
 (include "time/time.yuck")
-(include "mail/mail.yuck")
+(include "last/last.yuck")
 (include "weather/weather.yuck")
 (include "power/power.yuck")
 (include "profile/profile.yuck")

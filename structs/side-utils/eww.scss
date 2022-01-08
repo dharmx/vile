@@ -2,7 +2,10 @@
 @import "base.scss";
 
 @import "time/time.scss";
+@import "meters/meters.scss";
+@import "weather/weather.scss";
 @import "power/power.scss";
+@import "last/last.scss";
 @import "profile/profile.scss";
 @import "username/username.scss";
 @import "notifications/notifications.scss";
@@ -37,14 +40,12 @@
   margin-top: 15px;
 }
 
-.weather-label {
-  font-size: 50px;
-  font-weight: 900;
-}
-
-.weather-sm-box,
-.weather-image,
-.weather-label {
+.radial-main-box {
+  background-color: $color0;
+  padding: 15px;
+  padding-top: 35px;
+  padding-left: 25px;
+  padding-right: 25px;
   border-radius: 10px;
-  background-color: $color8;
+  margin-top: 15px;
 }

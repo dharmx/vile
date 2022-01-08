@@ -1,0 +1,47 @@
+.last-box,
+.mail-box {
+  background-color: $color14;
+  color: $background;
+  border-radius: 10px;
+}
+
+.last-box {
+  margin-right: 5px;
+  margin-top: 15px;
+  padding: 10px;
+}
+
+.mail-label {
+  font-size: 30px;
+  font-weight: 900;
+  margin-left: 10px;
+}
+
+.mail-label,
+.mail-btn,
+.mail-img,
+.mail-box {
+  color: $background;
+  background-color: $color12;
+  border-radius: 10px;
+}
+
+.mail-box {
+  padding-left: 65px;
+  padding-right: 75px;
+}
+
+.extra-box {
+  font-size: 50px;
+  border-radius: 10px;
+  background-color: $foreground;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.extra-btn,
+.extra-label {
+  border-radius: 10px;
+  background-color: $foreground;
+  color: $background;
+}

@@ -41,11 +41,41 @@
         :run-while true
   "scripts/weather.py today temp")
 
+(defpoll weathertype
+        :interval "1h"
+        :initial "scripts/weather.py today type"
+        :run-while true
+  "scripts/weather.py today type")
+
+(defpoll weatherfeels
+        :interval "1h"
+        :initial "scripts/weather.py today feels"
+        :run-while true
+  "scripts/weather.py today feels")
+
+(defpoll weathermin
+        :interval "1h"
+        :initial "scripts/weather.py today min"
+        :run-while true
+  "scripts/weather.py today min")
+
+(defpoll weathermax
+        :interval "1h"
+        :initial "scripts/weather.py today max"
+        :run-while true
+  "scripts/weather.py today max")
+
+(defpoll weathercity
+        :interval "1h"
+        :initial "scripts/weather.py today city"
+        :run-while true
+  "scripts/weather.py today city")
+
 (defpoll homefree
         :interval "5h"
-        :initial "scripts/free-perc-df.bash /home/maker"
+        :initial "scripts/free-perc-df.bash /home"
         :run-while true
-  "scripts/free-perc-df.bash /home/maker")
+  "scripts/free-perc-df.bash /home")
 
 (defpoll configfree
         :interval "5h"

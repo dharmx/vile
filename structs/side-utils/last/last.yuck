@@ -1,0 +1,42 @@
+(defwidget mail [onclick onmiddleclick onrightclick text path width height onclickalt onmiddleclickalt onrightclickalt textalt]
+           (box :spacing 0
+                :orientation "horizontal"
+                :space-evenly false
+                :class "last-box"
+                (box :spacing 0
+                     :orientation "horizontal"
+                     :space-evenly false
+                     :class "mail-box"
+                     (image :path path
+                            :class "mail-img"
+                            :image-width width
+                            :image-height height)
+                     (button :onclick onclick
+                             :onmiddleclick onmiddleclick
+                             :onrightclick onrightclick
+                             :class "mail-btn"
+                             :timeout "1m"
+                     (label :text text
+                            :limit-width 5
+                            :show_truncated false
+                            :wrap false
+                            :class "mail-label"
+                            :angel 0.0)))
+                (box :spacing 0
+                     :orientation "horizontal"
+                     :space-evenly false
+                     :class "extra-box"
+                     :halign "end"
+                     :hexpand true
+                     (button :onclick onclickalt
+                             :onmiddleclick onmiddleclickalt
+                             :onrightclick onrightclickalt
+                             :timeout "1s"
+                             :class "extra-btn"
+                             (label :text textalt
+                                    :limit-width 5
+                                    :class "extra-label"
+                                    :show_truncated false
+                                    :wrap false
+                                    :angel 0.0)))))
+; vim:ft=yuck:nowrap

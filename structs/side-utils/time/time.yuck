@@ -15,7 +15,7 @@
                                :class "time-label"
                                :angle 0.0)
                         (label :text datetext
-                               :limit-width 20
+                               :limit-width 80
                                :show_truncated false
                                :markup true
                                :wrap false

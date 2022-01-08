@@ -101,9 +101,29 @@ def init() -> None:
                     with open(f"{cache}/weather-{date}.json", encoding="utf-8") as file:
                         loadedjson: dict = loads(file.read())
                         print(int(loadedjson["main"]["temp"]))
+                case "type":
+                    with open(f"{cache}/weather-{date}.json", encoding="utf-8") as file:
+                        loadedjson: dict = loads(file.read())
+                        print(loadedjson["weather"][0]["main"])
+                case "city":
+                    with open(f"{cache}/weather-{date}.json", encoding="utf-8") as file:
+                        loadedjson: dict = loads(file.read())
+                        print(loadedjson["name"])
                 case "json":
                     with open(f"{cache}/weather-{date}.json", encoding="utf-8") as file:
                         print(loads(file.read()))
+                case "feels":
+                    with open(f"{cache}/weather-{date}.json", encoding="utf-8") as file:
+                        loadedjson: dict = loads(file.read())
+                        print(int(loadedjson["main"]["feels_like"]))
+                case "max":
+                    with open(f"{cache}/weather-{date}.json", encoding="utf-8") as file:
+                        loadedjson: dict = loads(file.read())
+                        print(int(loadedjson["main"]["temp_max"]))
+                case "min":
+                    with open(f"{cache}/weather-{date}.json", encoding="utf-8") as file:
+                        loadedjson: dict = loads(file.read())
+                        print(int(loadedjson["main"]["temp_min"]))
                 case _:
                     print("Invalid Option!")
         case _:

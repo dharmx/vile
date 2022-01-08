@@ -1,0 +1,46 @@
+.radial {
+  background-color: $color8;
+}
+
+.radial-label {
+  padding: 30px;
+  font-size: 30px;
+  background-color: $color0;
+}
+
+.ram-radial {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.scale-main-box {
+  margin-left: 15px;
+  margin-top: 15px;
+  padding: 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.scale contents, .scale-box, .scale-main-box, .scale, .scale-label {
+  background-color: $color0;
+  border-radius: 10px;
+}
+
+.scale-label {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.scale trough highlight {
+  background-color: $color6;
+  border-radius: 10px;
+}
+
+.scale trough {
+  background-color: $color8;
+  border-radius: 50px;
+  min-height: 300px;
+  min-width: 15px;
+  margin-left: 22px;
+  margin-right: 22px;
+}
