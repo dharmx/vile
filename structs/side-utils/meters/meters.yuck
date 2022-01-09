@@ -1,33 +1,33 @@
-(defwidget radialmeter [value text ?class ?label-class]
+(defwidget radialmeter [value text ?class ?labelclass]
            (circular-progress :value value
                               :class "radial ${class}"
                               :start-angle 0
                               :thickness 15
                               (label :text text
-                                     :class "radial-label ${label-class}"
+                                     :class "radial-label ${labelclass}"
                                      :limit-width 2
                                      :show_truncated false
                                      :wrap false
                                      :angle 0.0)))
 
-(defwidget scalemeter [value min max onchange active text]
+(defwidget scalemeter [value min max onchange active text ?class]
            (box :spacing 0
                 :orientation "vertical"
                 :class "scale-box"
-		:space-evenly false
+	            	:space-evenly false
                 (scale :value value
                        :active active
                        :orientation "vertical"
                        :flipped true
                        :marks ""
-                       :class "scale"
+                       :class "scale ${class}"
                        :draw-value false
                        :min min
                        :max max
                        :timeout "1s"
                        :onchange onchange)
                 (label :text text
-                       :class "scale-label"
+                       :class "scale-label ${class}"
                        :limit-width 2
                        :show_truncated false
                        :wrap false

@@ -7,7 +7,7 @@
                    (label :text text
                           :limit-width 3
                           :show_truncated false
-                          :class "power-label"
+                          :class "power-label ${class}"
                           :wrap false
                           :angle 0.0)))
 

@@ -23,6 +23,12 @@
 .weather-feels-label {
   font-size: 10px;
   padding-left: 145px;
+  color: $color6;
+}
+
+.weather-cat-label,
+.weather-city-label {
+  color: $color3;
 }
 
 .weather-sm-box,
@@ -34,10 +40,30 @@
 .weather-max-label,
 .weather-min-label,
 .weather-feels-label,
-.weather-type-box,
 .weather-cat-label {
   border-radius: 10px;
   background-color: $color8;
+}
+
+.weather-sm-box {
+  background-image: url("/home/maker/Pictures/wallpapers/nord/Murky peaks.jpg");
+  background-size: contain;
+  background-repeat: round;
+}
+
+.weather-type-box {
+  opacity: 0.7;
+  background-color: $color8;
+}
+
+.weather-type-box-upper {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.weather-type-box-lower {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .weather-cat-city-box {

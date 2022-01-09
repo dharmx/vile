@@ -14,7 +14,7 @@
                  :orientation "vertical"
                  :space-evenly false
                  :class "uname-box"
-              (username :text "Keymaker")
+              (username :markup "<span foreground='#bf616a'> </span> <span foreground='#81a1c1'>maker</span> <span foreground='#bf616a'></span>")
               (box :spacing 0
                    :orientation "horizontal"
                    :space-evenly false
@@ -23,7 +23,10 @@
                                :onclick "${nightmodetoggle}"
                                :class "nightmode")
                 (notifications :text "${notificon}"
-                               :onclick "${notiftoggle}"))))
+                               :onclick "${notiftoggle}"
+                               :class "notifs"
+                               :halign "end"
+                               :hexpand true))))
             (box :spacing 0
                  :orientation "horizontal"
                  :space-evenly false
@@ -39,10 +42,12 @@
                              :class "poweroff")
                       (power :onclick "reboot"
                              :onmiddleclick ""
+                             :class "reboot"
                              :onrightclick ""
                              :text "")
                       (power :onclick "systemctl suspend"
                              :onmiddleclick ""
+                             :class "suspend"
                              :onrightclick ""
                              :text ""))
                  (weather :path "${weathericon}"
@@ -62,25 +67,32 @@
                       :space-evenly false
                       :class "radial-main-box"
                       (radialmeter :value "${100 - EWW_DISK["/"]["used_perc"]}"
-                                   :text "")
+                                   :text ""
+                                   :labelclass "disk-radial-label"
+                                   :class "disk-radial")
                       (radialmeter :value "${round(EWW_RAM["used_mem_perc"], 0)}"
                                    :text ""
+                                   :labelclass "ram-radial-label"
                                    :class "ram-radial")
                       (radialmeter :value "${round(loadavg, 0)}"
-                                   :text ""))
+                                   :text ""
+                                   :labelclass "cpu-radial-label"
+                                   :class "cpu-radial"))
                  (box :spacing 0
                       :orientation "horizontal"
                       :space-evenly false
-		      :class "scale-main-box"
+		                  :class "scale-main-box"
                       (scalemeter :value "${sourcevollevel}"
                                   :min 0
                                   :max 100
                                   :text ""
                                   :active true
+                                  :class "source"
                                   :onchange "${sourcevolset} {}")
                       (scalemeter :value "${sinkvollevel}"
                                   :min 0
                                   :max 100
+                                  :class "sink"
                                   :text ""
                                   :active true
                                   :onchange "${sinkvolset} {}")
@@ -89,11 +101,13 @@
                                   :max 100
                                   :text ""
                                   :active false
+                                  :class "config"
                                   :onchange "")
                       (scalemeter :value "${homefree}"
                                   :min 0
                                   :max 100
                                   :text ""
+                                  :class "home"
                                   :active false
                                   :onchange "")))
             (mail :onclick "${gmail}"

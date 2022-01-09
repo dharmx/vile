@@ -20,8 +20,7 @@
                             :limit-width 5
                             :show_truncated false
                             :wrap false
-                            :class "mail-label"
-                            :angel 0.0)))
+                            :class "mail-label")))
                 (box :spacing 0
                      :orientation "horizontal"
                      :space-evenly false
@@ -37,6 +36,5 @@
                                     :limit-width 5
                                     :class "extra-label"
                                     :show_truncated false
-                                    :wrap false
-                                    :angel 0.0)))))
+                                    :wrap false)))))
 ; vim:ft=yuck:nowrap

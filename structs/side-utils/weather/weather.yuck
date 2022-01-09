@@ -6,7 +6,7 @@
                 (box :spacing 0
                      :orientation "horizontal"
                      :space-evenly false
-                     :class "weather-type-box"
+                     :class "weather-type-box weather-type-box-upper"
                      (image :path path
                             :image-width width
                             :class "weather-image"
@@ -36,7 +36,7 @@
                 (box :spacing 0
                      :orientation "horizontal"
                      :space-evenly false
-                     :class "weather-type-box"
+                     :class "weather-type-box weather-type-box-lower"
                   (label :text text
                          :limit-width 4
                          :show_truncated false
