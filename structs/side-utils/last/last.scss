@@ -10,11 +10,15 @@
 }
 
 .mail-label {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 900;
-  margin-left: 5px;
-  color: $color8;
+  color: $foreground;
+  // background-color: $color13;
   background-color: $color12;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-radius: 10px;
 }
 
@@ -27,10 +31,9 @@
 }
 
 .mail-box {
-  padding-left: 90px;
-  padding-right: 90px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-width: 315px;
 }
 
 .extra-box {

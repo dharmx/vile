@@ -20,7 +20,7 @@ try:
     mail: IMAP4_SSL = IMAP4_SSL("imap.gmail.com")
 except gaierror as error:
     print("Offline")
-    sys.exit(1)
+    sys.exit(0)
 
 mail.login(getenv("EMAIL"), getenv("PASSWORD"))
 mail.select("INBOX")

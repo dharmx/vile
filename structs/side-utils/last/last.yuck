@@ -9,15 +9,21 @@
                      :class "mail-box"
                      (image :path path
                             :class "mail-img"
+                            :halign "center"
+                            :hexpand true
                             :image-width width
                             :image-height height)
                      (button :onclick onclick
                              :onmiddleclick onmiddleclick
+                             :halign "center"
+                             :hexpand true
                              :onrightclick onrightclick
                              :class "mail-btn"
                              :timeout "1m"
                      (label :text text
-                            :limit-width 5
+                            :limit-width 10
+                            :halign "center"
+                            :hexpand true
                             :show_truncated false
                             :wrap false
                             :class "mail-label")))

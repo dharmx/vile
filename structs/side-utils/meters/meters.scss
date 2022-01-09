@@ -2,6 +2,7 @@
   padding: 35px;
   font-size: 30px;
   background-color: $color0;
+  background: linear-gradient(0deg, $color0 0%, $color8  50%, $color4 100%);
 }
 
 .ram-radial {
@@ -46,7 +47,7 @@
 .scale-main-box,
 .scale,
 .scale-label {
-  background-color: $color0;
+  background-color: $color8;
   border-radius: 10px;
 }
 
@@ -60,7 +61,7 @@
 }
 
 .scale trough {
-  background-color: $color8;
+  background: linear-gradient(180deg, $color15 0%, $color15  40%, $color0 100%);
   border-radius: 2px;
   min-height: 300px;
   min-width: 10px;

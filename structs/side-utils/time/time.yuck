@@ -1,4 +1,4 @@
-(defwidget time [timetext datetext]
+(defwidget time [timetext datemarkup]
            (button :onclick "dunstify -u critical '${timetext}'"
                    :onmiddleclick ""
                    :onmiddleclick ""
@@ -10,14 +10,12 @@
                         (label :text timetext
                                :limit-width 9
                                :show_truncated false
-                               :markup true
                                :wrap false
                                :class "time-label"
                                :angle 0.0)
-                        (label :text datetext
-                               :limit-width 80
+                        (label :limit-width 80
                                :show_truncated false
-                               :markup true
+                               :markup datemarkup
                                :wrap false
                                :class "date-label"
                                :angle 0.0))))

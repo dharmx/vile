@@ -18,7 +18,7 @@
                           :halign "end"
                           :hexpand true
                           (label :text type
-                                 :limit-width 5
+                                 :limit-width 25
                                  :show_truncated false
                                  :class "weather-cat-label"
                                  :halign "end"
@@ -47,19 +47,19 @@
                        :orientation "vertical"
                        :space-evenly false
                        :class "weather-levels-box"
-                       (label :text "Min   ${min}"
+                       (label :text " Min   ${min}"
                          :limit-width 15
                          :show_truncated false
                          :class "weather-min-label"
                          :wrap false
                          :angle 0.0)
-                       (label :text "Max   ${max}"
+                       (label :text " Max   ${max}"
                          :limit-width 15
                          :show_truncated false
                          :class "weather-max-label"
                          :wrap false
                          :angle 0.0)
-                       (label :text "Feels ${feels}"
+                       (label :text " Feels ${feels}"
                          :limit-width 15
                          :show_truncated false
                          :class "weather-feels-label"
