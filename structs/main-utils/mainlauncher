@@ -16,7 +16,7 @@ run_eww() {
 			     "wlogout"       	                  \
 			     "wlock"	     	                    \
 			     "wsuspend"      	                  \
-			     "mpd"		                          \
+			     "playerctl"                        \
 			     "quicklinks"	                      \
 			     "audiocontrol"
 }
@@ -33,7 +33,7 @@ close_eww() {
 	    		 "wlogout"           	          \
 	    		 "wlock"	     	                \
 	    		 "wsuspend"       	            \
-	    		 "mpd"			                    \
+			     "playerctl"                    \
 	    		 "quicklinks"		                \
 	    		 "audiocontrol"
 }

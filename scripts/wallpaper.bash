@@ -36,7 +36,7 @@ apply_wallpaper() {
     TO_BE_APPLIED="$(prepared_path "$(cat $CACHE)")"
     feh --bg-scale "$TO_BE_APPLIED"
     dunstctl close
-    dunstify -u low -i "$(readlink -f "$XDG_CONFIG_HOME/eww/assets/images/alert.svg")"      \
+    dunstify -u low -i "$XDG_CONFIG_HOME/eww/assets/images/alert.svg"      \
                        "Changed wallpaper"                                                  \
                        "Applied $(basename "$TO_BE_APPLIED") as your new wallpaper!"
 }

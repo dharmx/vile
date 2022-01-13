@@ -11,10 +11,6 @@
   padding-right: 35px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-bottom-left-radius: 40px;
-  border-top-left-radius: 70px;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 60px;
 }
 
 .nightmode {
@@ -24,4 +20,23 @@
   padding-top: 5px;
   padding-bottom: 5px;
   margin-right: 10px;
+  border-bottom-left-radius: 40px;
+  border-top-left-radius: 70px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 60px;
+  color: $color2;
+  background: linear-gradient(180deg, $color0 0%, $color8 50%, $color8 100%);
+}
+
+.notifctl {
+  border-top-right-radius: 70px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 40px;
+  color: $color3;
+  background: linear-gradient(180deg, $color0 0%, $color8 50%, $color8 100%);
+}
+
+.notifctl,
+.nightmode {
 }

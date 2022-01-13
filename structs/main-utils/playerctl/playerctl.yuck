@@ -1,9 +1,9 @@
-(defpoll ALBUMART :interval "1s" "scripts/albumart.bash")
-(defpoll PLAYPAUSE :interval "1s" "scripts/playerstatus.bash")
-(defpoll ARTIST :interval "1s" "playerctl metadata xesam:artist")
-(defpoll TITLE :interval "1s" "playerctl metadata xesam:title")
+(defpoll ALBUMART :interval "5s" "scripts/playerctl.py spotifyd image")
+(defpoll PLAYPAUSE :interval "1s" "scripts/playerctl.py spotifyd status")
+(defpoll ARTIST :interval "5s" "scripts/playerctl.py spotifyd albumArtist")
+(defpoll TITLE :interval "5s" "scripts/playerctl.py spotifyd title")
 
-(defwindow audio
+(defwindow playerctl
            :monitor 0
            :geometry (geometry :x "-195"
                                :y "-5"
@@ -19,11 +19,11 @@
   (box :orientation "h"
        :halign "center"
        :space-evenly false
-    (image :path "${ALBUMART}"
-           :width 250)
-    (box :orientation "v"
+    (image :path {"${ALBUMART}" == "Offline" ? "assets/images/albumart.jpg" : "${ALBUMART}"}
+           :image-width 250)
+    (box :orientation "vertical"
          :space-evenly false
-      (box :orientation "h"
+      (box :orientation "horizontal"
            :halign "center"
            :space-evenly false
         (button :onclick "playerctl previous"
@@ -32,19 +32,22 @@
                  :class "label-media label-previous"))
         (button :onclick "playerctl play-pause"
                 :class "btn-play-pause"
-          (label :text "${PLAYPAUSE}"
+          (label :text {"${PLAYPAUSE}" == "Playing" ? "" : ""}
                  :class "label-media label-play-pause"))
         (button :onclick "playerctl next"
                 :class "btn-next"
           (label :text "怜 "
                  :class "label-media label-next")))
-       (label :text {"${ARTIST}" == "" ? "Offline" : "${ARTIST}"}
+       (label :text "${ARTIST}"
               :class "label-artist"
-              :limit-width 21
+              :limit-width 10
               :halign "center"
               :hexpand true)
-       (label :text {"${TITLE}" == "" ? "Nothing is playing" : "${TITLE}"}
+       (label :text "${TITLE}"
               :class "label-title"
-              :limit-width 21
+              :limit-width 15
               :halign "center"
               :hexpand true))))
+
+; vim:ft=yuck:nowrap
+

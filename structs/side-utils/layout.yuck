@@ -26,6 +26,7 @@
                                :onclick "${notiftoggle}"
                                :class "notifs"
                                :halign "end"
+                               :class "notifctl"
                                :hexpand true))))
             (box :spacing 0
                  :orientation "horizontal"
