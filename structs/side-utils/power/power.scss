@@ -1,10 +1,10 @@
 .power-label {
   font-size: 35px;
   background: linear-gradient(
-    180deg,
-    $background 0%,
-    $color0 50%,
-    $color8 100%
+    120deg,
+    $color8 10%,
+    $color15 60%,
+    $color15 100%
   );
   padding: 8px;
   border-radius: 50%;
@@ -13,19 +13,22 @@
 .power-btn {
   border-radius: 10px;
   padding-top: 8px;
-  padding-left: 15px;
-  padding-right: 5px;
+  padding-left: 9px;
+  padding-right: 9px;
 }
 
 .poweroff {
   padding-top: 10px;
   color: $color1;
+  background-color: $color0;
 }
 
 .reboot {
   color: $color2;
+  background-color: $color0;
 }
 
 .suspend {
   color: $color3;
+  background-color: $color0;
 }
