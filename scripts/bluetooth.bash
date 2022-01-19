@@ -26,4 +26,5 @@ if [[ "$1" == "--toggle" ]]; then
 elif [[ "$1" == "--status" ]]; then
   status
 fi
+
 # vim:ft=bash:nowrap
