@@ -39,7 +39,7 @@
                      :class "weather-type-box weather-type-box-lower"
                   (label :text text
                          :limit-width 4
-                         :show_truncated false
+                         :show_truncated true
                          :class "weather-label"
                          :wrap false
                          :angle 0.0)

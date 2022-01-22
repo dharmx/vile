@@ -100,7 +100,10 @@ def init() -> None:
                 case "temp":
                     with open(f"{cache}/weather-{date}.json", encoding="utf-8") as file:
                         loadedjson: dict = loads(file.read())
-                        print(int(loadedjson["main"]["temp"]))
+                        if len(args) == 3 and args[2] == "unit":
+                            print(f'{int(loadedjson["main"]["temp"])}°C')
+                        else:
+                            print(int(loadedjson["main"]["temp"]))
                 case "type":
                     with open(f"{cache}/weather-{date}.json", encoding="utf-8") as file:
                         loadedjson: dict = loads(file.read())
@@ -132,6 +135,9 @@ def init() -> None:
 
 if __name__ == "__main__":
     cachedirexists()
-    init()
+    try:
+        init()
+    except FileNotFoundError as file_not_found_error:
+        print("Offline")
 
 # vim:ft=python:nowrap
