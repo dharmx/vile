@@ -11,4 +11,3 @@
 (include "mpd/mpd.yuck")
 
 ; disable noclobber by "set +o noclobber" first
-; vim: ft=lisp
