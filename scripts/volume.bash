@@ -6,9 +6,9 @@ status() {
     MUTED=$(pacmd list-sinks | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
 
     if [[ "$MUTED" == "yes" ]]; then
-        echo "婢 "
+        echo ""
     else
-        echo "墳 " 
+        echo "" 
     fi
 }
 

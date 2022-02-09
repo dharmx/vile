@@ -21,7 +21,7 @@
          :halign "center"
          :space-evenly false
          :class "free-box"
-      (label :text "  "
+      (label :text ""
              :class "free-label free-label-disk")
       (label :text "|"
              :class "free-label free-label-sep")

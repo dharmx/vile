@@ -5,11 +5,11 @@ FILE="$XDG_CACHE_HOME/launch_main.eww"
 CONFIG="$XDG_CONFIG_HOME/eww/structs/main-utils"
 
 run_eww() {
-  eww -c "$CONFIG" open-many "background"    	\
-			     "time" 	                          \
+  eww -c "$CONFIG" open-many "background"					\
+  				"time" 	                          \
 			     "user"		                          \
 		  	   "system" 		                      \
-			     "uptime"        	                  \
+			     "calendar"        	                  \
 			     "directories"   	                  \
 			     "wshutdown"     	                  \
 	         "wreboot"       	                  \
@@ -22,11 +22,11 @@ run_eww() {
 }
 
 close_eww() {
-  eww -c "$CONFIG" close "background"     \
-	    		 "time" 	                      \
+  eww -c "$CONFIG" close "background"			\
+  				"time" 	                      \
 	    		 "user"			                    \
 	    	   "system" 	                    \
-	    		 "uptime"            	          \
+			     "calendar"        	                  \
 	    		 "directories"       	          \
 	    		 "wshutdown"         	          \
 	    		 "wreboot"           	          \

@@ -2,9 +2,7 @@
 
 * {
   all: unset;
-  font-family: "Iosevka Nerd Font", "JetBrainsMono Nerd Font", "Material Icons",
-    "Material Design Icons", "Material", "Material-Design-Iconic-Font",
-    "Unifont";
+  font-family: "feather", "Iosevka Nerd Font", "JetBrainsMono Nerd Font";
   background-color: $background;
 }
 
@@ -116,7 +114,7 @@
   margin-top: 15px;
   margin-bottom: 15px;
   padding-right: 10px;
-  background-color: $color0;
+  background-color: $color15;
   border-radius: 0px 10px 10px 0px;
 }
 

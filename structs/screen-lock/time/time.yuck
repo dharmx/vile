@@ -19,7 +19,7 @@
   (box :orientation "h"
        :space-evenly false
        :class "time-parent"
-    (label :text "祥"
+    (label :text ""
            :class "time-icon"
            :width 150)
     (box :orientation "v"

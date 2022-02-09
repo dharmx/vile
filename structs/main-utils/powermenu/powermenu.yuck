@@ -65,7 +65,7 @@
        :space-evenly false
        :class "box-reddit"
     (button :onclick "reboot"
-      (label :text ""
+      (label :text ""
              :class "logo-reboot"))))
 
 (defwidget shutdown []
@@ -74,7 +74,7 @@
        :space-evenly false
        :class "box-reddit"
     (button :onclick "poweroff"
-      (label :text ""
+      (label :text ""
              :class "logo-shutdown"))))
 
 (defwidget logout []
@@ -83,7 +83,7 @@
        :space-evenly false
        :class "box-reddit"
     (button :onclick "bspc quit"
-      (label :text "ﴚ"
+      (label :text ""
              :class "logo-logout"))))
 
 (defwidget lock []
@@ -92,7 +92,7 @@
        :space-evenly false
        :class "box-reddit"
     (button :onclick "locklauncher"
-      (label :text ""
+      (label :text ""
              :class "logo-lock"))))
 
 (defwidget suspend []
@@ -101,5 +101,5 @@
        :space-evenly false
        :class "box-reddit"
     (button :onclick "locklauncher && systemctl suspend"
-      (label :text ""
+      (label :text ""
              :class "logo-suspend"))))

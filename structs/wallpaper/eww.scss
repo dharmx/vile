@@ -2,9 +2,7 @@
 
 * {
   all: unset;
-  font-family: "Iosevka Nerd Font", "JetBrainsMono Nerd Font", "Material Icons",
-    "Material Design Icons", "Material", "Material-Design-Iconic-Font",
-    "Unifont";
+  font-family: "feather", "Iosevka Nerd Font", "JetBrainsMono Nerd Font";
   background-color: $background;
 }
 
@@ -15,16 +13,16 @@
 }
 
 .nav-label-prev {
-  padding-left: 35px;
+  padding-left: 20px;
 }
 
 .nav-label-next {
-  padding-right: 30px;
+  padding-right: 15px;
 }
 
 .nav-label-apply {
-  margin-left: 35px;
-  margin-right: 35px;
+  margin-left: 29px;
+  margin-right: 29px;
   color: $color4;
   font-size: 50px;
   font-weight: 900;
@@ -75,7 +73,7 @@
 .wallpaper-time-child {
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 20px;
+  padding-left: 40px;
   padding-right: 20px;
 }
 

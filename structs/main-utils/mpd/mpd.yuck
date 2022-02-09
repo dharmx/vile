@@ -61,12 +61,12 @@
         (button :onclick "${SEEKBACKWARD}"
                 :active true
                 :class "mpd-btn-seekbackward"
-          (label :text ""
+          (label :text ""
                  :class "mpd-label-media mpd-label-seekbackward"))
         (button :onclick "${PREV}"
                 :class "mpd-btn-previous"
                 :active true
-          (label :text " 玲"
+          (label :text ""
                  :class "mpd-label-media mpd-label-previous"))
         (button :onclick "${TOGGLE}"
                 :class "mpd-btn-play-pause"
@@ -76,12 +76,12 @@
         (button :onclick "${NEXT}"
                 :class "mpd-btn-next"
                 :active true
-          (label :text "怜 "
+          (label :text ""
                  :class "mpd-label-media mpd-label-next"))
         (button :onclick "${SEEKFORWARD}"
                 :active true
                 :class "mpd-btn-seekforward"
-          (label :text ""
+          (label :text ""
                  :class "mpd-label-media mpd-label-seekforward")))
       (box :orientation "h"
            :haligh "center"

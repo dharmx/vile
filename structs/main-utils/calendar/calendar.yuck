@@ -1,0 +1,58 @@
+(defpoll CALDAY :interval "6h" "date +%d")
+(defpoll CALMONTH :interval "6h" "date +%m")
+(defpoll CALYEAR :interval "1000h" "date +%y")
+(defpoll CALBAT :interval "5s" "cat /sys/class/power_supply/BAT0/capacity")
+
+(defpoll CALNOTIF :interval "5s" "scripts/dunst-x.bash --with-wait")
+
+(defpoll CALWEA
+        :interval "1h"
+        :initial "scripts/weather.py today temp"
+        :run-while true
+  "scripts/weather.py today temp")
+
+(defpoll CALINBOX
+         :interval "3h"
+         :initial "scripts/gmail.py"
+         :run-while true
+  "scripts/gmail.py")
+
+(defwindow calendar 
+           :monitor 0
+           :geometry (geometry :x "-134"
+                               :y "-298"
+                               :width "530"
+                               :height "240"
+                               :anchor "center")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (calinfo))
+
+(defwidget calinfo []
+  (box :orientation "h"
+       :space-evenly false
+       :class "cal-box"
+       :halign "start"
+       :hexpand true
+    (calendar :day "${CALDAY}"
+              :month "${CALMONTH - 1}"
+              :year "${CALYEAR}"
+              :show-details true 
+              :class "cal"
+              :show-heading true
+              :show-day-names true
+              :show-week-numbers true)
+    (box :orientation "v"
+       :space-evenly false
+       :class "cal-child-box"
+       :halign "start"
+       :hexpand true
+       (label :text " ${CALWEA}"
+              :class "cal-lb cal-wea")
+       (label :text " ${CALINBOX}"
+              :class "cal-lb cal-inb")
+       (label :text "${CALNOTIF}"
+              :class "cal-lb cal-notif"))))
+
+; vim:ft=yuck

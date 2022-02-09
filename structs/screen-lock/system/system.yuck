@@ -17,16 +17,16 @@
        :orientation "h"
        :space-evenly false
        :halign "center"
-    (metric :label " "
+    (metric :label ""
             :text "${round(EWW_CPU['avg'], 2)}"
             :class "mem-box")
-    (metric :label " "
+    (metric :label ""
             :text "${EWW_BATTERY['BAT0'].capacity}%"
             :class "batt-box")
-    (metric :label " "
+    (metric :label ""
             :text "${TEMP}"
             :class "temp-box")
-    (metric :label " "
+    (metric :label ""
             :text "${round(EWW_RAM['used_mem_perc'], 0)}%"
             :class "load-box")))
 

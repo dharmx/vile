@@ -1,4 +1,3 @@
-(defpoll BATTERY :interval "30s"  "cat /sys/class/power_supply/$(ls /sys/class/power_supply | grep BAT | head -n 1)/capacity")
 (defpoll BACKLIGHT :interval "5s" "xbacklight -get")
 
 (defwindow system
@@ -18,17 +17,14 @@
        :orientation "v" 
        :space-evenly true
        :halign "center"
-    (ram :label "  "
+    (ram :label " "
          :value {EWW_RAM.used_mem_perc}
          :onchange ""
          :class "")
-    (disk :label "  "
+    (disk :label " "
           :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
           :onchange "")
-    (bat :label "  "
-         :value {BATTERY}
-         :onchange "")
-    (blgt :label "盛  "
+    (blgt :label " "
           :value {BACKLIGHT}
           :onchange "")))
 
@@ -75,3 +71,5 @@
            :active true
            :value value
            :onchange "xbacklight -set {}")))
+
+; vim:ft=yuck

@@ -11,9 +11,9 @@ SINGLESTATUS=$(mpc | tail -n1 | awk -F '   ' '{print $4}' | awk '{print $2}')
 ## Get status
 get_status() {
 	if [[ $STATUS == *"[playing]"* ]]; then
-		echo ""
+		echo ""
 	else
-		echo "喇"
+		echo ""
 	fi
 }
 

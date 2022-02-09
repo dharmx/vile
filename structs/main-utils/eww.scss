@@ -2,9 +2,7 @@
 
 * {
   all: unset;
-  font-family: "Iosevka Nerd Font", "JetBrainsMono Nerd Font", "Material Icons",
-    "Material Design Icons", "Material", "Material-Design-Iconic-Font",
-    "Unifont";
+  font-family: "feather", "Iosevka Nerd Font", "JetBrainsMono Nerd Font";
   background-color: $background;
 }
 
@@ -52,7 +50,7 @@
 .mpd-label-artist {
   font-size: 22px;
   font-weight: 700;
-  color: $color8;
+  color: $color13;
   margin-top: 40px;
   margin-left: 15px;
 }
@@ -67,10 +65,14 @@
 
 .mpd-label-previous {
   color: $color7;
+  font-size: 40px;
+  padding-left: 10px; 
 }
 
 .mpd-label-next {
   color: $color7;
+  font-size: 40px;
+  padding-right: 10px; 
 }
 
 .mpd-label-play-pause {
@@ -98,14 +100,15 @@
 }
 
 .mpd-child-child-box {
-  margin-bottom: 20px;
-  padding-top: 5px;
+  margin-bottom: 25px;
+  padding-top: 10px;
   padding-right: 15px;
   padding-left: 15px;
 }
 
 .mpd-child-child-extra-controls {
-  padding-left: 20px;
+  padding-left: 10px;
+  padding-bottom: 5px;
 }
 
 .mpd-label {
@@ -166,6 +169,8 @@
   padding: 2px;
   padding-left: 15px;
   padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .controller-box {
@@ -248,7 +253,7 @@
 
 .nightmode-icon {
   font-size: 50px;
-  color: $color4;
+  color: $color3;
 }
 
 .nightmode-label {
@@ -259,7 +264,7 @@
 
 .free-label {
   font-size: 77px;
-  background-color: $color8;
+  background-color: $color13;
   margin-top: 25px;
   font-weight: 700;
   padding-top: 20px;
@@ -271,11 +276,12 @@
   font-size: 65px;
   font-weight: 700;
   padding-right: 16px;
+  padding-left: 19px;
   color: $color0;
 }
 
 .free-label-disk {
-  padding-left: 20px;
+  padding-left: 45px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -352,28 +358,42 @@
 .logo-suspend {
   font-size: 90;
   padding: 11px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-top: 20px;
+  padding-bottom: 21px;
 }
 
 .logo-reboot {
   color: $color4;
+  padding-left: 26px;
+  padding-right: 26px;
 }
 
 .logo-shutdown {
   color: $color4;
+  padding-left: 27px;
+  padding-right: 27px;
 }
 
 .logo-logout {
   color: $color4;
+  padding-left: 27px;
+  padding-right: 27px;
 }
 
 .logo-lock {
   color: $color6;
+  padding-left: 27px;
+  padding-right: 27px;
 }
 
 .logo-suspend {
   color: $color6;
+  padding-left: 27px;
+  padding-right: 27px;
+  padding-top: 21px;
+  padding-bottom: 21px;
 }
 
 .quick-links {
@@ -471,7 +491,7 @@
   background-color: $color8;
   border-radius: 50px;
   min-height: 20px;
-  min-width: 150px;
+  min-width: 160px;
   margin-left: 5px;
   margin-right: 12px;
 }
@@ -493,11 +513,10 @@
 
 .label-usage,
 .label-usage-header {
-  font-family: "Iosevka";
   font-weight: 600;
   font-size: 20px;
   color: $color4;
-  min-width: 20px;
+  min-width: 25px;
 }
 
 .usage-scale-all {
@@ -508,67 +527,36 @@
   padding: 5px;
 }
 
-.time-parent {
-  margin: 15px 30px 15px 20px;
-}
-
-.time-child-left {
-  padding-top: 5px;
-}
-
 .time-label {
-  font-weight: 700;
-}
-
-.time-label-ampm {
-  color: $color6;
-  font-size: 80px;
-  margin-left: 20px;
-}
-
-.time-label-day {
-  color: $color6;
-  font-size: 60px;
-}
-
-.time-label-hr,
-.time-label-min {
-  font-size: 80px;
+  font-size: 30px;
+  font-weight: 800;
+  margin-top: 15px;
   color: $color4;
-}
-
-.time-label-sep {
-  font-size: 80px;
-  color: $color6;
-  padding-bottom: 15px;
 }
 
 .time-icon {
-  font-size: 150px;
-  padding-right: 2px;
-  color: $color6;
-}
-
-.uptime-label {
-  font-size: 50px;
-  font-weight: 800;
-  color: $color4;
-}
-
-.uptime-icon {
-  font-size: 140px;
+  font-size: 130px;
   margin-left: 35px;
   margin-bottom: 0px;
   color: $color6;
 }
 
-.uptime-child {
+.time-child {
   margin-top: 70px;
   padding-left: 25px;
 }
 
+.cal {
+  color: $color14;
+  padding: 2px;
+}
+
+.cal-box {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
 .doodle {
-  font-family: "Iosevka Nerd Font";
   font-size: 30px;
   font-weight: 900;
   color: $color6;
@@ -590,4 +578,28 @@
   font-size: 16px;
   font-weight: 700;
   color: $color6;
+}
+
+.cal-lb {
+  margin-left: 20px;
+  font-size: 20px;
+  padding-left: 95px;
+  padding-right: 95px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+.cal-wea {
+  background-color: $color6;
+  color: $color1;
+}
+
+.cal-inb {
+  background-color: $color12;
+  color: $color3;
+}
+
+.cal-notif {
+  background-color: $color4;
+  color: $color14;
 }

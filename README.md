@@ -2,4 +2,5 @@
 My EWW configurations and widgets.
 
 ## Alert!
-These configurations have now been upgraded to be compatible with recent EWW versions.
+Glyphs will be switched to `Feather.ttf` in the near future.
+Note that `side-utils` already uses those!

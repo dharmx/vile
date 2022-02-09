@@ -38,15 +38,15 @@
        :space-evenly false
     (button :onclick previous
             :class "btn-navi btn-nav-prev"
-      (label :text ""
+      (label :text ""
              :class "nav-label nav-label-prev"))
     (button :onclick apply
             :class "btn-nav btn-nav-apply"
-      (label :text ""
+      (label :text ""
              :class "nav-label nav-label-apply"))
     (button :onclick next
             :class "btn-nav btn-nav-next"
-      (label :text ""
+      (label :text ""
              :class "nav-label nav-label-next"))))
 
 
@@ -61,7 +61,7 @@
            :stacking "fg"
            :windowtype "normal"
            :wm-ignore true
-  (backlight :label "盛"
+  (backlight :label ""
              :value {BACKLIGHT}
              :onchange ""))
 
