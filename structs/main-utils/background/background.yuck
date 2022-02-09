@@ -1,4 +1,4 @@
-(defvar BACKGROUND "assets/shuffle/backgrounds/background-valley.jpg")
+(defvar BACKGROUND "assets/shuffle/backgrounds/background-flower.jpg")
 
 (defwindow background
            :monitor 0
