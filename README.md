@@ -1,12 +1,11 @@
-<h1 align="center">Vile</h1>
+![Repo Banner](./assets/readme/banner.jpg)
+
 <div align="center">
 
 ![Lines of code](https://img.shields.io/tokei/lines/github/pagankeymaster/vile?color=%2381A1C1&label=LINES&logo=BookStack&logoColor=%2381A1C1&style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/pagankeymaster/vile?color=red&label=SIZE&logo=serverless&logoColor=red&style=for-the-badge)
 ![Repo License](https://img.shields.io/badge/LICENSE-GPL--3.0-%2388c0d0?style=for-the-badge)
 </div>
-
-<p align="center">Powered By <a href="https://github.com/elkowar/eww">EWW</a></p>
 
 ## Screenshots 
 
