@@ -2,4 +2,4 @@
 (include "system/system.yuck")
 (include "time/time.yuck")
 
-; vim: ft=lisp
+; vim:ft=yuck

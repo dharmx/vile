@@ -225,3 +225,83 @@ Most of the widget designs are inspired from their versions.
 [iSparsh](https://github.com/iSparsh/gross)
 
 [Axarva](https://github.com/Axarva/dotfiles-2.0)
+
+## Todo List
+
+End my misery.
+
+- [ ] Add script documentations
+    - [ ] bluetooth
+    - [ ] coreusage
+    - [ ] dunst-x
+    - [ ] dunst
+    - [ ] free-perc-df
+    - [ ] free
+    - [ ] gmail
+    - [ ] microphone
+    - [ ] mount
+    - [ ] mpd
+    - [ ] opendir
+    - [ ] openlinks
+    - [ ] playerctl
+    - [ ] ram
+    - [ ] randomize
+    - [ ] redshift-toggle
+    - [ ] redshift
+    - [ ] temp
+    - [ ] uphour
+    - [ ] volume
+    - [ ] wal-cache
+    - [ ] wallpaper
+    - [ ] weather
+- [ ] Add comments in code
+- [ ] Revise documentations
+- [ ] Add widget animations
+    - [ ] To side-utils
+    - [ ] To main-utils
+    - [ ] To screen-lock
+    - [ ] To main-utils
+- [ ] Add hover animations
+    - [ ] To side-utils
+    - [ ] To main-utils
+    - [ ] To screen-lock
+    - [ ] To main-utils
+- [ ] Refine and re-write old widgets
+    - [ ] Refine side-utils
+    - [ ] Refine main-utils
+    - [ ] Refine screen-lock
+    - [ ] Refine main-utils
+- [ ] Refine and re-write scripts
+    - [ ] bluetooth
+    - [ ] coreusage
+    - [ ] dunst-x
+    - [ ] dunst
+    - [ ] free-perc-df
+    - [ ] free
+    - [ ] gmail
+    - [ ] microphone
+    - [ ] mount
+    - [ ] mpd
+    - [ ] opendir
+    - [ ] openlinks
+    - [ ] playerctl
+    - [ ] ram
+    - [ ] randomize
+    - [ ] redshift-toggle
+    - [ ] redshift
+    - [ ] temp
+    - [ ] uphour
+    - [ ] volume
+    - [ ] wal-cache
+    - [ ] wallpaper
+    - [ ] weather
+- [ ] Delete cache files
+- [ ] Add statusbar widget
+- [ ] Add a todolist widget
+- [ ] Add a pomodoro widget
+- [ ] Add a xrandr interface
+- [ ] Revise, format and cleanup
+
+<!--
+  vim:ft=markdown
+-->

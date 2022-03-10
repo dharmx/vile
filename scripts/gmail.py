@@ -30,4 +30,4 @@ print("500+" if inbox > 500 else inbox)
 mail.close()
 mail.logout()
 
-# vim:ft=python:nowrap:number:smartindent:smarttab:smartcase
+# vim:ft=python:nowrap:smartindent:smarttab:smartcase
