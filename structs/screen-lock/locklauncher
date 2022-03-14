@@ -1,6 +1,21 @@
 #!/usr/bin/env bash
 
-source "$HOME/.colors.sh"
+color0='#2e3440'
+color8='#434C5E'
+color1='#BF616A'
+color9='#D08770'
+color2='#A3BE8C'
+color10='#A3BE8C'
+color3='#EBCB8B'
+color11='#EBCB8B'
+color4='#5E81AC'
+color12='#81A1C1'
+color5='#B48EAD'
+color13='#B48EAD'
+color6='#88C0D0'
+color14='#8FBCBB'
+color7='#d8dee9'
+color15='#ECEFF4'
 
 ## Files and cmd
 FILE="$XDG_CACHE_HOME/launch_lock.eww"
@@ -15,14 +30,14 @@ DUNST_IS_PAUSED=false && [[ "$DUNST_INSTALLED" == "true" ]] && DUNST_IS_PAUSED=$
 ## Open widgets
 run_eww() {
   eww -c "$CONFIG" open-many "time"   \
-		             "user"               \
+                     "user"           \
 		             "system"
 }
 
 close_eww() {
-  eww -c "$CONFIG" close "time"    \
-	                 "user"	         \
-	                 "system"
+  eww -c "$CONFIG" close "time"        \
+                         "user"        \
+                         "system"
 }
 
 prelock() {
