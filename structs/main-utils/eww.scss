@@ -556,6 +556,30 @@
   margin-left: 15px;
 }
 
+.cal:selected {
+  color: $background;
+  background-color: $color12;
+  border-radius: 30px;
+}
+
+.cal.header {
+  color: $color5;
+  font-weight: bold;
+}
+
+.cal.button {
+  color: $color13;
+}
+
+.cal.highlight {
+  color: $color9;
+  font-weight: bold;
+}
+
+.cal:indeterminate {
+  color: $color14;
+}
+
 .doodle {
   font-size: 30px;
   font-weight: 900;

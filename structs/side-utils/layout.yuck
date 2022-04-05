@@ -4,7 +4,8 @@
                :space-evenly false
                :class "main-box"
             (time :timetext "${time}"
-                 :datemarkup "<span foreground='#4c566a'>─────────────────────</span> <span foreground='#4c566a'>${date}</span> <span foreground='#4c566a'>─────────────────────</span>")
+                 ;:datemarkup "<span foreground='#4c566a'>─────────────────────</span> <span foreground='#4c566a'>${date}</span> <span foreground='#4c566a'>─────────────────────</span>")
+                 :datemarkup "<span foreground='#4c566a'>${date}</span>")
             (box :spacing 0
                  :orientation "horizontal"
                  :space-evenly false

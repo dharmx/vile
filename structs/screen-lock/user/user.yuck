@@ -1,7 +1,4 @@
-;(deflisten PROFILE :initial "assets/shuffle/profiles/black-lambda.jpg"
-;  "scripts/randomize paths/profiles.txt")
-
-(defvar PROFILE "images/profiles/profile.png")
+(defvar PROFILE "assets/shuffle/profiles/profile-lock.png")
 
 (defwindow user
            :monitor 0

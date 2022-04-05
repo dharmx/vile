@@ -12,8 +12,8 @@ from os.path import isdir
 from dotenv import load_dotenv
 from requests import get
 
-xdg_config: str = getenv("XDG_CONFIG_HOME")
-xdg_cache: str = getenv("XDG_CACHE_HOME")
+xdg_config = getenv("XDG_CONFIG_HOME")
+xdg_cache = getenv("XDG_CACHE_HOME")
 
 date: str = datetime.today().strftime("%Y-%m-%d")
 cache: str = f"{xdg_cache}/weather"
@@ -47,10 +47,9 @@ def validatecache(cachedate: str = date) -> bool:
 
 def preparelink() -> str:
     """Prepare the weather API link"""
-    load_dotenv(
-        f"{xdg_config}/eww/structs/side-utils/.weather-env")
-    city: str = getenv("CITY")
-    token: str = getenv("TOKEN")
+    load_dotenv(f"{xdg_config}/eww/structs/side-utils/.weather-env")
+    city = getenv("CITY")
+    token = getenv("TOKEN")
     return f"https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={token}"
 
 
@@ -79,23 +78,27 @@ def init() -> None:
                     if not validatecache(date):
                         print(f"{xdg_config}/eww/assets/images/cloud.svg")
                     else:
-                        with open(f"{cache}/weather-{date}.json", encoding="utf-8") as file:
+                        with open(
+                            f"{cache}/weather-{date}.json", encoding="utf-8"
+                        ) as file:
                             loadedjson: dict = loads(file.read())
                             print(
-                                "https://openweathermap.org/img/wn/" +
-                                f"{loadedjson['weather'][0]['icon']}@2x.png"
+                                "https://openweathermap.org/img/wn/"
+                                + f"{loadedjson['weather'][0]['icon']}@2x.png"
                             )
                 case "icon":
                     if not validatecache(date):
                         print(f"{xdg_config}/eww/assets/images/cloud.svg")
                     else:
-                        with open(f"{cache}/weather-{date}.json", encoding="utf-8") as file:
+                        with open(
+                            f"{cache}/weather-{date}.json", encoding="utf-8"
+                        ) as file:
                             loadedjson: dict = loads(file.read())
                             print(
-                                xdg_config +
-                                "/eww/structs/side-utils/weather/weather-icons/" +
-                                loadedjson['weather'][0]['icon'] +
-                                "@2x.png"
+                                xdg_config
+                                + "/eww/structs/side-utils/weather/weather-icons/"
+                                + loadedjson["weather"][0]["icon"]
+                                + "@2x.png"
                             )
                 case "temp":
                     with open(f"{cache}/weather-{date}.json", encoding="utf-8") as file:

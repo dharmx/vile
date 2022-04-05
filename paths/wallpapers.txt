@@ -4,30 +4,567 @@
 /home/maker/Pictures/wallpapers/alto/wp7116928-the-alto-collection-wallpapers.png
 /home/maker/Pictures/wallpapers/alto/wp7116930-the-alto-collection-wallpapers.jpg
 /home/maker/Pictures/wallpapers/alto/wp7116932-the-alto-collection-wallpapers.png
-/home/maker/Pictures/wallpapers/anime/896270.png
-/home/maker/Pictures/wallpapers/anime/915176.jpg
+/home/maker/Pictures/wallpapers/anime/0031.jpeg
+/home/maker/Pictures/wallpapers/anime/0035.jpg
+/home/maker/Pictures/wallpapers/anime/1 - 2dWJAad.jpg
+/home/maker/Pictures/wallpapers/anime/1 - 4gKMygK.png
+/home/maker/Pictures/wallpapers/anime/1 - dmPIoZv.png
+/home/maker/Pictures/wallpapers/anime/10 - 1uBpG3o.jpg
+/home/maker/Pictures/wallpapers/anime/10 - 5WcIOl6.jpg
+/home/maker/Pictures/wallpapers/anime/10 - HuGXM2X - Alnoah Zero - Asseylum Vers Allusia.jpg
+/home/maker/Pictures/wallpapers/anime/10 - IkFbADX.png
+/home/maker/Pictures/wallpapers/anime/10 - LlzdKCE.jpg
+/home/maker/Pictures/wallpapers/anime/10 - Va8RSAY.jpg
+/home/maker/Pictures/wallpapers/anime/11 - GdW27Qi.png
+/home/maker/Pictures/wallpapers/anime/11 - N0Thg60.jpg
+/home/maker/Pictures/wallpapers/anime/11 - Qdw1m2g.jpg
+/home/maker/Pictures/wallpapers/anime/11 - SjGuctJ.jpg
+/home/maker/Pictures/wallpapers/anime/11 - hM2j0Vz.jpg
+/home/maker/Pictures/wallpapers/anime/11 - iqEFSeY - Angel Beats - Kanade Tachibana.png
+/home/maker/Pictures/wallpapers/anime/11 - mFM9zH9.jpg
+/home/maker/Pictures/wallpapers/anime/11 - svcywBO.jpg
+/home/maker/Pictures/wallpapers/anime/12 - DTiY7Y2.png
+/home/maker/Pictures/wallpapers/anime/12 - KmFVtFp.png
+/home/maker/Pictures/wallpapers/anime/12 - NMMrFlz.png
+/home/maker/Pictures/wallpapers/anime/12 - W2R4s7H.png
+/home/maker/Pictures/wallpapers/anime/12 - bJtJ41P.jpg
+/home/maker/Pictures/wallpapers/anime/12 - c6AFHhJ - Anohana - Cast.jpg
+/home/maker/Pictures/wallpapers/anime/12 - qdU65Ks.jpg
+/home/maker/Pictures/wallpapers/anime/12 - yE00Yij.jpg
+/home/maker/Pictures/wallpapers/anime/13 - HRS9jnT.jpg
+/home/maker/Pictures/wallpapers/anime/13 - IxBRsZI.jpg
+/home/maker/Pictures/wallpapers/anime/13 - KMgLkpX.jpg
+/home/maker/Pictures/wallpapers/anime/13 - NijSwjN.png
+/home/maker/Pictures/wallpapers/anime/13 - SD67tSy.jpg
+/home/maker/Pictures/wallpapers/anime/13 - VF5Zy1K.jpg
+/home/maker/Pictures/wallpapers/anime/13 - bMSD9xc - Anohana - Menma.png
+/home/maker/Pictures/wallpapers/anime/13 - il13x1z.jpg
+/home/maker/Pictures/wallpapers/anime/13 - kV4G4Ul.jpg
+/home/maker/Pictures/wallpapers/anime/13 - p4TIlyS.jpg
+/home/maker/Pictures/wallpapers/anime/13 - ppiFIQn.jpg
+/home/maker/Pictures/wallpapers/anime/13 - vqFtWbc.jpg
+/home/maker/Pictures/wallpapers/anime/14 - 3KhF5eQ.jpg
+/home/maker/Pictures/wallpapers/anime/14 - 9YNcG8f.png
+/home/maker/Pictures/wallpapers/anime/14 - BgotbjS.jpg
+/home/maker/Pictures/wallpapers/anime/14 - M5yq3il.jpg
+/home/maker/Pictures/wallpapers/anime/14 - OYIHgN8.png
+/home/maker/Pictures/wallpapers/anime/14 - RkwfZkm - Anohana - Menma.jpg
+/home/maker/Pictures/wallpapers/anime/14 - aq4zuDc.jpg
+/home/maker/Pictures/wallpapers/anime/14 - bZkrVbZ.jpg
+/home/maker/Pictures/wallpapers/anime/14 - erkwPTa.jpg
+/home/maker/Pictures/wallpapers/anime/14 - jeqlKPX.jpg
+/home/maker/Pictures/wallpapers/anime/14 - oBmIu6C.jpg
+/home/maker/Pictures/wallpapers/anime/14 - rNaezrE.png
+/home/maker/Pictures/wallpapers/anime/14 - xiN8GbP.jpg
+/home/maker/Pictures/wallpapers/anime/15 - 61MpK7n.jpg
+/home/maker/Pictures/wallpapers/anime/15 - AoMbTUG.jpg
+/home/maker/Pictures/wallpapers/anime/15 - CFtDL3S.png
+/home/maker/Pictures/wallpapers/anime/15 - EVQaC5F.jpg
+/home/maker/Pictures/wallpapers/anime/15 - Swm5lHw.png
+/home/maker/Pictures/wallpapers/anime/15 - TWl061z.jpg
+/home/maker/Pictures/wallpapers/anime/15 - UsjDcNa.png
+/home/maker/Pictures/wallpapers/anime/15 - ZSuznGw - Another - Misaki Mei.png
+/home/maker/Pictures/wallpapers/anime/15 - yODe1wM.jpg
+/home/maker/Pictures/wallpapers/anime/16 - 04MzXbv.png
+/home/maker/Pictures/wallpapers/anime/16 - 1glOdei.jpg
+/home/maker/Pictures/wallpapers/anime/16 - EpMv08H.png
+/home/maker/Pictures/wallpapers/anime/16 - F0kcxze.png
+/home/maker/Pictures/wallpapers/anime/16 - HW96d7f.jpg
+/home/maker/Pictures/wallpapers/anime/16 - JvW7ouJ.jpg
+/home/maker/Pictures/wallpapers/anime/16 - M3vPdX7.png
+/home/maker/Pictures/wallpapers/anime/16 - oFtw9Pv.jpg
+/home/maker/Pictures/wallpapers/anime/16 - oonJdzb - Ao Haru Ride - Kou _ Futaba.png
+/home/maker/Pictures/wallpapers/anime/16 - taDm10J.jpg
+/home/maker/Pictures/wallpapers/anime/16 - yy9BlQ8.jpg
+/home/maker/Pictures/wallpapers/anime/16ZfGqJ.png
+/home/maker/Pictures/wallpapers/anime/17 - NRRBwNL.jpg
+/home/maker/Pictures/wallpapers/anime/17 - Z2enUII.jpg
+/home/maker/Pictures/wallpapers/anime/17 - ahYIi1J.jpg
+/home/maker/Pictures/wallpapers/anime/17 - czXbTNa.jpg
+/home/maker/Pictures/wallpapers/anime/17 - zAwP8C3.jpg
+/home/maker/Pictures/wallpapers/anime/18 - BPVLtYn.jpg
+/home/maker/Pictures/wallpapers/anime/18 - TE4uX5R.jpg
+/home/maker/Pictures/wallpapers/anime/18 - pExfc6U.jpg
+/home/maker/Pictures/wallpapers/anime/18 - ysye4A7.jpg
+/home/maker/Pictures/wallpapers/anime/19 - 2QUcTy8.jpg
+/home/maker/Pictures/wallpapers/anime/19 - RjNhvcG.jpg
+/home/maker/Pictures/wallpapers/anime/19 - VhrD3rw.jpg
+/home/maker/Pictures/wallpapers/anime/19 - Vv88a64.png
+/home/maker/Pictures/wallpapers/anime/19 - gn6APFL.jpg
+/home/maker/Pictures/wallpapers/anime/1LfXWDs.png
+/home/maker/Pictures/wallpapers/anime/1iNNHqP.jpeg
+/home/maker/Pictures/wallpapers/anime/1kIhwGj.jpeg
+/home/maker/Pictures/wallpapers/anime/1pBxiIj.png
+/home/maker/Pictures/wallpapers/anime/2 - Y2k16OF.jpg
+/home/maker/Pictures/wallpapers/anime/2 - c8x6BmO.jpg
+/home/maker/Pictures/wallpapers/anime/2 - dq0BH2s.jpg
+/home/maker/Pictures/wallpapers/anime/2 - glU6Tr0.jpg
+/home/maker/Pictures/wallpapers/anime/20 - fQW0TuR.jpg
+/home/maker/Pictures/wallpapers/anime/20 - zCqSg7i.png
+/home/maker/Pictures/wallpapers/anime/20 - zcPRSch.png
+/home/maker/Pictures/wallpapers/anime/21 - ADsm8lL.jpg
+/home/maker/Pictures/wallpapers/anime/21 - aiyg8RJ.jpg
+/home/maker/Pictures/wallpapers/anime/21 - tvjKRMH.png
+/home/maker/Pictures/wallpapers/anime/21 - zzdHRAE.jpg
+/home/maker/Pictures/wallpapers/anime/22 - 5ZEn8pZ.jpg
+/home/maker/Pictures/wallpapers/anime/22 - F00sQTR.png
+/home/maker/Pictures/wallpapers/anime/22 - NwcOR6b.png
+/home/maker/Pictures/wallpapers/anime/22 - fxhdDWm.jpg
+/home/maker/Pictures/wallpapers/anime/22 - i9APkQU.jpg
+/home/maker/Pictures/wallpapers/anime/22 - lZfUbZs.png
+/home/maker/Pictures/wallpapers/anime/23 - VL0S3Lb.png
+/home/maker/Pictures/wallpapers/anime/23 - nzLhDbn.png
+/home/maker/Pictures/wallpapers/anime/23urooeehjl81.jpg
+/home/maker/Pictures/wallpapers/anime/24 - 6BhwYmm.jpg
+/home/maker/Pictures/wallpapers/anime/24 - C54HbBs.jpg
+/home/maker/Pictures/wallpapers/anime/24 - DcT2zqa.png
+/home/maker/Pictures/wallpapers/anime/24 - JQjDDRN.jpg
+/home/maker/Pictures/wallpapers/anime/24 - e47ScRz.jpg
+/home/maker/Pictures/wallpapers/anime/24 - nK8o9QA.png
+/home/maker/Pictures/wallpapers/anime/25 - 9nTPZCn.jpg
+/home/maker/Pictures/wallpapers/anime/25 - Cz8WZr3.jpg
+/home/maker/Pictures/wallpapers/anime/25 - DiXRkd0.jpg
+/home/maker/Pictures/wallpapers/anime/25 - Gkkn1Et.png
+/home/maker/Pictures/wallpapers/anime/25 - PszodRq.png
+/home/maker/Pictures/wallpapers/anime/25 - To4Inty.png
+/home/maker/Pictures/wallpapers/anime/25 - W440XFt.jpg
+/home/maker/Pictures/wallpapers/anime/25 - dv35OkG - Avatar - Korra.jpg
+/home/maker/Pictures/wallpapers/anime/25 - oO70alH.jpg
+/home/maker/Pictures/wallpapers/anime/25 - pRInq5E.jpg
+/home/maker/Pictures/wallpapers/anime/25 - yj5rVKB.png
+/home/maker/Pictures/wallpapers/anime/26 - 7gs84az.jpg
+/home/maker/Pictures/wallpapers/anime/26 - CxBufsy.jpg
+/home/maker/Pictures/wallpapers/anime/26 - EPmXYrq.jpg
+/home/maker/Pictures/wallpapers/anime/26 - JZ991fQ.jpg
+/home/maker/Pictures/wallpapers/anime/26 - OJUN3CJ.jpg
+/home/maker/Pictures/wallpapers/anime/26 - q8Mvkge.jpg
+/home/maker/Pictures/wallpapers/anime/26 - uTPHRbC.png
+/home/maker/Pictures/wallpapers/anime/27 - 23CpVQ4.jpg
+/home/maker/Pictures/wallpapers/anime/27 - 5aSpmJi.jpg
+/home/maker/Pictures/wallpapers/anime/27 - 86LBgFY.jpg
+/home/maker/Pictures/wallpapers/anime/27 - BgiK6XN.png
+/home/maker/Pictures/wallpapers/anime/27 - DGj3ijm.jpg
+/home/maker/Pictures/wallpapers/anime/27 - Ogh2jtx.jpg
+/home/maker/Pictures/wallpapers/anime/27 - xM8mdsc.png
+/home/maker/Pictures/wallpapers/anime/28 - C6959FM - Bersek - Guts.png
+/home/maker/Pictures/wallpapers/anime/28 - FVqKxYX.png
+/home/maker/Pictures/wallpapers/anime/28 - SW6BzXV.png
+/home/maker/Pictures/wallpapers/anime/28 - YnL7CTg.jpg
+/home/maker/Pictures/wallpapers/anime/28 - ZG6VF5r.png
+/home/maker/Pictures/wallpapers/anime/28 - dYLDenv.jpg
+/home/maker/Pictures/wallpapers/anime/28 - iiJ1kas.jpg
+/home/maker/Pictures/wallpapers/anime/28 - ymfWAU0.jpg
+/home/maker/Pictures/wallpapers/anime/28 - yn8kFJi.jpg
+/home/maker/Pictures/wallpapers/anime/29 - OijO1Y9.png
+/home/maker/Pictures/wallpapers/anime/29 - evNFlPn.jpg
+/home/maker/Pictures/wallpapers/anime/29 - pMx3wKS.jpg
+/home/maker/Pictures/wallpapers/anime/29 - xLKylCU.jpg
+/home/maker/Pictures/wallpapers/anime/29 - xTdRuPM.jpg
+/home/maker/Pictures/wallpapers/anime/3 - R81Att1.png
+/home/maker/Pictures/wallpapers/anime/3 - W81mBe9.jpg
+/home/maker/Pictures/wallpapers/anime/3 - lmAAIws.jpg
+/home/maker/Pictures/wallpapers/anime/30 - 9Y9jXLe.jpg
+/home/maker/Pictures/wallpapers/anime/30 - VvwyRE1.jpg
+/home/maker/Pictures/wallpapers/anime/30 - m1EguUr.jpg
+/home/maker/Pictures/wallpapers/anime/31 - CjTmQ8s.jpg
+/home/maker/Pictures/wallpapers/anime/31 - KlhtVEY.png
+/home/maker/Pictures/wallpapers/anime/31 - NRG04pt.jpg
+/home/maker/Pictures/wallpapers/anime/31 - c4jFz61.jpg
+/home/maker/Pictures/wallpapers/anime/31 - eG1j9mj.jpg
+/home/maker/Pictures/wallpapers/anime/31 - qmiPsd0.jpg
+/home/maker/Pictures/wallpapers/anime/31 - rJnx01E.jpg
+/home/maker/Pictures/wallpapers/anime/31 - woORrOf.jpg
+/home/maker/Pictures/wallpapers/anime/31 - z4frIWG.jpg
+/home/maker/Pictures/wallpapers/anime/32 - 60fTWqN.jpg
+/home/maker/Pictures/wallpapers/anime/32 - 7b119p3.png
+/home/maker/Pictures/wallpapers/anime/32 - Es3XIZc - Black Bullet - Fuse Midori.jpg
+/home/maker/Pictures/wallpapers/anime/32 - Es9om0f.jpg
+/home/maker/Pictures/wallpapers/anime/32 - NiUmQzy.jpg
+/home/maker/Pictures/wallpapers/anime/32 - Qmctd2V.jpg
+/home/maker/Pictures/wallpapers/anime/32 - cIVI0K7.jpg
+/home/maker/Pictures/wallpapers/anime/32 - eT35iZs.jpg
+/home/maker/Pictures/wallpapers/anime/32 - rS9lewf.jpg
+/home/maker/Pictures/wallpapers/anime/322 - vci7A8y.jpg
+/home/maker/Pictures/wallpapers/anime/324 - lxndQrz.jpg
+/home/maker/Pictures/wallpapers/anime/327 - K3cVH1f.jpg
+/home/maker/Pictures/wallpapers/anime/329 - ZhYK3TV.jpg
+/home/maker/Pictures/wallpapers/anime/33 - 1OUDz4b.jpg
+/home/maker/Pictures/wallpapers/anime/33 - 2KPZWNP - Black Bullet - Kisara Tendo.png
+/home/maker/Pictures/wallpapers/anime/33 - 5ZZTWKF.jpg
+/home/maker/Pictures/wallpapers/anime/33 - Awp9gXz.png
+/home/maker/Pictures/wallpapers/anime/33 - jwwiFPw.jpg
+/home/maker/Pictures/wallpapers/anime/33 - oczy9hl.jpg
+/home/maker/Pictures/wallpapers/anime/332 - PnhpHHB.jpg
+/home/maker/Pictures/wallpapers/anime/332 - s5ZyDXJ.jpg
+/home/maker/Pictures/wallpapers/anime/339 - HHteMXX.jpg
+/home/maker/Pictures/wallpapers/anime/339 - VT0kRsf.jpg
+/home/maker/Pictures/wallpapers/anime/34 - GisNNmO.jpg
+/home/maker/Pictures/wallpapers/anime/34 - ScOdkWl - Black Bullet - Kisara Tendo.png
+/home/maker/Pictures/wallpapers/anime/340 - 4fShoVE.jpg
+/home/maker/Pictures/wallpapers/anime/340 - oDGNZ0E.jpg
+/home/maker/Pictures/wallpapers/anime/342 - bNdMhtX.png
+/home/maker/Pictures/wallpapers/anime/35 - G619cnJ.png
+/home/maker/Pictures/wallpapers/anime/35 - GdyX9hG.png
+/home/maker/Pictures/wallpapers/anime/35 - pg8aC8d.jpg
+/home/maker/Pictures/wallpapers/anime/35 - psAdCnh.jpg
+/home/maker/Pictures/wallpapers/anime/357 - Dk7Tlr1.png
+/home/maker/Pictures/wallpapers/anime/36 - aIDuqJn.png
+/home/maker/Pictures/wallpapers/anime/36 - m3Hrid4 - Black Bullet - Rentarou Satomi.jpg
+/home/maker/Pictures/wallpapers/anime/36 - oKsUZuc.jpg
+/home/maker/Pictures/wallpapers/anime/37 - I3FMdGu.png
+/home/maker/Pictures/wallpapers/anime/37 - gjWTHML.png
+/home/maker/Pictures/wallpapers/anime/37 - gjmbZXv.png
+/home/maker/Pictures/wallpapers/anime/37 - jKQWVO9 - Bokura wa Minna Kawaisou - Ritsu _ Katsunari.jpg
+/home/maker/Pictures/wallpapers/anime/37 - mZC5QLA.jpg
+/home/maker/Pictures/wallpapers/anime/37 - zZ6lun8.jpg
+/home/maker/Pictures/wallpapers/anime/370 - DCSNC7i.jpg
+/home/maker/Pictures/wallpapers/anime/370 - iTaxAP7.png
+/home/maker/Pictures/wallpapers/anime/375 - tzilrRP.jpg
+/home/maker/Pictures/wallpapers/anime/376 - kgcycPs.jpg
+/home/maker/Pictures/wallpapers/anime/379 - RtZnFb2.jpg
+/home/maker/Pictures/wallpapers/anime/38 - 5IlT3rk.jpg
+/home/maker/Pictures/wallpapers/anime/38 - DYIWwPF - Brynhildr in the Darkness - Kuroneko.jpg
+/home/maker/Pictures/wallpapers/anime/38 - Pka35FQ.png
+/home/maker/Pictures/wallpapers/anime/380 - 5I22ZA9.jpg
+/home/maker/Pictures/wallpapers/anime/381 - 6lMio3V.jpg
+/home/maker/Pictures/wallpapers/anime/39 - 8lSrzy2.jpg
+/home/maker/Pictures/wallpapers/anime/39 - JRrm5bv.jpg
+/home/maker/Pictures/wallpapers/anime/39 - OIaBmyC - Captain Earth - Hana _ Pitz.jpg
+/home/maker/Pictures/wallpapers/anime/39 - qUgvFuJ.png
+/home/maker/Pictures/wallpapers/anime/39 - rInvp5w.png
+/home/maker/Pictures/wallpapers/anime/39 - zF45Erk.jpg
+/home/maker/Pictures/wallpapers/anime/3QI5aHw.png
+/home/maker/Pictures/wallpapers/anime/3lqIfoS.jpeg
+/home/maker/Pictures/wallpapers/anime/4 - TVaNulD.png
+/home/maker/Pictures/wallpapers/anime/40 - 0bbbHt2.jpg
+/home/maker/Pictures/wallpapers/anime/40 - 2OhTMd8 - Chuunibyou demo Koi ga Shitai - Takanashi Rikka.jpg
+/home/maker/Pictures/wallpapers/anime/40 - HiZkJDd.png
+/home/maker/Pictures/wallpapers/anime/40 - Ido34CA.jpg
+/home/maker/Pictures/wallpapers/anime/40 - JPG2NZi.jpg
+/home/maker/Pictures/wallpapers/anime/40 - WXifqrg.jpg
+/home/maker/Pictures/wallpapers/anime/40 - b1cbSMj.png
+/home/maker/Pictures/wallpapers/anime/40 - qIL5Otr.jpg
+/home/maker/Pictures/wallpapers/anime/405 - 7dqDxr4.jpg
+/home/maker/Pictures/wallpapers/anime/41 - 4GDx1Pi.jpg
+/home/maker/Pictures/wallpapers/anime/41 - 6kq4O8C.jpg
+/home/maker/Pictures/wallpapers/anime/41 - EReJ9Il.jpg
+/home/maker/Pictures/wallpapers/anime/42 - 16knDT0.jpg
+/home/maker/Pictures/wallpapers/anime/42 - 8LjHPUk.jpg
+/home/maker/Pictures/wallpapers/anime/42 - L4VNWYd.jpg
+/home/maker/Pictures/wallpapers/anime/42 - U6mRv0G.jpg
+/home/maker/Pictures/wallpapers/anime/42 - a10ETmm.png
+/home/maker/Pictures/wallpapers/anime/43 - JqQpA7p.jpg
+/home/maker/Pictures/wallpapers/anime/43 - c8BGE8l.jpg
+/home/maker/Pictures/wallpapers/anime/43 - iDcHb5D.png
+/home/maker/Pictures/wallpapers/anime/44 - RQXNezM - Code Geass - Eupehmia Li Britannia.png
+/home/maker/Pictures/wallpapers/anime/45 - CbVXE5h.jpg
+/home/maker/Pictures/wallpapers/anime/45 - HicaAQx.jpg
+/home/maker/Pictures/wallpapers/anime/45 - JGL0JrN - Code Geass - Lelouch _ CC.png
+/home/maker/Pictures/wallpapers/anime/45 - T2ylKlS.jpg
+/home/maker/Pictures/wallpapers/anime/45 - hDCyDJt.png
+/home/maker/Pictures/wallpapers/anime/46 - 9yPAZCE - Code Geass - Lelouch Lamperouge.png
+/home/maker/Pictures/wallpapers/anime/46 - ffKIEVx.png
+/home/maker/Pictures/wallpapers/anime/46 - lGuIxgJ.jpg
+/home/maker/Pictures/wallpapers/anime/46 - riGMuom.jpg
+/home/maker/Pictures/wallpapers/anime/47 - 7g9tvL1.png
+/home/maker/Pictures/wallpapers/anime/47 - PAxulEt.jpg
+/home/maker/Pictures/wallpapers/anime/47 - vuEiLm7.jpg
+/home/maker/Pictures/wallpapers/anime/474 - Mypo6OB.jpg
+/home/maker/Pictures/wallpapers/anime/48 - nRZhPvm.jpg
+/home/maker/Pictures/wallpapers/anime/49 - 7OIgckm.jpg
+/home/maker/Pictures/wallpapers/anime/49 - Ay6U5nW - Code Geass - Lelouch Lamperouge.png
+/home/maker/Pictures/wallpapers/anime/49 - O87PY0i.jpg
+/home/maker/Pictures/wallpapers/anime/49 - UeImWzj.png
+/home/maker/Pictures/wallpapers/anime/49 - WFeyNLl.jpg
+/home/maker/Pictures/wallpapers/anime/49 - vadP58S.jpg
+/home/maker/Pictures/wallpapers/anime/4MHOMvU.jpeg
+/home/maker/Pictures/wallpapers/anime/4X3z4Ha.jpeg
+/home/maker/Pictures/wallpapers/anime/5 - kv7Shzw.jpg
+/home/maker/Pictures/wallpapers/anime/50 - CGz1sva - Code Geass - Suzaku Kururugi.png
+/home/maker/Pictures/wallpapers/anime/50 - nkhWQrf.jpg
+/home/maker/Pictures/wallpapers/anime/50 - qEZ1Pia.png
+/home/maker/Pictures/wallpapers/anime/51 - 8VEdsbZ.jpg
+/home/maker/Pictures/wallpapers/anime/51 - KaPp1LJ.jpg
+/home/maker/Pictures/wallpapers/anime/51 - MOPv8vi.jpg
+/home/maker/Pictures/wallpapers/anime/51 - NZ9sEUw.jpg
+/home/maker/Pictures/wallpapers/anime/51 - YAURCyY.png
+/home/maker/Pictures/wallpapers/anime/51 - b77SdlO - Cowboy Bebop - Spike Spiegel.jpg
+/home/maker/Pictures/wallpapers/anime/51 - drVZtpz.jpg
+/home/maker/Pictures/wallpapers/anime/52 - j8Tq1KZ.png
+/home/maker/Pictures/wallpapers/anime/52 - sdiqUaa.jpg
+/home/maker/Pictures/wallpapers/anime/53 - 5mfxcOd.jpg
+/home/maker/Pictures/wallpapers/anime/54 - GqV4FW7.png
+/home/maker/Pictures/wallpapers/anime/54 - Gx78dJZ.jpg
+/home/maker/Pictures/wallpapers/anime/54 - NmIlgc9.jpg
+/home/maker/Pictures/wallpapers/anime/54 - Tn12QdH.jpg
+/home/maker/Pictures/wallpapers/anime/54 - vxDP6U9.jpg
+/home/maker/Pictures/wallpapers/anime/544 - sHEcDRl.png
+/home/maker/Pictures/wallpapers/anime/547 - Kss6bE5.jpg
+/home/maker/Pictures/wallpapers/anime/55 - 7ubr4L9.jpg
+/home/maker/Pictures/wallpapers/anime/55 - kTSuUXN.jpg
+/home/maker/Pictures/wallpapers/anime/55 - lhTeR7O - D-Gray Man - Allen Walker.jpg
+/home/maker/Pictures/wallpapers/anime/555 - hGEo2Zf.png
+/home/maker/Pictures/wallpapers/anime/559 - SkPlSJf.jpg
+/home/maker/Pictures/wallpapers/anime/56 - CoYBP2x.jpg
+/home/maker/Pictures/wallpapers/anime/56 - On9rUzf.jpg
+/home/maker/Pictures/wallpapers/anime/56 - Ru2l92Z.jpg
+/home/maker/Pictures/wallpapers/anime/56 - iMdAQ90.jpg
+/home/maker/Pictures/wallpapers/anime/56 - syzvitk.jpg
+/home/maker/Pictures/wallpapers/anime/58 - MLNA4Tt.png
+/home/maker/Pictures/wallpapers/anime/58 - u3NIxr7.jpg
+/home/maker/Pictures/wallpapers/anime/59 - 2OWL6El.jpg
+/home/maker/Pictures/wallpapers/anime/59 - Po7I8eZ.jpg
+/home/maker/Pictures/wallpapers/anime/59 - XWkLobr.jpg
+/home/maker/Pictures/wallpapers/anime/59 - bniTTqU - Deadman Wonderland - Shiro.jpg
+/home/maker/Pictures/wallpapers/anime/59 - ePdPSEZ.jpg
+/home/maker/Pictures/wallpapers/anime/59 - n646Ctm.png
+/home/maker/Pictures/wallpapers/anime/59 - qAEspB8.png
+/home/maker/Pictures/wallpapers/anime/59 - uGOfuur.jpg
+/home/maker/Pictures/wallpapers/anime/592 - G9EZyh0.jpg
+/home/maker/Pictures/wallpapers/anime/5IKc5vO.jpeg
+/home/maker/Pictures/wallpapers/anime/5VUhtaY.jpeg
+/home/maker/Pictures/wallpapers/anime/5a1c8031-3c4e-4b2e-96ef-5b17d8c1c948.jpg
+/home/maker/Pictures/wallpapers/anime/5zQiXen.png
+/home/maker/Pictures/wallpapers/anime/6 - BMoXn6B.png
+/home/maker/Pictures/wallpapers/anime/6 - EgCQktd.jpg
+/home/maker/Pictures/wallpapers/anime/6 - TlxYOFD.jpg
+/home/maker/Pictures/wallpapers/anime/6 - eH9vl09.jpg
+/home/maker/Pictures/wallpapers/anime/6 - k60etGo.jpg
+/home/maker/Pictures/wallpapers/anime/6 - tjhUMrN.jpg
+/home/maker/Pictures/wallpapers/anime/6 - wDxLIxZ - Akame ga Kill! - Leone.png
+/home/maker/Pictures/wallpapers/anime/6 - xUTe1xY.jpg
+/home/maker/Pictures/wallpapers/anime/60 - 77AnzPF.png
+/home/maker/Pictures/wallpapers/anime/60 - AKTXvHF - Diebuster - Nono.jpg
+/home/maker/Pictures/wallpapers/anime/60 - E9YRV2B.jpg
+/home/maker/Pictures/wallpapers/anime/60 - H2xoVzi.jpg
+/home/maker/Pictures/wallpapers/anime/60 - NExlBwl.jpg
+/home/maker/Pictures/wallpapers/anime/60 - OdNTuyz.jpg
+/home/maker/Pictures/wallpapers/anime/60 - fdiO61M.jpg
+/home/maker/Pictures/wallpapers/anime/60 - gtBecnQ.png
+/home/maker/Pictures/wallpapers/anime/60 - l2izITD.jpg
+/home/maker/Pictures/wallpapers/anime/6077462.jpg
+/home/maker/Pictures/wallpapers/anime/61 - 3NkSNM5 - Evangelion - Rei Ayanami.jpg
+/home/maker/Pictures/wallpapers/anime/62 - CFn9TEx.jpg
+/home/maker/Pictures/wallpapers/anime/62 - I7QzImd.jpg
+/home/maker/Pictures/wallpapers/anime/62 - IQdE02Q.jpg
+/home/maker/Pictures/wallpapers/anime/62 - knpnM9Z.jpg
+/home/maker/Pictures/wallpapers/anime/62 - oQElrWZ.jpg
+/home/maker/Pictures/wallpapers/anime/63 - 89NstXc.jpg
+/home/maker/Pictures/wallpapers/anime/63 - 9QX28Vi.jpg
+/home/maker/Pictures/wallpapers/anime/63 - sAUF0cD.jpg
+/home/maker/Pictures/wallpapers/anime/64 - BGCZjJA.jpg
+/home/maker/Pictures/wallpapers/anime/64 - DtaohtA - Evangelion - Unit 01.jpg
+/home/maker/Pictures/wallpapers/anime/64 - lGJLkwm.jpg
+/home/maker/Pictures/wallpapers/anime/64 - ow7tn7c.jpg
+/home/maker/Pictures/wallpapers/anime/65 - 13vKXgl.jpg
+/home/maker/Pictures/wallpapers/anime/65 - dAN3RR2.png
+/home/maker/Pictures/wallpapers/anime/66 - AWWqaVc.jpg
+/home/maker/Pictures/wallpapers/anime/678 - EZDj2Ca.jpg
+/home/maker/Pictures/wallpapers/anime/68 - 6Uz2KA2.jpg
+/home/maker/Pictures/wallpapers/anime/68 - MxwmpVi.png
+/home/maker/Pictures/wallpapers/anime/68 - W8rZ7Bo.png
+/home/maker/Pictures/wallpapers/anime/68 - Yt72Mdr.jpg
+/home/maker/Pictures/wallpapers/anime/68 - cXVciTf.jpg
+/home/maker/Pictures/wallpapers/anime/68 - sKGhKLs.jpg
+/home/maker/Pictures/wallpapers/anime/69 - Aizyb9T.jpg
+/home/maker/Pictures/wallpapers/anime/69 - V54xpAK.jpg
+/home/maker/Pictures/wallpapers/anime/69 - cJY2koP.jpg
+/home/maker/Pictures/wallpapers/anime/69 - f08jjX2.jpg
+/home/maker/Pictures/wallpapers/anime/69 - fjvbsWm.jpg
+/home/maker/Pictures/wallpapers/anime/691 - VuXgR9K.jpg
+/home/maker/Pictures/wallpapers/anime/693 - F7LKQJN.jpg
+/home/maker/Pictures/wallpapers/anime/6zYby1m.png
+/home/maker/Pictures/wallpapers/anime/7 - 2QnMJj0.png
+/home/maker/Pictures/wallpapers/anime/7 - 2S33JkG - Akame ga Kill! - Tatsumi.jpg
+/home/maker/Pictures/wallpapers/anime/7 - AqO6gx4.png
+/home/maker/Pictures/wallpapers/anime/7 - I3kfdii.jpg
+/home/maker/Pictures/wallpapers/anime/7 - q6nTfgK.jpg
+/home/maker/Pictures/wallpapers/anime/7 - wBeCMZs.png
+/home/maker/Pictures/wallpapers/anime/70 - 0zABWm3.jpg
+/home/maker/Pictures/wallpapers/anime/70 - RfApfC1.png
+/home/maker/Pictures/wallpapers/anime/70 - cHTxpBv.jpg
+/home/maker/Pictures/wallpapers/anime/70 - oyrjonH.jpg
+/home/maker/Pictures/wallpapers/anime/70 - xuoiBgU.jpg
+/home/maker/Pictures/wallpapers/anime/706 - OqdAyt0.png
+/home/maker/Pictures/wallpapers/anime/707 - u9Asf1Y.jpg
+/home/maker/Pictures/wallpapers/anime/71 - THxWjlg.png
+/home/maker/Pictures/wallpapers/anime/71 - fGOB0Mf.png
+/home/maker/Pictures/wallpapers/anime/71 - sdzaogp.png
+/home/maker/Pictures/wallpapers/anime/71 - t9Q87Ay.jpg
+/home/maker/Pictures/wallpapers/anime/72 - 70a8TUq.jpg
+/home/maker/Pictures/wallpapers/anime/72 - PdL8m3j.jpg
+/home/maker/Pictures/wallpapers/anime/72 - sBlXD6h.jpg
+/home/maker/Pictures/wallpapers/anime/727 - kGaG9iM.jpg
+/home/maker/Pictures/wallpapers/anime/73 - 7W4gNBN.jpg
+/home/maker/Pictures/wallpapers/anime/73 - SbFo4cj.jpg
+/home/maker/Pictures/wallpapers/anime/74 - QfB1pSJ.jpg
+/home/maker/Pictures/wallpapers/anime/74 - StbpVs4.png
+/home/maker/Pictures/wallpapers/anime/74 - Wx4ay71.png
+/home/maker/Pictures/wallpapers/anime/74 - fVtDNXz.jpg
+/home/maker/Pictures/wallpapers/anime/74 - ujVaiGf - Evangelion - Arael.jpg
+/home/maker/Pictures/wallpapers/anime/744 - 9KcH14C.jpg
+/home/maker/Pictures/wallpapers/anime/749 - jfelIVF.jpg
+/home/maker/Pictures/wallpapers/anime/75 - AIphuOq.jpg
+/home/maker/Pictures/wallpapers/anime/75 - MkXF32Z.jpg
+/home/maker/Pictures/wallpapers/anime/75 - Sww9oHw.jpg
+/home/maker/Pictures/wallpapers/anime/75 - fm4NoFO.jpg
+/home/maker/Pictures/wallpapers/anime/76 - 5MYm14y.jpg
+/home/maker/Pictures/wallpapers/anime/76 - 5SP338w - Evangelion - Gaghiel.jpg
+/home/maker/Pictures/wallpapers/anime/76 - AkjlbCv.png
+/home/maker/Pictures/wallpapers/anime/76 - e4r5bQR.jpg
+/home/maker/Pictures/wallpapers/anime/76 - lgsPU4q.jpg
+/home/maker/Pictures/wallpapers/anime/76 - p4TIlyS.jpg
+/home/maker/Pictures/wallpapers/anime/768 - ydwtD7m.jpg
+/home/maker/Pictures/wallpapers/anime/77 - 9o0juE3.jpg
+/home/maker/Pictures/wallpapers/anime/77 - VH2zETv.jpg
+/home/maker/Pictures/wallpapers/anime/77 - fxpjGyY - Evangelion - Iruel.jpg
+/home/maker/Pictures/wallpapers/anime/77 - q7qpddU.jpg
+/home/maker/Pictures/wallpapers/anime/77 - xPUV21v.png
+/home/maker/Pictures/wallpapers/anime/778 - k5wB7V9.jpg
+/home/maker/Pictures/wallpapers/anime/78 - WC9Jas3 - Evangelion - Israfel.jpg
+/home/maker/Pictures/wallpapers/anime/78 - d4hrfWY.png
+/home/maker/Pictures/wallpapers/anime/78 - yFxrS7W.png
+/home/maker/Pictures/wallpapers/anime/79 - P9IzNUz - Evangelion - Leliel.jpg
+/home/maker/Pictures/wallpapers/anime/79 - aZ5NLt9.png
+/home/maker/Pictures/wallpapers/anime/79 - fBdacm3.jpg
+/home/maker/Pictures/wallpapers/anime/79 - q27W0zf.png
+/home/maker/Pictures/wallpapers/anime/79 - qkue89i.jpg
+/home/maker/Pictures/wallpapers/anime/7K7oRvk.jpeg
+/home/maker/Pictures/wallpapers/anime/7SBYtPj.jpeg
+/home/maker/Pictures/wallpapers/anime/7WJhdoR.jpeg
+/home/maker/Pictures/wallpapers/anime/7gs84az.jpeg
+/home/maker/Pictures/wallpapers/anime/8 - 0LIrqOi.jpg
+/home/maker/Pictures/wallpapers/anime/8 - 1CKK2o2.jpg
+/home/maker/Pictures/wallpapers/anime/8 - 4XEJ1W6.jpg
+/home/maker/Pictures/wallpapers/anime/8 - 4huIBaU - Akame ga Kill! - Akame.png
+/home/maker/Pictures/wallpapers/anime/8 - HWANlJy.jpg
+/home/maker/Pictures/wallpapers/anime/8 - VHJ7tgf.png
+/home/maker/Pictures/wallpapers/anime/8 - Yt72Mdr.jpg
+/home/maker/Pictures/wallpapers/anime/8 - obWcIxM.jpg
+/home/maker/Pictures/wallpapers/anime/8 - waMNuRL.jpg
+/home/maker/Pictures/wallpapers/anime/80 - 2CtxHp3 - Evangelion - Matariel.jpg
+/home/maker/Pictures/wallpapers/anime/80 - dNA95wd.jpg
+/home/maker/Pictures/wallpapers/anime/817 - eMr67L4.png
+/home/maker/Pictures/wallpapers/anime/8z7KRoh.jpeg
+/home/maker/Pictures/wallpapers/anime/9 - 2e61QCd.jpg
+/home/maker/Pictures/wallpapers/anime/9 - 7a3Bhe2.jpg
+/home/maker/Pictures/wallpapers/anime/9 - DaFuSO0.jpg
+/home/maker/Pictures/wallpapers/anime/9 - F61ECfB.jpg
+/home/maker/Pictures/wallpapers/anime/9 - PJ0wa2O.jpg
+/home/maker/Pictures/wallpapers/anime/9 - XSysiUZ.jpg
+/home/maker/Pictures/wallpapers/anime/9 - Xfbn3cb.jpg
+/home/maker/Pictures/wallpapers/anime/9 - aG11vTL.jpg
+/home/maker/Pictures/wallpapers/anime/9 - cjCiRX8 - Alnoah Zero - Asseylum Vers Allusia.png
+/home/maker/Pictures/wallpapers/anime/9 - mVYyynW.jpg
+/home/maker/Pictures/wallpapers/anime/9 - oNs62Em.jpg
+/home/maker/Pictures/wallpapers/anime/9 - xBJD9SM.jpg
+/home/maker/Pictures/wallpapers/anime/9 - yh71hZN.png
+/home/maker/Pictures/wallpapers/anime/94538143_p0.png
+/home/maker/Pictures/wallpapers/anime/95285426_p0.jpg
+/home/maker/Pictures/wallpapers/anime/96440296_p0.png
+/home/maker/Pictures/wallpapers/anime/9DikRoN.jpeg
+/home/maker/Pictures/wallpapers/anime/9Tej6V0.jpeg
+/home/maker/Pictures/wallpapers/anime/9emAf9J.jpeg
 /home/maker/Pictures/wallpapers/anime/9s3j5n8eok181.jpg
-/home/maker/Pictures/wallpapers/anime/gf09ki5shw281.png
+/home/maker/Pictures/wallpapers/anime/Attack on Titan The Rumbling Art by Bayu Dipura, attackontitan, AOT Wide Wallpaper - 2556x970.png
+/home/maker/Pictures/wallpapers/anime/BAf78wS.jpeg
+/home/maker/Pictures/wallpapers/anime/EtQRXRV.jpeg
+/home/maker/Pictures/wallpapers/anime/FDqNA0g.png
+/home/maker/Pictures/wallpapers/anime/GYZdHK5.png
+/home/maker/Pictures/wallpapers/anime/New_Project.png
+/home/maker/Pictures/wallpapers/anime/TTjZpbo.png
+/home/maker/Pictures/wallpapers/anime/The_Forest.png
+/home/maker/Pictures/wallpapers/anime/W0tWJsi.png
+/home/maker/Pictures/wallpapers/anime/WJWYPXW.png
+/home/maker/Pictures/wallpapers/anime/WLxvLHD.jpeg
+/home/maker/Pictures/wallpapers/anime/WyzDLCfq_f.png
+/home/maker/Pictures/wallpapers/anime/X3BdREK.jpeg
+/home/maker/Pictures/wallpapers/anime/XMIZK1X.jpeg
+/home/maker/Pictures/wallpapers/anime/YoMVBxM.png
+/home/maker/Pictures/wallpapers/anime/aTzsemi.jpeg
+/home/maker/Pictures/wallpapers/anime/anime-girl-city-lights-neon-face-mask-4k-08-2560x1600.jpg
+/home/maker/Pictures/wallpapers/anime/byfS0B2.jpeg
+/home/maker/Pictures/wallpapers/anime/cwrKXg0.jpeg
+/home/maker/Pictures/wallpapers/anime/d4i8ZZN.jpeg
+/home/maker/Pictures/wallpapers/anime/d9hmuHG.jpeg
+/home/maker/Pictures/wallpapers/anime/deity.jpg
+/home/maker/Pictures/wallpapers/anime/download.jpg
+/home/maker/Pictures/wallpapers/anime/eZCjrtr.jpeg
+/home/maker/Pictures/wallpapers/anime/erenthe.jpg
+/home/maker/Pictures/wallpapers/anime/f47gqiweare81.png
+/home/maker/Pictures/wallpapers/anime/gZfMFiM.jpeg
+/home/maker/Pictures/wallpapers/anime/ghibli.png
+/home/maker/Pictures/wallpapers/anime/ghibli1.jpg
+/home/maker/Pictures/wallpapers/anime/k2mn7eyhg4i81.png
+/home/maker/Pictures/wallpapers/anime/kuudere.jpg
 /home/maker/Pictures/wallpapers/anime/v91yjb4v35381.jpg
-/home/maker/Pictures/wallpapers/dracula/cat-nord-outrun.png
-/home/maker/Pictures/wallpapers/dracula/ign_astronaut.png
-/home/maker/Pictures/wallpapers/eyecandy/cherry-blossoms_FHD.jpg
-/home/maker/Pictures/wallpapers/eyecandy/floral-artistic-1_FHD.jpg
-/home/maker/Pictures/wallpapers/eyecandy/floral-artistic-2_FHD.jpg
-/home/maker/Pictures/wallpapers/eyecandy/mountain-1_HD.jpg
-/home/maker/Pictures/wallpapers/eyecandy/mountain-2_3K.jpg
-/home/maker/Pictures/wallpapers/eyecandy/mountain-3_8K.jpg
-/home/maker/Pictures/wallpapers/eyecandy/mountain-4_3K.jpg
-/home/maker/Pictures/wallpapers/eyecandy/snow_FHD.jpg
-/home/maker/Pictures/wallpapers/mechanical/batik-1_4K.jpg
-/home/maker/Pictures/wallpapers/mechanical/batik-2_FHD.jpg
-/home/maker/Pictures/wallpapers/mechanical/mechanical-key_2K.jpg
-/home/maker/Pictures/wallpapers/mechanical/okita-souji_FHD.jpg
-/home/maker/Pictures/wallpapers/mechanical/raindrops-1_FHD.jpg
-/home/maker/Pictures/wallpapers/mechanical/raindrops-2_FHD.jpg
-/home/maker/Pictures/wallpapers/mechanical/raindrops-3_6K.jpg
-/home/maker/Pictures/wallpapers/mechanical/raindrops-4_FHD.jpg
+/home/maker/Pictures/wallpapers/anime/w17Pbut.jpeg
+/home/maker/Pictures/wallpapers/anime/wallhaven-45k7g5.jpg
+/home/maker/Pictures/wallpapers/anime/wallhaven-4xry9v.jpg
+/home/maker/Pictures/wallpapers/anime/wallhaven-q2j78l.png
+/home/maker/Pictures/wallpapers/anime/wallhaven-q63vdr.jpg
+/home/maker/Pictures/wallpapers/anime/wallhaven-v9v3r5.jpg
+/home/maker/Pictures/wallpapers/anime/wallhaven-ymj8rg.png
+/home/maker/Pictures/wallpapers/anime/wejgu6j26sl81.png
+/home/maker/Pictures/wallpapers/anime/wp3110677.jpg
+/home/maker/Pictures/wallpapers/anime/wp3110723.jpg
+/home/maker/Pictures/wallpapers/anime/wp9263660-manga-black-and-white-wallpapers.jpg
+/home/maker/Pictures/wallpapers/anime/xlntq2m.jpeg
+/home/maker/Pictures/wallpapers/anime/zDekebY.jpeg
+/home/maker/Pictures/wallpapers/abstract/1629254800931.png
+/home/maker/Pictures/wallpapers/abstract/1630862206792.png
+/home/maker/Pictures/wallpapers/abstract/1630934898335.png
+/home/maker/Pictures/wallpapers/abstract/1632112923543.jpg
+/home/maker/Pictures/wallpapers/abstract/1634162439688.png
+/home/maker/Pictures/wallpapers/abstract/1637327575813.png
+/home/maker/Pictures/wallpapers/abstract/1637336228660.png
+/home/maker/Pictures/wallpapers/abstract/1637336939551.jpg
+/home/maker/Pictures/wallpapers/abstract/1637643605103.jpg
+/home/maker/Pictures/wallpapers/abstract/1637643772482.png
+/home/maker/Pictures/wallpapers/abstract/1637824731328.png
+/home/maker/Pictures/wallpapers/abstract/1637849501425.jpg
+/home/maker/Pictures/wallpapers/abstract/1638597695178.jpg
+/home/maker/Pictures/wallpapers/abstract/1638672440860.png
+/home/maker/Pictures/wallpapers/abstract/1639324186243.png
+/home/maker/Pictures/wallpapers/abstract/1640372689217.png
+/home/maker/Pictures/wallpapers/abstract/1640963942611.png
+/home/maker/Pictures/wallpapers/abstract/1645251474069.SVG.png
+/home/maker/Pictures/wallpapers/abstract/1645251474069.jpg
+/home/maker/Pictures/wallpapers/abstract/3LzAlSaT_f.jpg
+/home/maker/Pictures/wallpapers/abstract/4v7qvdn2jll81.png
+/home/maker/Pictures/wallpapers/abstract/earth-cube.jpg
+/home/maker/Pictures/wallpapers/abstract/edmwp.png
+/home/maker/Pictures/wallpapers/abstract/gentoo.png
+/home/maker/Pictures/wallpapers/abstract/jezebielwp.png
+/home/maker/Pictures/wallpapers/abstract/light.png
+/home/maker/Pictures/wallpapers/abstract/minimal_squares.png
+/home/maker/Pictures/wallpapers/abstract/minimal_squares_purple.png
+/home/maker/Pictures/wallpapers/abstract/quote.png
+/home/maker/Pictures/wallpapers/abstract/sm89a5hhirl81.jpg
+/home/maker/Pictures/wallpapers/abstract/wallhaven-13lxq9.png
+/home/maker/Pictures/wallpapers/abstract/wallhaven-39lvjd.png
+/home/maker/Pictures/wallpapers/abstract/wallhaven-73pojy.jpg
+/home/maker/Pictures/wallpapers/abstract/wallhaven-96d7o8.jpg
+/home/maker/Pictures/wallpapers/abstract/wallhaven-dg6jyj.png
+/home/maker/Pictures/wallpapers/abstract/wallhaven-dg6m8o.jpg
+/home/maker/Pictures/wallpapers/abstract/wallhaven-e7elvw.jpg
+/home/maker/Pictures/wallpapers/abstract/wallhaven-eoevew.png
+/home/maker/Pictures/wallpapers/abstract/wallhaven-eyxp3o.jpg
+/home/maker/Pictures/wallpapers/abstract/wallhaven-g8pxwe.jpg
+/home/maker/Pictures/wallpapers/abstract/wallhaven-o33x55.png
+/home/maker/Pictures/wallpapers/abstract/wallhaven-p89vl3.jpg
+/home/maker/Pictures/wallpapers/abstract/wallhaven-r2r911.png
+/home/maker/Pictures/wallpapers/abstract/wallhaven-wqqerq.png
+/home/maker/Pictures/wallpapers/abstract/wallhaven-wyegj7.png
+/home/maker/Pictures/wallpapers/abstract/wallhaven-ymx667.png
+/home/maker/Pictures/wallpapers/chillop/headphones-noframe.png
+/home/maker/Pictures/wallpapers/chillop/headphones.png
+/home/maker/Pictures/wallpapers/chillop/oxapskc1qxg81.png
+/home/maker/Pictures/wallpapers/chillop/smg9jgc1qxg81.jpg
+/home/maker/Pictures/wallpapers/chillop/steve-harvey-U4wcrDteZ2Y-unsplash.png
 /home/maker/Pictures/wallpapers/minimal/3dpa86v690s71.jpg
+/home/maker/Pictures/wallpapers/minimal/3naa2boj9rd81.png
+/home/maker/Pictures/wallpapers/minimal/bridge.jpg
 /home/maker/Pictures/wallpapers/minimal/cy4p34m246161.jpg
 /home/maker/Pictures/wallpapers/minimal/e8gcq9yrn2u71.jpg
 /home/maker/Pictures/wallpapers/minimal/en3g3wwmnwi41.png
@@ -65,75 +602,104 @@
 /home/maker/Pictures/wallpapers/minimal/summer_on_the_lake_dawn_5120x2880.png
 /home/maker/Pictures/wallpapers/minimal/summer_on_the_lake_dusk_5120x2880.png
 /home/maker/Pictures/wallpapers/minimal/summer_on_the_lake_noon_5120x2880.png
+/home/maker/Pictures/wallpapers/minimal/xur7195q84e81.jpg
 /home/maker/Pictures/wallpapers/minimal/yhaucvz246161.jpg
+/home/maker/Pictures/wallpapers/monokai/01dd8fd3-2fa9-4d70-9556-950c17ea40fd.jpg
 /home/maker/Pictures/wallpapers/monokai/holy-arch.png
 /home/maker/Pictures/wallpapers/monokai/linux-kernel-realistic-heart-l73x95gla1ri0h1o.jpg
 /home/maker/Pictures/wallpapers/monokai/mm7prhmrq3681.jpg
 /home/maker/Pictures/wallpapers/monokai/solarized-dark-sudo-linux-logo-7b9qvch5c8csms2r.jpg
 /home/maker/Pictures/wallpapers/monokai/solarized-dragon-kali-linux-hd-r2jtcz2ut8fs8eim.jpg
-/home/maker/Pictures/wallpapers/nord/1ttvv79apo851.png
-/home/maker/Pictures/wallpapers/nord/1vprhfeokov61.jpg
 /home/maker/Pictures/wallpapers/nord/64m36y0xpf561.png
+/home/maker/Pictures/wallpapers/nord/8bea03e6-5197-456b-ac44-97561d7563ed.png
+/home/maker/Pictures/wallpapers/nord/94192540-640d-468e-87df-d6f607b490a6.png
 /home/maker/Pictures/wallpapers/nord/9ltbmflkgrs61.jpg
 /home/maker/Pictures/wallpapers/nord/Abstract-Nord.png
-/home/maker/Pictures/wallpapers/nord/archlinux-darker.png
-/home/maker/Pictures/wallpapers/nord/archlinux.png
-/home/maker/Pictures/wallpapers/nord/Arch Linux (Text Dark Blue).png
-/home/maker/Pictures/wallpapers/nord/arctic-landscape.png
-/home/maker/Pictures/wallpapers/nord/astronaut-flying-full-nord.png
-/home/maker/Pictures/wallpapers/nord/astronaut-flying.png
-/home/maker/Pictures/wallpapers/nord/audio-bunny.png
-/home/maker/Pictures/wallpapers/nord/BirdNordDarker.png
-/home/maker/Pictures/wallpapers/nord/BirdNordDark.png
-/home/maker/Pictures/wallpapers/nord/BirdNordic.png
 /home/maker/Pictures/wallpapers/nord/BirdNord.png
-/home/maker/Pictures/wallpapers/nord/bitmap.png
+/home/maker/Pictures/wallpapers/nord/BirdNordDark.png
+/home/maker/Pictures/wallpapers/nord/BirdNordDarker.png
+/home/maker/Pictures/wallpapers/nord/BirdNordic.png
+/home/maker/Pictures/wallpapers/nord/CRON-Nord.png
+/home/maker/Pictures/wallpapers/nord/Chemical Nord.png
+/home/maker/Pictures/wallpapers/nord/Misty Mountain.jpg
+/home/maker/Pictures/wallpapers/nord/Mountain Jaws.jpg
+/home/maker/Pictures/wallpapers/nord/Murky peaks.jpg
+/home/maker/Pictures/wallpapers/nord/Nord Day.png
+/home/maker/Pictures/wallpapers/nord/Nord Night.png
+/home/maker/Pictures/wallpapers/nord/Street Blues.png
+/home/maker/Pictures/wallpapers/nord/archlinux.png
+/home/maker/Pictures/wallpapers/nord/astronaut-flying-full-nord.png
+/home/maker/Pictures/wallpapers/nord/audio-bunny.png
+/home/maker/Pictures/wallpapers/nord/camp_day.png
 /home/maker/Pictures/wallpapers/nord/cat-level-dark.png
 /home/maker/Pictures/wallpapers/nord/cat.png
-/home/maker/Pictures/wallpapers/nord/Chemical Nord.png
 /home/maker/Pictures/wallpapers/nord/cherry-blossoms.png
-/home/maker/Pictures/wallpapers/nord/computer.jpg
 /home/maker/Pictures/wallpapers/nord/covers.png
-/home/maker/Pictures/wallpapers/nord/CRON-Nord.png
 /home/maker/Pictures/wallpapers/nord/debian.png
+/home/maker/Pictures/wallpapers/nord/dn.png
 /home/maker/Pictures/wallpapers/nord/earth-in-space.png
 /home/maker/Pictures/wallpapers/nord/elementaryos.png
-/home/maker/Pictures/wallpapers/nord/eyes-4751572.png
 /home/maker/Pictures/wallpapers/nord/fedora.png
+/home/maker/Pictures/wallpapers/nord/flowers.png
 /home/maker/Pictures/wallpapers/nord/frame.png
-/home/maker/Pictures/wallpapers/nord/gnu-linux.png
+/home/maker/Pictures/wallpapers/nord/gentoo.png
 /home/maker/Pictures/wallpapers/nord/holy-arch-nordic.png
+/home/maker/Pictures/wallpapers/nord/igen-nebula-lighter.jpg
 /home/maker/Pictures/wallpapers/nord/igen-nebula.jpg
 /home/maker/Pictures/wallpapers/nord/ign-0001.png
 /home/maker/Pictures/wallpapers/nord/ign-0002.png
 /home/maker/Pictures/wallpapers/nord/ign-0011.png
-/home/maker/Pictures/wallpapers/nord/ign_astronautInTheOcean.png
-/home/maker/Pictures/wallpapers/nord/ign_astronaut.png
-/home/maker/Pictures/wallpapers/nord/ign-cementary.png
+/home/maker/Pictures/wallpapers/nord/ign-bady-abbas-unsplash-dark.jpg
+/home/maker/Pictures/wallpapers/nord/ign-bady-abbas-unsplash.jpg
+/home/maker/Pictures/wallpapers/nord/ign-cementary-dark.png
 /home/maker/Pictures/wallpapers/nord/ign-cementary-res.png
+/home/maker/Pictures/wallpapers/nord/ign-cementary.png
+/home/maker/Pictures/wallpapers/nord/ign-cold-hill.png
+/home/maker/Pictures/wallpapers/nord/ign-cyberpunk.png
+/home/maker/Pictures/wallpapers/nord/ign-depression-dark.png
+/home/maker/Pictures/wallpapers/nord/ign-depression.png
+/home/maker/Pictures/wallpapers/nord/ign-firewatch-2.png
+/home/maker/Pictures/wallpapers/nord/ign-flower-real-nord.png
+/home/maker/Pictures/wallpapers/nord/ign-flowers.png
+/home/maker/Pictures/wallpapers/nord/ign-jinen-shah-unsplash-dark.jpg
+/home/maker/Pictures/wallpapers/nord/ign-jinen-shah-unsplash.jpg
+/home/maker/Pictures/wallpapers/nord/ign-joey-flower-dark.jpg
+/home/maker/Pictures/wallpapers/nord/ign-joey-flower.jpg
+/home/maker/Pictures/wallpapers/nord/ign-nord-alone-tree-dark.png
+/home/maker/Pictures/wallpapers/nord/ign-pedro-saraiva-flower-dark.jpg
+/home/maker/Pictures/wallpapers/nord/ign-pedro-saraiva-flower.jpg
+/home/maker/Pictures/wallpapers/nord/ign-sleepy-mountain-poly.png
+/home/maker/Pictures/wallpapers/nord/ign-sleepy-mountain.png
+/home/maker/Pictures/wallpapers/nord/ign-unsplash-flower-3-dark.jpg
+/home/maker/Pictures/wallpapers/nord/ign-unsplash-flower-3.jpg
+/home/maker/Pictures/wallpapers/nord/ign-unsplash-flower-5-dark-res.jpg
+/home/maker/Pictures/wallpapers/nord/ign-unsplash-flower-5.jpg
+/home/maker/Pictures/wallpapers/nord/ign-unsplash-flower-7-dark-res.jpg
+/home/maker/Pictures/wallpapers/nord/ign-unsplash-flower-7.jpg
+/home/maker/Pictures/wallpapers/nord/ign-unsplash-flower-8-dark-res.jpg
+/home/maker/Pictures/wallpapers/nord/ign-unsplash-flower-8.jpg
+/home/maker/Pictures/wallpapers/nord/ign-unsplash-flower-9-dark-res.jpg
+/home/maker/Pictures/wallpapers/nord/ign-unsplash-flower-9.jpg
+/home/maker/Pictures/wallpapers/nord/ign-unsplash-lotus-dark-res.jpg
+/home/maker/Pictures/wallpapers/nord/ign-unsplash-lotus.jpg
+/home/maker/Pictures/wallpapers/nord/ign-waifu-nord-full.png
+/home/maker/Pictures/wallpapers/nord/ign-whale-dark.png
+/home/maker/Pictures/wallpapers/nord/ign-whale.png
+/home/maker/Pictures/wallpapers/nord/ign-xuan-nguyen-Gg-unsplash-dark.jpg
+/home/maker/Pictures/wallpapers/nord/ign-xuan-nguyen-Gg-unsplash.jpg
+/home/maker/Pictures/wallpapers/nord/ign-xuan-nguyen-unsplash-dark.jpg
+/home/maker/Pictures/wallpapers/nord/ign-xuan-nguyen-unsplash.jpg
+/home/maker/Pictures/wallpapers/nord/ign_astronaut.png
+/home/maker/Pictures/wallpapers/nord/ign_astronautInTheOcean.png
 /home/maker/Pictures/wallpapers/nord/ign_chineseIG.png
 /home/maker/Pictures/wallpapers/nord/ign_cityRainOther.png
-/home/maker/Pictures/wallpapers/nord/ign-cold-hill.png
-/home/maker/Pictures/wallpapers/nord/ign_colorful.png
-/home/maker/Pictures/wallpapers/nord/ign-cyberpunk.png
-/home/maker/Pictures/wallpapers/nord/ign_driving.png
-/home/maker/Pictures/wallpapers/nord/ign_farFromTomorrow.jpg
-/home/maker/Pictures/wallpapers/nord/ign-firewatch-2.png
 /home/maker/Pictures/wallpapers/nord/ign_furkaPass.jpg
-/home/maker/Pictures/wallpapers/nord/ign_girlWithHeadphones.png
 /home/maker/Pictures/wallpapers/nord/ign_herakles.png
 /home/maker/Pictures/wallpapers/nord/ign_highTechGlobe.png
-/home/maker/Pictures/wallpapers/nord/ign_iceAndFire.jpg
 /home/maker/Pictures/wallpapers/nord/ign_legendary.png
 /home/maker/Pictures/wallpapers/nord/ign_lightning.jpg
 /home/maker/Pictures/wallpapers/nord/ign_nordhills.png
-/home/maker/Pictures/wallpapers/nord/ign-pawnbroker.png
 /home/maker/Pictures/wallpapers/nord/ign_planets.jpg
-/home/maker/Pictures/wallpapers/nord/ign-scenery-lake-mountains-simple.png
-/home/maker/Pictures/wallpapers/nord/ign-sleepy-mountain.png
-/home/maker/Pictures/wallpapers/nord/ign-sleepy-mountain-poly.png
-/home/maker/Pictures/wallpapers/nord/ign-smoking-waifu-cold.png
-/home/maker/Pictures/wallpapers/nord/ign-smoking-waifu-warm.png
 /home/maker/Pictures/wallpapers/nord/ign_someGame.jpg
 /home/maker/Pictures/wallpapers/nord/ign_soupKong.png
 /home/maker/Pictures/wallpapers/nord/ign_spiderman.jpg
@@ -146,12 +712,9 @@
 /home/maker/Pictures/wallpapers/nord/ign_tokyo.jpg
 /home/maker/Pictures/wallpapers/nord/ign_travelling.jpg
 /home/maker/Pictures/wallpapers/nord/ign_unicorn.png
-/home/maker/Pictures/wallpapers/nord/ign_unsplash1.png
 /home/maker/Pictures/wallpapers/nord/ign_vader.png
-/home/maker/Pictures/wallpapers/nord/ign-valley.png
 /home/maker/Pictures/wallpapers/nord/ign_vaporWave.png
 /home/maker/Pictures/wallpapers/nord/ign_venom.jpg
-/home/maker/Pictures/wallpapers/nord/ign-waifu-nord-full.png
 /home/maker/Pictures/wallpapers/nord/ign_waifu.png
 /home/maker/Pictures/wallpapers/nord/ign_wanderlust.jpg
 /home/maker/Pictures/wallpapers/nord/ign_wave.png
@@ -162,59 +725,39 @@
 /home/maker/Pictures/wallpapers/nord/kv9zp2jakht61.jpg
 /home/maker/Pictures/wallpapers/nord/linux-be-good-4k.png
 /home/maker/Pictures/wallpapers/nord/linux-friends-4k.png
-/home/maker/Pictures/wallpapers/nord/linux-is-coming-4k.png
-/home/maker/Pictures/wallpapers/nord/linux-tux.png
 /home/maker/Pictures/wallpapers/nord/minimal-22-nordified.jpg
-/home/maker/Pictures/wallpapers/nord/Misty Mountain.jpg
 /home/maker/Pictures/wallpapers/nord/motel.jpg
-/home/maker/Pictures/wallpapers/nord/Mountain Jaws.jpg
-/home/maker/Pictures/wallpapers/nord/Murky peaks.jpg
+/home/maker/Pictures/wallpapers/nord/n9.png
 /home/maker/Pictures/wallpapers/nord/nixos.png
+/home/maker/Pictures/wallpapers/nord/nord-demon.png
+/home/maker/Pictures/wallpapers/nord/nord-koi.png
 /home/maker/Pictures/wallpapers/nord/nord_alone_tree.png
-/home/maker/Pictures/wallpapers/nord/nord-arctic-fox.png
-/home/maker/Pictures/wallpapers/nord/nord_bridge.png
 /home/maker/Pictures/wallpapers/nord/nord_buildings.png
-/home/maker/Pictures/wallpapers/nord/Nord Day.png
-/home/maker/Pictures/wallpapers/nord/nord_design.png
-/home/maker/Pictures/wallpapers/nord/Nordic-Heroin.png
-/home/maker/Pictures/wallpapers/nord/nordic-obsession.png
 /home/maker/Pictures/wallpapers/nord/nord_lake.png
-/home/maker/Pictures/wallpapers/nord/nord-landscape__9____city_forest_by_ncoll36_db1v48j.jpg
-/home/maker/Pictures/wallpapers/nord/nord_mountains_blurred.png
 /home/maker/Pictures/wallpapers/nord/nord_mountains.png
 /home/maker/Pictures/wallpapers/nord/nord_naruto_2.png
-/home/maker/Pictures/wallpapers/nord/nord_naruto.png
-/home/maker/Pictures/wallpapers/nord/Nord Night.png
 /home/maker/Pictures/wallpapers/nord/nord_roads.png
 /home/maker/Pictures/wallpapers/nord/nord_roads_warm.png
 /home/maker/Pictures/wallpapers/nord/nord_scenary.png
-/home/maker/Pictures/wallpapers/nord/nord_space.png
 /home/maker/Pictures/wallpapers/nord/nordtheme.png
-/home/maker/Pictures/wallpapers/nord/nord_valley.png
-/home/maker/Pictures/wallpapers/nord/nyvm1lb3rjv61.jpg
-/home/maker/Pictures/wallpapers/nord/ogifuklalsv61.jpg
+/home/maker/Pictures/wallpapers/nord/od_wallhaven-m9od1k.png
 /home/maker/Pictures/wallpapers/nord/openbsd.png
 /home/maker/Pictures/wallpapers/nord/opensuse.png
-/home/maker/Pictures/wallpapers/nord/pixelcity.png
-/home/maker/Pictures/wallpapers/nord/pixelmoon.png
 /home/maker/Pictures/wallpapers/nord/plan9.png
-/home/maker/Pictures/wallpapers/nord/prime-number-spiral.png
 /home/maker/Pictures/wallpapers/nord/rocket.png
 /home/maker/Pictures/wallpapers/nord/slackware.png
-/home/maker/Pictures/wallpapers/nord/Street Blues.png
+/home/maker/Pictures/wallpapers/nord/test.space.jpg
 /home/maker/Pictures/wallpapers/nord/ubuntu-aurora.png
 /home/maker/Pictures/wallpapers/nord/ubuntu-frost.png
 /home/maker/Pictures/wallpapers/nord/ui9f1ohhs3681.jpg
 /home/maker/Pictures/wallpapers/nord/underwater.png
 /home/maker/Pictures/wallpapers/nord/voidlinux-01.png
-/home/maker/Pictures/wallpapers/nord/voidlinux.png
-/home/maker/Pictures/wallpapers/nord/waves.jpg
-/home/maker/Pictures/wallpapers/nord/wild.png
+/home/maker/Pictures/wallpapers/nord/weirdearth.png
 /home/maker/Pictures/wallpapers/nord/windows-panic.png
-/home/maker/Pictures/wallpapers/onedark/BirdOneDarker.png
-/home/maker/Pictures/wallpapers/onedark/BirdOneDark.png
-/home/maker/Pictures/wallpapers/onedark/holy-arch-onedark.png
-/home/maker/Pictures/wallpapers/outrun/ign_soupKong.png
+/home/maker/Pictures/wallpapers/outrun/od_wallhaven-j5lk95.jpg
+/home/maker/Pictures/wallpapers/outrun/r.jpg
+/home/maker/Pictures/wallpapers/outrun/vaporjet.jpg
+/home/maker/Pictures/wallpapers/outrun/wallpaperflare.com_wallpaper.jpg
 /home/maker/Pictures/wallpapers/pixel/25j73dxcmy181.png
 /home/maker/Pictures/wallpapers/pixel/626akywu59j71.png
 /home/maker/Pictures/wallpapers/pixel/64skinxcmy181.png
@@ -228,42 +771,148 @@
 /home/maker/Pictures/wallpapers/pixel/steel_jungles_by_sengig_d8bhh3d.png
 /home/maker/Pictures/wallpapers/pixel/uahfknxcmy181.png
 /home/maker/Pictures/wallpapers/pixel/v68farxcmy181.png
-/home/maker/Pictures/wallpapers/pixel/zero_by_valenberg_d8out9b.png
 /home/maker/Pictures/wallpapers/pixel/zzi2nlxcmy181.png
+/home/maker/Pictures/wallpapers/other/1621516202_21-phonoteka_org-p-fon-nyu-york-ulitsa-34.jpg
 /home/maker/Pictures/wallpapers/other/2d1hxqb95g481.png
+/home/maker/Pictures/wallpapers/other/7.jpg
+/home/maker/Pictures/wallpapers/other/Nord_Pattern_1.png
+/home/maker/Pictures/wallpapers/other/clem-onojeghuo-zlABb6Gke24-unsplash.jpg
+/home/maker/Pictures/wallpapers/other/dzfjht6jcsj81.jpg
+/home/maker/Pictures/wallpapers/other/feu7rnnst2h81.png
+/home/maker/Pictures/wallpapers/other/forest_foggy_1.jpg
+/home/maker/Pictures/wallpapers/other/fractal-tnz.png
+/home/maker/Pictures/wallpapers/other/mm4h2ixgzdg81.jpg
+/home/maker/Pictures/wallpapers/other/qnuvn40aq5e81.jpg
+/home/maker/Pictures/wallpapers/other/two-forests-everforest-recolor.png
+/home/maker/Pictures/wallpapers/other/wall.png
+/home/maker/Pictures/wallpapers/scenery/1k550v214le81.png
 /home/maker/Pictures/wallpapers/scenery/1okwkjy3l3l71.png
+/home/maker/Pictures/wallpapers/scenery/2qguwwx1gch81.jpg
 /home/maker/Pictures/wallpapers/scenery/3ckrn0p4n3l71.png
 /home/maker/Pictures/wallpapers/scenery/3lnurbwbfwk71.png
 /home/maker/Pictures/wallpapers/scenery/4irtiy2f2uk71.png
+/home/maker/Pictures/wallpapers/scenery/4iz428d0epb81.jpg
+/home/maker/Pictures/wallpapers/scenery/59og5ec1qxg81.jpg
 /home/maker/Pictures/wallpapers/scenery/5fvdkmet39j71.png
 /home/maker/Pictures/wallpapers/scenery/5sbmcohm1uk71.png
 /home/maker/Pictures/wallpapers/scenery/8d98wrhcwlp51.png
 /home/maker/Pictures/wallpapers/scenery/8w53nbu0o3l71.png
+/home/maker/Pictures/wallpapers/scenery/97h72d081th81.jpg
 /home/maker/Pictures/wallpapers/scenery/9d9duorkm3l71.png
 /home/maker/Pictures/wallpapers/scenery/9py055cffwk71.png
 /home/maker/Pictures/wallpapers/scenery/ajcw7kzwmi181.jpg
+/home/maker/Pictures/wallpapers/scenery/balloon.jpg
+/home/maker/Pictures/wallpapers/scenery/bbajwew11ge81.png
 /home/maker/Pictures/wallpapers/scenery/bmucoxvlewk71.png
+/home/maker/Pictures/wallpapers/scenery/canyon.jpg
 /home/maker/Pictures/wallpapers/scenery/cyberpunk.jpg
 /home/maker/Pictures/wallpapers/scenery/dypuzktoewk71.png
 /home/maker/Pictures/wallpapers/scenery/e55nh915ewk71.png
 /home/maker/Pictures/wallpapers/scenery/ertqcs0fhun71.jpg
 /home/maker/Pictures/wallpapers/scenery/fkaz52mvm3l71.png
+/home/maker/Pictures/wallpapers/scenery/fox.jpg
+/home/maker/Pictures/wallpapers/scenery/gpbgayv1gch81.jpg
 /home/maker/Pictures/wallpapers/scenery/hxqkrrgfm3l71.png
 /home/maker/Pictures/wallpapers/scenery/ianlqrnwrij71.png
 /home/maker/Pictures/wallpapers/scenery/iculr8pxn3l71.png
+/home/maker/Pictures/wallpapers/scenery/j6n84m081th81.jpg
 /home/maker/Pictures/wallpapers/scenery/kuk9yf2on3l71.png
 /home/maker/Pictures/wallpapers/scenery/m0vwp5fto3l71.png
 /home/maker/Pictures/wallpapers/scenery/mu4jlqq2fwk71.png
+/home/maker/Pictures/wallpapers/scenery/niecy4jmlmh81.png
 /home/maker/Pictures/wallpapers/scenery/okk56hffewk71.png
 /home/maker/Pictures/wallpapers/scenery/qc6n30f7fwk71.png
 /home/maker/Pictures/wallpapers/scenery/qhlwynvsuak71.jpg
+/home/maker/Pictures/wallpapers/scenery/qpb3smkuc5f81.jpg
 /home/maker/Pictures/wallpapers/scenery/qwxz3ieun3l71.png
+/home/maker/Pictures/wallpapers/scenery/ra4b82fy6qg81.jpg
 /home/maker/Pictures/wallpapers/scenery/snavfn8icms71.jpg
 /home/maker/Pictures/wallpapers/scenery/starwars-new.png
+/home/maker/Pictures/wallpapers/scenery/sunset-in-the-mountains-illustration_3840x2160_xtrafondos.png
 /home/maker/Pictures/wallpapers/scenery/sw2zerxbdp261.jpg
 /home/maker/Pictures/wallpapers/scenery/tm49eqmqewk71.png
+/home/maker/Pictures/wallpapers/scenery/tree.jpg
+/home/maker/Pictures/wallpapers/scenery/unl50frfn8e81.png
 /home/maker/Pictures/wallpapers/scenery/usd577c3ewk71.png
 /home/maker/Pictures/wallpapers/scenery/vm5sfidsewk71.png
+/home/maker/Pictures/wallpapers/scenery/wallhaven-q2pxml.png
+/home/maker/Pictures/wallpapers/scenery/wallpaperflare.com_wallpaper.jpg
+/home/maker/Pictures/wallpapers/scenery/yang-shuo-uYHYGgvkz_Y-unsplash.jpg
+/home/maker/Pictures/wallpapers/gruvbox/25068aab-6f9d-4be5-9ba7-3d732910c3bf.png
+/home/maker/Pictures/wallpapers/gruvbox/3235b217-c583-4664-bb76-692435aebde6.png
 /home/maker/Pictures/wallpapers/gruvbox/astronaut-space-space-art-nn.jpg
+/home/maker/Pictures/wallpapers/gruvbox/fossil-gruv.png
 /home/maker/Pictures/wallpapers/gruvbox/igw-hills.png
+/home/maker/Pictures/wallpapers/gruvbox/od_1.jpg
+/home/maker/Pictures/wallpapers/gruvbox/od_2.jpg
+/home/maker/Pictures/wallpapers/gruvbox/od_3.jpg
+/home/maker/Pictures/wallpapers/gruvbox/od_4.jpg
+/home/maker/Pictures/wallpapers/gruvbox/od_5.jpg
+/home/maker/Pictures/wallpapers/gruvbox/od_6.jpg
+/home/maker/Pictures/wallpapers/gruvbox/od_unknown_31.png
 /home/maker/Pictures/wallpapers/gruvbox/w13kar04t3681.jpg
+/home/maker/Pictures/wallpapers/poly/dark-mountains.jpg
+/home/maker/Pictures/wallpapers/poly/inzo.jpg
+/home/maker/Pictures/wallpapers/poly/low-poly-atlantis-arpbsaak202p1tae.jpg
+/home/maker/Pictures/wallpapers/poly/low-poly-blue-earth-g8di8lbn34mj6h5h.jpg
+/home/maker/Pictures/wallpapers/poly/low-poly-deer-weor8ig81u6a8b2w.jpg
+/home/maker/Pictures/wallpapers/poly/low-poly-floating-island-asrbeylx1lxvgdpa.jpg
+/home/maker/Pictures/wallpapers/poly/low-poly-forest-vvhgabbdneiwcbya.jpg
+/home/maker/Pictures/wallpapers/poly/low-poly-saturn-zd4vnhzrojsju1w7.jpg
+/home/maker/Pictures/wallpapers/poly/low-poly-water-cave-6v36c4nmxbrbun7a.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-black-planet-grqon19qjyy8nwi6.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-blue-mountain-3kgglwsqpco91l1z.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-desert-camp-t8edgty96n0abvwo.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-doctor-strange-v41cnqu37vb5j6m0.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-elephant-zl9tl3aygty99j8l.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-foxes-on-bonfire-dula6myg0aznwmod.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-icy-mountain-yms07nkrcbsy0jtv.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-mighty-lion-zxu6rmd1hpz87onr.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-owl-dbpcsdiczaqoar9f.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-pennywise-it-movie-56e4f64ppqxvv1fb.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-polar-bear-6ur9x573fbf7s3kg.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-queen-daenerys-xjscfs71ao0jw98z.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-red-lion-v9vb6659lq7wbpj0.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-red-planet-u46wg72p3wht2ogn.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-rottweiler-lq9o1qtsjwq70h7o.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-skeleton-a6sjmamsqovajjof.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-tiger-v8sjtxj6kidsy06g.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-waterfalls-sxfvjqfqs70q6rxq.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-wild-bear-n7eyfkxucuukm909.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-wild-wolf-qd3z5jw74w78k9qx.jpg
+/home/maker/Pictures/wallpapers/poly/polygon-art-wolf-bndokdjibysc1wrz.jpg
+/home/maker/Pictures/wallpapers/poly/red-mountains-low-poly-jp0m92kw6gxt8o0s.jpg
+/home/maker/Pictures/wallpapers/poly/sunrise.jpg
+/home/maker/Pictures/wallpapers/poly/undefined - Imgur.png
+/home/maker/Pictures/wallpapers/flowers/3.jpg
+/home/maker/Pictures/wallpapers/flowers/Light-Floral-01.png
+/home/maker/Pictures/wallpapers/flowers/Wallpaper.png
+/home/maker/Pictures/wallpapers/flowers/alexander-montes-Qv79akqGQt0-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/alexander-montes-Uj-_XNXk210-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/ameen-fahmy-mXpTl4jNKiA-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/andrea-tummons-oPW-njJj1oM-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/annie-spratt-hEDwwsfES2w-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/annie-spratt-r9eIL7jtenc-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/bady-abbas-XAkPN7aEGJM-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/camille-orgel-LFUENr5bh1A-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/claire-brear-3KNUXqMgr4c-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/dawid-zawila-duADlJvRI7Y-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/deep-blue-waifu.png
+/home/maker/Pictures/wallpapers/flowers/emre-EfyQXFzu8Nw-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/evie-s-MicqqGyDQ6w-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/francisco-moreno-Yp8s2MLTGJE-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/gaspar-zaldo-yyjuLAenJXk-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/gilberto-olimpio-Hfh8viYL9kA-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/giuseppe-doto-mFK2hnYFvVQ-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/inga-shcheglova-CIZvO8VpGFo-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/joey-huang-VzIKITZA-N0-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/marivi-pazos-4kX1uoAAohY-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/markus-spiske-XQZ76LwmTAE-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/nikhil-kumar-JdPHvI7VF0o-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/pedro-saraiva-vvoMJresXM0-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/photo-1444912517131-2a1c46cb761f.jpg
+/home/maker/Pictures/wallpapers/flowers/photo-1493744493046-8ae80dca89eb.jpg
+/home/maker/Pictures/wallpapers/flowers/reynardo-etenia-wongso-BYIf3XanizQ-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/tabitha-turner-BJ6b1T41MeQ-unsplash.jpg
+/home/maker/Pictures/wallpapers/flowers/xuan-nguyen-_fjcWT7LZPA-unsplash.jpg
+/home/maker/Pictures/wallpapers/everforest/3e6db363-7ac0-4398-8956-a36a3185fa0d.jpg

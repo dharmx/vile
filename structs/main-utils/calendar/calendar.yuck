@@ -49,6 +49,8 @@
        :halign "start"
        :hexpand true
        (label :text " ${CALWEA}"
+              :limit-width 4
+              :show_truncated false
               :class "cal-lb cal-wea")
        (label :text " ${CALINBOX}"
               :class "cal-lb cal-inb")

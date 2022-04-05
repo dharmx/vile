@@ -1,26 +1,27 @@
 #!/usr/bin/env bash
 
-color0='#2e3440'
-color8='#434C5E'
-color1='#BF616A'
-color9='#D08770'
-color2='#A3BE8C'
-color10='#A3BE8C'
-color3='#EBCB8B'
-color11='#EBCB8B'
-color4='#5E81AC'
-color12='#81A1C1'
-color5='#B48EAD'
-color13='#B48EAD'
-color6='#88C0D0'
-color14='#8FBCBB'
-color7='#d8dee9'
-color15='#ECEFF4'
+color0='#23242A'
+color8='#949494'
+color1='#f87070'
+color9='#f87070'
+color2='#79dcaa'
+color10='#36c692'
+color3='#ffe59e'
+color11='#ffe59e'
+color4='#7ab0df'
+color12='#7ab0df'
+color5='#c397d8'
+color13='#b77ee0'
+color6='#70c0ba'
+color14='#54ced6'
+color7='#d4d4d5'
+color15='#ffffff'
+
 
 ## Files and cmd
 FILE="$XDG_CACHE_HOME/launch_lock.eww"
 CONFIG="$XDG_CONFIG_HOME/eww/structs/screen-lock"
-LOCKSCREEN_WALL="$XDG_CONFIG_HOME/eww/structs/screen-lock/images/backgrounds/ign-cementary-res-blurred.png"
+LOCKSCREEN_WALL="$XDG_CONFIG_HOME/eww/structs/screen-lock/assets/shuffle/backgrounds/background-night.jpg"
 
 DEFAULT_DPMS=$(xset q | awk '/^[[:blank:]]*DPMS is/ {print $(NF)}')
 LOCK_TIMEOUT=5 ### In Seconds
