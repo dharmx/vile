@@ -11,7 +11,6 @@ import sys
 from imaplib import IMAP4_SSL
 from os import getenv
 from socket import gaierror
-
 from dotenv import load_dotenv
 
 load_dotenv(f"{getenv('XDG_CONFIG_HOME')}/eww/structs/side-utils/.email-env")
