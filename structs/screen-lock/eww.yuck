@@ -1,5 +1,0 @@
-(include "user/user.yuck")
-(include "system/system.yuck")
-(include "time/time.yuck")
-
-; vim:ft=yuck
