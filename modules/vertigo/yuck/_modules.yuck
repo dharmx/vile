@@ -13,8 +13,11 @@
 (defwidget _revealex [revealon]
   (revealer :reveal revealon :transition "slidedown" :class "vertigo-revealer"
     (box :orientation "vertical" :class "vertigo-reveal-box"
-      (_label :text vertigo_redshift :tooltip "nightmode" :button-class "vertigo-nightmode-button") 
-      (_label :text vertigo_dunst :tooltip "notify" :button-class "vertigo-notify-button")
+      (_label :text vertigo_redshift :tooltip "nightmode" 
+              :L "[ $(pidof redshift) ] && pkill redshift || redshift &"
+              :button-class "vertigo-nightmode-button") 
+      (_label :text vertigo_dunst :tooltip "notify" :button-class "vertigo-notify-button"
+              :L "[ $(dunstctl is-paused) = false ] && dunstctl set-paused true || dunstctl set-paused false")
       (_label :text "" :tooltip "todo" :button-class "vertigo-todo-button"))))
 
 (defwidget _time [format_first format_second ?tooltip ?M ?L ?R ?button-class]
