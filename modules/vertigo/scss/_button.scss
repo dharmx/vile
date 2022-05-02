@@ -1,0 +1,228 @@
+.vertigo-button {
+  font-size: 15;
+  padding: 1.05em 0 1.05em 0;
+  margin: 0 1em 1em 1em;
+  border-radius: 15%;
+}
+
+.vertigo-workspace-plus-button {
+  border-radius: 50%;
+  background-color: $color00;
+}
+
+.vertigo-workspace-plus-button label {
+  background-color: $color00;
+  color: $color01;
+  border-radius: 55%;
+}
+
+.vertigo-workspace-plus-button:hover {
+  background-color: $color01;
+}
+
+.vertigo-workspace-plus-button:hover label {
+  background-color: $color01;
+  color: $color00;
+}
+
+.vertigo-workspace-local {
+  border-radius: 50%;
+}
+
+.vertigo-workspace-local label {
+  color: $color02;
+  border-radius: 55%;
+}
+
+.vertigo-workspace-local:hover {
+  background-color: $color02;
+}
+
+.vertigo-workspace-local:hover label {
+  background-color: $color02;
+  color: $color00;
+}
+
+.vertigo-workspace-focused {
+  background-color: $color00;
+  border-radius: 50%;
+}
+
+.vertigo-workspace-focused label {
+  color: $color03;
+  background-color: $color00;
+  border-radius: 55%;
+}
+
+.vertigo-workspace-focused:hover {
+  background-color: $color03;
+}
+
+.vertigo-workspace-focused:hover label {
+  color: $color00;
+  background-color: $color03;
+}
+
+.vertigo-workspace-urgent {
+  border-radius: 50%;
+  background-color: $color01;
+}
+
+.vertigo-workspace-urgent label {
+  color: $color00;
+  background-color: $color01;
+  border-radius: 55%;
+}
+
+.vertigo-workspace-urgent:hover {
+  background-color: $color00;
+}
+
+.vertigo-workspace-urgent:hover label {
+  background-color: $color00;
+  color: $color01;
+}
+
+.vertigo-workspace-occupied {
+  background-color: $color00;
+  border-radius: 50%;
+}
+
+.vertigo-workspace-occupied label {
+  color: $color05;
+  background-color: $color00;
+  border-radius: 55%;
+}
+
+.vertigo-workspace-occupied:hover {
+  background-color: $color05;
+}
+
+.vertigo-workspace-occupied:hover label {
+  background-color: $color05;
+  color: $color00;
+}
+
+.vertigo-logo-button {
+  margin-top: 1em;
+  background-color: $color02;
+}
+
+.vertigo-logo-button:hover {
+  border-radius: 50%;
+}
+
+.vertigo-logo-button:hover label {
+  border-radius: 50%;
+}
+
+.vertigo-logo-button label {
+  background-color: $color02;
+  color: $color00;
+}
+
+.vertigo-search-button {
+  background-color: $color00;
+}
+
+.vertigo-search-button label {
+  background-color: $color00;
+  color: $color04;
+}
+
+.vertigo-search-button:hover {
+  background-color: $color04;
+}
+
+.vertigo-search-button:hover label {
+  background-color: $color04;
+  color: $color00;
+}
+
+.vertigo-volume-button label {
+  color: $color13;
+}
+
+.vertigo-volume-button:hover {
+  background-color: $color13;
+}
+
+.vertigo-volume-button:hover label {
+  color: $color00;
+  background-color: $color13;
+}
+
+.vertigo-battery-button {
+  color: $color01;
+}
+
+.vertigo-battery-button label {
+  color: $color01;
+}
+
+.vertigo-battery-button:hover {
+  background-color: $color01;
+}
+
+.vertigo-battery-button:hover label {
+  background-color: $color01;
+  color: $color00;
+}
+
+.vertigo-time-button {
+  background-color: $color00;
+}
+
+.vertigo-time-button box label {
+  background-color: $color00;
+  font-size: 1.5em;
+  font-weight: 800;
+}
+
+.vertigo-time-button:hover {
+  background-color: $color12;
+}
+
+.vertigo-time-button:hover box label {
+  background-color: $color12;
+  color: $color00;
+}
+
+.vertigo-time-format-first {
+  color: $color12;
+}
+
+.vertigo-time-format-second {
+  color: $color02;
+}
+
+.vertigo-todo-button, 
+.vertigo-notify-button {
+  color: $color01;
+}
+
+.vertigo-nightmode-button {
+  color: $color03;
+}
+
+.vertigo-todo-button:hover, 
+.vertigo-notify-button:hover, 
+.vertigo-nightmode-button:hover {
+  background-color: $color00;
+}
+
+.vertigo-todo-button:hover label, 
+.vertigo-notify-button:hover label, 
+.vertigo-nightmode-button:hover label {
+  background-color: $color00;
+  color: $color12;
+}
+
+.vertigo-profile-button,
+.vertigo-profile-image {
+  margin-bottom: 0.8em;
+  margin-top: 0.5em;
+  padding: 0;
+}
+
+// vim:ft=scss

@@ -1,0 +1,27 @@
+(defwidget _profile [path size ?tooltip ?button-class ?image-class ?M ?L ?R]
+  (button :onmiddleclick M :onclick L :onrightclick R :timeout "2s" :tooltip tooltip
+          :class "vertigo-button ${button-class}"
+    (image :path path :image-width size :class "vertigo-image ${image-class}")))
+
+(defwidget _label [text ?tooltip ?valign ?vexpand ?button-class ?label-class ?M ?L ?R]
+  (button :onmiddleclick M :onclick L :onrightclick R :vexpand vexpand :valign valign
+          :class "vertigo-button ${button-class}" :tooltip tooltip
+    (label :text text :limit-width 2 :class "vertigo-label ${label-class}")))
+
+(defwidget _workspaces [] (literal :content vertigo_workspaces))
+
+(defwidget _revealex [revealon]
+  (revealer :reveal revealon :transition "slidedown" :class "vertigo-revealer"
+    (box :orientation "vertical" :class "vertigo-reveal-box"
+      (_label :text vertigo_redshift :tooltip "nightmode" :button-class "vertigo-nightmode-button") 
+      (_label :text vertigo_dunst :tooltip "notify" :button-class "vertigo-notify-button")
+      (_label :text "" :tooltip "todo" :button-class "vertigo-todo-button"))))
+
+(defwidget _time [format_first format_second ?tooltip ?M ?L ?R ?button-class]
+  (button :onmiddleclick M :onclick L :onrightclick R
+          :class "vertigo-button ${button-class}" :tooltip tooltip
+    (box :orientation "vertical" 
+      (label :text format_first :class "vertigo-time-format-first") 
+      (label :text format_second :class "vertigo-time-format-second"))))
+
+;; vim:ft=yuck
