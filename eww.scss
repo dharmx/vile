@@ -34,6 +34,7 @@ $shade11: #121214;
 * {
   all: unset;
   background-color: $background;
+  font-family: "feather", "Iosevka Nerd Font", sans-serif;
 }
 
 @import "./modules/vertigo/scss/_button.scss";

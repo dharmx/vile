@@ -1,6 +1,8 @@
-(deflisten vertigo_workspaces "./script/workspaces.zsh")
+(deflisten vertigo_workspaces "./script/workspaces.zsh subscribe")
 
 (defvar vertigo_revealex false)
+(defvar vertigo_remove "./script/workspaces.zsh remove")
+(defvar vertigo_create "./script/workspaces.zsh create")
 (defvar vertigo_volume_toggle "./script/volume.zsh --toggle")
 (defvar vertigo_profile "./assets/profile.png")
 

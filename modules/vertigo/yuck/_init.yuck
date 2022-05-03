@@ -9,8 +9,8 @@
   (box :spacing 0 :orientation "vertical" :space-evenly false
     (_label :text "" :tooltip "logo" :button-class "vertigo-logo-button")
     (_label :text "" :tooltip "find" :button-class "vertigo-search-button" :L "rofi -show &") (_workspaces)
-    (_label :text "" :tooltip "logo" :button-class "vertigo-workspace-plus-button"
-            :L "bspc monitor --add-desktops 1" :R "bspc desktop --remove")
+    (_label :text "" :tooltip "logo" :button-class "vertigo-workspace-plus-button" ;; NOTE: use a script for this
+            :L vertigo_create :R vertigo_remove)
     (_label :text vertigo_volume_status :L vertigo_volume_toggle :vexpand true :valign "end"
             :tooltip "volume: ${vertigo_volume_level}" :button-class "vertigo-volume-button")
     (_label :text vertigo_battery :tooltip "battery: ${vertigo_battery}" 

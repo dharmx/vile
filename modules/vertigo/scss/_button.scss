@@ -13,7 +13,7 @@
 .vertigo-workspace-plus-button label {
   background-color: $color00;
   color: $color01;
-  border-radius: 55%;
+  border-radius: 50%;
 }
 
 .vertigo-workspace-plus-button:hover {
@@ -26,12 +26,13 @@
 }
 
 .vertigo-workspace-local {
+  font-size: 14;
   border-radius: 50%;
 }
 
 .vertigo-workspace-local label {
   color: $color02;
-  border-radius: 55%;
+  border-radius: 50%;
 }
 
 .vertigo-workspace-local:hover {
@@ -51,7 +52,7 @@
 .vertigo-workspace-focused label {
   color: $color03;
   background-color: $color00;
-  border-radius: 55%;
+  border-radius: 50%;
 }
 
 .vertigo-workspace-focused:hover {
@@ -71,7 +72,7 @@
 .vertigo-workspace-urgent label {
   color: $color00;
   background-color: $color01;
-  border-radius: 55%;
+  border-radius: 50%;
 }
 
 .vertigo-workspace-urgent:hover {
@@ -91,7 +92,7 @@
 .vertigo-workspace-occupied label {
   color: $color05;
   background-color: $color00;
-  border-radius: 55%;
+  border-radius: 50%;
 }
 
 .vertigo-workspace-occupied:hover {
