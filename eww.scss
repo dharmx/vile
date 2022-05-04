@@ -1,39 +1,39 @@
-$background: #121519;
-$foreground: #d4d4d5;
+$base00: #101317;
+$base01: #171C21;
+$base02: #1c2026;
+$base03: #20252b;
 
-$color00: #23242A;
-$color08: #19191C;
-$color01: #f87070;
-$color09: #f87070;
-$color02: #79dcaa;
-$color10: #36c692;
-$color03: #ffe59e;
-$color11: #ffe59e;
-$color04: #6ba0ce;
-$color12: #7ab0df;
-$color05: #c397d8;
-$color13: #b77ee0;
-$color06: #54ced6;
-$color14: #70c0ba;
-$color07: #e0e0e0;
-$color15: #ffffff;
+$base04: #949494;
+$base05: #d4d4d5;
+$base06: #ffffff;
 
-$shade00: #353538;
-$shade01: #2d2d30;
+$base07: #54ced6;
+$base08: #70c0ba;
+$base09: #7ab0df;
+$base10: #b77ee0;
+
+$base11: #f87070;
+$base12: #36c692;
+$base13: #ffe59e;
+$base14: #79dcaa;
+$base15: #c397d8;
+
+$shade00: #333c44;
+$shade01: #262d33;
 $shade02: #252528;
-$shade03: #1f1f23;
+$shade03: #1b2026;
 $shade04: #1e1e21;
-$shade05: #212123;
-$shade06: #17171b;
-$shade07: #19191c;
-$shade08: #1a1a1F;
-$shade09: #151519;
+$shade05: #171b20;
+$shade06: #14171c;
+$shade07: #151a1e;
+$shade08: #14181c;
+$shade09: #121519;
 $shade10: #141416;
 $shade11: #121214;
 
 * {
   all: unset;
-  background-color: $background;
+  background-color: $base00;
   font-family: "feather", "Iosevka Nerd Font", sans-serif;
 }
 

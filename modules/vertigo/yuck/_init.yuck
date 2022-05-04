@@ -1,7 +1,7 @@
 (include "./modules/vertigo/yuck/_env.yuck")
 (include "./modules/vertigo/yuck/_modules.yuck")
 
-(defwindow vertigo :stacking "bg" :windowtype "dock"
+(defwindow vertigo :stacking "fg" :windowtype "dock"
   :geometry (geometry :width "4%" :height "100%" :anchor "left center")
   :reserve (struts :distance "4%" :side "left") (vertigo_layout))
 
@@ -9,7 +9,7 @@
   (box :spacing 0 :orientation "vertical" :space-evenly false
     (_label :text "" :tooltip "logo" :button-class "vertigo-logo-button")
     (_label :text "" :tooltip "find" :button-class "vertigo-search-button" :L "rofi -show &") (_workspaces)
-    (_label :text "" :tooltip "logo" :button-class "vertigo-workspace-plus-button" ;; NOTE: use a script for this
+    (_label :text "" :tooltip "logo" :button-class "vertigo-workspace-plus-button"
             :L vertigo_create :R vertigo_remove)
     (_label :text vertigo_volume_status :L vertigo_volume_toggle :vexpand true :valign "end"
             :tooltip "volume: ${vertigo_volume_level}" :button-class "vertigo-volume-button")
