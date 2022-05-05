@@ -7,8 +7,9 @@
 
 (defwidget vertigo_layout []
   (box :spacing 0 :orientation "vertical" :space-evenly false
-    (_label :text "" :tooltip "logo" :button-class "vertigo-logo-button")
-    (_label :text "" :tooltip "find" :button-class "vertigo-search-button" :L "rofi -show &") (_workspaces)
+    (literal :content vertigo_nodes)
+    (_label :text "" :tooltip "find" :button-class "vertigo-search-button" :L "rofi -show &")
+    (literal :content vertigo_workspaces)
     (_label :text "" :tooltip "logo" :button-class "vertigo-workspace-plus-button"
             :L vertigo_create :R vertigo_remove)
     (_label :text vertigo_volume_status :L vertigo_volume_toggle :vexpand true :valign "end"

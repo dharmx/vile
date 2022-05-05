@@ -8,8 +8,6 @@
           :class "vertigo-button ${button-class}" :tooltip tooltip
     (label :text text :limit-width 2 :class "vertigo-label ${label-class}")))
 
-(defwidget _workspaces [] (literal :content vertigo_workspaces))
-
 (defwidget _revealex [revealon]
   (revealer :reveal revealon :transition "slidedown" :class "vertigo-revealer"
     (box :orientation "vertical" :class "vertigo-reveal-box"
@@ -17,7 +15,8 @@
               :L "[ $(pidof redshift) ] && pkill redshift || redshift &"
               :button-class "vertigo-nightmode-button") 
       (_label :text vertigo_dunst :tooltip "notify" :button-class "vertigo-notify-button"
-              :L "[ $(dunstctl is-paused) = false ] && dunstctl set-paused true || dunstctl set-paused false")
+              :L "[ $(dunstctl is-paused) = false ] && dunstctl set-paused true || dunstctl set-paused false"
+              :M "[ $(eww windows | grep \*disclose) ] && eww close disclose || eww open disclose")
       (_label :text "" :tooltip "todo" :button-class "vertigo-todo-button"))))
 
 (defwidget _time [format_first format_second ?tooltip ?M ?L ?R ?button-class]

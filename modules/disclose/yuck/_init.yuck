@@ -1,0 +1,16 @@
+(include "./modules/disclose/yuck/_env.yuck")
+(include "./modules/disclose/yuck/_modules.yuck")
+
+(defwindow disclose :stacking "fg" :windowtype "normal" :wm-ignore true
+  :geometry (geometry :x 76 :width "26%" :height "100%" :anchor "left center") 
+  (disclose_layout))
+
+(defwidget disclose_layout []
+  (box :orientation "vertical"
+    (scroll :vscroll true (box :orientation "vertical" :class "disclose-box" :spacing 3 
+        (for item in {disclose_history.data[0]} (_card :size 70 :class "disclose-card"
+          :path {item.icon_path.data == "" ? "./assets/notify.svg" : item.icon_path.data}
+          :summary {item.summary.data == "" ? "Summary not available." : item.summary.data}
+          :body {item.body.data == "" ? "Body not available." : item.body.data}))))))
+
+;; vim:ft=yuck

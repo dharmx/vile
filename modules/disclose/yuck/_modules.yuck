@@ -1,0 +1,8 @@
+(defwidget _card [?class path size summary body]
+  (box :space-evenly false :class class
+    (image :path path :image-width size :image-height size)
+    (box :space-evenly false :orientation "vertical"
+      (label :limit-width 30 :wrap true :text summary) 
+      (label :limit-width 100 :wrap true :text body))))
+
+;; vim:ft=yuck

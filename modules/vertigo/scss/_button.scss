@@ -106,7 +106,60 @@
 
 .vertigo-logo-button {
   margin-top: 1em;
+}
+
+.vertigo-logo-button-tiled {
   background-color: $base14;
+}
+
+.vertigo-logo-button-tiled label {
+  background-color: $base14;
+  color: $base01;
+}
+
+.vertigo-logo-button-pseudo {
+  background-color: $base13;
+}
+
+.vertigo-logo-button-pseudo label {
+  background-color: $base13;
+  color: $base01;
+}
+
+.vertigo-logo-button-full {
+  background-color: $base12;
+}
+
+.vertigo-logo-button-full label {
+  background-color: $base12;
+  color: $base01;
+}
+
+.vertigo-logo-button-float {
+  background-color: $base11;
+}
+
+.vertigo-logo-button-float label {
+  background-color: $base11;
+  color: $base01;
+}
+
+.vertigo-logo-button-other {
+  background-color: $base09;
+}
+
+.vertigo-logo-button-other label {
+  background-color: $base09;
+  color: $base01;
+}
+
+.vertigo-logo-button-monocle {
+  background-color: $base10;
+}
+
+.vertigo-logo-button-monocle label {
+  background-color: $base10;
+  color: $base01;
 }
 
 .vertigo-logo-button:hover {
@@ -115,11 +168,6 @@
 
 .vertigo-logo-button:hover label {
   border-radius: 50%;
-}
-
-.vertigo-logo-button label {
-  background-color: $base14;
-  color: $base01;
 }
 
 .vertigo-search-button {

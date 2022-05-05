@@ -1,0 +1,3 @@
+(defpoll disclose_history :interval "10s" "dunstctl history")
+
+;; vim:ft=yuck

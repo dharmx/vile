@@ -4,7 +4,7 @@ function _make_button() {
   print "(button :class 'vertigo-button vertigo-workspace vertigo-workspace-"$2"' :tooltip 'workspace: "$1" state: "$2"' :onclick 'bspc desktop --focus "$3"' '"$1"')"
 }
 
-function _wrap_yuck() {
+function _wrap_desktop_yuck() {
   local buffered=""
   alias query="bspc query --names --desktops --desktop"
   # newlined str -> spaced str -> array, eg: "1\n2\n3" -> "1 2 3" -> (1 2 3)
@@ -35,10 +35,38 @@ function _wrap_yuck() {
 }
 
 function _make_box() {
-  print "(box :orientation 'vertical' :class 'vertigo-box vertigo-desktop' :space-evenly true :tooltip 'workspaces' "$(_wrap_yuck)")"
+  print "(scroll :height 370 (box :orientation 'vertical' :class 'vertigo-box vertigo-desktop' :space-evenly false :tooltip 'workspaces' "$(_wrap_desktop_yuck)"))"
 }
 
-function subscribe() {
+function _make_label() {
+  print "(button :onmiddleclick 'bspc desktop --layout next' :class 'vertigo-button vertigo-logo-button vertigo-logo-button-"$3"' :tooltip 'node: "$2"' (label :text '"$1"' :limit-width 2))"
+}
+
+function _wrap_node_yuck() {
+  alias query="bspc query --nodes --node"
+  if [ $(query .focused.tiled) ]; then 
+    if [ $(bspc query -T -d | jq -r .layout) = monocle ]; then
+      print $(_make_label "" "monocle" "monocle")
+      return 0
+    fi
+    print $(_make_label "" "tiled" "tiled")
+  elif [ $(query .focused.floating) ]; then 
+    print $(_make_label "" "float" "float")
+  elif [ $(query .focused.fullscreen) ]; then 
+    print $(_make_label "" "full" "full")
+  elif [ $(query .focused.pseudo_tiled) ]; then 
+    print $(_make_label "" "pseudo" "pseudo")
+  else 
+    print $(_make_label "" "other" "other")
+  fi
+  unalias query
+}
+
+function subscribe_node() {
+  _wrap_node_yuck && bspc subscribe report | while read -r _ do; _wrap_node_yuck done
+}
+
+function subscribe_desktop() {
   _make_box && bspc subscribe desktop node | while read -r _ do; _make_box done
 }
 
@@ -55,7 +83,8 @@ function remove() {
 }
 
 case $1 in
-  subscribe) subscribe ;;
+  subscribe_desktop) subscribe_desktop ;;
+  subscribe_node) subscribe_node ;;
   create) create ;;
   remove) remove ;;
   *) print "Invalid option!" ;;
