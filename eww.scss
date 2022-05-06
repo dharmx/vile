@@ -33,8 +33,7 @@ $shade11: #121214;
 
 * {
   all: unset;
-  background-color: $base00;
-  font-family: "feather", "Iosevka Nerd Font", sans-serif;
+  transition: 200ms ease;
 }
 
 @import "./modules/vertigo/scss/_button.scss";

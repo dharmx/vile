@@ -6,11 +6,29 @@
   (disclose_layout))
 
 (defwidget disclose_layout []
-  (box :orientation "vertical"
-    (scroll :vscroll true (box :orientation "vertical" :class "disclose-box" :spacing 3 
-        (for item in {disclose_history.data[0]} (_card :size 70 :class "disclose-card"
-          :path {item.icon_path.data == "" ? "./assets/notify.svg" : item.icon_path.data}
-          :summary {item.summary.data == "" ? "Summary not available." : item.summary.data}
-          :body {item.body.data == "" ? "Body not available." : item.body.data}))))))
+  (box :orientation "vertical" :space-evenly false
+    (box :space-evenly false :class "disclose-headers" :hexpand true
+      (label :text "Notifications" :class "disclose-headers-label" :halign "start" :hexpand true) 
+      (button :onclick "pkill dunst" :class "disclose-headers-clear" :halign "end" "Clear"))
+
+    (scroll :height 860 :vscroll true (box :orientation "vertical" 
+            :class "disclose-box" :spacing 3
+      (for item in {disclose_history.data[0]} (_card :class "disclose-card" :SL "${item.id.data}"
+        :summary {item.summary.data == "" ? "Summary not available." : item.summary.data}
+        :body {item.body.data == "" ? "Body not available." : item.body.data}))))
+
+    (box :class "disclose-count-box" :valign "end" :vexpand true
+      (button :class "disclose-count-button disclose-count-history" :valign "end"
+        (box :space-evenly false :halign "center" :spacing 5 
+          (label :class "disclose-count-icon disclose-count-icon-history" :text "") 
+          (label :text disclose_count_history)))
+      (button :class "disclose-count-button disclose-count-displayed"
+        (box :space-evenly false :halign "center" :spacing 5 
+          (label :class "disclose-count-icon disclose-count-icon-displayed" :text "")
+          (label :text disclose_count_displayed)))
+      (button :class "disclose-count-button disclose-count-waiting"
+        (box :space-evenly false :halign "center" :spacing 5 
+          (label :class "disclose-count-icon disclose-count-icon-waiting" :text "") 
+          (label :text disclose_count_waiting))))))
 
 ;; vim:ft=yuck

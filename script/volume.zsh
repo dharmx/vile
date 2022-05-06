@@ -3,13 +3,7 @@
 ## if the sound is muted then this function will return an image path of a muted sound icon
 ## otherwise it'll return an image of an un-muted sound
 function status() {
-    local MUTED=$(pacmd list-sinks | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
-
-    if [[ "$MUTED" == "yes" ]]; then
-        echo ""
-    else
-        echo "" 
-    fi
+    print $(pacmd list-sinks | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
 }
 
 ## returns the volume level of the sound

@@ -1,277 +1,108 @@
-.vertigo-button {
-  font-size: 15;
-  padding: 1.05em 0 1.05em 0;
-  margin: 0 1em 1em 1em;
-  border-radius: 15%;
+.vertigo {
+  background-color: $base00;
+  font-family: "feather", "Iosevka", sans-serif;
+  padding: 0.8em 0.8em 0 0.8em;
 }
+
+.vertigo-logo-button {
+  padding: 0.57em 0 0.57em 0;
+  margin-bottom: 0.5em;
+  font-size: 25;
+  color: $base02;
+}
+
+.vertigo-logo-button-tiled { background-color: $base14; }
+.vertigo-logo-button-monocle { background-color: $base11; }
+.vertigo-logo-button-float { background-color: $base13; }
+.vertigo-logo-button-pseudo { background-color: $base15; }
+.vertigo-logo-button-full { background-color: $base09; }
+.vertigo-logo-button-other { background-color: $base08; }
+
+.vertigo-search-button {
+  padding: 0.57em 0 0.57em 0;
+  background-color: $base09;
+  font-size: 25;
+  color: $base02;
+}
+
+.vertigo-search-button:hover,
+.vertigo-logo-button:hover {
+  background-color: $base07;
+}
+
+.vertigo-workspace { background-color: $base01; }
+.vertigo-workspace:first-child { padding-top: 0.3em; }
+.vertigo-workspace:last-child { border-radius: 0 0 50% 0; }
+
+.vertigo-workspace label { 
+  font-size: 25;
+  padding: 0.57em 0 0.57em 0; 
+}
+
+.vertigo-workspace:hover { background-color: $base03; }
+
+.vertigo-workspace-urgent { color: $base11; }
+.vertigo-workspace-occupied { color: $base13; }
+.vertigo-workspace-local { color: $base04; }
+.vertigo-workspace-focused { 
+  color: $base14; 
+  background-color: $base02;
+}
+
+.vertigo-battery-button {
+  background-color: $base11;
+  border-radius: 50% 0 0 0;
+  font-size: 25;
+  padding: 0.57em 0 0.57em 0; 
+  color: $base01;
+}
+
+.vertigo-battery-button:hover { opacity: 0.85; }
+
+.vertigo-time-button {
+  font-size: 26;
+  background-color: $base01;
+  padding: 0.4em 0 0.4em 0;
+}
+
+.vertigo-time-format-first { font-weight: bold; color: $base15; }
+.vertigo-time-format-second { color: $base14; }
+
+.vertigo-reveal-box button { 
+  padding: 0.57em 0 0.57em 0;
+  font-size: 26;
+}
+
+.vertigo-volume-on { background-color: $shade01; color: $base13; }
+.vertigo-volume-off { background-color: $shade01; color: $base11; }
+.vertigo-volume-on:hover { background-color: $base13; color: $shade01; }
+.vertigo-volume-off:hover { background-color: $base11; color: $shade01; }
+
+.vertigo-nightmode-on { background-color: $shade01; color: $base09; }
+.vertigo-nightmode-off { background-color: $shade01; color: $base13; }
+.vertigo-nightmode-on:hover { background-color: $base09; color: $shade01; }
+.vertigo-nightmode-off:hover { background-color: $base13; color: $shade01; }
+
+.vertigo-notify-on { background-color: $base02; color: $base15; }
+.vertigo-notify-off { background-color: $base02; color: $base11; }
+.vertigo-notify-on:hover { background-color: $base15; color: $base02; }
+.vertigo-notify-off:hover { background-color: $base11; color: $base02; }
+
+.vertigo-todo-button { background-color: $base01; color: $base07; }
+.vertigo-todo-button:hover { background-color: $base07; color: $base01; }
 
 .vertigo-workspace-plus-button {
-  border-radius: 50%;
-  background-color: $base01;
-}
-
-.vertigo-workspace-plus-button label {
-  background-color: $base01;
   color: $base11;
-  border-radius: 50%;
+  background-color: $base02;
 }
 
 .vertigo-workspace-plus-button:hover {
   background-color: $base11;
+  color: $base02;
 }
 
-.vertigo-workspace-plus-button:hover label {
-  background-color: $base11;
-  color: $base01;
-}
-
-.vertigo-workspace-local {
-  font-size: 14;
-  border-radius: 50%;
-}
-
-.vertigo-workspace-local label {
-  color: $base14;
-  border-radius: 50%;
-}
-
-.vertigo-workspace-local:hover {
-  background-color: $base14;
-}
-
-.vertigo-workspace-local:hover label {
-  background-color: $base14;
-  color: $base01;
-}
-
-.vertigo-workspace-focused {
-  background-color: $base01;
-  border-radius: 50%;
-}
-
-.vertigo-workspace-focused label {
-  color: $base13;
-  background-color: $base01;
-  border-radius: 50%;
-}
-
-.vertigo-workspace-focused:hover {
-  background-color: $base13;
-}
-
-.vertigo-workspace-focused:hover label {
-  color: $base01;
-  background-color: $base13;
-}
-
-.vertigo-workspace-urgent {
-  border-radius: 50%;
-  background-color: $base11;
-}
-
-.vertigo-workspace-urgent label {
-  color: $base01;
-  background-color: $base11;
-  border-radius: 50%;
-}
-
-.vertigo-workspace-urgent:hover {
-  background-color: $base01;
-}
-
-.vertigo-workspace-urgent:hover label {
-  background-color: $base01;
-  color: $base11;
-}
-
-.vertigo-workspace-occupied {
-  background-color: $base01;
-  border-radius: 50%;
-}
-
-.vertigo-workspace-occupied label {
-  color: $base15;
-  background-color: $base01;
-  border-radius: 50%;
-}
-
-.vertigo-workspace-occupied:hover {
-  background-color: $base15;
-}
-
-.vertigo-workspace-occupied:hover label {
-  background-color: $base15;
-  color: $base01;
-}
-
-.vertigo-logo-button {
-  margin-top: 1em;
-}
-
-.vertigo-logo-button-tiled {
-  background-color: $base14;
-}
-
-.vertigo-logo-button-tiled label {
-  background-color: $base14;
-  color: $base01;
-}
-
-.vertigo-logo-button-pseudo {
-  background-color: $base13;
-}
-
-.vertigo-logo-button-pseudo label {
-  background-color: $base13;
-  color: $base01;
-}
-
-.vertigo-logo-button-full {
-  background-color: $base12;
-}
-
-.vertigo-logo-button-full label {
-  background-color: $base12;
-  color: $base01;
-}
-
-.vertigo-logo-button-float {
-  background-color: $base11;
-}
-
-.vertigo-logo-button-float label {
-  background-color: $base11;
-  color: $base01;
-}
-
-.vertigo-logo-button-other {
-  background-color: $base09;
-}
-
-.vertigo-logo-button-other label {
-  background-color: $base09;
-  color: $base01;
-}
-
-.vertigo-logo-button-monocle {
-  background-color: $base10;
-}
-
-.vertigo-logo-button-monocle label {
-  background-color: $base10;
-  color: $base01;
-}
-
-.vertigo-logo-button:hover {
-  border-radius: 50%;
-}
-
-.vertigo-logo-button:hover label {
-  border-radius: 50%;
-}
-
-.vertigo-search-button {
-  background-color: $base01;
-}
-
-.vertigo-search-button label {
-  background-color: $base01;
-  color: $base09;
-}
-
-.vertigo-search-button:hover {
-  background-color: $base09;
-}
-
-.vertigo-search-button:hover label {
-  background-color: $base09;
-  color: $base01;
-}
-
-.vertigo-volume-button label {
-  color: $base10;
-}
-
-.vertigo-volume-button:hover {
-  background-color: $base10;
-}
-
-.vertigo-volume-button:hover label {
-  color: $base01;
-  background-color: $base10;
-}
-
-.vertigo-battery-button {
-  color: $base11;
-}
-
-.vertigo-battery-button label {
-  color: $base11;
-}
-
-.vertigo-battery-button:hover {
-  background-color: $base11;
-}
-
-.vertigo-battery-button:hover label {
-  background-color: $base11;
-  color: $base01;
-}
-
-.vertigo-time-button {
-  background-color: $base01;
-}
-
-.vertigo-time-button box label {
-  background-color: $base01;
-  font-size: 1.5em;
-  font-weight: 800;
-}
-
-.vertigo-time-button:hover {
-  background-color: $base09;
-}
-
-.vertigo-time-button:hover box label {
-  background-color: $base09;
-  color: $base01;
-}
-
-.vertigo-time-format-first {
-  color: $base09;
-}
-
-.vertigo-time-format-second {
-  color: $base14;
-}
-
-.vertigo-todo-button, 
-.vertigo-notify-button {
-  color: $base11;
-}
-
-.vertigo-nightmode-button {
-  color: $base13;
-}
-
-.vertigo-todo-button:hover, 
-.vertigo-notify-button:hover, 
-.vertigo-nightmode-button:hover {
-  background-color: $base01;
-}
-
-.vertigo-todo-button:hover label, 
-.vertigo-notify-button:hover label, 
-.vertigo-nightmode-button:hover label {
-  background-color: $base01;
-  color: $base09;
-}
-
-.vertigo-profile-button,
-.vertigo-profile-image {
-  margin-bottom: 0.8em;
-  margin-top: 0.5em;
-  padding: 0;
-}
+.vertigo-time-button:hover { background-color: $base03; color: $base01; }
+.vertigo-separator { color: $base03; }
+.vertigo-profile-button { margin: 0 0 1em 0; }
 
 // vim:ft=scss

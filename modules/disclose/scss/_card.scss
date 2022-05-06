@@ -1,15 +1,6 @@
-.disclose-card,
-.disclose-card box,
-.disclose-card label,
-.disclose-card image {
-  background-color: $shade08;
-  margin: 1em 1em 0 1em;
-  border-radius: 0.6em;
-  padding: 0.2em;
-}
-
-.disclose-box {
+.disclose {
   background-color: $shade09;
+  font-family: "feather", "Iosevka", sans-serif;
 }
 
 // vim:ft=scss

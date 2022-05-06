@@ -19,14 +19,14 @@ function _wrap_desktop_yuck() {
       if [[ ${_focused[(ie)$current]} -le ${#_focused} ]]; then 
         _local[$index]="" && state="focused"
       else
-        _local[$index]="" && state="occupied"
+        _local[$index]="" && state="occupied"
       fi
     elif [[ ${_urgent[(ie)$current]} -le ${#_urgent} ]]; then
-      _local[$index]="" && state="urgent"
+      _local[$index]="" && state="urgent"
     elif [[ ${_focused[(ie)$current]} -le ${#_focused} ]]; then 
       _local[$index]="" && state="focused"
     else
-      _local[$index]=$index && state="local"
+      _local[$index]="" && state="local"
     fi
     buffered+=$(_make_button $_local[$index] $state $index)
   done
@@ -57,7 +57,7 @@ function _wrap_node_yuck() {
   elif [ $(query .focused.pseudo_tiled) ]; then 
     print $(_make_label "" "pseudo" "pseudo")
   else 
-    print $(_make_label "" "other" "other")
+    print $(_make_label "" "other" "other")
   fi
   unalias query
 }
