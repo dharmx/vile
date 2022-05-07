@@ -17,6 +17,7 @@
 .vertigo-logo-button-pseudo { background-color: $base15; }
 .vertigo-logo-button-full { background-color: $base09; }
 .vertigo-logo-button-other { background-color: $base08; }
+.vertigo-logo-button:hover { opacity: 0.8; }
 
 .vertigo-search-button {
   padding: 0.57em 0 0.57em 0;
@@ -25,8 +26,7 @@
   color: $base02;
 }
 
-.vertigo-search-button:hover,
-.vertigo-logo-button:hover {
+.vertigo-search-button:hover {
   background-color: $base07;
 }
 

@@ -1,7 +1,6 @@
-(defpoll disclose_history :interval "10s" "dunstctl history")
-
-(defpoll disclose_count_displayed :interval "30s" "dunstctl count displayed")
-(defpoll disclose_count_history :interval "30s" "dunstctl count history")
-(defpoll disclose_count_waiting :interval "30s" "dunstctl count waiting")
+(defpoll disclose_history :interval "1s" "dunstctl history")
+(defpoll disclose_count_displayed :interval "1s" "dunstctl count displayed")
+(defpoll disclose_count_history :interval "1s" "dunstctl count history")
+(defpoll disclose_count_waiting :interval "1s" "dunstctl count waiting")
 
 ;; vim:ft=yuck
