@@ -1,12 +1,14 @@
 (defwidget _card [?class summary body ?SL ?M ?L ?R]
- (eventbox :onmiddleclick M :onclick L :onrightclick R :class "disclose-card-button"
-    (box :space-evenly false :orientation "vertical" :class class
+ (eventbox :onmiddleclick M :onclick L :onrightclick R 
+           :class "disclose-card-eventbox"
+    (box :orientation "vertical" :class class :space-evenly false :class "disclose-card-box"
       (box :space-evenly false
-        (label :limit-width 30 :wrap true :text summary :class "disclose-summary" 
+        (label :limit-width 35 :wrap true :text summary :class "disclose-summary" 
                :halign "start" :hexpand true)
         (button :onclick "dunstctl history-pop ${SL}" :class "disclose-card-notify-close" 
                 :halign "end" (label :text "")))
-
-      (label :limit-width 60 :halign "start" :wrap true :text body :class "disclose-body"))))
+      (label :text "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" 
+             :class "disclose-separator" :halign "center")
+      (label :limit-width 53 :halign "start" :wrap true :text body :class "disclose-body"))))
 
 ;; vim:ft=yuck

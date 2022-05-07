@@ -1,6 +1,75 @@
 .disclose {
   background-color: $shade09;
-  font-family: "feather", "Iosevka", sans-serif;
+  font-family: "feather", "Iosevka Nerd Font", sans-serif;
 }
+
+.disclose-headers {
+  padding: 2em 3em 0 2em;
+  color: $base05;
+}
+
+.disclose-headers-label {
+  font-size: 20;
+  font-weight: bold;
+  color: $base11;
+  opacity: 0.8;
+}
+
+.disclose-headers-clear { 
+  font-weight: bold;
+  padding: 0.5em;
+  border-radius: 10%;
+  color: $base09;
+}
+
+.disclose-headers-clear:hover { background-color: $base02; }
+.disclose-scroll-box { padding: 2em 1.5em 0 1.5em; }
+.disclose-card-eventbox { background-color: $base01; }
+.disclose-card-eventbox:hover { background-color: $base03; }
+.disclose-card-box { padding: 2em; }
+.disclose-separator { padding: 0 0 0 0; color: $shade00; }
+
+.disclose-summary {
+  font-weight: bold;
+  font-size: 17;
+  color: $base07;
+}
+
+.disclose-card-notify-close {
+  color: $base04;
+  border-radius: 50%;
+  margin-bottom: 0.3em;
+}
+
+.disclose-card-notify-close:hover { color: $base11; }
+.disclose-body { color: $base04; }
+.disclose-count-box { padding: 1em; }
+
+.disclose-count-button {
+  padding: 0.8em 0 0.8em 0;
+  font-size: 25;
+}
+
+.disclose-count-history {
+  background-color: $base14;
+  opacity: 0.75;
+  color: $base01;
+}
+
+.disclose-count-displayed {
+  background-color: $base09;
+  opacity: 0.75;
+  color: $base01;
+}
+
+.disclose-count-waiting {
+  background-color: $base11;
+  opacity: 0.75;
+  font-weight: bold;
+  color: $base01;
+}
+
+.disclose-count-button:hover { opacity: 1.0; }
+.disclose-count-icon { font-weight: bold; }
 
 // vim:ft=scss
