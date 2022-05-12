@@ -84,9 +84,9 @@
 }
 
 .disclose-circular-header {
-  margin-bottom: 0.8em;
   color: $shade00;
   font-weight: bolder;
+  background-color: $base09;
 }
 
 .disclose-circular label {
@@ -102,6 +102,10 @@
   color: $base09;
 }
 
+.disclose-critical-box {
+  background-color: $base02; 
+  margin: 0.6em 0.2em 0.65em 0.65em;
+}
 .disclose-bottom-button:hover { background-color: $normal; }
 .disclose-bottom-button-airplane { color: $base14; }
 .disclose-bottom-button-airplane:hover { background-color: $low; }

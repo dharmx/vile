@@ -16,17 +16,18 @@
 (defwidget _quick_notify_settings []
   (box :class "disclose-bottom-box"
     (box :orientation "vertical" :space-evenly false
-      (circular-progress :start-at 90 :class "disclose-circular" :value disclose_critical :thickness 50
-        (label :text "" :tooltip disclose_critical)) 
-      (label :text "Criticals" :class "disclose-circular-header"))
+      (box :class "disclose-critical-box" :orientation "vertical" :space-evenly false
+        (circular-progress :start-at 90 :class "disclose-circular" :value disclose_critical :thickness 50
+          (label :text "" :tooltip disclose_critical))
+        (label :text "Criticals" :class "disclose-circular-header")))
     (box :orientation "vertical" :spacing 10 :class "disclose-bottom-quick-box"
       (box :spacing 10
-        (button :onclick "./script/airplane.zsh toggle" 
-                :class "disclose-bottom-button disclose-bottom-button-airplane" disclose_airplane) 
-        (button :onclick "dunstctl history-pop" 
-                :class "disclose-bottom-button disclose-bottom-button-pop" "")) 
+        (button :onclick "./script/airplane.zsh toggle"
+                :class "disclose-bottom-button disclose-bottom-button-airplane" disclose_airplane)
+        (button :onclick "dunstctl history-pop"
+                :class "disclose-bottom-button disclose-bottom-button-pop" ""))
       (box :spacing 10
-        (button :onclick "./script/logger.zsh pop" :class "disclose-bottom-button" "") 
+        (button :onclick "./script/logger.zsh pop" :class "disclose-bottom-button" "")
         (button :onclick "./script/logger.zsh drop" :class "disclose-bottom-button" "")))))
 
 ;; vim:ft=yuck

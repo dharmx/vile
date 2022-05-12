@@ -63,7 +63,7 @@ function get_time_id() {
 }
 
 function get_crit_percent() {
-  local format='(([(.items[]|select(.urgency=="LOW"))]|length)/(.items|length))*100'
+  local format='(([(.items[]|select(.urgency=="CRITICAL"))]|length)/(.items|length))*100'
   local percent="$(cat ~/.cache/dunst.log.json | jq "$format")"
   print "$percent"
 }
