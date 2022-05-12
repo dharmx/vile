@@ -9,26 +9,14 @@
   (box :orientation "vertical" :space-evenly false
     (box :space-evenly false :class "disclose-headers" :hexpand true
       (label :text "Your notifications" :class "disclose-headers-label" :halign "start" :hexpand true) 
-      (button :onclick "pkill dunst" :class "disclose-headers-clear" :halign "end" "Clear all"))
+      (button :onclick "./script/logger.zsh clear" :class "disclose-headers-clear" :halign "end" "Clear all"))
 
-    (scroll :height 860 :vscroll true (box :orientation "vertical" 
+    (scroll :height 740 :vscroll true (box :orientation "vertical" 
             :class "disclose-scroll-box" :spacing 10 :space-evenly false
-      (for item in {disclose_history.data[0]} (_card :class "disclose-card" :SL "${item.id.data}"
-        :summary {item.summary.data == "" ? "Summary not available." : item.summary.data}
-        :body {item.body.data == "" ? "Body not available." : item.body.data}))))
-
-    (box :class "disclose-count-box" :valign "end" :vexpand true :spacing 10
-      (button :class "disclose-count-button disclose-count-history" :valign "end"
-        (box :space-evenly false :halign "center" :spacing 5 
-          (label :class "disclose-count-icon disclose-count-icon-history" :text "") 
-          (label :text disclose_count_history)))
-      (button :class "disclose-count-button disclose-count-displayed"
-        (box :space-evenly false :halign "center" :spacing 5 
-          (label :class "disclose-count-icon disclose-count-icon-displayed" :text "")
-          (label :text disclose_count_displayed)))
-      (button :class "disclose-count-button disclose-count-waiting"
-        (box :space-evenly false :halign "center" :spacing 5 
-          (label :class "disclose-count-icon disclose-count-icon-waiting" :text "") 
-          (label :text disclose_count_waiting))))))
+      (for item in {disclose_history.items} 
+        (_card :class "disclose-card" :glyph_class "disclose-${item.urgency == "" ? "OTHER" : item.urgency}"
+        :SL "${item.id}" :L "dunstctl history-pop ${item.id}" :body {item.body == "" ? "Body not available." : item.body}
+        :summary {item.summary == "" ? "Summary not available." : item.summary}
+        :glyph {item.glyph})))) (_quick_notify_settings)))
 
 ;; vim:ft=yuck

@@ -1,6 +1,8 @@
-(defpoll disclose_history :interval "1s" "dunstctl history")
-(defpoll disclose_count_displayed :interval "1s" "dunstctl count displayed")
-(defpoll disclose_count_history :interval "1s" "dunstctl count history")
-(defpoll disclose_count_waiting :interval "1s" "dunstctl count waiting")
+(defpoll disclose_history :interval "5s" "cat ~/.cache/dunst.log.json")
+(defpoll disclose_count_displayed :interval "30s" "dunstctl count displayed")
+(defpoll disclose_count_history :interval "30s" "dunstctl count history")
+(defpoll disclose_count_waiting :interval "30s" "dunstctl count waiting")
+(defpoll disclose_critical :interval "30s" "./script/logger.zsh crits")
+(defpoll disclose_airplane :interval "5s" "./script/airplane.zsh glyph")
 
 ;; vim:ft=yuck

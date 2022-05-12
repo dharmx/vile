@@ -31,9 +31,14 @@ $shade09: #121519;
 $shade10: #141416;
 $shade11: #121214;
 
+$normal: #273a4e;
+$critical: #471d1d;
+$low: #0c2d21;
+$other: #2c1033;
+
 * {
   all: unset;
-  transition: 200ms ease;
+  transition: 200ms ease-out;
 }
 
 @import "./modules/vertigo/scss/_button.scss";

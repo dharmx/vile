@@ -1,7 +1,7 @@
 (include "./modules/vertigo/yuck/_env.yuck")
 (include "./modules/vertigo/yuck/_modules.yuck")
 
-(defwindow vertigo :stacking "fg" :windowtype "dock"
+(defwindow vertigo :stacking "bg" :windowtype "dock"
   :geometry (geometry :width "4%" :height "100%" :anchor "left center")
   :reserve (struts :distance "4%" :side "left") (vertigo_layout))
 

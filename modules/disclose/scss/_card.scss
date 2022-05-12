@@ -18,15 +18,44 @@
 .disclose-headers-clear { 
   font-weight: bold;
   padding: 0.5em;
+  margin-bottom: 0.2em;
   color: $base09;
 }
 
 .disclose-headers-clear:hover { background-color: $base02; }
-.disclose-scroll-box { padding: 2em 1.5em 0 1.5em; }
+.disclose-scroll-box { padding: 2em 1.5em 0 1.1em; }
 .disclose-card-eventbox { background-color: $base01; }
 .disclose-card-eventbox:hover { background-color: $base03; }
 .disclose-card-box { padding: 2em; }
-.disclose-separator { padding: 0 0 0 0; color: $shade00; }
+.disclose-separator { padding: 0; color: $shade00; }
+
+.disclose-LOW {
+  background-color: $low;
+  color: $base14;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.disclose-NORMAL {
+  background-color: $normal;
+  color: $base09;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.disclose-CRITICAL {
+  background-color: $critical;
+  color: $base11;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.disclose-OTHER {
+  background-color: $other;
+  color: $base15;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
 
 .disclose-summary {
   font-weight: bold;
@@ -42,33 +71,42 @@
 
 .disclose-card-notify-close:hover { color: $base11; }
 .disclose-body { color: $base04; }
-.disclose-count-box { padding: 1em; }
 
-.disclose-count-button {
-  padding: 0.8em 0 0.8em 0;
-  font-size: 25;
+.disclose-bottom-box {
+  background-color: $shade05;
+  margin: 1.1em;
 }
 
-.disclose-count-history {
-  background-color: $base14;
-  opacity: 0.75;
-  color: $base01;
+.disclose-circular {
+  margin-top: 1.3em;
+  color: $base11;
+  background-color: $critical;
 }
 
-.disclose-count-displayed {
-  background-color: $base09;
-  opacity: 0.75;
-  color: $base01;
+.disclose-circular-header {
+  margin-bottom: 0.8em;
+  color: $shade00;
+  font-weight: bolder;
 }
 
-.disclose-count-waiting {
-  background-color: $base11;
-  opacity: 0.75;
-  font-weight: bold;
-  color: $base01;
+.disclose-circular label {
+  background-color: $shade04;
+  color: $base11;
+  padding: 1.8em 1.8em 1.9em 1.8em;
+  font-size: 45;
 }
 
-.disclose-count-button:hover { opacity: 1.0; }
-.disclose-count-icon { font-weight: bold; }
+.disclose-bottom-button {
+  background-color: $shade03;
+  font-size: 40;
+  color: $base09;
+}
+
+.disclose-bottom-button:hover { background-color: $normal; }
+.disclose-bottom-button-airplane { color: $base14; }
+.disclose-bottom-button-airplane:hover { background-color: $low; }
+.disclose-bottom-button-pop { color: $base15; }
+.disclose-bottom-button-pop:hover { background-color: $other; }
+.disclose-bottom-quick-box { margin: 0.6em; }
 
 // vim:ft=scss
