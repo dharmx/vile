@@ -41,3 +41,6 @@ case "$1" in
   ;;
 esac
 
+unset STATUS AIRPLANE_MODE_OFF AIRPLANE_MODE_ON
+
+# vim:ft=zsh

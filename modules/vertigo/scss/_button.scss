@@ -26,10 +26,7 @@
   color: $base02;
 }
 
-.vertigo-search-button:hover {
-  background-color: $base07;
-}
-
+.vertigo-search-button:hover { background-color: $base07; }
 .vertigo-workspace { background-color: $base01; }
 .vertigo-workspace:first-child { padding-top: 0.3em; }
 .vertigo-workspace:last-child { border-radius: 0 0 50% 0; }
@@ -40,7 +37,6 @@
 }
 
 .vertigo-workspace:hover { background-color: $base03; }
-
 .vertigo-workspace-urgent { color: $base11; }
 .vertigo-workspace-occupied { color: $base13; }
 .vertigo-workspace-local { color: $base04; }
@@ -67,11 +63,7 @@
 
 .vertigo-time-format-first { font-weight: bold; color: $base15; }
 .vertigo-time-format-second { color: $base14; }
-
-.vertigo-reveal-box button { 
-  padding: 0.57em 0 0.57em 0;
-  font-size: 26;
-}
+.vertigo-reveal-box button { padding: 0.57em 0 0.57em 0; font-size: 26; }
 
 .vertigo-volume-on { background-color: $shade01; color: $base13; }
 .vertigo-volume-off { background-color: $shade01; color: $base11; }
@@ -90,16 +82,8 @@
 
 .vertigo-todo-button { background-color: $base01; color: $base07; }
 .vertigo-todo-button:hover { background-color: $base07; color: $base01; }
-
-.vertigo-workspace-plus-button {
-  color: $base11;
-  background-color: $base02;
-}
-
-.vertigo-workspace-plus-button:hover {
-  background-color: $base11;
-  color: $base02;
-}
+.vertigo-workspace-plus-button { color: $base11; background-color: $base02; }
+.vertigo-workspace-plus-button:hover { background-color: $base11; color: $base02; }
 
 .vertigo-time-button:hover { background-color: $base03; color: $base01; }
 .vertigo-separator { color: $base03; }

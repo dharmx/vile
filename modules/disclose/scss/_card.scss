@@ -3,10 +3,7 @@
   font-family: "feather", "Iosevka Nerd Font", sans-serif;
 }
 
-.disclose-headers {
-  padding: 2em 3em 0 2em;
-  color: $base05;
-}
+.disclose-headers { padding: 2em 3em 0 2em; color: $base05; }
 
 .disclose-headers-label {
   font-size: 20;
@@ -71,11 +68,7 @@
 
 .disclose-card-notify-close:hover { color: $base11; }
 .disclose-body { color: $base04; }
-
-.disclose-bottom-box {
-  background-color: $shade05;
-  margin: 1.1em;
-}
+.disclose-bottom-box { background-color: $shade05; margin: 1.1em; }
 
 .disclose-circular {
   margin-top: 1.3em;
@@ -106,6 +99,7 @@
   background-color: $base02; 
   margin: 0.6em 0.2em 0.65em 0.65em;
 }
+
 .disclose-bottom-button:hover { background-color: $normal; }
 .disclose-bottom-button-airplane { color: $base14; }
 .disclose-bottom-button-airplane:hover { background-color: $low; }

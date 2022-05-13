@@ -1,22 +1,29 @@
 (include "./modules/disclose/yuck/_env.yuck")
 (include "./modules/disclose/yuck/_modules.yuck")
 
-(defwindow disclose :stacking "fg" :windowtype "normal" :wm-ignore true
+(defwindow disclose :stacking "fg" 
+  :windowtype "normal" 
+  :wm-ignore true
   :geometry (geometry :x 76 :width "26%" :height "100%" :anchor "left center") 
   (disclose_layout))
 
 (defwidget disclose_layout []
-  (box :orientation "vertical" :space-evenly false
-    (box :space-evenly false :class "disclose-headers" :hexpand true
-      (label :text "Your notifications" :class "disclose-headers-label" :halign "start" :hexpand true) 
-      (button :onclick "./script/logger.zsh clear" :class "disclose-headers-clear" :halign "end" "Clear all"))
+  (box :orientation "vertical"
+       :space-evenly false
+    (box :space-evenly false
+         :class "disclose-headers"
+         :hexpand true
 
-    (scroll :height 740 :vscroll true (box :orientation "vertical" 
-            :class "disclose-scroll-box" :spacing 10 :space-evenly false
-      (for item in {disclose_history.items} 
-        (_card :class "disclose-card" :glyph_class "disclose-${item.urgency == "" ? "OTHER" : item.urgency}"
-        :SL "${item.id}" :L "dunstctl history-pop ${item.id}" :body {item.body == "" ? "Body not available." : item.body}
-        :summary {item.summary == "" ? "Summary not available." : item.summary}
-        :glyph {item.glyph})))) (_quick_notify_settings)))
+      (label :text "Your notifications" 
+             :class "disclose-headers-label" 
+             :halign "start" 
+             :hexpand true) 
+      (button :onclick "./script/logger.zsh clear"
+              :class "disclose-headers-clear"
+              :halign "end" 
+        "Clear all"))
+
+    (literal :content disclose_cards)
+    (_quick_notify_settings)))
 
 ;; vim:ft=yuck

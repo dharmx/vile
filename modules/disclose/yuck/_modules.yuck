@@ -1,33 +1,67 @@
 (defwidget _card [?class summary body glyph ?glyph_class ?SL ?M ?L ?R]
- (eventbox :onmiddleclick M :onclick L :onrightclick R 
+ (eventbox :onmiddleclick M 
+           :onclick L 
+           :onrightclick R 
            :class "disclose-card-eventbox"
     (box :space-evenly false 
-      (label :class "disclose-glyph ${glyph_class}" :text glyph)
-      (box :orientation "vertical" :class class :space-evenly false :class "disclose-card-box"
+      (label :class "disclose-glyph ${glyph_class}" 
+             :text glyph)
+
+      (box :orientation "vertical" 
+           :class class 
+           :space-evenly false 
+           :class "disclose-card-box"
+
         (box :space-evenly false
-          (label :limit-width 25 :wrap true :text summary :class "disclose-summary" 
-                 :halign "start" :hexpand true)
-          (button :onclick "./script/logger.zsh rm_id ${SL}" :class "disclose-card-notify-close" 
-                  :halign "end" (label :text "")))
+          (label :limit-width 25 
+                 :wrap true 
+                 :text summary 
+                 :class "disclose-summary" 
+                 :halign "start" 
+                 :hexpand true)
+          (button :onclick "./script/logger.zsh rm_id ${SL}" 
+                  :class "disclose-card-notify-close" 
+                  :halign "end" 
+            (label :text "")))
+
         (label :text "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" 
-               :class "disclose-separator" :halign "center")
-        (label :limit-width 40 :halign "start" :wrap true :text body :class "disclose-body")))))
+               :class "disclose-separator" 
+               :halign "center")
+        (label :limit-width 40 
+               :halign "start" 
+               :wrap true 
+               :text body 
+               :class "disclose-body")))))
 
 (defwidget _quick_notify_settings []
   (box :class "disclose-bottom-box"
-    (box :orientation "vertical" :space-evenly false
-      (box :class "disclose-critical-box" :orientation "vertical" :space-evenly false
-        (circular-progress :start-at 90 :class "disclose-circular" :value disclose_critical :thickness 50
-          (label :text "" :tooltip disclose_critical))
-        (label :text "Criticals" :class "disclose-circular-header")))
-    (box :orientation "vertical" :spacing 10 :class "disclose-bottom-quick-box"
+    (box :orientation "vertical" 
+         :space-evenly false
+      (box :class "disclose-critical-box" 
+           :orientation "vertical" 
+           :space-evenly false
+        (circular-progress :start-at 90 
+                           :class "disclose-circular" 
+                           :value disclose_critical 
+                           :thickness 50
+          (label :text "" 
+                 :tooltip disclose_critical))
+        (label :text "Criticals" 
+               :class "disclose-circular-header")))
+
+    (box :orientation "vertical" 
+         :spacing 10 
+         :class "disclose-bottom-quick-box"
       (box :spacing 10
         (button :onclick "./script/airplane.zsh toggle"
                 :class "disclose-bottom-button disclose-bottom-button-airplane" disclose_airplane)
         (button :onclick "dunstctl history-pop"
                 :class "disclose-bottom-button disclose-bottom-button-pop" ""))
+
       (box :spacing 10
-        (button :onclick "./script/logger.zsh pop" :class "disclose-bottom-button" "")
-        (button :onclick "./script/logger.zsh drop" :class "disclose-bottom-button" "")))))
+        (button :onclick "./script/logger.zsh pop" 
+                :class "disclose-bottom-button" "")
+        (button :onclick "./script/logger.zsh drop" 
+                :class "disclose-bottom-button" "")))))
 
 ;; vim:ft=yuck

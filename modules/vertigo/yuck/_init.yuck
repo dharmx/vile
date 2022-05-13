@@ -1,23 +1,40 @@
 (include "./modules/vertigo/yuck/_env.yuck")
 (include "./modules/vertigo/yuck/_modules.yuck")
 
-(defwindow vertigo :stacking "bg" :windowtype "dock"
+(defwindow vertigo 
+  :stacking "bg" 
+  :windowtype "dock"
   :geometry (geometry :width "4%" :height "100%" :anchor "left center")
-  :reserve (struts :distance "4%" :side "left") (vertigo_layout))
+  :reserve (struts :distance "4%" :side "left") 
+  (vertigo_layout))
 
 (defwidget vertigo_layout []
-  (box :spacing 0 :orientation "vertical" :space-evenly false
+  (box :spacing 0 
+       :orientation "vertical" 
+       :space-evenly false
     (literal :content vertigo_nodes)
-    (_label :text "" :tooltip "find" :button-class "vertigo-search-button" :L "rofi -show &")
+    (_label :text "" 
+            :tooltip "find" 
+            :button-class "vertigo-search-button" 
+            :L "rofi -show &")
     (literal :content vertigo_workspaces)
-    (_label :text vertigo_battery :tooltip "battery: ${vertigo_battery}" :vexpand true :valign "end"
+    (_label :text vertigo_battery 
+            :tooltip "battery: ${vertigo_battery}" 
+            :vexpand true 
+            :valign "end"
             :button-class "vertigo-battery-button")
-    (_time :format_first vertigo_time_first :format_second vertigo_time_second 
-           :tooltip "time ${vertigo_time_first}:${vertigo_time_second}" :button-class "vertigo-time-button")
+    (_time :format_first vertigo_time_first 
+           :format_second vertigo_time_second 
+           :tooltip "time ${vertigo_time_first}:${vertigo_time_second}" 
+           :button-class "vertigo-time-button")
     (_revealex :revealon vertigo_revealex)
-    (label :text "━━━━━━━" :class "vertigo-separator")
-    (_profile :M "eww update vertigo_revealex=${!vertigo_revealex}" :path vertigo_profile
-              :image-class "vertigo-profile-image" :button-class "vertigo-profile-button" 
-              :size 45 :tooltip "profile")))
+    (label :text "━━━━━━━" 
+           :class "vertigo-separator")
+    (_profile :M "eww update vertigo_revealex=${!vertigo_revealex}" 
+              :path vertigo_profile
+              :image-class "vertigo-profile-image" 
+              :button-class "vertigo-profile-button" 
+              :size 45 
+              :tooltip "profile")))
 
 ;; vim:ft=yuck

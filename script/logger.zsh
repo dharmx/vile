@@ -1,82 +1,67 @@
 #!/usr/bin/env zsh
 
-DUNST_LOG="$XDG_CACHE_HOME/dunst.log.json"
+typeset DUNST_LOG="$XDG_CACHE_HOME/dunst.log"
 [ ! -f "$DUNST_LOG" ] && touch "$DUNST_LOG"
 
-function get_glyph() {
-  case "$1" in
-    "LOW") print "";;
-    "NORMAL") print "";;
-    "CRITICAL") print "";;
-    *) print "";;
+function create_cache() {
+  local urgency
+  case "$DUNST_URGENCY" in
+    "LOW"|"NORMAL"|"CRITICAL") urgency="$DUNST_URGENCY";;
+    *) urgency="OTHER";;
   esac
+
+  local summary
+  local body
+  [[ "$DUNST_SUMMARY" == "" ]] && summary="Summary unavailable." || summary="$DUNST_SUMMARY"
+  [[ "$DUNST_BODY" == "" ]] && body="Body unavailable." || body="$DUNST_BODY"
+
+  local glyph
+  case "$urgency" in
+    "LOW") glyph="";;
+    "NORMAL") glyph="";;
+    "CRITICAL") glyph="";;
+    *) glyph="";;
+  esac
+  print "(_card :class "\"disclose-card disclose-card-$urgency\"" :glyph_class "\"disclose-$urgency\"" :SL "\"$DUNST_ID\"" :L "\"dunstctl history-pop $DUNST_ID\"" :body "\"$body\"" :summary "\"$summary\"" :glyph "\"$glyph\"")" \
+    >> "$DUNST_LOG"
 }
 
-function append_json() {
-  local json_object="$(jq -n                  \
-    --arg an "$DUNST_APP_NAME"                \
-    --arg su "$DUNST_SUMMARY"                 \
-    --arg bd "$DUNST_BODY"                    \
-    --arg ic "$DUNST_ICON_PATH"               \
-    --arg ug "$DUNST_URGENCY"                 \
-    --arg it "$DUNST_ID"                      \
-    --arg pg "$DUNST_PROGRESS"                \
-    --arg ct "$DUNST_CATEGORY"                \
-    --arg st "$DUNST_STACK_TAG"               \
-    --arg ul "$DUNST_URLS"                    \
-    --arg to "$DUNST_TIMEOUT"                 \
-    --arg ts "$DUNST_TIMESTAMP"               \
-    --arg et "$DUNST_DESKTOP_ENTRY"           \
-    --arg gl "$(get_glyph "$DUNST_URGENCY")"  \
-    '{appname:$an,summary:$su,body:$bd,icon:$ic,urgency:$ug,glyph:$gl,id:$it,progress:$pg,category:$ct,stack:$st,urls:$ul,timeout:$to,timestamp:$ts,entry:$et}')"
-
-  local data="$(cat "$DUNST_LOG")"
-  local final
-  if [[ "$data" == "" ]]; then 
-    final="$(jq --compact-output --monochrome-output --null-input "{items:["$json_object"]}")"
-  else
-    final="$(print "$data" | jq --compact-output --monochrome-output ".items[.items|length] = "$json_object"")"
-  fi
-  print "$final" > "$DUNST_LOG"
+function compile_caches() {
+  local buffered=""
+  cat "$DUNST_LOG" | while read -r card; do buffered+="$card "; done
+  print "$buffered"
 }
 
-function rmv_idx() {
-  local data="$(cat "$DUNST_LOG" | jq --compact-output --monochrome-output "del(.items[]|select(.id==\"$1\"))")"
-  print "$data" > "$DUNST_LOG"
+function make_literal() {
+  print "(scroll :height 740 :vscroll true (box :orientation 'vertical' :class 'disclose-scroll-box' :spacing 10 :space-evenly false "$(compile_caches)"))"
 }
 
 function pop() {
-  local data="$(cat "$DUNST_LOG" | jq --compact-output --monochrome-output "del(.items[0])")"
-  print "$data" > "$DUNST_LOG"
+  print "$(cat "$DUNST_LOG" | tail --silent --lines=+2)" > "$DUNST_LOG"
 }
 
 function drop() {
-  local data="$(cat "$DUNST_LOG" | jq --compact-output --monochrome-output "del(.items[.items|length-1])")"
-  print "$data" > "$DUNST_LOG"
+  print "$(cat "$DUNST_LOG" | head --silent --lines=-1)" > "$DUNST_LOG"
 }
 
 function clear_logs() { print > "$DUNST_LOG" }
 
-function get_time_id() {
-  local data="$(dunstctl history | jq --compact-output --monochrome-output ".data[0][]|select(.id.data==$1).timestamp.data")"
-  date --date="@$data" +%H:%M
+function() critical_count() {
+  cat "$DUNST_LOG" | grep "CRITICAL" | wc -l
 }
 
-function get_crit_percent() {
-  local format='(([(.items[]|select(.urgency=="CRITICAL"))]|length)/(.items|length))*100'
-  local percent="$(cat ~/.cache/dunst.log.json | jq "$format")"
-  print "$percent"
+function subscribe() {
+  # monitor mouse buttons instead
+  dbus-monitor interface='org.freedesktop.Notifications' | while read -r _ do; make_literal done
 }
 
 case "$1" in
-  "rm_id") rmv_idx $2;;
-  "time_st_id") get_time_id $2;;
   "pop") pop;;
   "drop") drop;;
-  "glyph") get_glyph $2;;
   "clear") clear_logs;;
-  "crits") get_crit_percent;;
-  *) append_json;;
+  "subscribe") subscribe;;
+  "crits") critical_count;;
+  *) create_cache;;
 esac
 
 unset DUNST_LOG

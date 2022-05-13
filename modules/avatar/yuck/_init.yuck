@@ -1,8 +1,8 @@
 (include "./modules/disclose/yuck/_env.yuck")
 (include "./modules/disclose/yuck/_modules.yuck")
 
-(defwindow disclose :stacking "fg" :windowtype "normal" :wm-ignore true
+(defwindow avatar :stacking "fg" :windowtype "normal" :wm-ignore true
   :geometry (geometry :x 76 :width "26%" :height "100%" :anchor "left center") 
-  (disclose_layout))
+  (avatar_layout))
 
 ;; vim:ft=yuck
