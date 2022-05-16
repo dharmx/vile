@@ -1,7 +1,10 @@
 #!/usr/bin/env zsh
 
-typeset DUNST_LOG="$XDG_CACHE_HOME/dunst.log"
-[ ! -f "$DUNST_LOG" ] && touch "$DUNST_LOG"
+typeset DUNST_CACHE_DIR="$XDG_CACHE_HOME/dunst"
+mkdir "$DUNST_CACHE_DIR" 2>/dev/null
+
+typeset DUNST_LOG="$DUNST_CACHE_DIR/notifications.txt"
+touch "$DUNST_LOG" 2>/dev/null
 
 function create_cache() {
   local urgency
@@ -12,8 +15,8 @@ function create_cache() {
 
   local summary
   local body
-  [[ "$DUNST_SUMMARY" == "" ]] && summary="Summary unavailable." || summary="$DUNST_SUMMARY"
-  [[ "$DUNST_BODY" == "" ]] && body="Body unavailable." || body="$DUNST_BODY"
+  [ "$DUNST_SUMMARY" = "" ] && summary="Summary unavailable." || summary="$DUNST_SUMMARY"
+  [ "$DUNST_BODY" = "" ] && body="Body unavailable." || body="$DUNST_BODY"
 
   local glyph
   case "$urgency" in
@@ -22,37 +25,60 @@ function create_cache() {
     "CRITICAL") glyph="";;
     *) glyph="";;
   esac
-  print "(_card :class "\"disclose-card disclose-card-$urgency\"" :glyph_class "\"disclose-$urgency\"" :SL "\"$DUNST_ID\"" :L "\"dunstctl history-pop $DUNST_ID\"" :body "\"$body\"" :summary "\"$summary\"" :glyph "\"$glyph\"")" \
-    >> "$DUNST_LOG"
+  case "$DUNST_APP_NAME" in
+    "spotify") glyph="";;
+    "mpd") glyph="";;
+    "picom") glyph="";;
+    "sxhkd") glyph="";;
+    "brightness") glyph="";;
+    "nightmode") glyph="ﯦ";;
+    "microphone") glyph="";;
+    "volume") glyph="";;
+    "screenshot") glyph="";;
+    "firefox") glyph="";;
+  esac
+  # pipe stdout -> pipe cat stdin (cat conCATs multiple files and sends to stdout) -> absorb stdout from cat
+  # concat: "one" + "two" + "three" -> notice how the order matters i.e. "one" will be prepended
+  print '(_card :class "disclose-card disclose-card-'$urgency' disclose-card-'$DUNST_APP_NAME'" :glyph_class "disclose-'$urgency' disclose-'$DUNST_APP_NAME'" :SL "'$DUNST_ID'" :L "dunstctl history-pop '$DUNST_ID'" :body "'$body'" :summary "'$summary'" :glyph "'$glyph'")' \
+    | cat - "$DUNST_LOG" \
+    | sponge "$DUNST_LOG"
 }
 
-function compile_caches() {
-  local buffered=""
-  cat "$DUNST_LOG" | while read -r card; do buffered+="$card "; done
-  print "$buffered"
-}
+function compile_caches() { tr '\n' ' ' < "$DUNST_LOG" }
 
 function make_literal() {
-  print "(scroll :height 740 :vscroll true (box :orientation 'vertical' :class 'disclose-scroll-box' :spacing 10 :space-evenly false "$(compile_caches)"))"
+  local caches="$(compile_caches)"
+  local quote="$($XDG_CONFIG_HOME/eww/script/quotes.zsh rand)"
+  [[ "$caches" == "" ]] \
+    && print '(box :class "disclose-empty-box" :height 740 :orientation "vertical" :space-evenly false (image :class "disclose-empty-banner" :valign "end" :vexpand true :path "./assets/clock.png" :image-width 200 :image-height 200) (label :vexpand true :valign "start" :wrap true :class "disclose-empty-label" :text "'$quote'"))' \
+    || print "(scroll :height 740 :vscroll true (box :orientation 'vertical' :class 'disclose-scroll-box' :spacing 10 :space-evenly false $caches))"
 }
 
-function pop() {
-  print "$(cat "$DUNST_LOG" | tail --silent --lines=+2)" > "$DUNST_LOG"
+function clear_logs() {
+  killall dunst 2>/dev/null
+  dunst & disown
+  print > "$DUNST_LOG"
 }
 
-function drop() {
-  print "$(cat "$DUNST_LOG" | head --silent --lines=-1)" > "$DUNST_LOG"
-}
+function pop() { sed -i '1d' "$DUNST_LOG" }
 
-function clear_logs() { print > "$DUNST_LOG" }
+function drop() { sed -i '$d' "$DUNST_LOG" }
 
-function() critical_count() {
-  cat "$DUNST_LOG" | grep "CRITICAL" | wc -l
+function remove_line() { sed -i '/SL "'$1'"/d' "$DUNST_LOG" }
+
+function critical_count() { 
+  local crits=$(cat $DUNST_LOG | grep CRITICAL | wc -l)
+  local total=$(cat $DUNST_LOG | wc -l)
+  print $(((crits*100)/total))
 }
 
 function subscribe() {
-  # monitor mouse buttons instead
-  dbus-monitor interface='org.freedesktop.Notifications' | while read -r _ do; make_literal done
+  make_literal
+  local lines=$(cat $DUNST_LOG | wc -l)
+  while sleep 0.1; do
+    local new=$(cat $DUNST_LOG | wc -l)
+    [[ $lines -ne $new ]] && lines=$new && print
+  done | while read -r _ do; make_literal done
 }
 
 case "$1" in
@@ -60,10 +86,12 @@ case "$1" in
   "drop") drop;;
   "clear") clear_logs;;
   "subscribe") subscribe;;
+  "rm_id") remove_line $2;;
   "crits") critical_count;;
   *) create_cache;;
 esac
 
-unset DUNST_LOG
+sed -i '/^$/d' "$DUNST_LOG"
+unset DUNST_CACHE_DIR DUNST_LOG
 
 # vim:ft=zsh

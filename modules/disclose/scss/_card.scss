@@ -20,6 +20,20 @@
 }
 
 .disclose-headers-clear:hover { background-color: $base02; }
+
+.disclose-empty-box {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.disclose-empty-label {
+  padding-top: 2em;
+  color: $shade00;
+  font-size: 15;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
 .disclose-scroll-box { padding: 2em 1.5em 0 1.1em; }
 .disclose-card-eventbox { background-color: $base01; }
 .disclose-card-eventbox:hover { background-color: $base03; }
@@ -54,6 +68,27 @@
   font-size: 30;
 }
 
+.disclose-spotify {
+  background-color: $critical;
+  color: $base11;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.disclose-sxhkd {
+  background-color: $normal;
+  color: $base07;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.disclose-brightness {
+  background-color: $normal;
+  color: $base13;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
 .disclose-summary {
   font-weight: bold;
   font-size: 17;
@@ -68,10 +103,14 @@
 
 .disclose-card-notify-close:hover { color: $base11; }
 .disclose-body { color: $base04; }
-.disclose-bottom-box { background-color: $shade05; margin: 1.1em; }
+
+.disclose-bottom-box { 
+  background-color: $shade05; 
+  margin: 0 1.1em 0 1.1em; 
+}
 
 .disclose-circular {
-  margin-top: 1.3em;
+  margin-top: 1.2em;
   color: $base11;
   background-color: $critical;
 }

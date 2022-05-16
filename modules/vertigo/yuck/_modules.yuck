@@ -48,7 +48,7 @@
               :tooltip "notify"
               :button-class "vertigo-notify-button ${vertigo_dunst == "" ? "vertigo-notify-on" : "vertigo-notify-off"}"
               :L "[ $(dunstctl is-paused) = false ] && dunstctl set-paused true || dunstctl set-paused false"
-              :M "[ $(eww windows | grep \*disclose) ] && eww close disclose || eww open disclose")
+              :M "eww open --toggle disclose")
       (_label :text "" 
               :tooltip "todo"
               :button-class "vertigo-todo-button"))))

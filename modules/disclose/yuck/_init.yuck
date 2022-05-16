@@ -14,13 +14,13 @@
          :class "disclose-headers"
          :hexpand true
 
-      (label :text "Your notifications" 
-             :class "disclose-headers-label" 
-             :halign "start" 
-             :hexpand true) 
+      (label :text "Your notifications"
+             :class "disclose-headers-label"
+             :halign "start"
+             :hexpand true)
       (button :onclick "./script/logger.zsh clear"
               :class "disclose-headers-clear"
-              :halign "end" 
+              :halign "end"
         "Clear all"))
 
     (literal :content disclose_cards)

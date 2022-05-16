@@ -31,6 +31,7 @@
     (label :text "━━━━━━━" 
            :class "vertigo-separator")
     (_profile :M "eww update vertigo_revealex=${!vertigo_revealex}" 
+              :L "eww open --toggle avatar" 
               :path vertigo_profile
               :image-class "vertigo-profile-image" 
               :button-class "vertigo-profile-button" 
