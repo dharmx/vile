@@ -1,4 +1,4 @@
-(deflisten disclose_cards :interval "1s" "./script/logger.zsh subscribe")
+(deflisten disclose_cards "./script/logger.zsh subscribe")
 
 (defpoll disclose_critical :interval "1s" "./script/logger.zsh crits")
 (defpoll disclose_airplane :interval "1s" "./script/airplane.zsh glyph")

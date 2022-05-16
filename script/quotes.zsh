@@ -1,12 +1,10 @@
 #!/usr/bin/env zsh
 
-typeset DUNST_CACHE_DIR="$XDG_CACHE_HOME/dunst"
+source "$XDG_CONFIG_HOME/eww/script/config.zsh"
+_set_vars
+
 mkdir "$DUNST_CACHE_DIR" 2>/dev/null
-
-typeset DUNST_QUOTES="$DUNST_CACHE_DIR/quotes.txt"
 touch "$DUNST_QUOTES" 2>/dev/null
-
-typeset DEFAULT_QUOTE="To fake it is to stand guard over emptiness. ── Arthur Herzog"
 
 function add() { 
   [[ "$1" != "" ]] && print "$1" >> "$DUNST_QUOTES" 
@@ -27,7 +25,6 @@ case "$1" in
   *) print "$DEFAULT_QUOTE";;
 esac
 
-
-unset DUNST_CACHE_DIR DUNST_QUOTES DEFAULT_QUOTE
+_unset_vars
 
 # vim:ft=zsh

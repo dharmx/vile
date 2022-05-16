@@ -1,3 +1,13 @@
+(defwidget avatar_profile [path size ?M1 ?L1 ?R1 ?M2 ?L2 ?R2 ?M3 ?L3 ?R3]
+  (box :orientation "vertical" :space-evenly false :class "avatar-profile-box"
+    (image :path path :image-height size :image-width size :class "avatar-image")
+    (box (button :onclick L1 "") (button :onclick L2 "") (button :onclick L3 ""))))
 
+(defwidget avatar_card [icon main ?info ?class ?box_class ?class_main ?class_icon ?class_info] 
+  (eventbox :class "avatar-eventbox ${class}"
+    (box :orientation "vertical" :class "avatar-card-box ${box_class}"
+      (label :text icon :class "avatar-icon ${class_icon}")
+      (label :text main :class "avatar-main ${class_main}")
+      (label :text info :class "avatar-info ${class_info}"))))
 
 ;; vim:ft=yuck

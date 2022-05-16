@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
-typeset DUNST_CACHE_DIR="$XDG_CACHE_HOME/dunst"
-mkdir "$DUNST_CACHE_DIR" 2>/dev/null
+source "$XDG_CONFIG_HOME/eww/script/config.zsh"
+_set_vars
 
-typeset DUNST_LOG="$DUNST_CACHE_DIR/notifications.txt"
+mkdir "$DUNST_CACHE_DIR" 2>/dev/null
 touch "$DUNST_LOG" 2>/dev/null
 
 function create_cache() {
@@ -92,6 +92,6 @@ case "$1" in
 esac
 
 sed -i '/^$/d' "$DUNST_LOG"
-unset DUNST_CACHE_DIR DUNST_LOG
+_unset_vars
 
 # vim:ft=zsh
