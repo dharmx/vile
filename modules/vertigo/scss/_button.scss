@@ -45,11 +45,16 @@
   background-color: $base02;
 }
 
+.vertigo-workspace-focused { border-right: 3px solid $base14; }
+.vertigo-workspace-occupied:hover { border-left: 3px solid $base13; }
+.vertigo-workspace-urgent:hover { border-left: 3px solid $base11; }
+.vertigo-workspace-local:hover { border-left: 3px solid $base04; }
+
 .vertigo-battery-button {
   background-color: $base11;
   border-radius: 50% 0 0 0;
   font-size: 25;
-  padding: 0.57em 0 0.57em 0; 
+  padding: 0.57em 0 0.57em 0;
   color: $base01;
 }
 

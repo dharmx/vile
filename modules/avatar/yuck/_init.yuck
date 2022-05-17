@@ -6,8 +6,9 @@
   (avatar_layout))
 
 (defwidget avatar_layout []
-  (scroll :class "avatar-scroll" :hscroll false :vscroll true 
-    (box :space-evenly false :class "avatar-box" :orientation "vertical" :vexpand true :hexpand true
-      (avatar_profile :path "./assets/profile.png" :size 120))))
+  (box :orientation "vertical" :space-evenly false :class "avatar-box"
+    (avatar_profile :path "./assets/profile.png" :size 120)
+    (scroll :class "avatar-scroll" :hscroll false :vscroll true 
+      (box :space-evenly false :class "avatar-box-inner" :orientation "vertical" :vexpand true :hexpand true (label :text "hello")))))
 
 ;; vim:ft=yuck

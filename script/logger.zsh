@@ -16,7 +16,7 @@ function create_cache() {
   local summary
   local body
   [ "$DUNST_SUMMARY" = "" ] && summary="Summary unavailable." || summary="$DUNST_SUMMARY"
-  [ "$DUNST_BODY" = "" ] && body="Body unavailable." || body="$DUNST_BODY"
+  [ "$DUNST_BODY" = "" ] && body="Body unavailable." || body="$(print "$DUNST_BODY" | recode html)"
 
   local glyph
   case "$urgency" in

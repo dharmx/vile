@@ -1,5 +1,7 @@
-.avatar-box {
-  background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 30%), url("./assets/banner.png");
+.avatar-profile-top-box {
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(18, 21, 25, 1) 95%), url("./assets/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 // vim:ft=scss
