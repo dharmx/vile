@@ -7,6 +7,9 @@
 ![Repo License](https://img.shields.io/badge/LICENSE-GPL--3.0-%2388c0d0?style=for-the-badge&logo=GNU)
 </div>
 
+##  NOTICE
+Branch `rewrite` will be merged with `main` on this Sunday.
+
 ## Screenshots 
 
 Screenshots of the widget sets. Note that all of them does exactly what you would think.
