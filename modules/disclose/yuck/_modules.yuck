@@ -10,6 +10,7 @@
       (box :orientation "vertical" 
            :class class 
            :space-evenly false 
+           :hexpand true
            :class "disclose-card-box"
 
         (box :space-evenly false
@@ -21,21 +22,19 @@
                  :hexpand true)
           (button :onclick "./script/logger.zsh rm_id ${SL}" 
                   :class "disclose-card-notify-close" 
-                  :halign "end" 
             (label :text "")))
 
-        (label :text "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" 
-               :class "disclose-separator" 
-               :halign "center")
-        (label :limit-width 40 
-               :halign "start" 
-               :wrap true 
-               :text body 
+        (label :text ""
+               :class "disclose-separator")
+        (label :limit-width 40
+               :wrap true
+               :text body
+               :halign "start"
                :class "disclose-body")))))
 
 (defwidget _quick_notify_settings []
-  (box :class "disclose-bottom-box"
-    (box :orientation "vertical" 
+  (box :class "disclose-bottom-box" :valign "end" :vexpand true
+    (box :orientation "vertical"
          :space-evenly false
       (box :class "disclose-critical-box" 
            :orientation "vertical" 

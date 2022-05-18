@@ -1,6 +1,12 @@
 (defwidget avatar_profile [path size ?M1 ?L1 ?R1 ?M2 ?L2 ?R2 ?M3 ?L3 ?R3]
-  (box :space-evenly false :class "avatar-profile-top-box" :height 320
-    (box :orientation "vertical" :space-evenly false :class "avatar-profile-user-box"
+  (box :space-evenly false 
+       :vexpand true 
+       :valign "end" 
+       :class "avatar-profile-top-box" 
+       :height 320
+    (box :orientation "vertical" 
+         :space-evenly false 
+         :class "avatar-profile-user-box"
       (image :path path 
              :image-height size 
              :image-width size 

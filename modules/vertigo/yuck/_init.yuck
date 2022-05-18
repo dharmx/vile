@@ -28,7 +28,7 @@
            :tooltip "time ${vertigo_time_first}:${vertigo_time_second}" 
            :button-class "vertigo-time-button")
     (_revealex :revealon vertigo_revealex)
-    (label :text "━━━━━━━" 
+    (label :text ""
            :class "vertigo-separator")
     (_profile :M "eww update vertigo_revealex=${!vertigo_revealex}" 
               :L "eww open --toggle avatar" 

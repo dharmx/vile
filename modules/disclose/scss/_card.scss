@@ -1,9 +1,13 @@
-.disclose {
+.disclose-layout-box {
   background-color: $shade09;
   font-family: "feather", "Iosevka Nerd Font", sans-serif;
 }
 
-.disclose-headers { padding: 2em 3em 0 2em; color: $base05; }
+.disclose-headers {
+  padding: 1em 2em 0 2em;
+  margin-bottom: 0.8em;
+  color: $base05;
+}
 
 .disclose-headers-label {
   font-size: 20;
@@ -13,13 +17,15 @@
 }
 
 .disclose-headers-clear { 
-  font-weight: bold;
-  padding: 0.5em;
-  margin-bottom: 0.2em;
+  font-size: 25;
   color: $base09;
+  padding: 0em 0.7em 0 0.5em;
 }
 
-.disclose-headers-clear:hover { background-color: $base02; }
+.disclose-headers-clear:hover { 
+  background-color: $base09; 
+  color: $base02;
+}
 
 .disclose-empty-box {
   padding-left: 1em;
@@ -34,11 +40,17 @@
   padding-right: 5em;
 }
 
-.disclose-scroll-box { padding: 2em 1.5em 0 1.1em; }
-.disclose-card-eventbox { background-color: $base01; }
-.disclose-card-eventbox:hover { background-color: $base03; }
+.disclose-scroll-box { margin: 0 1.1em 0 1.1em; }
+.disclose-card-eventbox { background: linear-gradient(45deg, $base02 20%, $base01 100%); }
+.disclose-card-eventbox:hover { background: linear-gradient(170deg, $base01 20%, $shade01 100%); }
 .disclose-card-box { padding: 2em; }
-.disclose-separator { padding: 0; color: $shade00; }
+
+.disclose-separator {
+  background-color: $shade00;
+  font-size: 1;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
 
 .disclose-LOW {
   background-color: $low;
@@ -96,17 +108,23 @@
 }
 
 .disclose-card-notify-close {
-  color: $base04;
+  color: $base11;
   border-radius: 50%;
   margin-bottom: 0.3em;
 }
 
-.disclose-card-notify-close:hover { color: $base11; }
+.disclose-card-notify-close:hover label { 
+  background-color: $base11; 
+  color: $base03;
+  border-radius: 50%;
+  padding-left: 0.05em;
+  padding-right: 0.05em;
+}
 .disclose-body { color: $base04; }
 
 .disclose-bottom-box { 
   background-color: $shade05; 
-  margin: 0 1.1em 0 1.1em; 
+  margin: 1em 1.1em 1em 1.1em; 
 }
 
 .disclose-circular {
@@ -124,7 +142,7 @@
 .disclose-circular label {
   background-color: $shade04;
   color: $base11;
-  padding: 1.8em 1.8em 1.9em 1.8em;
+  padding: 1.8em 1.5em 1.9em 1.5em;
   font-size: 45;
 }
 

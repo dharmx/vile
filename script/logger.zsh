@@ -50,8 +50,8 @@ function make_literal() {
   local caches="$(compile_caches)"
   local quote="$($XDG_CONFIG_HOME/eww/script/quotes.zsh rand)"
   [[ "$caches" == "" ]] \
-    && print '(box :class "disclose-empty-box" :height 740 :orientation "vertical" :space-evenly false (image :class "disclose-empty-banner" :valign "end" :vexpand true :path "./assets/clock.png" :image-width 200 :image-height 200) (label :vexpand true :valign "start" :wrap true :class "disclose-empty-label" :text "'$quote'"))' \
-    || print "(scroll :height 740 :vscroll true (box :orientation 'vertical' :class 'disclose-scroll-box' :spacing 10 :space-evenly false $caches))"
+    && print '(box :class "disclose-empty-box" :height 760 :orientation "vertical" :space-evenly false (image :class "disclose-empty-banner" :valign "end" :vexpand true :path "./assets/clock.png" :image-width 200 :image-height 200) (label :vexpand true :valign "start" :wrap true :class "disclose-empty-label" :text "'$quote'"))' \
+    || print "(scroll :height 760 :vscroll true (box :orientation 'vertical' :class 'disclose-scroll-box' :spacing 10 :space-evenly false $caches))"
 }
 
 function clear_logs() {

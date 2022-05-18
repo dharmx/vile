@@ -91,7 +91,13 @@
 .vertigo-workspace-plus-button:hover { background-color: $base11; color: $base02; }
 
 .vertigo-time-button:hover { background-color: $base03; color: $base01; }
-.vertigo-separator { color: $base03; }
 .vertigo-profile-button { margin: 0 0 1em 0; }
+
+.vertigo-separator { 
+  background-color: $base03; 
+  margin-top: 5em;
+  margin-bottom: 5em;
+  font-size: 2;
+}
 
 // vim:ft=scss

@@ -10,20 +10,18 @@
 (defwidget disclose_layout []
   (box :orientation "vertical"
        :space-evenly false
+       :class "disclose-layout-box"
     (box :space-evenly false
          :class "disclose-headers"
-         :hexpand true
 
-      (label :text "Your notifications"
+      (label :text "Notifications"
              :class "disclose-headers-label"
              :halign "start"
              :hexpand true)
       (button :onclick "./script/logger.zsh clear"
-              :class "disclose-headers-clear"
-              :halign "end"
-        "Clear all"))
+              :class "disclose-headers-clear" ""))
 
-    (literal :content disclose_cards)
+    (literal :content disclose_cards :class "disclose-literal")
     (_quick_notify_settings)))
 
 ;; vim:ft=yuck
