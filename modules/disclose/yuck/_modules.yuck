@@ -36,16 +36,40 @@
   (box :class "disclose-bottom-box" :valign "end" :vexpand true
     (box :orientation "vertical"
          :space-evenly false
-      (box :class "disclose-critical-box" 
+      (box :class "disclose-urgency-box" 
            :orientation "vertical" 
            :space-evenly false
-        (circular-progress :start-at 90 
-                           :class "disclose-circular" 
-                           :value disclose_critical 
-                           :thickness 50
-          (label :text "" 
-                 :tooltip disclose_critical))
-        (label :text "Criticals" 
+           :spacing 10
+        (box :class "disclose-low-total-box"
+             :space-evenly false
+             :spacing 25
+             :vexpand true
+             :halign "center"
+          (circular-progress :start-at 90 
+                             :class "disclose-circular disclose-circular-low" 
+                             :value disclose_low
+                             :thickness 15
+            (label :text "" 
+                   :tooltip disclose_low)))
+        (box :class "disclose-critical-normal-box"
+             :space-evenly false
+             :vexpand true
+             :halign "center"
+             :spacing 25
+          (circular-progress :start-at 90 
+                             :class "disclose-circular disclose-circular-critical" 
+                             :value disclose_critical 
+                             :thickness 15
+            (label :text "" 
+                   :tooltip disclose_critical))
+          (circular-progress :start-at 90 
+                             :class "disclose-circular disclose-circular-normal" 
+                             :value disclose_normal
+                             :thickness 15
+            (label :text "" 
+                   :tooltip disclose_normal)))
+
+        (label :text "Statistics"
                :class "disclose-circular-header")))
 
     (box :orientation "vertical" 

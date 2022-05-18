@@ -127,36 +127,68 @@
   margin: 1em 1.1em 1em 1.1em; 
 }
 
+.disclose-urgency-box {
+  margin: 0.65em 0 0.65em 0.6em;
+  padding-top: 1em;
+  border-radius: 1em;
+  background: linear-gradient(0deg, $base03 2%, $base02 100%);
+}
+
 .disclose-circular {
-  margin-top: 1.2em;
+  font-size: 30;
+}
+
+.disclose-circular label {
+  padding: 1em 1.3em 1em 1em;
+}
+
+.disclose-circular-critical {
   color: $base11;
   background-color: $critical;
 }
 
-.disclose-circular-header {
-  color: $shade00;
-  font-weight: bolder;
-  background-color: $base09;
+.disclose-circular-critical label {
+  color: $base11;
+  background: linear-gradient(90deg, $base01 0%, $critical 100%);
 }
 
-.disclose-circular label {
-  background-color: $shade04;
-  color: $base11;
-  padding: 1.8em 1.5em 1.9em 1.5em;
-  font-size: 45;
+.disclose-circular-normal {
+  color: $base09;
+  background-color: $normal;
+}
+
+.disclose-circular-normal label {
+  color: $base09;
+  background: linear-gradient(90deg, $base01 0%, $normal 100%);
+}
+
+.disclose-circular-low {
+  color: $base14;
+  background-color: $low;
+}
+
+.disclose-circular-low label {
+  color: $base14;
+  background: linear-gradient(90deg, $base01 0%, $low 100%);
+}
+
+.disclose-circular-header {
+  background-color: $base09;
+  color: $normal;
+  border-radius: 0.5em 0.5em 0 0;
+  font-weight: bold;
+  margin-left: 3em;
+  margin-right: 3em;
 }
 
 .disclose-bottom-button {
   background-color: $shade03;
   font-size: 40;
+  border-radius: 0.3em;
   color: $base09;
 }
 
-.disclose-critical-box {
-  background-color: $base02; 
-  margin: 0.6em 0.2em 0.65em 0.65em;
-}
-
+.disclose-critical-box { background-color: $base02; }
 .disclose-bottom-button:hover { background-color: $normal; }
 .disclose-bottom-button-airplane { color: $base14; }
 .disclose-bottom-button-airplane:hover { background-color: $low; }

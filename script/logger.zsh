@@ -50,8 +50,8 @@ function make_literal() {
   local caches="$(compile_caches)"
   local quote="$($XDG_CONFIG_HOME/eww/script/quotes.zsh rand)"
   [[ "$caches" == "" ]] \
-    && print '(box :class "disclose-empty-box" :height 760 :orientation "vertical" :space-evenly false (image :class "disclose-empty-banner" :valign "end" :vexpand true :path "./assets/clock.png" :image-width 200 :image-height 200) (label :vexpand true :valign "start" :wrap true :class "disclose-empty-label" :text "'$quote'"))' \
-    || print "(scroll :height 760 :vscroll true (box :orientation 'vertical' :class 'disclose-scroll-box' :spacing 10 :space-evenly false $caches))"
+    && print '(box :class "disclose-empty-box" :height 750 :orientation "vertical" :space-evenly false (image :class "disclose-empty-banner" :valign "end" :vexpand true :path "./assets/clock.png" :image-width 200 :image-height 200) (label :vexpand true :valign "start" :wrap true :class "disclose-empty-label" :text "'$quote'"))' \
+    || print "(scroll :height 750 :vscroll true (box :orientation 'vertical' :class 'disclose-scroll-box' :spacing 10 :space-evenly false $caches))"
 }
 
 function clear_logs() {
@@ -67,9 +67,21 @@ function drop() { sed -i '$d' "$DUNST_LOG" }
 function remove_line() { sed -i '/SL "'$1'"/d' "$DUNST_LOG" }
 
 function critical_count() { 
-  local crits=$(cat $DUNST_LOG | grep CRITICAL | wc -l)
-  local total=$(cat $DUNST_LOG | wc -l)
+  local crits=$(cat $DUNST_LOG | grep CRITICAL | wc --lines)
+  local total=$(cat $DUNST_LOG | wc --lines)
   print $(((crits*100)/total))
+}
+
+function normal_count() { 
+  local norms=$(cat $DUNST_LOG | grep NORMAL | wc --lines)
+  local total=$(cat $DUNST_LOG | wc --lines)
+  print $(((norms*100)/total))
+}
+
+function low_count() { 
+  local lows=$(cat $DUNST_LOG | grep LOW | wc --lines)
+  local total=$(cat $DUNST_LOG | wc --lines)
+  print $(((lows*100)/total))
 }
 
 function subscribe() {
@@ -88,6 +100,8 @@ case "$1" in
   "subscribe") subscribe;;
   "rm_id") remove_line $2;;
   "crits") critical_count;;
+  "lows") low_count;;
+  "norms") normal_count;;
   *) create_cache;;
 esac
 
