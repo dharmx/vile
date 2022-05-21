@@ -10,11 +10,9 @@ function connection() {
 }
 
 function updates() {
-  if [ $(connection) = Online ]; then
-    yay --query --upgrades | wc --lines
-  else
-    print 
-  fi
+  [ $(connection) = Online ] \
+    && yay --query --upgrades | wc --lines \
+    || print 
 }
 
 updates
