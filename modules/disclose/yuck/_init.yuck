@@ -1,0 +1,27 @@
+(include "./modules/disclose/yuck/_env.yuck")
+(include "./modules/disclose/yuck/_modules.yuck")
+
+(defwindow disclose :stacking "fg" 
+  :windowtype "normal" 
+  :wm-ignore true
+  :geometry (geometry :x 76 :width "26%" :height "100%" :anchor "left center") 
+  (disclose_layout))
+
+(defwidget disclose_layout []
+  (box :orientation "vertical"
+       :space-evenly false
+       :class "disclose-layout-box"
+    (box :space-evenly false
+         :class "disclose-headers"
+
+      (label :text "Notifications"
+             :class "disclose-headers-label"
+             :halign "start"
+             :hexpand true)
+      (button :onclick "./script/logger.zsh clear"
+              :class "disclose-headers-clear" ""))
+
+    (literal :content disclose_cards :class "disclose-literal")
+    (_quick_notify_settings)))
+
+;; vim:ft=yuck

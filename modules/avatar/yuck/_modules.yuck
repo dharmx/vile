@@ -1,0 +1,55 @@
+(defwidget avatar_profile [path size ?M1 ?L1 ?R1 ?M2 ?L2 ?R2 ?M3 ?L3 ?R3]
+  (box :space-evenly false 
+       :vexpand true 
+       :valign "end" 
+       :class "avatar-profile-top-box" 
+       :height 320
+    (box :orientation "vertical" 
+         :space-evenly false 
+         :class "avatar-profile-user-box"
+      (image :path path 
+             :image-height size 
+             :image-width size 
+             :class "avatar-profile-image")
+
+      (label :text "${avatar_username}" 
+             :class "avatar-profile-username")
+      (label :text "@${avatar_hostname}" 
+             :class "avatar-profile-hostname"))
+
+    (box :orientation "vertical" 
+         :space-evenly false
+         :spacing 10
+         :class "avatar-quick-settings"
+         :valign "start"
+      (literal :content avatar_network 
+               :class "avatar-literal-wifi")
+
+      (avatar_tile :L "${avatar_bluetooth_state == "on" ? "bluetooth off" : "bluetooth on"}" 
+                   :icon "" 
+                   :main "Bluetooth" 
+                   :class "avatar-profile-bluetooth avatar-profile-bluetooth-${avatar_bluetooth_state}")
+      (avatar_tile :L "$TERMINAL yay & disown" 
+                   :icon "" 
+                   :main "${avatar_updates_state == 0 ? "Updates" : avatar_updates_state}" 
+                   :class "avatar-updates avatar-updates-${avatar_updates_state == 0 ? "none" : "has"}"))))
+
+(defwidget avatar_tile [icon main ?style_label ?style_icon ?M ?L ?R ?class ?box_class ?class_main ?class_icon]
+  (eventbox :class "avatar-eventbox ${class}" 
+            :onclick L 
+            :onmiddleclick M 
+            :onrightclick R
+
+    (box :class "avatar-card-box ${box_class}" 
+         :space-evenly false;
+      (label :style style_label 
+             :text icon 
+             :class "avatar-icon ${class_icon}")
+      (label :style style_icon 
+             :text main 
+             :class "avatar-main ${class_main}"))))
+
+;; TODO: Add mini-options like don't disturb, nightmode and mute
+;; TODO: Add powermenu options like reboot, poweroff, suspend lock, and logout
+
+;; vim:ft=yuck

@@ -1,0 +1,48 @@
+$base00: #101317;
+$base01: #171C21;
+$base02: #1c2026;
+$base03: #20252b;
+
+$base04: #949494;
+$base05: #d4d4d5;
+$base06: #ffffff;
+
+$base07: #54ced6;
+$base08: #70c0ba;
+$base09: #7ab0df;
+$base10: #b77ee0;
+
+$base11: #f87070;
+$base12: #36c692;
+$base13: #ffe59e;
+$base14: #79dcaa;
+$base15: #c397d8;
+
+$shade00: #333c44;
+$shade01: #262d33;
+$shade02: #252528;
+$shade03: #1b2026;
+$shade04: #1e1e21;
+$shade05: #171b20;
+$shade06: #14171c;
+$shade07: #151a1e;
+$shade08: #14181c;
+$shade09: #121519;
+$shade10: #141416;
+$shade11: #121214;
+
+$normal: #273a4e;
+$critical: #471d1d;
+$low: #0c2d21;
+$other: #2c1033;
+
+* {
+  all: unset;
+  transition: 200ms ease-out;
+}
+
+@import "./modules/vertigo/scss/_button.scss";
+@import "./modules/disclose/scss/_card.scss";
+@import "./modules/avatar/scss/_main.scss";
+
+// vim:ft=scss

@@ -1,0 +1,14 @@
+(include "./modules/avatar/yuck/_env.yuck")
+(include "./modules/avatar/yuck/_modules.yuck")
+
+(defwindow avatar :stacking "fg" :windowtype "normal" :wm-ignore true
+  :geometry (geometry :x 76 :width "26%" :height "100%" :anchor "left center") 
+  (avatar_layout))
+
+(defwidget avatar_layout []
+  (box :orientation "vertical" :space-evenly false :class "avatar-box"
+    (scroll :class "avatar-scroll" :hscroll false :vscroll true 
+      (box :space-evenly false :class "avatar-box-inner" :orientation "vertical" :vexpand true :hexpand true (label :text "hello")))
+    (avatar_profile :path "./assets/profile.png" :size 120)))
+
+;; vim:ft=yuck

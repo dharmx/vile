@@ -1,0 +1,199 @@
+.disclose-layout-box {
+  background-color: $shade09;
+  font-family: "feather", "Iosevka Nerd Font", sans-serif;
+}
+
+.disclose-headers {
+  padding: 1em 2em 0 2em;
+  margin-bottom: 0.8em;
+  color: $base05;
+}
+
+.disclose-headers-label {
+  font-size: 20;
+  font-weight: bold;
+  color: $base11;
+  opacity: 0.8;
+}
+
+.disclose-headers-clear { 
+  font-size: 25;
+  color: $base09;
+  padding: 0em 0.7em 0 0.5em;
+}
+
+.disclose-headers-clear:hover { 
+  background-color: $base09; 
+  color: $base02;
+}
+
+.disclose-empty-box {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.disclose-empty-label {
+  padding-top: 2em;
+  color: $shade00;
+  font-size: 15;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+.disclose-scroll-box { margin: 0 1.1em 0 1.1em; }
+.disclose-card-eventbox { background: linear-gradient(45deg, $base02 20%, $base01 100%); }
+.disclose-card-eventbox:hover { background: linear-gradient(170deg, $base01 20%, $shade01 100%); }
+.disclose-card-box { padding: 2em; }
+
+.disclose-separator {
+  background-color: $shade00;
+  font-size: 1;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.disclose-LOW {
+  background-color: $low;
+  color: $base14;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.disclose-NORMAL {
+  background-color: $normal;
+  color: $base09;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.disclose-CRITICAL {
+  background-color: $critical;
+  color: $base11;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.disclose-OTHER {
+  background-color: $other;
+  color: $base15;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.disclose-spotify {
+  background-color: $critical;
+  color: $base11;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.disclose-sxhkd {
+  background-color: $normal;
+  color: $base07;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.disclose-brightness {
+  background-color: $normal;
+  color: $base13;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.disclose-summary {
+  font-weight: bold;
+  font-size: 17;
+  color: $base07;
+}
+
+.disclose-card-notify-close {
+  color: $base11;
+  border-radius: 50%;
+  margin-bottom: 0.3em;
+}
+
+.disclose-card-notify-close:hover label { 
+  background-color: $base11; 
+  color: $base03;
+  border-radius: 50%;
+  padding-left: 0.05em;
+  padding-right: 0.05em;
+}
+.disclose-body { color: $base04; }
+
+.disclose-bottom-box { 
+  background-color: $shade05; 
+  margin: 1em 1.1em 1em 1.1em; 
+}
+
+.disclose-urgency-box {
+  margin: 0.65em 0 0.65em 0.6em;
+  padding-top: 1em;
+  border-radius: 1em;
+  background: linear-gradient(0deg, $base03 2%, $base02 100%);
+}
+
+.disclose-circular {
+  font-size: 30;
+}
+
+.disclose-circular label {
+  padding: 1em 1.3em 1em 1em;
+}
+
+.disclose-circular-critical {
+  color: $base11;
+  background-color: $critical;
+}
+
+.disclose-circular-critical label {
+  color: $base11;
+  background: linear-gradient(90deg, $base01 0%, $critical 100%);
+}
+
+.disclose-circular-normal {
+  color: $base09;
+  background-color: $normal;
+}
+
+.disclose-circular-normal label {
+  color: $base09;
+  background: linear-gradient(90deg, $base01 0%, $normal 100%);
+}
+
+.disclose-circular-low {
+  color: $base14;
+  background-color: $low;
+}
+
+.disclose-circular-low label {
+  color: $base14;
+  background: linear-gradient(90deg, $base01 0%, $low 100%);
+}
+
+.disclose-circular-header {
+  background-color: $base09;
+  color: $normal;
+  border-radius: 0.5em 0.5em 0 0;
+  font-weight: bold;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+.disclose-bottom-button {
+  background-color: $shade03;
+  font-size: 40;
+  border-radius: 0.3em;
+  color: $base09;
+}
+
+.disclose-critical-box { background-color: $base02; }
+.disclose-bottom-button:hover { background-color: $normal; }
+.disclose-bottom-button-airplane { color: $base14; }
+.disclose-bottom-button-airplane:hover { background-color: $low; }
+.disclose-bottom-button-pop { color: $base15; }
+.disclose-bottom-button-pop:hover { background-color: $other; }
+.disclose-bottom-quick-box { margin: 0.6em; }
+
+// vim:ft=scss

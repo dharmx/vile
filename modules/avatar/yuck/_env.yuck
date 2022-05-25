@@ -1,0 +1,8 @@
+(deflisten avatar_network "./script/network.zsh sub2wifi")
+
+(defpoll avatar_bluetooth_state :interval "3s" "bluetooth | awk '{print $3}'")
+(defpoll avatar_updates_state :interval "5h" "./script/yay.zsh")
+(defpoll avatar_hostname :interval "1000s" "hostnamectl hostname")
+(defpoll avatar_username :interval "1000s" "echo $USER")
+
+;; vim:ft=yuck
