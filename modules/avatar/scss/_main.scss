@@ -1,4 +1,4 @@
-.avatar-box {
+.avatar-layout-box {
   font-family: "feather", "Iosevka Nerd Font";
   background-color: $shade09;
 }
@@ -7,6 +7,8 @@
   // TODO: Make this look prettier.
   background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 1.0), rgba(30, 33, 40, 0.95)), url("./assets/banner.jpg");
   background-size: cover;
+  border-radius: 1em;
+  margin: 1em;
   background-repeat: no-repeat;
 }
 
@@ -39,6 +41,7 @@
 
 .avatar-profile-bluetooth-on .avatar-icon { color: $base14; }
 .avatar-profile-bluetooth-off .avatar-icon { color: $base11; }
+
 .avatar-icon-connected { color: $base14; }
 .avatar-icon-disconnected { color: $base11; }
 .avatar-icon-connecting { color: $base13; }
@@ -46,6 +49,82 @@
 .avatar-icon-unmanaged { color: $base09; }
 .avatar-icon-deactivating { color: $base10; }
 .avatar-icon-using { color: $base12; }
-.avatar-updates-has .avatar-icon { color: $base13; }
 
+.avatar-updates-has .avatar-icon { color: $base13; }
+.avatar-updates-none .avatar-icon { color: $base14; }
+
+.avatar-mpd-box {
+  font-family: feather, Lato, "Iosevka Nerd Font", sans-serif;
+  margin: 1em;
+  border-radius: 1em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  padding: 1.5em;
+}
+
+.avatar-mpd-icon {
+  font-size: 30;
+  margin-right: 0.6em;
+}
+
+.avatar-mpd-icon,
+.avatar-mpd-name {
+  font-weight: 500;
+}
+
+.avatar-mpd-separator {
+  font-size: 15;
+  padding: 0 0.5em 0 0.5em;
+}
+
+.avatar-mpd-artist,
+.avatar-mpd-title {
+  font-size: 20;
+}
+
+.avatar-mpd-title {
+  font-weight: bold;
+}
+
+.avatar-mpd-controls {
+  font-size: 25;
+}
+
+.avatar-mpd-button-playback {
+  font-size: 40;
+  margin-right: 0.3em;
+}
+
+.avatar-mpd-button-like {
+  padding-left: 0.5em;
+  font-size: 30;
+}
+
+.avatar-mpd-minimal {
+  font-size: 20;
+}
+
+.avatar-mpd-footer {
+  font-size: 17;
+}
+
+.avatar-mpd-progress {
+  trough {
+    background-color: darken($base05, 25%);
+    min-height: 0.3em;
+    border-radius: 0.2em;
+
+    highlight {
+      background-color: lighten($base05, 15%);
+      border-radius: 0.2em;
+    }
+
+    slider {
+      background: lighten($base05, 25%);
+      border-radius: 100%;
+      margin: -8px;
+    }
+  }
+}
 // vim:ft=scss

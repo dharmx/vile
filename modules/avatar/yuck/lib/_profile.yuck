@@ -34,22 +34,4 @@
                    :main "${avatar_updates_state == 0 ? "Updates" : avatar_updates_state}" 
                    :class "avatar-updates avatar-updates-${avatar_updates_state == 0 ? "none" : "has"}"))))
 
-(defwidget avatar_tile [icon main ?style_label ?style_icon ?M ?L ?R ?class ?box_class ?class_main ?class_icon]
-  (eventbox :class "avatar-eventbox ${class}" 
-            :onclick L 
-            :onmiddleclick M 
-            :onrightclick R
-
-    (box :class "avatar-card-box ${box_class}" 
-         :space-evenly false;
-      (label :style style_label 
-             :text icon 
-             :class "avatar-icon ${class_icon}")
-      (label :style style_icon 
-             :text main 
-             :class "avatar-main ${class_main}"))))
-
-;; TODO: Add mini-options like don't disturb, nightmode and mute
-;; TODO: Add powermenu options like reboot, poweroff, suspend lock, and logout
-
-;; vim:ft=yuck
+; vim:filetype=yuck

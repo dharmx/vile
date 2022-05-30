@@ -1,14 +1,43 @@
 (include "./modules/avatar/yuck/_env.yuck")
-(include "./modules/avatar/yuck/_modules.yuck")
+(include "./modules/avatar/yuck/lib/_init.yuck")
 
 (defwindow avatar :stacking "fg" :windowtype "normal" :wm-ignore true
   :geometry (geometry :x 76 :width "26%" :height "100%" :anchor "left center") 
   (avatar_layout))
 
 (defwidget avatar_layout []
-  (box :orientation "vertical" :space-evenly false :class "avatar-box"
-    (scroll :class "avatar-scroll" :hscroll false :vscroll true 
-      (box :space-evenly false :class "avatar-box-inner" :orientation "vertical" :vexpand true :hexpand true (label :text "hello")))
-    (avatar_profile :path "./assets/profile.png" :size 120)))
+  (box :orientation "vertical"
+       :space-evenly false
+       :class "avatar-layout-box"
+    (scroll :class "avatar-scroll"
+            :height 760
+            :hscroll false
+            :vscroll true
+      (box :space-evenly false
+           :class "avatar-box-inner"
+           :orientation "vertical"
+           :vexpand true
+           :hexpand true
+        (avatar_mpd :current mpd_current
+                    :duration "${mpd_sub.duration}"
+                    :progress mpd_progress
+                    :icon ""
+                    :separator ""
+                    :album "${mpd_sub.album == "" ? "Unknown" : mpd_sub.album}"
+                    :title "${mpd_sub.title == "" ? "Unknown" : mpd_sub.title}"
+                    :artist "${mpd_sub.artist == "" ? "Unknown" : mpd_sub.artist}"
+                    :like "dunstify MPD Liked"
+                    :like_icon ""
+                    :prev "mpc prev"
+                    :prev_icon ""
+                    :next "mpc next"
+                    :next_icon ""
+                    :minimal "dunstify MPD minimal"
+                    :minimal_icon ""
+                    :pause_icon ""
+                    :play_icon ""
+                    :playback "[ $(mpc toggle | sed -n 2p | awk '{print $1}') = '[paused]' ] && eww update mpd_state='' || eww update mpd_state=''")))
+    (avatar_profile :path "./assets/profile.png" 
+                    :size 120)))
 
 ;; vim:ft=yuck

@@ -10,9 +10,7 @@ function connection() {
 }
 
 function updates() {
-  [ $(connection) = Online ] \
-    && yay --query --upgrades | wc --lines \
-    || print 
+  [ $(connection) = Online ] && yay --query --upgrades | wc --lines || print 
 }
 
 updates

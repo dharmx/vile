@@ -9,18 +9,20 @@
   (vertigo_layout))
 
 (defwidget vertigo_layout []
-  (box :spacing 0 
-       :orientation "vertical" 
+  (box :orientation "vertical" 
        :space-evenly false
+       :class "vertigo-layout-box"
     (literal :content vertigo_nodes)
-    (_label :text "" 
-            :tooltip "find" 
+    (_label :text ""
+            :tooltip "find"
+            :vexpand false
             :button-class "vertigo-search-button" 
-            :L "rofi -show &")
-    (literal :content vertigo_workspaces)
+            :L `pushd ~;rofi -show;popd`)
+    (literal :content vertigo_workspaces 
+             :vexpand true)
     (_label :text vertigo_battery 
             :tooltip "battery: ${vertigo_battery}" 
-            :vexpand true 
+            :vexpand false
             :valign "end"
             :button-class "vertigo-battery-button")
     (_time :format_first vertigo_time_first 
@@ -35,7 +37,7 @@
               :path vertigo_profile
               :image-class "vertigo-profile-image" 
               :button-class "vertigo-profile-button" 
-              :size 45 
+              :size "50"
               :tooltip "profile")))
 
 ;; vim:ft=yuck

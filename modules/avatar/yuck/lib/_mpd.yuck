@@ -1,0 +1,89 @@
+(defwidget avatar_mpd [
+  current duration progress icon separator album 
+  title artist like like_icon prev prev_icon next 
+  next_icon minimal minimal_icon playback play_icon 
+  pause_icon]
+  (box :orientation "vertical" 
+       :class "avatar-mpd-box" 
+       :space-evenly false
+       :spacing 20
+       :style "
+         background-image: radial-gradient(
+           circle farthest-side at left,
+           ${mpd_sub.color_bg} 48%,
+           rgba(30, 33, 40, 0.5) 80%),
+           url(\"${mpd_sub.art}\");
+         color: ${mpd_sub.color_fg}
+       "
+
+    (box :class "avatar-mpd-header-box"
+         :space-evenly false
+
+      (box :hexpand true
+           :space-evenly false
+        (label :class "avatar-mpd-icon"
+               :text icon)
+        (label :class "avatar-mpd-name"
+               :text "MPD")
+        (label :class "avatar-mpd-separator"
+               :text separator)
+        (label :class "avatar-mpd-album ${album == "" ? "avatar-mpd-album-null" : ""}" 
+               :style "color: ${mpd_sub.color_fg}"
+               :text album))
+
+      (button :onclick minimal
+              :class "avatar-mpd-minimal-box"
+              :halign "end"
+        (label :class "avatar-mpd-minimal"
+               :text minimal_icon)))
+
+    (box :orientation "vertical" 
+         :class "avatar-title-artist-box"
+         :space-evenly false
+         :halign "start"
+      (label :class "avatar-mpd-title"
+             :halign "start"
+             :text title)
+      (label :class "avatar-mpd-artist"
+             :text artist
+             :halign "start"))
+
+    (box :class "avatar-mpd-controls"
+         :space-evenly false
+         :spacing 30
+
+      (button :onclick like
+              :class "avatar-mpd-button-like"
+        (label :class "avatar-mpd-label-like"
+               :text like_icon))
+      (button :onclick prev 
+              :class "avatar-mpd-button-prev" 
+        (label :class "avatar-mpd-label-prev" 
+               :text prev_icon))
+
+      (button :onclick playback 
+              :class "avatar-mpd-button-playback" 
+        (label :class "avatar-mpd-label-playback" 
+               :text "${mpd_playback == "[paused]" ? pause_icon : play_icon}"))
+      (button :onclick next 
+              :class "avatar-mpd-button-next" 
+        (label :class "avatar-mpd-label-next" 
+               :text next_icon)))
+
+    (scale :class "avatar-mpd-progress"
+           :value progress
+           :min 0
+           :max 100
+           :active false)
+
+    (box :class "avatar-mpd-footer"
+         :space-evenly false
+      (label :class "avatar-mpd-label-current" 
+             :text current 
+             :hexpand true 
+             :halign "start")
+      (label :class "avatar-mpd-label-duration" 
+             :text duration 
+             :halign "end"))))
+
+; vim:filetype=yuck
