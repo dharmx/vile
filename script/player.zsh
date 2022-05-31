@@ -1,8 +1,12 @@
 #!/usr/bin/env zsh
 
-typeset -g MPD_DEFAULT="${XDG_CACHE_HOME:-~/.cache}/mpd/default.png"
 typeset -g MPD_CACHE="${XDG_CACHE_HOME:-~/.cache}/mpd"
 mkdir "$MPD_CACHE" 2>/dev/null
+typeset -g MPD_DEFAULT="${XDG_CACHE_HOME:-~/.cache}/mpd/default.png"
+
+typeset -g PCTL_CACHE="${XDG_CACHE_HOME:-~/.cache}/pctl"
+mkdir "$PCTL_CACHE" 2>/dev/null
+typeset -g PCTL_DEFAULT="${XDG_CACHE_HOME:-~/.cache}/pctl/default.png"
 
 function clean_corrupt_mpd_caches() {
   pushd "$MPD_CACHE"
@@ -129,10 +133,15 @@ function interface_pctl() {
     tojson)
       local artUrl="$MPD_DEFAULT"
       [ $(connection) = Online ] && artUrl='{{mpris:artUrl}}'
-      playerctl metadata --format '{"url": "{{xesam:url}}","albumArtist":"{{xesam:albumArtist}}","length":"{{xesam:length}}","artist":"{{xesam:artist}}","discNumber":"{{xesam:discNumber}}","title":"{{xesam:title}}","autoRating":"{{xesam:autoRating}}","album":"{{xesam:album}}","artUrl":"'$artUrl'","trackid":"{{xesam:trackid}}","trackNumber":"{{xesam:trackNumber}}"}'
+      playerctl metadata --format '{"status":"{{status}}","url":"{{xesam:url}}","albumArtist":"{{xesam:albumArtist}}","length":"{{xesam:length}}","artist":"{{xesam:artist}}","discNumber":"{{xesam:discNumber}}","title":"{{xesam:title}}","autoRating":"{{xesam:autoRating}}","album":"{{xesam:album}}","artUrl":"'$artUrl'","trackid":"{{xesam:trackid}}","trackNumber":"{{xesam:trackNumber}}"}'
       ;;
     *) print "PCTL: Not implemented!"
   esac
+}
+
+function handle_pctl_caching() {
+  local current_player="$(playerctl --list-all | head -n1)"
+  local player_json="$(interface_pctl _ _ tojson | jq .artUrl)"
 }
 
 function redirect() {
@@ -152,6 +161,6 @@ case "$1" in
   *) print "Not implemented!";;
 esac
 
-unset MPD_CACHE MPD_DEFAULT
+unset MPD_CACHE MPD_DEFAULT PCTL_CACHE PCTL_DEFAULT
 
 # vim:filetype=zsh

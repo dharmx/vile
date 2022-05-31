@@ -1,0 +1,12 @@
+{
+  "player": {
+    "mpd": {
+      "cache_path": "$XDG_CACHE_HOME/mpd",
+      "default_art": "$XDG_CACHE_HOME/mpd/default.png"
+    },
+    "pctl": {
+      "cache_path": "$XDG_CACHE_HOME/pctl",
+      "default_art": "$XDG_CACHE_HOME/pctl/default.png"
+    }
+  }
+}

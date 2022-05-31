@@ -41,6 +41,11 @@ $other: #2c1033;
   transition: 200ms ease-out;
 }
 
+tooltip {
+  background-color: $base15;
+  font-size: 14px;
+}
+
 @import "./modules/vertigo/scss/_button.scss";
 @import "./modules/disclose/scss/_card.scss";
 @import "./modules/avatar/scss/_main.scss";
