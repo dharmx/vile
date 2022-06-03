@@ -31,9 +31,9 @@ class MPDHandler:
         pathlib.Path(self.prefix).mkdir(parents=True, exist_ok=True)
         pathlib.Path(self.cache).mkdir(parents=True, exist_ok=True)
 
-    def _validatepath(path: str) -> str:
-        path = os.path.dirname(path)
-        return path + "/" if "/" in path or path else path
+    def _validatepath(self) -> str:
+        self = os.path.dirname(self)
+        return f"{self}/" if "/" in self or self else self
 
     def _embeddedcover(self, key: str) -> None or bytes:
         content = self._client.readpicture(key)
@@ -57,10 +57,7 @@ class MPDHandler:
         cachefull = f"{MPDHandler._validatepath(key)}{pathlib.Path(key).stem}"
 
         if not os.path.exists(f"{self.cache}/{cachefull}.png"):
-            # try fetch the embedded cover in the mp3 file
-            covercontent = self._embeddedcover(f"{cachefull}.mp3")
-
-            if covercontent:  # check if mp3 has cover art
+            if covercontent := self._embeddedcover(f"{cachefull}.mp3"):
                 with open(f"{self.cache}/{cachefull}.png", "wb") as target:
                     target.write(covercontent)  # then write bytes to file
                 return True
@@ -99,7 +96,7 @@ class MPDHandler:
         metadata["cachepath"] = (
             self.get(metadata["current"]["file"]) if metadata["current"] else {}
         )
-        return metadata if not tojson else json.dumps(metadata)
+        return json.dumps(metadata) if tojson else metadata
 
     def cacheplaylist(self) -> None:
         [self.create(file[6:]) for file in self._client.playlist()]
@@ -109,7 +106,7 @@ class MPDHandler:
         self._client.update()
         for file in self._client.listall():
             todict: dict = dict(file)
-            if not "directory" in todict:
+            if "directory" not in todict:
                 self.create(todict["file"])
 
     def subscribe(self, interval: float = 1.0) -> str:
@@ -151,10 +148,10 @@ class PCTLHandler:
         try:
             # INFO: https://amish.naidu.dev/blog/dbus
             properties = dbus.Interface(self._player, "org.freedesktop.DBus.Properties")
-            metadata = metadata | properties.Get("org.mpris.MediaPlayer2.Player", "Metadata")
+            metadata |= properties.Get("org.mpris.MediaPlayer2.Player", "Metadata")
         except DBusException:
             pass
-        return json.loads(json.dumps(metadata)) if not tojson else json.dumps(metadata)
+        return json.dumps(metadata) if tojson else json.loads(json.dumps(metadata))
 
     def playback(self, function: str) -> None:
         interface = dbus.Interface(
