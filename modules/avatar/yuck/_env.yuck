@@ -1,15 +1,16 @@
 (deflisten avatar_network "./script/network.zsh sub2wifi")
-(deflisten mpd_sub "./script/player.zsh sub_mpd")
-(deflisten mpd_playback "./script/player.zsh sub_mpd playback")
+(deflisten mpd_sub "./script/player.py -I mpd -s 0.3")
+(deflisten mpd_state "./script/player.py -I mpd -s -1")
 
 (defpoll mpd_progress :interval "1s" `mpc | grep "%)" | awk '{print $4}' | tr -d '(%)'`)
 (defpoll mpd_current :interval "1s" `mpc | grep "#" | awk '{print $3}' | sed 's|/.*||g'`)
+(defpoll mpd_duration :interval "10s" `mpc --format=%time% current`)
 (defpoll pctl_current :interval "10s" "./player.zsh interface pctl tojson")
 (defpoll avatar_bluetooth_state :interval "3s" "bluetooth | awk '{print $3}'")
 (defpoll avatar_updates_state :interval "5h" "./script/yay.zsh")
 (defpoll avatar_hostname :interval "1000s" "hostnamectl hostname")
 (defpoll avatar_username :interval "1000s" "echo $USER")
 
-(defvar mpd_state "")
+; eww update mpd_state='' || eww update mpd_state=''"
 
 ;; vim:ft=yuck

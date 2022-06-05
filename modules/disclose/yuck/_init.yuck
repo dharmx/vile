@@ -4,7 +4,7 @@
 (defwindow disclose :stacking "fg" 
   :windowtype "normal" 
   :wm-ignore true
-  :geometry (geometry :x 76 :width "26%" :height "100%" :anchor "left center") 
+  :geometry (geometry :width "26%" :height "100%" :anchor "right center") 
   (disclose_layout))
 
 (defwidget disclose_layout []

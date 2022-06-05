@@ -1,6 +1,8 @@
 (deflisten vertigo_workspaces "./script/workspaces.zsh subscribe_desktop")
 (deflisten vertigo_nodes "./script/workspaces.zsh subscribe_node")
 
+
+(defvar vertigo_open false)
 (defvar vertigo_revealex false)
 (defvar vertigo_remove "./script/workspaces.zsh remove")
 (defvar vertigo_create "./script/workspaces.zsh create")

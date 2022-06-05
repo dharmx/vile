@@ -2,7 +2,7 @@
 (include "./modules/avatar/yuck/lib/_init.yuck")
 
 (defwindow avatar :stacking "fg" :windowtype "normal" :wm-ignore true
-  :geometry (geometry :x 76 :width "26%" :height "100%" :anchor "left center") 
+  :geometry (geometry :width "26%" :height "100%" :anchor "right center") 
   (avatar_layout))
 
 (defwidget avatar_layout []
@@ -19,13 +19,13 @@
            :vexpand true
            :hexpand true
         (avatar_mpd :current mpd_current
-                    :duration "${mpd_sub.duration}"
+                    :duration mpd_duration
                     :progress mpd_progress
                     :icon ""
                     :separator ""
-                    :album "${mpd_sub.album == "" ? "Unknown" : mpd_sub.album}"
-                    :title "${mpd_sub.title == "" ? "Unknown" : mpd_sub.title}"
-                    :artist "${mpd_sub.artist == "" ? "Unknown" : mpd_sub.artist}"
+                    :album "${mpd_sub.album}"
+                    :title "${mpd_sub.title}"
+                    :artist "${mpd_sub.artist}"
                     :like "dunstify MPD Liked"
                     :like_icon ""
                     :prev "mpc prev"
@@ -35,8 +35,7 @@
                     :minimal "dunstify MPD minimal"
                     :minimal_icon ""
                     :pause_icon ""
-                    :play_icon ""
-                    :playback "[ $(mpc toggle | sed -n 2p | awk '{print $1}') = '[paused]' ] && eww update mpd_state='' || eww update mpd_state=''")))
+                    :play_icon "")))
     (avatar_profile :path "./assets/profile.png" 
                     :size 120)))
 

@@ -1,7 +1,7 @@
 (defwidget avatar_mpd [
   current duration progress icon separator album 
   title artist like like_icon prev prev_icon next 
-  next_icon minimal minimal_icon playback play_icon 
+  next_icon minimal minimal_icon play_icon 
   pause_icon]
   (box :orientation "vertical" 
        :class "avatar-mpd-box" 
@@ -10,10 +10,10 @@
        :style "
          background-image: radial-gradient(
            circle farthest-side at left,
-           ${mpd_sub.color_bg} 48%,
-           rgba(30, 33, 40, 0.5) 80%),
-           url(\"${mpd_sub.art}\");
-         color: ${mpd_sub.color_fg}
+           ${mpd_sub.bright} 48%,
+           rgba(30, 33, 40, 0.7) 80%),
+           url(\"${mpd_sub.file}\");
+         color: ${mpd_sub.dark}
        "
 
     (box :class "avatar-mpd-header-box"
@@ -28,7 +28,7 @@
         (label :class "avatar-mpd-separator"
                :text separator)
         (label :class "avatar-mpd-album ${album == "" ? "avatar-mpd-album-null" : ""}" 
-               :style "color: ${mpd_sub.color_fg}"
+               :style "color: ${mpd_sub.dark}"
                :text album))
 
       (button :onclick minimal
@@ -61,10 +61,10 @@
         (label :class "avatar-mpd-label-prev" 
                :text prev_icon))
 
-      (button :onclick playback 
+      (button :onclick "mpc toggle"
               :class "avatar-mpd-button-playback" 
         (label :class "avatar-mpd-label-playback" 
-               :text "${mpd_playback == "[paused]" ? pause_icon : play_icon}"))
+               :text "${mpd_state == "play" ? play_icon : pause_icon}"))
       (button :onclick next 
               :class "avatar-mpd-button-next" 
         (label :class "avatar-mpd-label-next" 
