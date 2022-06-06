@@ -29,7 +29,8 @@
                :text separator)
         (label :class "avatar-mpd-album ${album == "" ? "avatar-mpd-album-null" : ""}" 
                :style "color: ${mpd_sub.dark}"
-               :text album))
+               :text album
+               :limit-width 30))
 
       (button :onclick minimal
               :class "avatar-mpd-minimal-box"
@@ -43,10 +44,12 @@
          :halign "start"
       (label :class "avatar-mpd-title"
              :halign "start"
-             :text title)
+             :text title
+             :limit-width 30)
       (label :class "avatar-mpd-artist"
              :text artist
-             :halign "start"))
+             :halign "start"
+             :limit-width 30))
 
     (box :class "avatar-mpd-controls"
          :space-evenly false
@@ -62,7 +65,7 @@
                :text prev_icon))
 
       (button :onclick "mpc toggle"
-              :class "avatar-mpd-button-playback" 
+              :class "avatar-mpd-button-playback"
         (label :class "avatar-mpd-label-playback" 
                :text "${mpd_state == "play" ? play_icon : pause_icon}"))
       (button :onclick next 

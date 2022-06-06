@@ -7,7 +7,6 @@ import pathlib
 import subprocess
 import sys
 import time
-import datetime
 
 import gi
 import mpd
@@ -304,11 +303,9 @@ if __name__ == "__main__":
                 print(handler.metadatajson(player))
             elif args.playback:
                 handler.playback(player, args.playback)
-            elif args.subscribe > 0:
-                handler.subscribe(args.subscribe)
+            elif args.subscribe:
+                handler.subscribe()
             elif args.subscribe < 0:
                 print("arg of -s/--subscribe must be greater than 0")
-            else:
-                handler.subscribe()
 
 # vim:filetype=python

@@ -55,8 +55,7 @@ function make_literal() {
 }
 
 function clear_logs() {
-  killall dunst 2>/dev/null
-  dunst & disown
+  systemctl --user restart dunst.service
   print > "$DUNST_LOG"
 }
 

@@ -1,74 +1,65 @@
 (defwidget avatar_pctl [
   icon separator album 
-  title artist like like_icon prev prev_icon next 
-  next_icon minimal minimal_icon playback play_icon 
-  pause_icon]
+  title artist prev prev_icon next 
+  next_icon minimal minimal_icon]
   (box :orientation "vertical" 
-       :class "avatar-mpd-box" 
+       :class "avatar-pctl-box" 
        :space-evenly false
        :spacing 20
-       :style "
-         background-image: radial-gradient(
-           circle farthest-side at left,
-           ${mpd_sub.color_bg} 48%,
-           rgba(30, 33, 40, 0.5) 80%),
-           url(\"${mpd_sub.art}\");
-         color: ${mpd_sub.color_fg}
-       "
+       :style `
+         background-image: radial-gradient(circle farthest-side at left, black 60%, rgba(30, 33, 40, 0.7) 80%), url("${pctl_sub['mpris:artUrl']}");
+       `
 
-    (box :class "avatar-mpd-header-box"
+    (box :class "avatar-pctl-header-box"
          :space-evenly false
 
       (box :hexpand true
            :space-evenly false
-        (label :class "avatar-mpd-icon"
+        (label :class "avatar-pctl-icon"
                :text icon)
-        (label :class "avatar-mpd-name"
-               :text "MPD")
-        (label :class "avatar-mpd-separator"
+        (label :class "avatar-pctl-name"
+               :text "PCTL")
+        (label :class "avatar-pctl-separator"
                :text separator)
-        (label :class "avatar-mpd-album ${album == "" ? "avatar-mpd-album-null" : ""}" 
-               :style "color: ${mpd_sub.color_fg}"
-               :text album))
+        (label :class "avatar-pctl-album ${album == "" ? "avatar-pctl-album-null" : ""}" 
+               :text album
+               :limit-width 30))
 
       (button :onclick minimal
-              :class "avatar-mpd-minimal-box"
+              :class "avatar-pctl-minimal-box"
               :halign "end"
-        (label :class "avatar-mpd-minimal"
+        (label :class "avatar-pctl-minimal"
                :text minimal_icon)))
 
     (box :orientation "vertical" 
          :class "avatar-title-artist-box"
          :space-evenly false
          :halign "start"
-      (label :class "avatar-mpd-title"
+      (label :class "avatar-pctl-title"
              :halign "start"
-             :text title)
-      (label :class "avatar-mpd-artist"
+             :text title
+             :limit-width 30)
+      (label :class "avatar-pctl-artist"
              :text artist
-             :halign "start"))
+             :halign "start"
+             :limit-width 30))
 
-    (box :class "avatar-mpd-controls"
+    (box :class "avatar-pctl-controls"
          :space-evenly false
          :spacing 30
 
-      (button :onclick like
-              :class "avatar-mpd-button-like"
-        (label :class "avatar-mpd-label-like"
-               :text like_icon))
       (button :onclick prev 
-              :class "avatar-mpd-button-prev" 
-        (label :class "avatar-mpd-label-prev" 
+              :class "avatar-pctl-button-prev" 
+        (label :class "avatar-pctl-label-prev" 
                :text prev_icon))
 
-      (button :onclick playback 
-              :class "avatar-mpd-button-playback" 
-        (label :class "avatar-mpd-label-playback" 
-               :text "${mpd_playback == "[paused]" ? pause_icon : play_icon}"))
+      (button :onclick "playerctl play-pause"
+              :class "avatar-pctl-button-playback"
+        (label :class "avatar-pctl-label-playback" 
+               :text pctl_state))
       (button :onclick next 
-              :class "avatar-mpd-button-next" 
-        (label :class "avatar-mpd-label-next" 
+              :class "avatar-pctl-button-next" 
+        (label :class "avatar-pctl-label-next" 
                :text next_icon)))))
 
-; vim:filetype=yuck
 ; vim:filetype=yuck

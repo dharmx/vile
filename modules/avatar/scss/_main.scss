@@ -69,45 +69,35 @@
 }
 
 .avatar-mpd-icon,
-.avatar-mpd-name {
-  font-weight: 500;
-}
+.avatar-mpd-name { font-weight: 500; }
 
 .avatar-mpd-separator {
   font-size: 15;
-  padding: 0 0.5em 0 0.5em;
+  padding: 0 0.5em 0 0.5em; 
 }
 
 .avatar-mpd-artist,
-.avatar-mpd-title {
-  font-size: 20;
-}
-
-.avatar-mpd-title {
-  font-weight: bold;
-}
-
-.avatar-mpd-controls {
-  font-size: 25;
-}
+.avatar-mpd-title { font-size: 20; }
+.avatar-mpd-title { font-weight: bold; }
+.avatar-mpd-controls { font-size: 25; }
 
 .avatar-mpd-button-playback {
   font-size: 40;
   margin-right: 0.3em;
 }
 
+.avatar-mpd-button-playback:hover { color: $base10; }
+.avatar-mpd-button-prev:hover { color: $base09; }
+.avatar-mpd-button-next:hover { color: $base09; }
+
 .avatar-mpd-button-like {
   padding-left: 0.5em;
   font-size: 30;
 }
 
-.avatar-mpd-minimal {
-  font-size: 20;
-}
-
-.avatar-mpd-footer {
-  font-size: 17;
-}
+.avatar-mpd-button-like:hover { color: $base11; }
+.avatar-mpd-minimal { font-size: 20; }
+.avatar-mpd-footer { font-size: 17; }
 
 .avatar-mpd-progress {
   trough {
@@ -127,4 +117,45 @@
     }
   }
 }
+
+.avatar-pctl-box {
+  font-family: feather, Lato, "Iosevka Nerd Font", sans-serif;
+  margin: 1em;
+  border-radius: 1em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  padding: 1.5em;
+  color: $base05;
+}
+
+.avatar-pctl-icon {
+  font-size: 30;
+  margin-right: 0.6em;
+  color: $base09;
+}
+
+.avatar-pctl-icon,
+.avatar-pctl-name { font-weight: 500; }
+
+.avatar-pctl-separator {
+  font-size: 15;
+  padding: 0 0.5em 0 0.5em;
+}
+
+.avatar-pctl-artist,
+.avatar-pctl-title { font-size: 20; }
+.avatar-pctl-title { font-weight: bold; }
+.avatar-pctl-controls { font-size: 25; }
+
+.avatar-pctl-button-playback {
+  font-size: 40;
+  margin-right: 0.3em;
+}
+
+.avatar-pctl-button-playback:hover { color: $base10; }
+.avatar-pctl-button-prev:hover { color: $base09; }
+.avatar-pctl-button-next:hover { color: $base09; }
+.avatar-pctl-minimal { font-size: 20; }
+
 // vim:ft=scss

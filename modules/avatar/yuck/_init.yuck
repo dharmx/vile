@@ -35,6 +35,19 @@
                     :minimal "dunstify MPD minimal"
                     :minimal_icon ""
                     :pause_icon ""
+                    :play_icon "")
+        (avatar_pctl :icon ""
+                    :separator ""
+                    :album "${pctl_sub['xesam:album']}"
+                    :title "${pctl_sub['xesam:title']}"
+                    :artist "${pctl_sub['xesam:artist']}"
+                    :prev "playerctl previous"
+                    :prev_icon ""
+                    :next "playerctl next"
+                    :next_icon ""
+                    :minimal "dunstify PCTL minimal"
+                    :minimal_icon ""
+                    :pause_icon ""
                     :play_icon "")))
     (avatar_profile :path "./assets/profile.png" 
                     :size 120)))
