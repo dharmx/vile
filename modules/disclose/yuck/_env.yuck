@@ -1,8 +1,0 @@
-(deflisten disclose_cards "./script/logger.zsh subscribe")
-
-(defpoll disclose_critical :interval "1s" "./script/logger.zsh crits")
-(defpoll disclose_normal :interval "1s" "./script/logger.zsh norms")
-(defpoll disclose_low :interval "1s" "./script/logger.zsh lows")
-(defpoll disclose_airplane :interval "1s" "./script/airplane.zsh glyph")
-
-;; vim:ft=yuck

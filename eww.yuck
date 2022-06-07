@@ -1,5 +1,5 @@
-(include "./modules/vertigo/yuck/_init.yuck")
-(include "./modules/disclose/yuck/_init.yuck")
-(include "./modules/avatar/yuck/_init.yuck")
+(include "./src/yuck/vertigo/_init.yuck")
+(include "./src/yuck/disclose/_init.yuck")
+(include "./src/yuck/avatar/_init.yuck")
 
 ;; vim:ft=yuck

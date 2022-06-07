@@ -20,7 +20,7 @@
                  :class "disclose-summary" 
                  :halign "start" 
                  :hexpand true)
-          (button :onclick "./script/logger.zsh rm_id ${SL}" 
+          (button :onclick "./src/shell/logger.zsh rm_id ${SL}" 
                   :class "disclose-card-notify-close" 
             (label :text "")))
 
@@ -76,15 +76,15 @@
          :spacing 10 
          :class "disclose-bottom-quick-box"
       (box :spacing 10
-        (button :onclick "./script/airplane.zsh toggle"
+        (button :onclick "./src/shell/airplane.zsh toggle"
                 :class "disclose-bottom-button disclose-bottom-button-airplane" disclose_airplane)
         (button :onclick "dunstctl history-pop"
                 :class "disclose-bottom-button disclose-bottom-button-pop" ""))
 
       (box :spacing 10
-        (button :onclick "./script/logger.zsh pop" 
+        (button :onclick "./src/shell/logger.zsh pop" 
                 :class "disclose-bottom-button" "")
-        (button :onclick "./script/logger.zsh drop" 
+        (button :onclick "./src/shell/logger.zsh drop" 
                 :class "disclose-bottom-button" "")))))
 
 ;; vim:ft=yuck

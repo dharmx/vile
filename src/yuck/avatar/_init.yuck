@@ -1,5 +1,5 @@
-(include "./modules/avatar/yuck/_env.yuck")
-(include "./modules/avatar/yuck/lib/_init.yuck")
+(include "./src/yuck/avatar/_env.yuck")
+(include "./src/yuck/avatar/lib/_init.yuck")
 
 (defwindow avatar :stacking "fg" :windowtype "normal" :wm-ignore true
   :geometry (geometry :width "26%" :height "100%" :anchor "right center") 
@@ -45,6 +45,7 @@
                     :prev_icon ""
                     :next "playerctl next"
                     :next_icon ""
+                    :player "${pctl_sub.player}"
                     :minimal "dunstify PCTL minimal"
                     :minimal_icon ""
                     :pause_icon ""

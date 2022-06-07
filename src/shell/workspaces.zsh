@@ -45,7 +45,7 @@ function _make_label() {
 function _wrap_node_yuck() {
   alias query="bspc query --nodes --node"
   if [ $(query .focused.tiled) ]; then 
-    if [ $(bspc query -T -d | jq -r .layout) = monocle ]; then
+    if [ $(bspc query --tree --desktop | jq --raw-output .layout) = monocle ]; then
       print $(_make_label "" "monocle" "monocle")
       return 0
     fi

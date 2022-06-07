@@ -1,5 +1,5 @@
-(include "./modules/disclose/yuck/_env.yuck")
-(include "./modules/disclose/yuck/_modules.yuck")
+(include "./src/yuck/disclose/_env.yuck")
+(include "./src/yuck/disclose/_modules.yuck")
 
 (defwindow disclose :stacking "fg" 
   :windowtype "normal" 
@@ -18,7 +18,7 @@
              :class "disclose-headers-label"
              :halign "start"
              :hexpand true)
-      (button :onclick "./script/logger.zsh clear"
+      (button :onclick "./src/shell/logger.zsh clear"
               :class "disclose-headers-clear" ""))
 
     (literal :content disclose_cards :class "disclose-literal")

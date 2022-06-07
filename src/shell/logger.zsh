@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-source "$XDG_CONFIG_HOME/eww/script/config.zsh"
+source "$XDG_CONFIG_HOME/eww/src/shell/config.zsh"
 _set_vars
 
 mkdir "$DUNST_CACHE_DIR" 2>/dev/null
@@ -48,7 +48,7 @@ function compile_caches() { tr '\n' ' ' < "$DUNST_LOG" }
 
 function make_literal() {
   local caches="$(compile_caches)"
-  local quote="$($XDG_CONFIG_HOME/eww/script/quotes.zsh rand)"
+  local quote="$($XDG_CONFIG_HOME/eww/src/shell/quotes.zsh rand)"
   [[ "$caches" == "" ]] \
     && print '(box :class "disclose-empty-box" :height 750 :orientation "vertical" :space-evenly false (image :class "disclose-empty-banner" :valign "end" :vexpand true :path "./assets/clock.png" :image-width 200 :image-height 200) (label :vexpand true :valign "start" :wrap true :class "disclose-empty-label" :text "'$quote'"))' \
     || print "(scroll :height 750 :vscroll true (box :orientation 'vertical' :class 'disclose-scroll-box' :spacing 10 :space-evenly false $caches))"

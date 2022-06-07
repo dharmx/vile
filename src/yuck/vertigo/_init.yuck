@@ -1,5 +1,5 @@
-(include "./modules/vertigo/yuck/_env.yuck")
-(include "./modules/vertigo/yuck/_modules.yuck")
+(include "./src/yuck/vertigo/_env.yuck")
+(include "./src/yuck/vertigo/_modules.yuck")
 
 (defwindow vertigo 
   :stacking "bg" 

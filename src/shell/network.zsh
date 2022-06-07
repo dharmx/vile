@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-source "$XDG_CONFIG_HOME/eww/script/config.zsh"
+source "$XDG_CONFIG_HOME/eww/src/shell/config.zsh"
 _set_vars
 
 function category() {

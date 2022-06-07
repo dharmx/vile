@@ -1,0 +1,6 @@
+(include "./src/yuck/avatar/lib/_profile.yuck")
+(include "./src/yuck/avatar/lib/_mpd.yuck")
+(include "./src/yuck/avatar/lib/_pctl.yuck")
+(include "./src/yuck/avatar/lib/_small.yuck")
+
+; vim:filetype=yuck

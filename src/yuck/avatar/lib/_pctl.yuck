@@ -1,5 +1,5 @@
 (defwidget avatar_pctl [
-  icon separator album 
+  icon separator album player
   title artist prev prev_icon next 
   next_icon minimal minimal_icon]
   (box :orientation "vertical" 
@@ -18,7 +18,7 @@
         (label :class "avatar-pctl-icon"
                :text icon)
         (label :class "avatar-pctl-name"
-               :text "PCTL")
+               :text player)
         (label :class "avatar-pctl-separator"
                :text separator)
         (label :class "avatar-pctl-album ${album == "" ? "avatar-pctl-album-null" : ""}" 

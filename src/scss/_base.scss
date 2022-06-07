@@ -1,0 +1,11 @@
+* {
+  all: unset;
+  transition: 200ms ease-out;
+}
+
+tooltip {
+  background-color: $base15;
+  font-size: 14px;
+}
+
+// vim:ft=scss
