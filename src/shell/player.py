@@ -1,4 +1,4 @@
-#!/usr/bin/env -S python -u
+#!/usr/bin/env --split-string=python -u
 
 import argparse
 import json

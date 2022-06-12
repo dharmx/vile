@@ -53,7 +53,7 @@
         (label :class "avatar-pctl-label-prev" 
                :text prev_icon))
 
-      (button :onclick "playerctl play-pause"
+      (button :onclick "playerctl play-pause &"
               :class "avatar-pctl-button-playback"
         (label :class "avatar-pctl-label-playback" 
                :text pctl_state))
