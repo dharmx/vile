@@ -1,6 +1,6 @@
 .disclose-layout-box {
   background-color: $shade10;
-  font-family: "feather", "Iosevka Nerd Font", sans-serif;
+  font-family: feather, "Cooper Hewitt", "Iosevka Nerd Font", sans-serif;
 }
 
 .disclose-headers {
@@ -109,16 +109,14 @@
 
 .disclose-card-notify-close {
   color: $base11;
-  border-radius: 50%;
   margin-bottom: 0.3em;
+  padding: 0.07em 0.05em 0.07em 0.05em;
 }
 
 .disclose-card-notify-close:hover label { 
   background-color: $base11; 
   color: $base03;
-  border-radius: 50%;
-  padding-left: 0.05em;
-  padding-right: 0.05em;
+  padding: 0.07em 0.05em 0.07em 0.05em;
 }
 .disclose-body { color: $base04; }
 
@@ -176,6 +174,7 @@
   background-color: $base09;
   color: $normal;
   border-radius: 0.5em 0.5em 0 0;
+  padding-top: 0.3em;
   font-weight: bold;
   margin-left: 3em;
   margin-right: 3em;
