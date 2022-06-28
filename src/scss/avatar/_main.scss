@@ -1,5 +1,5 @@
 .avatar-layout-box {
-  font-family: feather, "Cooper Hewitt", "Iosevka Nerd Font", sans-serif;
+  font-family: feather, Dosis, "Iosevka Nerd Font", sans-serif;
   background-color: $shade09;
 }
 
@@ -53,9 +53,10 @@
 .avatar-updates-has .avatar-icon { color: $base13; }
 .avatar-updates-none .avatar-icon { color: $base14; }
 
+.avatar-box-inner { padding: 1em; }
+
 .avatar-mpd-box {
-  font-family: feather, Lato, "Iosevka Nerd Font", sans-serif;
-  margin: 1em;
+  font-family: feather, Dosis, "Iosevka Nerd Font", sans-serif;
   border-radius: 1em;
   background-repeat: no-repeat;
   background-size: contain;
@@ -80,11 +81,6 @@
 .avatar-mpd-title { font-size: 20; }
 .avatar-mpd-title { font-weight: bold; }
 .avatar-mpd-controls { font-size: 25; }
-
-.avatar-mpd-button-playback {
-  font-size: 40;
-  margin-right: 0.3em;
-}
 
 .avatar-mpd-button-playback:hover { color: $base10; }
 .avatar-mpd-button-prev:hover { color: $base09; }
@@ -120,7 +116,6 @@
 
 .avatar-pctl-box {
   font-family: feather, Lato, "Iosevka Nerd Font", sans-serif;
-  margin: 1em;
   border-radius: 1em;
   background-repeat: no-repeat;
   background-size: contain;
@@ -146,11 +141,11 @@
 .avatar-pctl-artist,
 .avatar-pctl-title { font-size: 20; }
 .avatar-pctl-title { font-weight: bold; }
-.avatar-pctl-controls { font-size: 25; }
+.avatar-pctl-controls { font-size: 30; }
 
-.avatar-pctl-button-playback {
-  font-size: 40;
-  margin-right: 0.3em;
+.avatar-pctl-button-playback,
+.avatar-mpd-button-playback {
+  font-size: 50;
 }
 
 .avatar-pctl-button-playback:hover { color: $base10; }

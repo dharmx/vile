@@ -26,7 +26,7 @@ function create_cache() {
     *) glyph="";;
   esac
   case "$DUNST_APP_NAME" in
-    "spotify") glyph="";;
+    "spt"|"Spotify"|"ncspot") glyph="";;
     "mpd") glyph="";;
     "picom") glyph="";;
     "sxhkd") glyph="";;
@@ -51,11 +51,11 @@ function make_literal() {
   local quote="$($XDG_CONFIG_HOME/eww/src/shell/quotes.zsh rand)"
   [[ "$caches" == "" ]] \
     && echo '(box :class "disclose-empty-box" :height 750 :orientation "vertical" :space-evenly false (image :class "disclose-empty-banner" :valign "end" :vexpand true :path "./assets/clock.png" :image-width 200 :image-height 200) (label :vexpand true :valign "start" :wrap true :class "disclose-empty-label" :text "'$quote'"))' \
-    || echo "(scroll :height 750 :vscroll true (box :orientation 'vertical' :class 'disclose-scroll-box' :spacing 10 :space-evenly false $caches))"
+    || echo "(scroll :height 750 :vscroll true (box :orientation 'vertical' :class 'disclose-scroll-box' :spacing 15 :space-evenly false $caches))"
 }
 
 function clear_logs() {
-  systemctl --user restart dunst.service
+  pkill dunst && dunst -conf "$XDG_CONFIG_HOME/dunst/config.ini" & disown
   echo > "$DUNST_LOG"
 }
 

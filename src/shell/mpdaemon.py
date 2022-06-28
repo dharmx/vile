@@ -19,7 +19,6 @@ with open("./.config.json", encoding="utf8") as file:
     config: dict = json.loads(file.read())["player"]
     config["default_art"] = os.path.expandvars(config["default_art"])
     config["mpd_cache"] = os.path.expandvars(config["mpd_cache"])
-    config["pctl_cache"] = os.path.expandvars(config["pctl_cache"])
 
 
 class MPDHandler:
@@ -177,70 +176,6 @@ class MPDHandler:
         self._client.disconnect()
 
 
-# loop_status metadata playback_status
-# player_instance player_name
-class PCTLHandler:
-    def __init__(self, cache: str, default: str) -> None:
-        self.cache = cache
-        self.default = default
-        pathlib.Path(self.cache).mkdir(parents=True, exist_ok=True)
-
-    def playback(self, player, function) -> None:
-        supports = player.props
-        functions = {
-            "play": lambda: supports.can_play and player.play(),
-            "pause": lambda: supports.can_pause and player.pause(),
-            "stop": lambda: supports.can_pause and player.stop(),
-            "prev": lambda: supports.can_go_previous and player.previous(),
-            "next": lambda: supports.can_go_next and player.next(),
-            "toggle": lambda: supports.can_play
-            and supports.can_pause
-            and player.play_pause(),
-        }
-        function in functions and functions[function]()
-
-    def metadatajson(self, player, tojson=True) -> str or dict:
-        metadata: dict = {
-            "mpris:artUrl": self.default,
-            "xesam:artist": "Unknown",
-            "xesam:title": "Unknown",
-            "xesam:album": "Unknown",
-            "mpris:trackid": "none",
-            "player": "none",
-        }
-
-        metadata |= {
-            key: value for key, value in dict(player.props.metadata).items() if value
-        }
-
-        metadata["player"] = player.props.player_name
-        if metadata["xesam:artist"] and type(metadata["xesam:artist"]) == list:
-            metadata["xesam:artist"] = ", ".join(metadata["xesam:artist"])
-        return json.dumps(metadata) if tojson else metadata
-
-    def subscribe(self) -> None:
-        print(self.metadatajson(Playerctl.Player()))
-        manager = Playerctl.PlayerManager()
-
-        def onmetadata(player, *_):
-            print(self.metadatajson(player))
-
-        def initplayer(name) -> None:
-            player = None
-            if type(name) == Playerctl.Player:
-                player = name
-            else:
-                player = Playerctl.Player.new_from_name(name)
-            player.connect("metadata", onmetadata, manager)
-            manager.manage_player(player)
-
-        manager.connect("name-appeared", lambda _, name: initplayer(name))
-        manager.connect("player-vanished", lambda _, player: initplayer(player))
-
-        [initplayer(name) for name in manager.props.player_names]
-        GLib.MainLoop().run()
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         prog=sys.argv[0],
@@ -252,7 +187,6 @@ if __name__ == "__main__":
         "-I",
         "--interface",
         required=True,
-        choices=["mpd", "pctl"],
         help="manage a supported player metadata",
     )
 
@@ -284,6 +218,7 @@ if __name__ == "__main__":
                 config["mpd_cache"],
                 config["default_art"],
             )
+            handler.cachedatatbase()
             if args.json:
                 print(handler.metadatajson())
             elif args.subscribe:
@@ -296,16 +231,5 @@ if __name__ == "__main__":
             if args.playback:
                 handler.playback(args.playback)
             handler.close()
-        case "pctl":
-            handler = PCTLHandler(config["pctl_cache"], config["default_art"])
-            player = Playerctl.Player()
-            if args.json:
-                print(handler.metadatajson(player))
-            elif args.playback:
-                handler.playback(player, args.playback)
-            elif args.subscribe:
-                handler.subscribe()
-            elif args.subscribe < 0:
-                print("arg of -s/--subscribe must be greater than 0")
 
 # vim:filetype=python

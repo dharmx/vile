@@ -1,6 +1,6 @@
 .disclose-layout-box {
   background-color: $shade10;
-  font-family: feather, "Cooper Hewitt", "Iosevka Nerd Font", sans-serif;
+  font-family: Dosis, feather, "Iosevka Nerd Font", sans-serif;
 }
 
 .disclose-headers {
@@ -43,7 +43,7 @@
 .disclose-scroll-box { margin: 0 1.1em 0 1.1em; }
 .disclose-card-eventbox { background: linear-gradient(45deg, $base02 20%, $base01 100%); }
 .disclose-card-eventbox:hover { background: linear-gradient(170deg, $base01 20%, $shade01 100%); }
-.disclose-card-box { padding: 2em; }
+.disclose-card-box { padding: 3em 2em 3em 2em; }
 
 .disclose-separator {
   background-color: $shade00;

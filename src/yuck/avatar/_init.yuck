@@ -18,6 +18,7 @@
            :orientation "vertical"
            :vexpand true
            :hexpand true
+           :spacing 15
         (avatar_mpd :current mpd_current
                     :duration mpd_duration
                     :progress mpd_progress
@@ -34,8 +35,8 @@
                     :next_icon ""
                     :minimal "dunstify MPD minimal"
                     :minimal_icon ""
-                    :pause_icon ""
-                    :play_icon "")
+                    :pause_icon ""
+                    :play_icon "")
         (avatar_pctl :icon ""
                     :separator ""
                     :album "${pctl_sub['xesam:album']}"
@@ -48,8 +49,8 @@
                     :player "${pctl_sub.player}"
                     :minimal "dunstify PCTL minimal"
                     :minimal_icon ""
-                    :pause_icon ""
-                    :play_icon "")))
+                    :pause_icon ""
+                    :play_icon "")))
     (avatar_profile :path "./assets/profile.png" 
                     :size 120)))
 

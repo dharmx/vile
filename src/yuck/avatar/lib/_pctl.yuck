@@ -1,14 +1,19 @@
 (defwidget avatar_pctl [
-  icon separator album player
+  icon separator album player pause_icon play_icon
   title artist prev prev_icon next 
   next_icon minimal minimal_icon]
   (box :orientation "vertical" 
        :class "avatar-pctl-box" 
        :space-evenly false
        :spacing 20
-       :style `
-         background-image: radial-gradient(circle farthest-side at left, black 60%, rgba(30, 33, 40, 0.7) 80%), url("${pctl_sub['mpris:artUrl']}");
-       `
+       :style "
+         background-image: radial-gradient(
+           circle farthest-side at left,
+           ${pctl_sub.bright} 55%,
+           rgba(30, 33, 40, 0.7) 80%),
+           url(\"${pctl_sub['mpris:artUrl']}\");
+         color: ${pctl_sub.dark}
+       "
 
     (box :class "avatar-pctl-header-box"
          :space-evenly false
@@ -46,7 +51,7 @@
 
     (box :class "avatar-pctl-controls"
          :space-evenly false
-         :spacing 30
+         :spacing 20
 
       (button :onclick prev 
               :class "avatar-pctl-button-prev" 
@@ -56,7 +61,7 @@
       (button :onclick "playerctl play-pause &"
               :class "avatar-pctl-button-playback"
         (label :class "avatar-pctl-label-playback" 
-               :text pctl_state))
+               :text "${pctl_sub.status == "Playing" ? play_icon : pause_icon}"))
       (button :onclick next 
               :class "avatar-pctl-button-next" 
         (label :class "avatar-pctl-label-next" 

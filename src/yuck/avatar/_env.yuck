@@ -1,9 +1,8 @@
 (deflisten avatar_network "./src/shell/network.zsh sub2wifi")
-(deflisten mpd_sub "./src/shell/player.py -I mpd -s 0.3")
-(deflisten mpd_state "./src/shell/player.py -I mpd -s -1")
-(deflisten pctl_sub "./src/shell/player.py -I pctl -s 1")
+(deflisten mpd_sub "./src/shell/mpdaemon.py -I mpd -s 0.3")
+(deflisten mpd_state "./src/shell/mpdaemon.py -I mpd -s -1")
+(deflisten pctl_sub "./src/shell/playerctl.py")
 
-(defpoll pctl_state :interval "1s" `[ $(playerctl status) = Playing ] && echo  || echo `)
 (defpoll mpd_progress :interval "1s" `mpc | grep "%)" | awk '{print $4}' | tr -d '(%)'`)
 (defpoll mpd_current :interval "1s" `mpc | grep "#" | awk '{print $3}' | sed 's|/.*||g'`)
 (defpoll mpd_duration :interval "10s" `mpc --format=%time% current`)
