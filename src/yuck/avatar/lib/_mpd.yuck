@@ -12,7 +12,8 @@
            circle farthest-side at left,
            ${mpd_sub.bright} 48%,
            rgba(30, 33, 40, 0.7) 80%),
-           url(\"${mpd_sub.file}\");
+           url(\"${mpd_sub.file}\"
+         );
          color: ${mpd_sub.dark}
        "
 

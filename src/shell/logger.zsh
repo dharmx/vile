@@ -68,19 +68,19 @@ function remove_line() { sed -i '/SL "'$1'"/d' "$DUNST_LOG" }
 function critical_count() { 
   local crits=$(cat $DUNST_LOG | grep CRITICAL | wc --lines)
   local total=$(cat $DUNST_LOG | wc --lines)
-  echo $(((crits*100)/total))
+  [ $total -eq 0 ] && echo 0 || echo $(((crits*100)/total))
 }
 
 function normal_count() { 
   local norms=$(cat $DUNST_LOG | grep NORMAL | wc --lines)
   local total=$(cat $DUNST_LOG | wc --lines)
-  echo $(((norms*100)/total))
+  [ $total -eq 0 ] && echo 0 || echo $(((norms*100)/total))
 }
 
 function low_count() { 
   local lows=$(cat $DUNST_LOG | grep LOW | wc --lines)
   local total=$(cat $DUNST_LOG | wc --lines)
-  echo $(((lows*100)/total))
+  [ $total -eq 0 ] && echo 0 || echo $(((lows*100)/total))
 }
 
 function subscribe() {

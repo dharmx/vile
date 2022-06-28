@@ -27,5 +27,9 @@
       "floating": "",
       "empty": ""
     }
+  },
+  "logger": {
+    "interval": 0.5,
+    "cache": "$XDG_CACHE_HOME/dunst/notifications.txt"
   }
 }

@@ -12,12 +12,6 @@ from gi.repository import GLib, Playerctl
 import requests
 
 
-with open("./.config.json", encoding="utf8") as file:
-    config: dict = json.loads(file.read())["player"]
-    default_cover = os.path.expandvars(config["default_art"])
-    pctl_cache = os.path.expandvars(config["pctl_cache"])
-
-
 def on_metadata(*args):
     # sourcery skip: identity-comprehension, remove-redundant-constructor-in-dict-union
     metadata = {
@@ -155,15 +149,21 @@ def get_bright_dark_from_cover(image_path) -> dict:
     return {"bright": colors[0], "dark": colors[5]}
 
 
-manager = Playerctl.PlayerManager()
-manager.connect("name-appeared", on_name_appeared_vanished)
-manager.connect("name-vanished", on_name_appeared_vanished)
+if __name__ == "__main__":
+    with open("./.config.json", encoding="utf8") as file:
+        config: dict = json.loads(file.read())["player"]
+        default_cover = os.path.expandvars(config["default_art"])
+        pctl_cache = os.path.expandvars(config["pctl_cache"])
 
-[init_player(name) for name in manager.props.player_names]
-if player_null_check(manager):
-    player = Playerctl.Player()
-    on_metadata(player, player.props.metadata)
+    manager = Playerctl.PlayerManager()
+    manager.connect("name-appeared", on_name_appeared_vanished)
+    manager.connect("name-vanished", on_name_appeared_vanished)
 
-GLib.MainLoop().run()
+    [init_player(name) for name in manager.props.player_names]
+    if player_null_check(manager):
+        player = Playerctl.Player()
+        on_metadata(player, player.props.metadata)
+
+    GLib.MainLoop().run()
 
 # vim:filetype=python
