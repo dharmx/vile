@@ -14,7 +14,7 @@
           :onclick L
           :onrightclick R
           :vexpand vexpand
-          :valign valign
+          :valign "${valign == "" ? "start" : valign}"
           :class "vertigo-button ${button-class}" 
           :tooltip tooltip
 

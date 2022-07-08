@@ -1,7 +1,6 @@
 (deflisten vertigo_workspaces "./src/shell/workspaces.zsh subscribe_desktop")
 (deflisten vertigo_nodes "./src/shell/workspaces.zsh subscribe_node")
 
-
 (defvar vertigo_open false)
 (defvar vertigo_revealex false)
 (defvar vertigo_remove "./src/shell/workspaces.zsh remove")
@@ -13,7 +12,7 @@
 (defpoll vertigo_redshift :interval "1s" "[ $(pidof redshift) ] && echo '' || echo ''")
 (defpoll vertigo_volume_status :interval "1s" "[ $(pamixer --get-volume-human) = muted ] && echo '' || echo ''")
 (defpoll vertigo_volume_level :interval "1s" "pamixer --get-volume")
-(defpoll vertigo_battery :interval "1s" "./src/shell/battery.zsh")
+(defpoll vertigo_battery :interval "1s" "./src/shell/battery.bash")
 (defpoll vertigo_time_first :interval "1s" "date +%H")
 (defpoll vertigo_time_second :interval "1s" "date +%M")
 

@@ -47,7 +47,7 @@
                     :next "playerctl next"
                     :next_icon ""
                     :player "${pctl_sub.player}"
-                    :minimal "dunstify PCTL minimal"
+                    :minimal "playerctld shift"
                     :minimal_icon ""
                     :pause_icon ""
                     :play_icon "")))

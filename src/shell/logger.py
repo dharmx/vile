@@ -1,10 +1,8 @@
 #!/usr/bin/env --split-string=python -u
 
-### TODO: Replicate clear_logs
-### TODO: Implement caching
-### TODO: Implement image and text based caching
-### TODO: Replicate the quote script
-### TODO: Implement range delete
+# TODO: Implement caching
+# TODO: Implement image and text based caching
+# TODO: Replicate the quote script
 
 import json
 import os
@@ -30,7 +28,7 @@ def watcher(file_path: str, callback: typing.Callable) -> None:
         sys.stderr.write("The path does not exist!\n")
 
 
-def file_rm_line(file_path: str, position: int or bool = True) -> bool:
+def file_rm_line(file_path: str, position: int or bool or range = True) -> bool:
     file = pathlib.PosixPath(file_path)
     match str(type(position)):
         case "<class 'int'>":
@@ -50,6 +48,16 @@ def file_rm_line(file_path: str, position: int or bool = True) -> bool:
             file_contents = file.read_text().splitlines()
             file_contents = file_contents[1:] if position else file_contents[:-1]
             file.write_text("\n".join(file_contents))
+        case "<class 'range'>":
+            if not position:
+                file.write_text("")
+                return
+            file_contents = file.read_text().splitlines()
+            write_contents = []
+            for index in range(len(file_contents)):
+                if index not in position:
+                    write_contents += [file_contents[index]]
+            file.write_text("\n".join(write_contents))
 
 
 def file_in_line(file_path: str, write_contents: str, position: bool = True) -> None:
@@ -65,12 +73,7 @@ def file_in_line(file_path: str, write_contents: str, position: bool = True) -> 
 
 
 def parse_stats(file_contents: str) -> None:
-    stats = {
-        "critical": 0,
-        "low": 0,
-        "normal": 0,
-        "total": 0
-    }
+    stats = {"critical": 0, "low": 0, "normal": 0, "total": 0}
     for line in file_contents.splitlines():
         if "CRITICAL" in line:
             stats["critical"] += 1
@@ -87,7 +90,9 @@ def parse_stats(file_contents: str) -> None:
 if __name__ == "__main__":
     with open("./.config.json") as file:
         config: dict = json.load(file)
-        with open(os.path.expandvars("$XDG_CACHE_HOME/dunst/notifications.txt")) as _file:
+        with open(
+            os.path.expandvars("$XDG_CACHE_HOME/dunst/notifications.txt")
+        ) as _file:
             parse_stats(_file.read())
 
 # vim:filetype=python

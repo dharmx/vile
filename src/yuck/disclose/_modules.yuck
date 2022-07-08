@@ -1,90 +1,64 @@
-(defwidget _card [?class summary body glyph ?glyph_class ?SL ?M ?L ?R]
- (eventbox :onmiddleclick M 
-           :onclick L 
-           :onrightclick R 
-           :class "disclose-card-eventbox"
-    (box :space-evenly false 
-      (label :class "disclose-glyph ${glyph_class}" 
-             :text glyph)
+(defwidget _cardimage [summary body appname icon icon_width icon_height close image image_width image_height timestamp urgency]
+  (eventbox :class "disclose-cardimage-eventbox disclose-cardimage-eventbox-${urgency}"
+    (box :orientation "vertical" :space-evenly false
+         :class "disclose-cardimage-container-box disclose-cardimage-container-box-${urgency}"
+      (box :class "disclose-cardimage-summary-box disclose-cardimage-summary-box-${urgency}" :space-evenly false
+        (box :style "background-image: url('${icon}')" :width icon_width :height icon_height :space-evenly false
+             :class "disclose-cardimage-icon disclose-cardimage-icon-${urgency}")
+        (label :text appname :hexpand true :halign "start" :class "disclose-cardimage-appname-label disclose-cardimage-appname-label-${urgency}")
+        (button :class "disclose-cardimage-close-button disclose-cardimage-close-button-${urgency}"
+          (label :text close :class "disclose-cardimage-close-icon disclose-cardimage-close-icon-${urgency}")))
+      (box :class "disclose-cardimage-separator disclose-cardimage-separator-${urgency}" :space-evenly false)
+      (box :class "disclose-cardimage-body-box disclose-cardimage-body-box-${urgency}" :space-evenly false
+        (box :halign "center" :valign "center" :class "disclose-cardimage-image-box disclose-cardimage-image-box-${urgency}"
+          (box :style "background-image: url('${image}')" :hexpand false :vexpand false
+               :width image_width :height image_height :space-evenly false
+               :class "disclose-cardimage-image disclose-cardimage-image-${urgency}"))
+        (box :hexpand true :vexpand true :orientation "vertical" :class "disclose-cardimage-body-outer disclose-cardimage-body-outer-${urgency}" :space-evenly false
+          (label :limit-width 25 :text summary :halign "start" :class "disclose-cardimage-summary-label disclose-cardimage-summary-label-${urgency}")
+          (label :limit-width 120 :text body :halign "start" :wrap true :class "disclose-cardimage-body-label disclose-cardimage-body-${urgency}")
+          (label :text timestamp :halign "end" :class "disclose-cardimage-timestamp disclose-cardimage-timestamp-${urgency}"))))))
 
-      (box :orientation "vertical" 
-           :class class 
-           :space-evenly false 
-           :hexpand true
-           :class "disclose-card-box"
+(defwidget _cardscr [summary body close image image_width image_height timestamp urgency]
+  (eventbox :class "disclose-cardscr-eventbox disclose-cardscr-eventbox-${urgency}"
+    (box :orientation "vertical" :space-evenly false
+         :class "disclose-cardscr-container-box disclose-cardscr-container-box-${urgency}"
+      (box :space-evenly false :class "disclose-cardscr-summary-box disclose-cardscr-summary-box-${urgency}"
+        (label :hexpand true :halign "start" :class "disclose-cardscr-summary-label disclose-cardscr-summary-label-${urgency}" :text summary)
+        (label :class "disclose-cardscr-timestamp disclose-cardscr-timestamp-${urgency}" :text timestamp)
+        (button :class "disclose-cardscr-close-button disclose-cardscr-close-button-${urgency}"
+          (label :text close :class "disclose-cardscr-close-icon disclose-cardscr-close-icon-${urgency}")))
+      (box :class "disclose-cardscr-image" :style "background-image: url('${image}')"
+           :width image_width :height image_height :space-evenly false)
+      (box :spacing 20 :space-evenly true :class "disclose-cardscr-action-box disclose-cardscr-action-box-${urgency}" :hexpand true :halign "center"
+        (button :class "disclose-cardscr-open-button disclose-cardscr-open-button-${urgency}" 
+          (label :text "Open" :class "disclose-cardscr-open-label disclose-cardscr-open-label-${urgency}"))
+        (button :class "disclose-cardscr-delete-button disclose-cardscr-delete-button-${urgency}" 
+          (label :text "Delete" :class "disclose-cardscr-delete-label disclose-cardscr-delete-label-${urgency}"))))))
 
-        (box :space-evenly false
-          (label :limit-width 25 
-                 :wrap true 
-                 :text summary 
-                 :class "disclose-summary" 
-                 :halign "start" 
-                 :hexpand true)
-          (button :onclick "./src/shell/logger.zsh rm_id ${SL}" 
-                  :class "disclose-card-notify-close" 
-            (label :text "")))
-
-        (label :text ""
-               :class "disclose-separator")
-        (label :limit-width 40
-               :wrap true
-               :text body
-               :halign "start"
-               :class "disclose-body")))))
-
-(defwidget _quick_notify_settings []
-  (box :class "disclose-bottom-box" :valign "end" :vexpand true
-    (box :orientation "vertical"
-         :space-evenly false
-      (box :class "disclose-urgency-box" 
-           :orientation "vertical" 
-           :space-evenly false
-           :spacing 10
-        (box :class "disclose-low-total-box"
-             :space-evenly false
-             :spacing 25
-             :vexpand true
-             :halign "center"
-          (circular-progress :start-at 90 
-                             :class "disclose-circular disclose-circular-low" 
-                             :value disclose_low
-                             :thickness 15
-            (label :text "" 
-                   :tooltip disclose_low)))
-        (box :class "disclose-critical-normal-box"
-             :space-evenly false
-             :vexpand true
-             :halign "center"
-             :spacing 25
-          (circular-progress :start-at 90 
-                             :class "disclose-circular disclose-circular-critical" 
-                             :value disclose_critical 
-                             :thickness 15
-            (label :text "" 
-                   :tooltip disclose_critical))
-          (circular-progress :start-at 90 
-                             :class "disclose-circular disclose-circular-normal" 
-                             :value disclose_normal
-                             :thickness 15
-            (label :text "" 
-                   :tooltip disclose_normal)))
-
-        (label :text "Statistics"
-               :class "disclose-circular-header")))
-
-    (box :orientation "vertical" 
-         :spacing 10 
-         :class "disclose-bottom-quick-box"
-      (box :spacing 10
-        (button :onclick "./src/shell/airplane.zsh toggle"
-                :class "disclose-bottom-button disclose-bottom-button-airplane" disclose_airplane)
-        (button :onclick "dunstctl history-pop"
-                :class "disclose-bottom-button disclose-bottom-button-pop" ""))
-
-      (box :spacing 10
-        (button :onclick "./src/shell/logger.zsh pop" 
-                :class "disclose-bottom-button" "")
-        (button :onclick "./src/shell/logger.zsh drop" 
-                :class "disclose-bottom-button" "")))))
+(defwidget _cardprog [summary body appname icon icon_width icon_height close image image_width image_height timestamp urgency progress]
+  (eventbox :class "disclose-cardprog-eventbox disclose-cardprog-eventbox-${urgency}"
+    (box :orientation "vertical" :space-evenly false
+         :class "disclose-cardprog-container-box disclose-cardprog-container-box-${urgency}"
+      (box :class "disclose-cardprog-summary-box disclose-cardprog-summary-box-${urgency}" :space-evenly false
+        (box :style "background-image: url('${icon}')" :width icon_width :height icon_height :space-evenly false
+             :class "disclose-cardprog-icon disclose-cardprog-icon-${urgency}")
+        (label :text appname :hexpand true :halign "start" :class "disclose-cardprog-appname-label disclose-cardprog-appname-label-${urgency}")
+        (button :class "disclose-cardprog-close-button disclose-cardprog-close-button-${urgency}"
+          (label :text close :class "disclose-cardprog-close-icon disclose-cardprog-close-icon-${urgency}")))
+      (box :class "disclose-cardprog-separator disclose-cardprog-separator-${urgency}" :space-evenly false)
+      (box :class "disclose-cardprog-body-box disclose-cardprog-body-box-${urgency}" :space-evenly false
+        (box :halign "center" :valign "center" :class "disclose-cardprog-image-box disclose-cardprog-image-box-${urgency}"
+          (box :style "background-image: url('${image}')" :hexpand false :vexpand false
+               :width image_width :height image_height :space-evenly false
+               :class "disclose-cardprog-image disclose-cardprog-image-${urgency}"))
+        (box :spacing 1 :hexpand true :vexpand true :valign "center" :orientation "vertical" :class "disclose-cardprog-body-outer disclose-cardprog-body-outer-${urgency}" :space-evenly false
+          (box :class "disclose-cardprog-summary-body-box disclose-cardprog-summary-body-box-${urgency}"
+            (label :limit-width 25 :text summary :halign "start" :class "disclose-cardprog-summary-label disclose-cardprog-summary-label-${urgency}")
+            (label :text timestamp :halign "end" :class "disclose-cardprog-timestamp disclose-cardprog-timestamp-${urgency}"))
+          (label :limit-width 120 :text body :halign "start" :wrap true :class "disclose-cardprog-body-label disclose-cardprog-body-${urgency}")
+          (box :spacing 15 :class "disclose-cardprog-scale-box disclose-cardprog-scale-box-${urgency}" :space-evenly false
+            (scale :hexpand true :class "disclose-cardprog-scale disclose-cardprog-scale-${urgency}" :min 0 :max 100 :active false :value progress)
+            (label :class "disclose-cardprog-value-label disclose-cardprog-value-label-${urgency}" :text progress)))))))
 
 ;; vim:ft=yuck

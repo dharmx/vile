@@ -1,29 +1,17 @@
 #!/usr/bin/env --split-string=python -u
 
-import argparse
 import json
 import os
 import pathlib
 import subprocess
-import sys
 import time
 
-import gi
 import mpd
 from mpd.base import CommandError
-
-gi.require_version("Playerctl", "2.0")
-from gi.repository import GLib, Playerctl
-
-with open("./.config.json", encoding="utf8") as file:
-    config: dict = json.loads(file.read())["player"]
-    config["default_art"] = os.path.expandvars(config["default_art"])
-    config["mpd_cache"] = os.path.expandvars(config["mpd_cache"])
 
 
 class MPDHandler:
     def __init__(self, prefix, cache, default) -> None:
-        """Setup MPD client for use."""
         self._client: mpd.MPDClient = mpd.MPDClient()
         self._client.timeout = 3
         self._client.connect("localhost", 6600)
@@ -68,34 +56,6 @@ class MPDHandler:
             return False
         return False  # will return True iff a file is created
 
-    def toggle(self, function) -> bool:
-        currentstatus = json.loads(self.metadatajson())
-        functions: dict = {
-            "consume": self._client.consume,
-            "single": self._client.single,
-            "random": self._client.random,
-            "repeat": self._client.repeat,
-            "shuffle": self._client.shuffle,
-        }
-        function in functions and functions[function]
-        (0 if currentstatus[function] == "1" else 1)
-
-    def playback(self, function) -> None:
-        functions: dict = {
-            "play": self._client.play,
-            "pause": self._client.pause,
-            "stop": self._client.stop,
-            "prev": self._client.previous,
-            "next": self._client.next,
-            "toggle": lambda: self._client.pause()
-            if self.metadatajson(tojson=False)["state"] == "play"
-            else self._client.play(),
-        }
-        try:
-            function in functions and functions[function]()
-        except CommandError:
-            print("Unsupported function.")
-
     def metadatajson(self, tojson=True) -> str or dict:
         metadata: dict = self._client.status()
         metadata["current"] = {
@@ -108,6 +68,7 @@ class MPDHandler:
         metadata["current"] |= self._client.currentsong()
         metadata["stats"] = self._client.stats()
         metadata["current"]["file"] = self.get(metadata["current"]["file"])
+        metadata["current"]["status"] = self._client.status()["state"]
 
         colors = [
             *map(
@@ -135,19 +96,10 @@ class MPDHandler:
                 ),
             )
         ]
-
         metadata["current"]["bright"] = colors[0]
         metadata["current"]["dark"] = colors[5]
         return json.dumps(metadata) if tojson else metadata
 
-    def statusmon(self) -> None:
-        old = self._client.status()["state"]
-        print(old)
-        while not time.sleep(0.3):
-            new = self._client.status()["state"]
-            if new != old:
-                print(new)
-                old = new
 
     def cacheplaylist(self) -> None:
         [self.create(file[6:]) for file in self._client.playlist()]
@@ -165,8 +117,8 @@ class MPDHandler:
         print(json.dumps(old))
         while not time.sleep(interval):
             new = self.metadatajson(tojson=False)["current"]
-            old_formatted = f"{old['artist']}-{old['title']}-{old['album']}"
-            new_formatted = f"{new['artist']}-{new['title']}-{new['album']}"
+            old_formatted = f"{old['artist']}-{old['title']}-{old['album']}-{old['status']}"
+            new_formatted = f"{new['artist']}-{new['title']}-{new['album']}-{new['status']}"
             if old_formatted != new_formatted:
                 print(json.dumps(new))
                 old = new
@@ -177,59 +129,18 @@ class MPDHandler:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        prog=sys.argv[0],
-        usage="%(prog)s [INTERFACE] [OPTIONS] [FLAGS]",
-        description="CLI tool for managing mpd and playerctl metadata.",
+    with open("./.config.json", encoding="utf8") as file:
+        config: dict = json.loads(file.read())["player"]
+        config["default_art"] = os.path.expandvars(config["default_art"])
+        config["mpd_cache"] = os.path.expandvars(config["mpd_cache"])
+
+    handler = MPDHandler(
+        os.path.expandvars("$XDG_MUSIC_DIR"),
+        config["mpd_cache"],
+        config["default_art"],
     )
-
-    parser.add_argument(
-        "-I",
-        "--interface",
-        required=True,
-        help="manage a supported player metadata",
-    )
-
-    parser.add_argument(
-        "-j", "--json", action="store_true", help="get metadata in json format"
-    )
-
-    parser.add_argument(
-        "-s",
-        "--subscribe",
-        type=float,
-        help="print json metadata when a song changes",
-    )
-
-    parser.add_argument(
-        "-p",
-        "--playback",
-        type=str,
-        help="control player state like play / pause / next",
-        choices=["next", "prev", "stop", "toggle", "play", "pause"],
-    )
-
-    args: argparse.Namespace = parser.parse_args(sys.argv[1:])
-
-    match args.interface:
-        case "mpd":
-            handler = MPDHandler(
-                os.path.expandvars("$XDG_MUSIC_DIR"),
-                config["mpd_cache"],
-                config["default_art"],
-            )
-            handler.cachedatatbase()
-            if args.json:
-                print(handler.metadatajson())
-            elif args.subscribe:
-                if args.subscribe > 0:
-                    handler.subscribe(args.subscribe)
-                elif args.subscribe < 0:
-                    handler.statusmon()
-                else:
-                    handler.subscribe()
-            if args.playback:
-                handler.playback(args.playback)
-            handler.close()
+    handler.cachedatatbase()
+    handler.subscribe(1)
+    handler.close()
 
 # vim:filetype=python

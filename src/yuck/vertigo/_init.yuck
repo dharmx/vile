@@ -20,7 +20,7 @@
             :L `pushd ~;rofi -show;popd`)
     (literal :content vertigo_workspaces 
              :vexpand true)
-    (_label :text vertigo_battery 
+    (_label :text vertigo_battery
             :tooltip "battery: ${vertigo_battery}" 
             :vexpand false
             :valign "end"

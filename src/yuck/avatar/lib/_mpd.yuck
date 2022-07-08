@@ -68,7 +68,7 @@
       (button :onclick "mpc toggle"
               :class "avatar-mpd-button-playback"
         (label :class "avatar-mpd-label-playback" 
-               :text "${mpd_state == "play" ? play_icon : pause_icon}"))
+               :text "${mpd_sub.status == "play" ? play_icon : pause_icon}"))
       (button :onclick next 
               :class "avatar-mpd-button-next" 
         (label :class "avatar-mpd-label-next" 

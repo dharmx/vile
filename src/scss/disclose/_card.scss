@@ -16,183 +16,210 @@
   opacity: 0.8;
 }
 
-.disclose-headers-clear { 
+.disclose-headers-clear {
   font-size: 25;
   color: $base09;
   padding: 0em 0.7em 0 0.5em;
+  border-radius: 0.3em;
 }
 
-.disclose-headers-clear:hover { 
-  background-color: $base09; 
+.disclose-headers-clear:hover {
+  background-color: $base09;
   color: $base02;
 }
 
-.disclose-empty-box {
-  padding-left: 1em;
+.disclose-scroll {
+  margin: 0 1.5em 0 1.5em;
+}
+
+.disclose-cardimage-eventbox,
+.disclose-cardprog-eventbox,
+.disclose-cardscr-eventbox {
+  background: linear-gradient(45deg, $base02 20%, $base01 100%);
+  border-radius: 0.5em;
+}
+
+
+.disclose-cardprog-eventbox:hover,
+.disclose-cardimage-eventbox:hover {
+  background: linear-gradient(170deg, $base01 20%, $shade01 100%);
+}
+
+.disclose-cardscr-eventbox:hover {
+  background: linear-gradient(170deg, $shade01 20%, $base01 100%);
+}
+
+.disclose-cardprog-icon,
+.disclose-cardimage-icon {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.disclose-cardprog-image-box,
+.disclose-cardimage-image-box {
+  padding: 0 1em 0 1em;
+}
+
+.disclose-cardprog-image,
+.disclose-cardimage-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: -0.4px -0.3px 4px 4px $shade08;
+  border-radius: 0.3em;
+}
+
+.disclose-cardprog-separator,
+.disclose-cardimage-separator {
+  background-color: $shade03;
+  font-size: 1;
+  padding-top: 3em;
+}
+
+.disclose-cardprog-body-box,
+.disclose-cardimage-body-box {
+  font-size: 15;
+  padding: 1em 0 1em 0;
+}
+
+.disclose-cardprog-summary-box,
+.disclose-cardimage-summary-box {
+  padding: 0.5em 0 0.5em 0.5em;
+  background-color: darken($base09, 10%);
+  border-radius: 0.3em 0.3em 0 0;
+  color: $base02;
+}
+
+.disclose-cardscr-summary-box {
+  padding: 0.5em 0 0 1em;
+  border-radius: 0.3em 0.3em 0 0;
+  color: $base02;
+}
+
+.disclose-cardprog-appname-label,
+.disclose-cardimage-appname-label {
+  padding-left: 0.4em;
+  font-size: 16;
+  font-weight: bold;
+}
+
+.disclose-cardimage-close-button,
+.disclose-cardprog-close-button,
+.disclose-cardscr-close-button {
+  margin: 0.6em 1em 0.6em 0;
+  padding: 0.2em;
+  background-color: $base11;
+  color: $base01;
+  border-radius: 50%;
+  box-shadow: -0.4px -0.3px 4px -1.8px $shade09;
+}
+
+.disclose-cardimage-close-button:hover,
+.disclose-cardprog-close-button:hover,
+.disclose-cardscr-close-button:hover {
+  background-color: $base01;
+  color: $base11;
+}
+
+.disclose-cardprog-body-outer,
+.disclose-cardimage-body-outer {
+  padding: 0 1em 0 0;
+}
+
+.disclose-cardimage-summary-label,
+.disclose-cardprog-summary-label,
+.disclose-cardscr-summary-label {
+  font-size: 20;
+  font-weight: bold;
+  color: $base05;
+}
+
+.disclose-cardimage-body-label,
+.disclose-cardprog-body-label,
+.disclose-cardscr-body-label {
+  font-size: 16;
+  color: $base05;
+}
+
+.disclose-cardimage-timestamp,
+.disclose-cardprog-timestamp,
+.disclose-cardscr-timestamp {
+  color: $base10;
+  font-weight: bold;
+}
+
+.disclose-cardscr-image {
+  margin: 1em;
+  border-radius: 0.5em;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.disclose-cardscr-timestamp {
   padding-right: 1em;
 }
 
-.disclose-empty-label {
-  padding-top: 2em;
-  color: $shade00;
-  font-size: 15;
-  padding-left: 5em;
-  padding-right: 5em;
-}
-
-.disclose-scroll-box { margin: 0 1.1em 0 1.1em; }
-.disclose-card-eventbox { background: linear-gradient(45deg, $base02 20%, $base01 100%); }
-.disclose-card-eventbox:hover { background: linear-gradient(170deg, $base01 20%, $shade01 100%); }
-.disclose-card-box { padding: 3em 2em 3em 2em; }
-
-.disclose-separator {
-  background-color: $shade00;
-  font-size: 1;
-  margin-top: 5em;
-  margin-bottom: 5em;
-}
-
-.disclose-LOW {
-  background-color: $low;
-  color: $base14;
-  padding: 0 1em 0 0.7em;
-  font-size: 30;
-}
-
-.disclose-NORMAL {
-  background-color: $normal;
-  color: $base09;
-  padding: 0 1em 0 0.7em;
-  font-size: 30;
-}
-
-.disclose-CRITICAL {
-  background-color: $critical;
-  color: $base11;
-  padding: 0 1em 0 0.7em;
-  font-size: 30;
-}
-
-.disclose-OTHER {
-  background-color: $other;
-  color: $base15;
-  padding: 0 1em 0 0.7em;
-  font-size: 30;
-}
-
-.disclose-spotify {
-  background-color: $critical;
-  color: $base11;
-  padding: 0 1em 0 0.7em;
-  font-size: 30;
-}
-
-.disclose-sxhkd {
-  background-color: $normal;
-  color: $base07;
-  padding: 0 1em 0 0.7em;
-  font-size: 30;
-}
-
-.disclose-brightness {
-  background-color: $normal;
-  color: $base13;
-  padding: 0 1em 0 0.7em;
-  font-size: 30;
-}
-
-.disclose-summary {
+.disclose-cardscr-open-button,
+.disclose-cardscr-delete-button {
+  font-size: 20;
   font-weight: bold;
-  font-size: 17;
-  color: $base07;
+  padding: 0.6em 3.72em 0.6em 3.72em;
+  margin-bottom: 0.7em;
+  border-radius: 0.2em;
+  color: $base02;
 }
 
-.disclose-card-notify-close {
-  color: $base11;
-  margin-bottom: 0.3em;
-  padding: 0.07em 0.05em 0.07em 0.05em;
+.disclose-cardscr-open-button {
+  background-color: darken($base09, 10%);
 }
 
-.disclose-card-notify-close:hover label { 
-  background-color: $base11; 
-  color: $base03;
-  padding: 0.07em 0.05em 0.07em 0.05em;
-}
-.disclose-body { color: $base04; }
-
-.disclose-bottom-box { 
-  background-color: $shade05; 
-  margin: 1em 1.1em 1em 1.1em; 
-}
-
-.disclose-urgency-box {
-  margin: 0.65em 0 0.65em 0.6em;
-  padding-top: 1em;
-  border-radius: 1em;
-  background: linear-gradient(0deg, $base03 2%, $base02 100%);
-}
-
-.disclose-circular {
-  font-size: 30;
-}
-
-.disclose-circular label {
-  padding: 1em 1.3em 1em 1em;
-}
-
-.disclose-circular-critical {
-  color: $base11;
-  background-color: $critical;
-}
-
-.disclose-circular-critical label {
-  color: $base11;
-  background: linear-gradient(90deg, $base01 0%, $critical 100%);
-}
-
-.disclose-circular-normal {
+.disclose-cardscr-open-button:hover {
   color: $base09;
-  background-color: $normal;
+  background-color: $shade02;
 }
 
-.disclose-circular-normal label {
-  color: $base09;
-  background: linear-gradient(90deg, $base01 0%, $normal 100%);
+.disclose-cardscr-delete-button {
+  background-color: $shade02;
+  color: $base11;
 }
 
-.disclose-circular-low {
-  color: $base14;
-  background-color: $low;
+.disclose-cardscr-delete-button:hover {
+  background-color: $base11;
+  color: $shade02;
 }
 
-.disclose-circular-low label {
-  color: $base14;
-  background: linear-gradient(90deg, $base01 0%, $low 100%);
+.disclose-cardprog-scale {
+  background-color: $shade01;
+  border-radius: 0.2em;
+  margin: 0.5em 0 0.5em;
+
+  contents {
+    trough {
+      border-radius: 0.2em;
+
+      // Uncomment to enable slider pointer
+      // slider {
+      //   margin: -8px;
+      //   background: $base15;
+      //   box-shadow: -0.4px -0.3px 4px -1.8px $shade09;
+      //   border-radius: 20%;
+      // }
+
+      highlight {
+        background: $base09;
+        padding: 0.7em;
+        border-radius: 0.2em;
+      }
+    }
+  }
 }
 
-.disclose-circular-header {
-  background-color: $base09;
-  color: $normal;
-  border-radius: 0.5em 0.5em 0 0;
-  padding-top: 0.3em;
-  font-weight: bold;
-  margin-left: 3em;
-  margin-right: 3em;
+.disclose-cardprog-value-label {
+  padding: 0 0.5em 0 0.5em;
+  margin: 0.2em 0 0.2em 0;
+  color: $base02;
+  font-weight: 700;
+  background-color: $base10;
+  border-radius: 10%;
 }
-
-.disclose-bottom-button {
-  background-color: $shade03;
-  font-size: 40;
-  border-radius: 0.3em;
-  color: $base09;
-}
-
-.disclose-critical-box { background-color: $base02; }
-.disclose-bottom-button:hover { background-color: $normal; }
-.disclose-bottom-button-airplane { color: $base14; }
-.disclose-bottom-button-airplane:hover { background-color: $low; }
-.disclose-bottom-button-pop { color: $base15; }
-.disclose-bottom-button-pop:hover { background-color: $other; }
-.disclose-bottom-quick-box { margin: 0.6em; }
 
 // vim:ft=scss

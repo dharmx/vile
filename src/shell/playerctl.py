@@ -96,7 +96,6 @@ def cache_and_get(metadata):
         new_meta = {
             "artist": gen_hex_path_encode(metadata["xesam:artist"]),
             "album": gen_hex_path_encode(metadata["xesam:album"]),
-            "title": gen_hex_path_encode(metadata["xesam:title"]),
         }
         gen_path = f"{player_dir}/{new_meta['artist']}"
         if not os.path.isdir(gen_path):
@@ -119,6 +118,9 @@ def cache_and_get(metadata):
 def get_bright_dark_from_cover(image_path) -> dict:
     if image_path == default_cover:
         return {'bright': '#292929', 'dark': '#BEBFC1'}
+    color_cached = pathlib.PosixPath(f"{os.path.dirname(image_path)}/colors.json")
+    if color_cached.is_file():
+        return json.loads(color_cached.read_text())
     colors = [
         *map(
             lambda item: item.strip().split(" ")[2][:7],
@@ -145,8 +147,11 @@ def get_bright_dark_from_cover(image_path) -> dict:
             ),
         )
     ]
-
-    return {"bright": colors[0], "dark": colors[5]}
+    parsed_colors = {"bright": colors[0], "dark": colors[5]}
+    if "firefox-mpris" in image_path:
+        return parsed_colors
+    color_cached.write_text(json.dumps(parsed_colors))
+    return parsed_colors
 
 
 if __name__ == "__main__":

@@ -6,30 +6,44 @@
   },
   "desktops": {
     "states": {
-      "focused": "",
-      "occupied": "",
-      "urgent": "",
-      "empty": ""
+      "focused": "\ue956",
+      "occupied": "\ue9e7",
+      "urgent": "\ue902",
+      "empty": "\ue97d"
     },
     "tags": {
-      "hidden": "",
-      "sticky": "",
-      "private": "",
-      "locked": "",
-      "marked": "",
-      "empty": ""
+      "hidden": "\ue95f",
+      "sticky": "\ue9ad",
+      "private": "\uea08",
+      "locked": "\ue98f",
+      "marked": "\ue9da",
+      "empty": "\ue998"
     },
     "layouts": {
-      "monocle": "",
-      "tiled": "",
-      "fullscreen": "",
-      "pseudo_tiled": "",
-      "floating": "",
-      "empty": ""
+      "monocle": "\ue951",
+      "tiled": "\ue963",
+      "fullscreen": "\ue9f5",
+      "pseudo_tiled": "\ue964",
+      "floating": "\ue96f",
+      "empty": "\ue943"
     }
   },
   "logger": {
     "interval": 0.5,
-    "cache": "$XDG_CACHE_HOME/dunst/notifications.txt"
+    "cache_dir": "$XDG_CACHE_HOME/dunst",
+    "cache_name": "notifications.txt",
+    "thumbnail": "image",
+    "default_quote": "To fake it is to stand guard over emptiness. \u2500\u2500 Arthur Herzog",
+    "quote_dir": "$XDG_CACHE_HOME/dunst",
+    "quote_name": "quotes.txt"
+  },
+  "battery": {
+    "full": "\uea16",
+    "full_at": 95,
+    "crit": "\ue902",
+    "crit_at": 20
+  },
+  "network": {
+    "interface": "wlp0s20f3"
   }
 }
