@@ -43,16 +43,6 @@
                      :done 1
                      :timestamp "10:30"
                      :urgency "low")
-        (_cardstatus :summary "Layout Control"
-                     :body "Changed ignore_ewmh_struts to true"
-                     :close "" :image_height 100 :image_width 100
-                     :image "./assets/windows.png"
-                     :appname "bspwm"
-                     :icon "/usr/share/icons/Reversal-green/apps/scalable/gnome-layout-switcher.svg"
-                     :icon_height 32 :icon_width 32
-                     :timestamp "10:30"
-                     :urgency "critical"
-                     :status 1)
         (_cardimage :summary "This is a summary!"
                     :body "So become so incoherent? According to McClintock, a 15th century typesetter likely scrambled part of Cicero's De Finibus in order to provide placeholder text to mockup various fonts for a type specimen book."
                     :close "" :image_height 100 :image_width 100
