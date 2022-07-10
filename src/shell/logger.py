@@ -8,11 +8,14 @@ import datetime
 import json
 import os
 import pathlib
+import random
 import sys
 import time
 import typing
 
 CACHE_PATH = os.path.expandvars("$XDG_CACHE_HOME/dunst/notifications.txt")
+QUOTE_PATH = os.path.expandvars("$XDG_CACHE_HOME/dunst/quotes.txt")
+DEFAULT_QUOTE = "To fake it is to stand guard over emptiness. \u2500\u2500 Arthur Herzog"
 
 FORMATS = {
     "default": "(_cardimage :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
@@ -25,6 +28,7 @@ FORMATS = {
     "volume": "(_cardprog :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s' :progress '%(DUNST_PROGRESS)s')",
     "shot": "(_cardscr :delete '%(DELETE)s' :open '%(OPEN)s' :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :image '%(DUNST_ICON_PATH)s' :image_height 250 :image_width 100 :urgency '%(DUNST_URGENCY)s' :close '' :timestamp '%(DUNST_TIMESTAMP)s')",
     "todo": "(_cardradial :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :appname '%(DUNST_APP_NAME)s' :progress %(PERC)s :thickness 20.0 :total %(TOTAL)s :done %(DONE)s :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
+    "empty": "(box :class 'disclose-empty-box' :height 750 :orientation 'vertical' :space-evenly false (image :class 'disclose-empty-banner' :valign 'end' :vexpand true :path './assets/wedding-bells.png' :image-width 250 :image-height 250) (label :vexpand true :valign 'start' :wrap true :class 'disclose-empty-label' :text '%(QUOTE)s'))",
 }
 
 DUNST_VARS = [
@@ -44,17 +48,15 @@ DUNST_VARS = [
     "DUNST_STACK_TAG",
 ]
 
-# cache_dir $XDG_CACHE_HOME/dunst
-# cache_name notifications.txt
-# default_quote To fake it is to stand guard over emptiness. \u2500\u2500 Arthur Herzog
-# quote_dir $XDG_CACHE_HOME/dunst
-# quote_name quotes.txt
-
 INTERVAL = 0.5
 DUNST_ENVS = {
     DUNST_VARS[0]: os.getenv(DUNST_VARS[0].strip()) or "Unknown",
-    DUNST_VARS[1]: (os.getenv(DUNST_VARS[1].strip()) or "Summary Unavailable.").replace("'","\\'"),
-    DUNST_VARS[2]: (os.getenv(DUNST_VARS[2].strip()) or "Body Unavailable.").replace("'","\\'"),
+    DUNST_VARS[1]: (os.getenv(DUNST_VARS[1].strip()) or "Summary Unavailable.").replace(
+        "'", "\\'"
+    ),
+    DUNST_VARS[2]: (os.getenv(DUNST_VARS[2].strip()) or "Body Unavailable.").replace(
+        "'", "\\'"
+    ),
     DUNST_VARS[3]: os.getenv(DUNST_VARS[3].strip()) or "./assets/browser.png",
     DUNST_VARS[4]: os.getenv(DUNST_VARS[4].strip()) or "Normal",
     DUNST_VARS[5]: os.getenv(DUNST_VARS[5].strip()) or "N/A",
@@ -157,7 +159,7 @@ def redir_to_handlers(appname: str) -> str:
 
 
 def shot_handler(attributes: dict) -> str:
-    ## TODO: Make this better
+    # TODO: Make this better
     attributes["DELETE"] = f"rm --force \\'{attributes['DUNST_ICON_PATH']}\\'"
     attributes["OPEN"] = f"xdg-open \\'{attributes['DUNST_ICON_PATH']}\\'"
     return FORMATS["shot"] % attributes
@@ -191,6 +193,11 @@ def shot_icon_handler(attributes: dict) -> str:
     return FORMATS["shot_icon"] % attributes
 
 
+def get_rand_quote(file_path: str, default_quote: str) -> str:
+    loaded_quotes: str = pathlib.PosixPath(file_path).read_text().strip()
+    return random.choice(loaded_quotes.splitlines()) if loaded_quotes else default_quote
+
+
 if __name__ == "__main__":
     match sys.argv[1]:
         case "subscribe":
@@ -201,13 +208,17 @@ if __name__ == "__main__":
                     # handle empty
                     contents.replace("\n", " ") + ")\n"
                     if contents.strip()
-                    else ""
+                    else ((FORMATS["empty"] + "\n") % {"QUOTE": get_rand_quote(QUOTE_PATH, DEFAULT_QUOTE)})
                 ),
             )
         case "rm":
             file_rm_line(CACHE_PATH, int(sys.argv[2]))
+        case "quote":
+            sys.stdout.write(get_rand_quote(QUOTE_PATH, DEFAULT_QUOTE))
         case "cls":
-            os.system("killall dunst && dunst -conf ~/.config/dunst/config.ini & disown")
+            os.system(
+                "killall dunst && dunst -conf ~/.config/dunst/config.ini & disown"
+            )
             pathlib.PosixPath(CACHE_PATH).write_text("")
         case _:
             file_add_line(CACHE_PATH, redir_to_handlers(DUNST_ENVS["DUNST_APP_NAME"]))

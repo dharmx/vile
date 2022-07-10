@@ -251,4 +251,19 @@
   color: $base10;
 }
 
+.disclose-empty-banner {
+  padding-top: 8em;
+}
+
+.disclose-empty-box {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.disclose-empty-label {
+  padding-top: 3em;
+  color: $shade00;
+  font-size: 16;
+}
+
 // vim:ft=scss
