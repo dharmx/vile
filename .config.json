@@ -28,15 +28,6 @@
       "empty": "\ue943"
     }
   },
-  "logger": {
-    "interval": 0.5,
-    "cache_dir": "$XDG_CACHE_HOME/dunst",
-    "cache_name": "notifications.txt",
-    "thumbnail": "image",
-    "default_quote": "To fake it is to stand guard over emptiness. \u2500\u2500 Arthur Herzog",
-    "quote_dir": "$XDG_CACHE_HOME/dunst",
-    "quote_name": "quotes.txt"
-  },
   "battery": {
     "interface": "BAT0",
     "full": "\uea16",

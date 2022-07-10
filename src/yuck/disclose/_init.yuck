@@ -17,66 +17,12 @@
              :class "disclose-headers-label"
              :halign "start"
              :hexpand true)
-      (button :class "disclose-headers-clear" ""))
+      (button :onclick "./src/shell/logger.py cls" :class "disclose-headers-clear" ""))
     (scroll :hscroll false
             :vscroll true
             :vexpand true
             :hexpand true
             :class "disclose-scroll"
-      (box :spacing 20 :orientation "vertical" :space-evenly false
-        (_cardimage :summary "This is a summary!"
-                    :body "So become so incoherent? According to McClintock, a 15th century typesetter likely scrambled part of Cicero's De Finibus in order to provide placeholder text to mockup various fonts for a type specimen book."
-                    :close "" :image_height 100 :image_width 100
-                    :image "/home/maker/Pictures/wallpapers/devicons/nvimtree.png"
-                    :appname "Spotify"
-                    :icon "/usr/share/icons/Reversal-green/apps/scalable/Spotify.svg"
-                    :icon_height 32 :icon_width 32
-                    :timestamp "10:30"
-                    :urgency "low")
-        (_cardradial :summary "Tasks Report"
-                     :body "1 task conpleted and 1 task left to go!"
-                     :close ""
-                     :appname "Todo"
-                     :progress 50
-                     :thickness 20.0
-                     :total 2
-                     :done 1
-                     :timestamp "10:30"
-                     :urgency "low")
-        (_cardimage :summary "This is a summary!"
-                    :body "So become so incoherent? According to McClintock, a 15th century typesetter likely scrambled part of Cicero's De Finibus in order to provide placeholder text to mockup various fonts for a type specimen book."
-                    :close "" :image_height 100 :image_width 100
-                    :image "/home/maker/Pictures/wallpapers/devicons/packer.png"
-                    :appname "Firefox"
-                    :icon "/usr/share/icons/Reversal-green/apps/scalable/firefox-beta.svg"
-                    :icon_height 32 :icon_width 32
-                    :timestamp "10:30"
-                    :urgency "normal")
-        (_cardscr :summary "Screenshot" 
-                  :body "Screenshot Saved."
-                  :image "/home/maker/Pictures/screenshot.png"
-                  :image_height 250 :image_width 100
-                  :urgency "normal"
-                  :close ""
-                  :timestamp "9:05")
-        (_cardprog :summary "Pulseaudio"
-                    :body "Volume has been decreased."
-                    :close "" :image_height 100 :image_width 100
-                    :image "./assets/equalizer.png"
-                    :appname "Pulse"
-                    :icon "/usr/share/icons/Reversal-green/apps/scalable/pulseeffects.svg"
-                    :icon_height 32 :icon_width 32
-                    :timestamp "10:30"
-                    :urgency "normal"
-                    :progress 65)
-        (_cardimage :summary "This is a summary!"
-                    :body "So become so incoherent? According to McClintock, a 15th century typesetter likely scrambled part of Cicero's De Finibus in order to provide placeholder text to mockup various fonts for a type specimen book."
-                    :close "" :image_height 100 :image_width 100
-                    :image "/home/maker/Pictures/wallpapers/devicons/neovim.png"
-                    :appname "Neovim"
-                    :icon "/usr/share/icons/Reversal-green/apps/scalable/neovim.svg"
-                    :icon_height 32 :icon_width 32
-                    :timestamp "10:30"
-                    :urgency "high")))))
+      (literal :content disclose_sub))))
 
 ;; vim:ft=yuck

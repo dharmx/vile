@@ -1,4 +1,5 @@
 (defpoll disclose_airplane :interval "1s" "rfkill list | sed -n 2p | awk '{print $3}'")
-(defvar disclose_fallback_scr "./assets/screenshot.png")
+
+(deflisten disclose_sub "./src/shell/logger.py subscribe")
 
 ;; vim:ft=yuck
