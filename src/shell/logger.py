@@ -11,6 +11,39 @@ import sys
 import time
 import typing
 
+dunst_vars = [
+    "DUNST_APP_NAME",
+    "DUNST_SUMMARY",
+    "DUNST_BODY",
+    "DUNST_ICON_PATH",
+    "DUNST_URGENCY",
+    "DUNST_ID",
+    "DUNST_PROGRESS",
+    "DUNST_CATEGORY",
+    "DUNST_STACK_TAG",
+    "DUNST_URLS",
+    "DUNST_TIMEOUT",
+    "DUNST_TIMESTAMP",
+    "DUNST_DESKTOP_ENTRY",
+    "DUNST_STACK_TAG",
+]
+DUNST_ENV = {
+    dunst_vars[0]: os.getenv(dunst_vars[0], "Unknown"),
+    dunst_vars[1]: os.getenv(dunst_vars[1], "Summary Unavailable."),
+    dunst_vars[2]: os.getenv(dunst_vars[2], "Body Unavailable."),
+    dunst_vars[3]: os.getenv(dunst_vars[3], ""),
+    dunst_vars[4]: os.getenv(dunst_vars[4], "Unknown"),
+    dunst_vars[5]: os.getenv(dunst_vars[5], "Unknown"),
+    dunst_vars[6]: os.getenv(dunst_vars[6], "Unknown"),
+    dunst_vars[7]: os.getenv(dunst_vars[7], "Unknown"),
+    dunst_vars[8]: os.getenv(dunst_vars[8], "Unknown"),
+    dunst_vars[9]: os.getenv(dunst_vars[9], "Unknown"),
+    dunst_vars[10]: os.getenv(dunst_vars[10], "Unknown"),
+    dunst_vars[11]: os.getenv(dunst_vars[11], "Unknown"),
+    dunst_vars[12]: os.getenv(dunst_vars[12], "Unknown"),
+    dunst_vars[13]: os.getenv(dunst_vars[13], "Unknown"),
+}
+
 
 def watcher(file_path: str, callback: typing.Callable) -> None:
     INTERVAL = config["logger"]["interval"]

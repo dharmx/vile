@@ -49,7 +49,7 @@ function _wrap_desktop_yuck() {
 }
 
 function _make_box() {
-  print "(scroll :height 370 (box :orientation 'vertical' :class 'vertigo-box vertigo-desktop' :space-evenly false :tooltip 'workspaces' "$(_wrap_desktop_yuck)"))"
+  print "(eventbox :onscroll '[ \{\} = up ] || bspc desktop -f next; [ \{\} = down ] || bspc desktop -f prev' (scroll :height 370 (box :orientation 'vertical' :class 'vertigo-box vertigo-desktop' :space-evenly false :tooltip 'workspaces' "$(_wrap_desktop_yuck)")))"
 }
 
 function _make_label() {
