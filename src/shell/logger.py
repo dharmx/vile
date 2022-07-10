@@ -90,9 +90,5 @@ def parse_stats(file_contents: str) -> None:
 if __name__ == "__main__":
     with open("./.config.json") as file:
         config: dict = json.load(file)
-        with open(
-            os.path.expandvars("$XDG_CACHE_HOME/dunst/notifications.txt")
-        ) as _file:
-            parse_stats(_file.read())
 
 # vim:filetype=python

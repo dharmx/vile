@@ -34,6 +34,8 @@
 
 .disclose-cardimage-eventbox,
 .disclose-cardprog-eventbox,
+.disclose-cardradial-eventbox,
+.disclose-cardstatus-eventbox,
 .disclose-cardscr-eventbox {
   background: linear-gradient(45deg, $base02 20%, $base01 100%);
   border-radius: 0.5em;
@@ -41,6 +43,8 @@
 
 
 .disclose-cardprog-eventbox:hover,
+.disclose-cardradial-eventbox:hover,
+.disclose-cardstatus-eventbox:hover,
 .disclose-cardimage-eventbox:hover {
   background: linear-gradient(170deg, $base01 20%, $shade01 100%);
 }
@@ -50,12 +54,14 @@
 }
 
 .disclose-cardprog-icon,
+.disclose-cardstatus-icon,
 .disclose-cardimage-icon {
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .disclose-cardprog-image-box,
+.disclose-cardstatus-image-box,
 .disclose-cardimage-image-box {
   padding: 0 1em 0 1em;
 }
@@ -68,7 +74,15 @@
   border-radius: 0.3em;
 }
 
+.disclose-cardstatus-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 0.3em;
+}
+
 .disclose-cardprog-separator,
+.disclose-cardradial-separator,
+.disclose-cardstatus-separator,
 .disclose-cardimage-separator {
   background-color: $shade03;
   font-size: 1;
@@ -76,12 +90,16 @@
 }
 
 .disclose-cardprog-body-box,
+.disclose-cardradial-body-box,
+.disclose-cardstatus-body-box,
 .disclose-cardimage-body-box {
   font-size: 15;
   padding: 1em 0 1em 0;
 }
 
 .disclose-cardprog-summary-box,
+.disclose-cardradial-summary-box,
+.disclose-cardstatus-summary-box,
 .disclose-cardimage-summary-box {
   padding: 0.5em 0 0.5em 0.5em;
   background-color: darken($base09, 10%);
@@ -96,6 +114,8 @@
 }
 
 .disclose-cardprog-appname-label,
+.disclose-cardradial-appname-label,
+.disclose-cardstatus-appname-label,
 .disclose-cardimage-appname-label {
   padding-left: 0.4em;
   font-size: 16;
@@ -104,6 +124,8 @@
 
 .disclose-cardimage-close-button,
 .disclose-cardprog-close-button,
+.disclose-cardstatus-close-button,
+.disclose-cardradial-close-button,
 .disclose-cardscr-close-button {
   margin: 0.6em 1em 0.6em 0;
   padding: 0.2em;
@@ -115,18 +137,24 @@
 
 .disclose-cardimage-close-button:hover,
 .disclose-cardprog-close-button:hover,
+.disclose-cardstatus-close-button:hover,
+.disclose-cardradial-close-button:hover,
 .disclose-cardscr-close-button:hover {
   background-color: $base01;
   color: $base11;
 }
 
 .disclose-cardprog-body-outer,
+.disclose-cardradial-body-outer,
+.disclose-cardstatus-body-outer,
 .disclose-cardimage-body-outer {
   padding: 0 1em 0 0;
 }
 
 .disclose-cardimage-summary-label,
 .disclose-cardprog-summary-label,
+.disclose-cardradial-summary-label,
+.disclose-cardstatus-summary-label,
 .disclose-cardscr-summary-label {
   font-size: 20;
   font-weight: bold;
@@ -135,6 +163,8 @@
 
 .disclose-cardimage-body-label,
 .disclose-cardprog-body-label,
+.disclose-cardradial-body-label,
+.disclose-cardstatus-body-label,
 .disclose-cardscr-body-label {
   font-size: 16;
   color: $base05;
@@ -142,6 +172,8 @@
 
 .disclose-cardimage-timestamp,
 .disclose-cardprog-timestamp,
+.disclose-cardradial-timestamp,
+.disclose-cardstatus-timestamp,
 .disclose-cardscr-timestamp {
   color: $base10;
   font-weight: bold;
@@ -199,13 +231,13 @@
       // Uncomment to enable slider pointer
       // slider {
       //   margin: -8px;
-      //   background: $base15;
+      //   background-color: $base15;
       //   box-shadow: -0.4px -0.3px 4px -1.8px $shade09;
       //   border-radius: 20%;
       // }
 
       highlight {
-        background: $base09;
+        background-color: $base09;
         padding: 0.7em;
         border-radius: 0.2em;
       }
@@ -220,6 +252,45 @@
   font-weight: 700;
   background-color: $base10;
   border-radius: 10%;
+}
+
+.disclose-cardradial-circle-box {
+  padding: 0 1em 0 1em;
+}
+
+.disclose-cardradial-circle {
+  font-size: 25;
+  color: $base09;
+  background-color: $shade01;
+}
+
+.disclose-cardradial-tasks {
+  padding: 1.4em;
+  font-weight: bolder;
+  color: $base10;
+}
+
+.disclose-cardstatus-scale {
+  background-color: $shade01;
+  border-radius: 10%;
+  margin: 0.9em 0.8em 0.9em 0;
+  padding-right: 0.8em;
+  padding-left: 0.8em;
+
+  contents {
+    trough {
+      slider {
+        margin: -8px;
+        background-color: $base15;
+        box-shadow: -0.4px -0.3px 4px -1.8px $shade09;
+        border-radius: 15%;
+      }
+
+      highlight {
+        padding: 0 0.6em 0 0.6em;
+      }
+    }
+  }
 }
 
 // vim:ft=scss

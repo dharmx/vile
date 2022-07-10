@@ -61,4 +61,48 @@
             (scale :hexpand true :class "disclose-cardprog-scale disclose-cardprog-scale-${urgency}" :min 0 :max 100 :active false :value progress)
             (label :class "disclose-cardprog-value-label disclose-cardprog-value-label-${urgency}" :text progress)))))))
 
+(defwidget _cardradial [summary body appname close timestamp urgency progress thickness total done]
+  (eventbox :class "disclose-cardradial-eventbox disclose-cardradial-eventbox-${urgency}"
+    (box :orientation "vertical" :space-evenly false
+         :class "disclose-cardradial-container-box disclose-cardradial-container-box-${urgency}"
+      (box :class "disclose-cardradial-summary-box disclose-cardradial-summary-box-${urgency}" :space-evenly false
+        (label :text appname :hexpand true :halign "start" :class "disclose-cardradial-appname-label disclose-cardradial-appname-label-${urgency}")
+        (button :class "disclose-cardradial-close-button disclose-cardradial-close-button-${urgency}"
+          (label :text close :class "disclose-cardradial-close-icon disclose-cardradial-close-icon-${urgency}")))
+      (box :class "disclose-cardradial-separator disclose-cardradial-separator-${urgency}" :space-evenly false)
+      (box :class "disclose-cardradial-body-box disclose-cardradial-body-box-${urgency}" :space-evenly false
+        (box :halign "center" :valign "center" :class "disclose-cardradial-circle-box disclose-cardradial-circle-box-${urgency}"
+          (circular-progress :value progress :thickness thickness
+               :class "disclose-cardradial-circle disclose-cardradial-circle-${urgency}"
+            (label :class "disclose-cardradial-tasks disclose-cardradial-tasks-${urgency}" :text "${done}/${total}")))
+        (box :hexpand true :vexpand true :valign "center" :spacing 5 :orientation "vertical" :class "disclose-cardradial-body-outer disclose-cardradial-body-outer-${urgency}" :space-evenly false
+          (label :limit-width 25 :text summary :halign "start" :class "disclose-cardradial-summary-label disclose-cardradial-summary-label-${urgency}")
+          (label :limit-width 120 :text body :halign "start" :wrap true :class "disclose-cardradial-body-label disclose-cardradial-body-${urgency}")
+          (label :text timestamp :halign "end" :class "disclose-cardradial-timestamp disclose-cardradial-timestamp-${urgency}"))))))
+
+(defwidget _cardstatus [summary body appname icon icon_width icon_height close image image_width image_height timestamp urgency status]
+  (eventbox :class "disclose-cardstatus-eventbox disclose-cardstatus-eventbox-${urgency}"
+    (box :orientation "vertical" :space-evenly false
+         :class "disclose-cardstatus-container-box disclose-cardstatus-container-box-${urgency}"
+      (box :class "disclose-cardstatus-summary-box disclose-cardstatus-summary-box-${urgency}" :space-evenly false
+        (box :style "background-image: url('${icon}')" :width icon_width :height icon_height :space-evenly false
+             :class "disclose-cardstatus-icon disclose-cardstatus-icon-${urgency}")
+        (label :text appname :hexpand true :halign "start" 
+               :class "disclose-cardstatus-appname-label disclose-cardstatus-appname-label-${urgency}")
+        (scale :class "disclose-cardstatus-scale disclose-cardstatus-scale-${urgency}" 
+               :min 0 :max 100 :active false :value "${status == 1 ? 100 : 0}")
+        (button :class "disclose-cardstatus-close-button disclose-cardstatus-close-button-${urgency}"
+          (label :text close :class "disclose-cardstatus-close-icon disclose-cardstatus-close-icon-${urgency}")))
+      (box :class "disclose-cardstatus-separator disclose-cardstatus-separator-${urgency}" :space-evenly false)
+      (box :class "disclose-cardstatus-body-box disclose-cardstatus-body-box-${urgency}" :space-evenly false
+        (box :halign "center" :valign "center" :class "disclose-cardstatus-image-box disclose-cardstatus-image-box-${urgency}"
+          (box :style "background-image: url('${image}')" :hexpand false :vexpand false
+               :width image_width :height image_height :space-evenly false
+               :class "disclose-cardstatus-image disclose-cardstatus-image-${urgency}"))
+        (box :hexpand true :vexpand true :valign "center" :orientation "vertical" :class "disclose-cardstatus-body-outer disclose-cardstatus-body-outer-${urgency}" :space-evenly false
+          (box :class "disclose-cardstatus-body-inner disclose-cardstatus-body-inner-${urgency}" :orientation "vertical"
+              (label :limit-width 25 :text summary :halign "start" :class "disclose-cardstatus-summary-label disclose-cardstatus-summary-label-${urgency}")
+              (label :limit-width 120 :text body :halign "start" :wrap true :class "disclose-cardstatus-body-label disclose-cardstatus-body-${urgency}"))
+          (label :text timestamp :halign "end" :class "disclose-cardstatus-timestamp disclose-cardstatus-timestamp-${urgency}"))))))
+
 ;; vim:ft=yuck

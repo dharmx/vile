@@ -59,7 +59,11 @@ function shotwin() {
 function shotarea() {
 	cd "$dir" || return
 	local bytes
-	bytes="$(maim -u -f png -s -b 2 -c 0.35,0.55,0.85,0.25 -l | base64)"
+    if [ "$(pgrep -x picom)" ]; then
+      bytes="$(maim -u -f png -s -b 2 -c 0.35,0.55,0.85,0.25 -l | base64)"
+    else
+      bytes="$(maim -u -f png -s -b 2 | base64)" 
+    fi
 	if [ "$bytes" ]; then
 		echo "$bytes" | base64 --decode | tee "$file" | xclip -selection clipboard -t image/png
 		notify_view

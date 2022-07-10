@@ -38,6 +38,7 @@
     "quote_name": "quotes.txt"
   },
   "battery": {
+    "interface": "BAT0",
     "full": "\uea16",
     "full_at": 95,
     "crit": "\ue902",
