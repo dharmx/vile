@@ -12,10 +12,15 @@ import random
 import sys
 import time
 import typing
+from html.parser import HTMLParser
+from io import StringIO
 
+HISTORY_LIMIT = 50
 CACHE_PATH = os.path.expandvars("$XDG_CACHE_HOME/dunst/notifications.txt")
 QUOTE_PATH = os.path.expandvars("$XDG_CACHE_HOME/dunst/quotes.txt")
-DEFAULT_QUOTE = "To fake it is to stand guard over emptiness. \u2500\u2500 Arthur Herzog"
+DEFAULT_QUOTE = (
+    "To fake it is to stand guard over emptiness. \u2500\u2500 Arthur Herzog"
+)
 
 FORMATS = {
     "default": "(_cardimage :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
@@ -71,6 +76,44 @@ DUNST_ENVS = {
 }
 
 
+class PangoStripper(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.reset()
+        self.strict = False
+        self.convert_charrefs = True
+        self.text = StringIO()
+
+    def handle_data(self, d):
+        self.text.write(d)
+
+    def get_data(self):
+        return self.text.getvalue()
+
+
+def contains_pango(string: str) -> bool:
+    return "<span>" in string or "</span>" in string
+
+
+def strip_pango_tags(pango: str) -> str:
+    # get your head out of the gutter
+    stripper = PangoStripper()
+    stripper.feed(pango)
+    return stripper.get_data()
+
+
+# TODO: manually shorten body / summary strings - GTK / EWW wrap is shit
+def manual_wrap(string: str, limit_chars: int) -> str:
+    buffer, limit_chars, charge = "", limit_chars - 3, 0
+    for index in range(len(string)):
+        if charge == limit_chars:
+            buffer += "\u2500\u2500 "
+            charge = 0
+        buffer += string[index]
+        charge += 1
+    return buffer
+
+
 def watcher(file_path: str, callback: typing.Callable) -> None:
     try:
         old = pathlib.PosixPath(file_path).read_text()
@@ -118,9 +161,20 @@ def file_rm_line(file_path: str, position: int or bool or range = True) -> bool:
             file.write_text("\n".join(write_contents))
 
 
+def prettify_name(name: str) -> str:
+    return " ".join(
+        [
+            item.capitalize()
+            for item in name.replace("-", " ").replace("_", " ").split(" ")
+        ]
+    )
+
+
 def file_add_line(file_path: str, write_contents: str, top: bool = True) -> None:
     file = pathlib.PosixPath(file_path)
     file_contents = file.read_text().splitlines()
+    if len(file_contents) == HISTORY_LIMIT:
+        file_contents = file_contents[:-1]
     file_contents = (
         [write_contents] + file_contents if top else file_contents + [write_contents]
     )
@@ -143,6 +197,11 @@ def parse_stats(file_contents: str) -> None:
 
 
 def redir_to_handlers(appname: str) -> str:
+    if contains_pango(DUNST_ENVS["DUNST_BODY"]):
+        DUNST_ENVS["DUNST_BODY"] = strip_pango_tags(DUNST_ENVS["DUNST_BODY"])
+    if contains_pango(DUNST_ENVS["DUNST_SUMMARY"]):
+        DUNST_ENVS["DUNST_SUMMARY"] = strip_pango_tags(DUNST_ENVS["DUNST_SUMMARY"])
+    DUNST_ENVS["DUNST_BODY"] = manual_wrap(DUNST_ENVS["DUNST_BODY"], 45)
     match appname:
         case "notify-send":
             return notify_send_handler(DUNST_ENVS)
@@ -162,22 +221,27 @@ def shot_handler(attributes: dict) -> str:
     # TODO: Make this better
     attributes["DELETE"] = f"rm --force \\'{attributes['DUNST_ICON_PATH']}\\'"
     attributes["OPEN"] = f"xdg-open \\'{attributes['DUNST_ICON_PATH']}\\'"
+    attributes["DUNST_APP_NAME"] = prettify_name(attributes["DUNST_APP_NAME"])
     return FORMATS["shot"] % attributes
 
 
 def default_handler(attributes: dict) -> str:
+    attributes["DUNST_APP_NAME"] = prettify_name(attributes["DUNST_APP_NAME"])
     return FORMATS["default"] % attributes
 
 
 def notify_send_handler(attributes: dict) -> str:
+    attributes["DUNST_APP_NAME"] = prettify_name(attributes["DUNST_APP_NAME"])
     return FORMATS["notify-send"] % attributes
 
 
 def brightness_handler(attributes: dict) -> str:
+    attributes["DUNST_APP_NAME"] = prettify_name(attributes["DUNST_APP_NAME"])
     return FORMATS["brightness"] % attributes
 
 
 def volume_handler(attributes: dict) -> str:
+    attributes["DUNST_APP_NAME"] = prettify_name(attributes["DUNST_APP_NAME"])
     return FORMATS["volume"] % attributes
 
 
@@ -186,10 +250,12 @@ def todo_handler(attributes: dict) -> str:
     attributes["TOTAL"] = int(splitted[4])
     attributes["DONE"] = int(splitted[0])
     attributes["PERC"] = (attributes["DONE"] / attributes["TOTAL"]) * 100
+    attributes["DUNST_APP_NAME"] = prettify_name(attributes["DUNST_APP_NAME"])
     return FORMATS["todo"] % attributes
 
 
 def shot_icon_handler(attributes: dict) -> str:
+    attributes["DUNST_APP_NAME"] = prettify_name(attributes["DUNST_APP_NAME"])
     return FORMATS["shot_icon"] % attributes
 
 
@@ -208,7 +274,10 @@ if __name__ == "__main__":
                     # handle empty
                     contents.replace("\n", " ") + ")\n"
                     if contents.strip()
-                    else ((FORMATS["empty"] + "\n") % {"QUOTE": get_rand_quote(QUOTE_PATH, DEFAULT_QUOTE)})
+                    else (
+                        (FORMATS["empty"] + "\n")
+                        % {"QUOTE": get_rand_quote(QUOTE_PATH, DEFAULT_QUOTE)}
+                    )
                 ),
             )
         case "rm":

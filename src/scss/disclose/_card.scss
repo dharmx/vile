@@ -74,9 +74,10 @@
 .disclose-cardprog-separator,
 .disclose-cardradial-separator,
 .disclose-cardimage-separator {
-  background-color: $shade03;
+  background-color: $shade02;
   font-size: 1;
-  padding-top: 3em;
+  padding: 3.4em 0 0 0;
+  margin: 0 10em 0 10em;
 }
 
 .disclose-cardprog-body-box,
@@ -265,5 +266,7 @@
   color: $shade00;
   font-size: 16;
 }
+
+@import "./_override.scss"
 
 // vim:ft=scss
