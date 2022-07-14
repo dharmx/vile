@@ -1,5 +1,5 @@
-(defpoll disclose_airplane :interval "1s" "rfkill list | sed -n 2p | awk '{print $3}'")
-
+(defpoll disclose_stats :interval "5s" "./src/shell/logger.py stats")
 (deflisten disclose_sub "./src/shell/logger.py subscribe")
+(defpoll disclose_dnd_state :interval "1s" "dunstctl is-paused")
 
 ;; vim:ft=yuck

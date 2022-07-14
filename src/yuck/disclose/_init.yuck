@@ -5,6 +5,8 @@
 (include "./src/yuck/disclose/cards/_cardscr.yuck")
 (include "./src/yuck/disclose/cards/_cardradial.yuck")
 
+(include "./src/yuck/disclose/_stats.yuck")
+(include "./src/yuck/disclose/_dnd.yuck")
 (include "./src/yuck/disclose/_layout.yuck")
 
 (defwindow disclose :stacking "fg"

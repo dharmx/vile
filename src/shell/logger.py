@@ -181,8 +181,9 @@ def file_add_line(file_path: str, write_contents: str, limit, top: bool = True) 
     file.write_text("\n".join(file_contents))
 
 
-def parse_stats(file_contents: str) -> None:
+def parse_and_print_stats(file_contents: str) -> str:
     stats = {"critical": 0, "low": 0, "normal": 0, "total": 0}
+
     for line in file_contents.splitlines():
         if "CRITICAL" in line:
             stats["critical"] += 1
@@ -193,7 +194,11 @@ def parse_stats(file_contents: str) -> None:
         elif "NORMAL" in line:
             stats["normal"] += 1
             stats["total"] += 1
-    sys.stdout.write(json.dumps(stats) + "\n")
+
+    stats["critical"] = stats["critical"] * 100 / stats["total"] if stats["critical"] > 0 else 0
+    stats["normal"] = stats["normal"] * 100 / stats["total"] if stats["normal"] > 0 else 0
+    stats["low"] = stats["low"] * 100 / stats["total"] if stats["low"] > 0 else 0
+    return stats
 
 
 def has_non_english_chars(string: str) -> dict:
@@ -307,7 +312,16 @@ if __name__ == "__main__":
                 ),
             )
         case "rmid":
-            file_matched_index_rm(CACHE_PATH, f":identity ':::###::::XXXWWW{sys.argv[2]}===::'")
+            file_matched_index_rm(
+                CACHE_PATH, f":identity ':::###::::XXXWWW{sys.argv[2]}===::'"
+            )
+        case "stats":
+            sys.stdout.write(
+                json.dumps(
+                    parse_and_print_stats(pathlib.PosixPath(CACHE_PATH).read_text())
+                )
+                + "\n"
+            )
         case "rm":
             file_rm_line(CACHE_PATH, int(sys.argv[2]))
         case "quote":

@@ -1,11 +1,12 @@
 .disclose-layout-box {
   background-color: $shade10;
   font-family: Dosis, feather, "Iosevka Nerd Font", sans-serif;
+  padding-bottom: 1em;
 }
 
 .disclose-headers {
   padding: 1em 2em 0 2em;
-  margin-bottom: 0.8em;
+  margin-bottom: 1.5em;
   color: $base05;
 }
 
@@ -19,13 +20,19 @@
 .disclose-headers-clear {
   font-size: 25;
   color: $base09;
-  padding: 0em 0.7em 0 0.5em;
-  border-radius: 0.3em;
+}
+
+.disclose-headers-close {
+  font-size: 25;
+  color: $base14;
 }
 
 .disclose-headers-clear:hover {
-  background-color: $base09;
-  color: $base02;
+  color: $base14;
+}
+
+.disclose-headers-close:hover {
+  color: $base09;
 }
 
 .disclose-scroll {
@@ -53,6 +60,7 @@
 
 .disclose-cardprog-icon,
 .disclose-cardimage-icon {
+  margin: 0 0 0 -0.21em;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -90,7 +98,7 @@
 .disclose-cardprog-summary-box,
 .disclose-cardradial-summary-box,
 .disclose-cardimage-summary-box {
-  padding: 0.5em 0 0.5em 0.5em;
+  padding: 0.5em 0 0.5em 0.9em;
   background-color: darken($base09, 10%);
   border-radius: 0.3em 0.3em 0 0;
   color: $base02;
@@ -105,7 +113,6 @@
 .disclose-cardprog-appname-label,
 .disclose-cardradial-appname-label,
 .disclose-cardimage-appname-label {
-  padding-left: 0.4em;
   font-size: 16;
   font-weight: bold;
 }
@@ -267,6 +274,14 @@
   font-size: 16;
 }
 
-@import "./_override.scss"
+.disclose-separator {
+  font-size: 0.5;
+  background-color: $shade06;
+  margin: 35em 25em 35em 25em;
+}
+
+@import "./_stats.scss";
+@import "./_dnd.scss";
+@import "./_override.scss";
 
 // vim:ft=scss

@@ -1,0 +1,60 @@
+.disclose-dnd-box {
+  background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 1.0), rgba(30, 33, 40, 0.5)), url("./assets/speaker.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 1em;
+  border-radius: 1.5em;
+}
+
+.disclose-dnd-header {
+  font-size: 20;
+  font-weight: bold;
+  color: $base05;
+}
+
+.disclose-dnd-footer {
+  font-size: 15;
+  color: lighten($base04, 8%);
+}
+
+.disclose-dnd-labels {
+  padding: 1.5em;
+}
+
+.disclose-dnd-toggle {
+  padding: 0.3em 0.8em 0.3em 0.8em;
+  border-radius: 0.3em;
+  font-weight: bold;
+  color: $base02;
+  opacity: 0.6;
+}
+
+.disclose-dnd-box-inner {
+  padding-top: 0.8em;
+  opacity: 0.4;
+}
+
+.disclose-dnd-total {
+  font-size: 40;
+  font-weight: bold;
+  color: $base13;
+}
+
+.disclose-dnd-total-label {
+  color: $base13;
+}
+
+.disclose-dnd-toggle:hover {
+  opacity: 1.0;
+  border-radius: 1em;
+}
+
+.disclose-dnd-toggle-ON {
+  background-color: $base14;
+}
+
+.disclose-dnd-toggle-OFF {
+  background-color: $base11;
+}
+
+// vim:filetype=scss

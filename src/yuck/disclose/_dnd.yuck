@@ -1,0 +1,32 @@
+(defwidget _dnd [total total_label label footer state action]
+  (box :vexpand true
+       :hexpand true
+       :class "disclose-dnd-box"
+       :space-evenly false
+    (box :class "disclose-dnd-labels"
+         :hexpand true
+         :orientation "vertical"
+         :space-evenly false
+      (label :halign "start"
+             :class "disclose-dnd-header"
+             :text label)
+      (label :halign "start"
+             :class "disclose-dnd-footer"
+             :text footer)
+      (box :halign "center"
+           :valign "center"
+           :orientation "vertical"
+           :vexpand true
+           :class "disclose-dnd-box-inner"
+           :space-evenly false
+        (label :class "disclose-dnd-total"
+               :text total)
+        (label :class "disclose-dnd-total-label"
+               :text total_label))
+      (button :onclick action
+              :vexpand true
+              :halign "start"
+              :valign "end"
+              :class "disclose-dnd-toggle disclose-dnd-toggle-${state}" state))))
+
+;; vim:filetype=yuck

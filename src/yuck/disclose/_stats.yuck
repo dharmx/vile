@@ -1,0 +1,52 @@
+(defwidget _dstats [
+    critical
+    criticon
+
+    normal
+    normicon
+
+    low
+    lowicon
+
+    level
+    thickness
+  ]
+  (box :space-evenly false
+       :orientation "vertical"
+       :class "disclose-stats"
+       :spacing 10
+    (box :space-evenly false
+         :class "disclose-stats-crit-box"
+      (circular-progress :value critical
+                         :thickness thickness
+                         :class "disclose-stats-crit"
+        (label :class "disclose-stats-crit-label"
+               :text criticon))
+      (label :class "disclose-stats-separator" :text "")
+      (box :hexpand true :halign "center" :orientation "vertical" :class "disclose-stats-crit-info-box"
+        (label :halign "start" :class "disclose-stats-crit-info-value" :text "${round(critical, level)}%")
+        (label :halign "start" :class "disclose-stats-crit-info-label" :text "Critical")))
+    (box :space-evenly false
+         :class "disclose-stats-norm-box"
+      (circular-progress :value normal
+                         :thickness thickness
+                         :class "disclose-stats-norm"
+        (label :class "disclose-stats-norm-label"
+               :text normicon))
+      (label :class "disclose-stats-separator" :text "")
+      (box :hexpand true :halign "center" :orientation "vertical" :class "disclose-stats-norm-info-box"
+        (label :halign "start" :class "disclose-stats-norm-info-value" :text "${round(normal, level)}%")
+        (label :halign "start" :class "disclose-stats-norm-info-label" :text "Normal")))
+    (box :space-evenly false
+         :class "disclose-stats-low-box"
+      (circular-progress :value low
+                         :thickness thickness
+                         :class "disclose-stats-low"
+        (label :class "disclose-stats-low-label"
+               :text lowicon))
+      (label :class "disclose-stats-separator" :text "")
+      (box :hexpand true :orientation "vertical" :halign "center" :class "disclose-stats-low-info-box"
+        (label :halign "start" :class "disclose-stats-low-info-value" :text "${round(low, level)}%")
+        (label :halign "start" :class "disclose-stats-low-info-label" :text "Low")))))
+
+;; vim:filetype=yuck

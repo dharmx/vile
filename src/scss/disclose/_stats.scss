@@ -1,0 +1,74 @@
+.disclose-stats-crit-box,
+.disclose-stats-norm-box,
+.disclose-stats-low-box {
+  background-color: $shade06;
+  border-radius: 3em;
+  margin: 0 1em 0 1em;
+  padding: 0.8em;
+}
+
+.disclose-stats-crit,
+.disclose-stats-norm,
+.disclose-stats-low {
+  background-color: $shade03;
+}
+
+.disclose-stats-crit {
+  color: $base11;
+}
+
+.disclose-stats-low {
+  color: $base14;
+}
+
+.disclose-stats-norm {
+  color: $base09;
+}
+
+.disclose-stats-crit-label,
+.disclose-stats-norm-label,
+.disclose-stats-low-label {
+  padding: 0.9em 0.9em 0.9em 0.83em;
+  font-size: 23;
+  font-weight: bold;
+  background-color: $shade07;
+}
+
+.disclose-stats-crit-info-value {
+  font-size: 20;
+  font-weight: bold;
+  color: $base11;
+}
+
+.disclose-stats-norm-info-value {
+  font-size: 20;
+  font-weight: bold;
+  color: $base09;
+}
+
+.disclose-stats-norm-info-box,
+.disclose-stats-norm-info-box,
+.disclose-stats-norm-info-box {
+  padding: 0 0.8em 0 1em;
+}
+
+.disclose-stats-low-info-value {
+  font-size: 20;
+  font-weight: bold;
+  color: $base14;
+}
+
+.disclose-stats-low-info-label,
+.disclose-stats-norm-info-label,
+.disclose-stats-crit-info-label {
+  color: $base15;
+}
+
+.disclose-stats-separator {
+  font-size: 1;
+  background-color: $shade02;
+  padding: 1em;
+  margin-left: 15em;
+}
+
+// vim:filetype=scss

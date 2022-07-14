@@ -21,6 +21,7 @@
          :class "disclose-cardimage-container-box disclose-cardimage-container-box-${urgency}"
       (box :class "disclose-cardimage-summary-box disclose-cardimage-summary-box-${urgency}" 
            :space-evenly false
+           :spacing 6
 
         (box :style "background-image: url('${icon}')" 
              :width icon_width
