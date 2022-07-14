@@ -82,7 +82,7 @@ function subscribe_node() {
 }
 
 function subscribe_desktop() {
-  _make_box && bspc subscribe desktop node | while read -r _ do; _make_box done
+  _make_box && bspc subscribe report | while read -r _ do; _make_box done
 }
 
 function create() {

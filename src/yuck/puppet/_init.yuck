@@ -1,0 +1,20 @@
+(include "./src/yuck/puppet/_env.yuck")
+(include "./src/yuck/puppet/_modules.yuck")
+
+(defwindow puppet :stacking "fg"
+  :windowtype "normal"
+  :wm-ignore true
+  :geometry (geometry :width "26%" :height "100%" :anchor "right center") 
+  (puppet_layout))
+
+(defwidget puppet_layout []
+  (box :orientation "vertical"
+       :space-evenly false
+       :class "puppet-layout-box"
+    (box :space-evenly false
+      (_puppetcfgbtn :name "${puppet_cfg_sub.presel_feedback}"
+                     :value "${puppet_cfg_sub.presel_feedback}"
+                     :class "presel-feedback"
+                     :action "bspc config presel_feedback ${!puppet_cfg_sub.presel_feedback}"))))
+
+;; vim:ft=yuck

@@ -1,17 +1,15 @@
 #!/usr/bin/env --split-string=python -u
 
-# TODO: Implement caching
-# TODO: Implement image and text based caching
-# TODO: Replicate the quote script
-
 import datetime
 import json
 import os
 import pathlib
 import random
+import re
 import sys
 import time
 import typing
+import unicodedata
 from html.parser import HTMLParser
 from io import StringIO
 
@@ -23,16 +21,16 @@ DEFAULT_QUOTE = (
 )
 
 FORMATS = {
-    "default": "(_cardimage :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
-    "spotifyd": "(_cardimage :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
-    "ncspot": "(_cardimage :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
-    "Spotify": "(_cardimage :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
-    "shot_icon": "(_cardimage :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image './assets/poster.png' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
-    "notify-send": "(_cardimage :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon './assets/browser.png' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
-    "brightness": "(_cardprog :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s' :progress '%(DUNST_PROGRESS)s')",
-    "volume": "(_cardprog :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s' :progress '%(DUNST_PROGRESS)s')",
-    "shot": "(_cardscr :delete '%(DELETE)s' :open '%(OPEN)s' :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :image '%(DUNST_ICON_PATH)s' :image_height 250 :image_width 100 :urgency '%(DUNST_URGENCY)s' :close '' :timestamp '%(DUNST_TIMESTAMP)s')",
-    "todo": "(_cardradial :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :appname '%(DUNST_APP_NAME)s' :progress %(PERC)s :thickness 20.0 :total %(TOTAL)s :done %(DONE)s :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
+    "default": "(_cardimage :identity ':::###::::XXXWWW%(DUNST_ID)s===::' :close_action './src/shell/logger.py rmid %(DUNST_ID)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
+    "spotifyd": "(_cardimage :identity ':::###::::XXXWWW%(DUNST_ID)s===::' :close_action './src/shell/logger.py rmid %(DUNST_ID)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
+    "ncspot": "(_cardimage :identity ':::###::::XXXWWW%(DUNST_ID)s===::' :close_action './src/shell/logger.py rmid %(DUNST_ID)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
+    "Spotify": "(_cardimage :identity ':::###::::XXXWWW%(DUNST_ID)s===::' :close_action './src/shell/logger.py rmid %(DUNST_ID)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
+    "shot_icon": "(_cardimage :identity ':::###::::XXXWWW%(DUNST_ID)s===::' :close_action './src/shell/logger.py rmid %(DUNST_ID)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image './assets/poster.png' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
+    "notify-send": "(_cardimage :identity ':::###::::XXXWWW%(DUNST_ID)s===::' :close_action './src/shell/logger.py rmid %(DUNST_ID)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon './assets/browser.png' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
+    "brightness": "(_cardprog :identity ':::###::::XXXWWW%(DUNST_ID)s===::' :close_action './src/shell/logger.py rmid %(DUNST_ID)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s' :progress '%(DUNST_PROGRESS)s')",
+    "volume": "(_cardprog :identity ':::###::::XXXWWW%(DUNST_ID)s===::' :close_action './src/shell/logger.py rmid %(DUNST_ID)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :image_height 100 :image_width 100 :image '%(DUNST_ICON_PATH)s' :appname '%(DUNST_APP_NAME)s' :icon '%(DUNST_ICON_PATH)s' :icon_height 32 :icon_width 32 :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s' :progress '%(DUNST_PROGRESS)s')",
+    "shot": "(_cardscr :identity ':::###::::XXXWWW%(DUNST_ID)s===::' :close_action './src/shell/logger.py rmid %(DUNST_ID)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :delete '%(DELETE)s' :open '%(OPEN)s' :summary '%(DUNST_SUMMARY)s' :image '%(DUNST_ICON_PATH)s' :image_height 250 :image_width 100 :urgency '%(DUNST_URGENCY)s' :close '' :timestamp '%(DUNST_TIMESTAMP)s')",
+    "todo": "(_cardradial :identity ':::###::::XXXWWW%(DUNST_ID)s===::' :close_action './src/shell/logger.py rmid %(DUNST_ID)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(DUNST_SUMMARY)s' :body '%(DUNST_BODY)s' :close '' :appname '%(DUNST_APP_NAME)s' :progress %(PERC)s :thickness 20.0 :total %(TOTAL)s :done %(DONE)s :timestamp '%(DUNST_TIMESTAMP)s' :urgency '%(DUNST_URGENCY)s')",
     "empty": "(box :class 'disclose-empty-box' :height 750 :orientation 'vertical' :space-evenly false (image :class 'disclose-empty-banner' :valign 'end' :vexpand true :path './assets/wedding-bells.png' :image-width 250 :image-height 250) (label :vexpand true :valign 'start' :wrap true :class 'disclose-empty-label' :text '%(QUOTE)s'))",
 }
 
@@ -92,7 +90,7 @@ class PangoStripper(HTMLParser):
 
 
 def contains_pango(string: str) -> bool:
-    return "<span>" in string or "</span>" in string
+    return any(item in string for item in ["<span>", "</span>"])
 
 
 def strip_pango_tags(pango: str) -> str:
@@ -100,18 +98,6 @@ def strip_pango_tags(pango: str) -> str:
     stripper = PangoStripper()
     stripper.feed(pango)
     return stripper.get_data()
-
-
-# TODO: manually shorten body / summary strings - GTK / EWW wrap is shit
-def manual_wrap(string: str, limit_chars: int) -> str:
-    buffer, limit_chars, charge = "", limit_chars - 3, 0
-    for index in range(len(string)):
-        if charge == limit_chars:
-            buffer += "\u2500\u2500 "
-            charge = 0
-        buffer += string[index]
-        charge += 1
-    return buffer
 
 
 def watcher(file_path: str, callback: typing.Callable) -> None:
@@ -127,6 +113,22 @@ def watcher(file_path: str, callback: typing.Callable) -> None:
         sys.stdout.write("Closed.\n")
     except FileNotFoundError:
         sys.stderr.write("The path does not exist!\n")
+    except Exception:
+        sys.stderr.write("Unknown Error!\n")
+
+
+def file_matched_index_rm(file_path: str, pattern: str) -> None:
+    posix_file_path: pathlib.PosixPath = pathlib.PosixPath(file_path)
+    lines: typing.List[str] = posix_file_path.read_text().splitlines()
+
+    rm_index_lines: typing.List[str] = [
+        lines[index]
+        for index in range(len(lines))
+        if not re.search(pattern, lines[index])
+    ]
+
+    if len(lines) != len(rm_index_lines):
+        posix_file_path.write_text("\n".join(rm_index_lines))
 
 
 def file_rm_line(file_path: str, position: int or bool or range = True) -> bool:
@@ -163,17 +165,15 @@ def file_rm_line(file_path: str, position: int or bool or range = True) -> bool:
 
 def prettify_name(name: str) -> str:
     return " ".join(
-        [
-            item.capitalize()
-            for item in name.replace("-", " ").replace("_", " ").split(" ")
-        ]
+        item.capitalize()
+        for item in name.replace("-", " ").replace("_", " ").split(" ")
     )
 
 
-def file_add_line(file_path: str, write_contents: str, top: bool = True) -> None:
+def file_add_line(file_path: str, write_contents: str, limit, top: bool = True) -> None:
     file = pathlib.PosixPath(file_path)
     file_contents = file.read_text().splitlines()
-    if len(file_contents) == HISTORY_LIMIT:
+    if len(file_contents) == limit:
         file_contents = file_contents[:-1]
     file_contents = (
         [write_contents] + file_contents if top else file_contents + [write_contents]
@@ -196,12 +196,35 @@ def parse_stats(file_contents: str) -> None:
     sys.stdout.write(json.dumps(stats) + "\n")
 
 
+def has_non_english_chars(string: str) -> dict:
+    return {
+        "CJK": any(unicodedata.category(char) == "Lo" for char in string),
+        "CYR": any(unicodedata.category(char) == "Lu" for char in string),
+    }
+
+
 def redir_to_handlers(appname: str) -> str:
     if contains_pango(DUNST_ENVS["DUNST_BODY"]):
         DUNST_ENVS["DUNST_BODY"] = strip_pango_tags(DUNST_ENVS["DUNST_BODY"])
     if contains_pango(DUNST_ENVS["DUNST_SUMMARY"]):
         DUNST_ENVS["DUNST_SUMMARY"] = strip_pango_tags(DUNST_ENVS["DUNST_SUMMARY"])
-    DUNST_ENVS["DUNST_BODY"] = manual_wrap(DUNST_ENVS["DUNST_BODY"], 45)
+
+    DUNST_ENVS["SUMMARY_LIMITER"] = ""
+    summary_lang_char_check = has_non_english_chars(DUNST_ENVS["DUNST_SUMMARY"][:15])
+    if summary_lang_char_check["CJK"]:
+        DUNST_ENVS["SUMMARY_LIMITER"] = 14
+    elif summary_lang_char_check["CYR"]:
+        DUNST_ENVS["SUMMARY_LIMITER"] = 30
+
+    DUNST_ENVS["BODY_LIMITER"] = ""
+    body_lang_char_check = has_non_english_chars(DUNST_ENVS["DUNST_BODY"][:70])
+    if body_lang_char_check["CJK"]:
+        DUNST_ENVS["BODY_LIMITER"] = 80
+    elif body_lang_char_check["CYR"]:
+        DUNST_ENVS["BODY_LIMITER"] = 110
+    else:
+        DUNST_ENVS["BODY_LIMITER"] = 100
+
     match appname:
         case "notify-send":
             return notify_send_handler(DUNST_ENVS)
@@ -265,7 +288,10 @@ def get_rand_quote(file_path: str, default_quote: str) -> str:
 
 
 if __name__ == "__main__":
-    match sys.argv[1]:
+    args = sys.argv
+    if len(args) < 2:
+        args = ["dummy", "dummy"]
+    match args[1]:
         case "subscribe":
             watcher(
                 CACHE_PATH,
@@ -280,6 +306,8 @@ if __name__ == "__main__":
                     )
                 ),
             )
+        case "rmid":
+            file_matched_index_rm(CACHE_PATH, f":identity ':::###::::XXXWWW{sys.argv[2]}===::'")
         case "rm":
             file_rm_line(CACHE_PATH, int(sys.argv[2]))
         case "quote":
@@ -290,6 +318,10 @@ if __name__ == "__main__":
             )
             pathlib.PosixPath(CACHE_PATH).write_text("")
         case _:
-            file_add_line(CACHE_PATH, redir_to_handlers(DUNST_ENVS["DUNST_APP_NAME"]))
+            file_add_line(
+                CACHE_PATH,
+                redir_to_handlers(DUNST_ENVS["DUNST_APP_NAME"]),
+                HISTORY_LIMIT,
+            )
 
 # vim:filetype=python

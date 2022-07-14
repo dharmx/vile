@@ -154,6 +154,10 @@ def get_bright_dark_from_cover(image_path) -> dict:
     return parsed_colors
 
 
+def decode_cache_get(arg) -> str:
+    pass
+
+
 if __name__ == "__main__":
     with open("./.config.json", encoding="utf8") as file:
         config: dict = json.loads(file.read())["player"]

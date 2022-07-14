@@ -1,0 +1,19 @@
+(defwidget disclose_layout []
+  (box :orientation "vertical"
+       :space-evenly false
+       :class "disclose-layout-box"
+    (box :space-evenly false
+         :class "disclose-headers"
+      (label :text "Notifications"
+             :class "disclose-headers-label"
+             :halign "start"
+             :hexpand true)
+      (button :onclick "./src/shell/logger.py cls" :class "disclose-headers-clear" ""))
+    (scroll :hscroll false
+            :vscroll true
+            :vexpand true
+            :hexpand true
+            :class "disclose-scroll"
+      (literal :content disclose_sub))))
+
+;; vim:filetype=yuck

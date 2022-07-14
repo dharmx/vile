@@ -1,0 +1,76 @@
+(defwidget _cardimage [
+    summary
+    body
+    ?limit_summary
+    ?limit_body
+    appname
+    icon
+    icon_width
+    icon_height
+    close
+    ?close_action
+    image
+    image_width
+    image_height
+    timestamp
+    urgency
+  ]
+  (eventbox :class "disclose-cardimage-eventbox disclose-cardimage-eventbox-${urgency}"
+    (box :orientation "vertical"
+         :space-evenly false
+         :class "disclose-cardimage-container-box disclose-cardimage-container-box-${urgency}"
+      (box :class "disclose-cardimage-summary-box disclose-cardimage-summary-box-${urgency}" 
+           :space-evenly false
+
+        (box :style "background-image: url('${icon}')" 
+             :width icon_width
+             :height icon_height
+             :space-evenly false
+             :class "disclose-cardimage-icon disclose-cardimage-icon-${urgency}")
+        (label :text appname
+               :hexpand true
+               :halign "start"
+               :class "disclose-cardimage-appname-label disclose-cardimage-appname-label-${urgency}")
+        (button :class "disclose-cardimage-close-button disclose-cardimage-close-button-${urgency}" 
+                :onclick close_action
+          (label :text close
+                 :class "disclose-cardimage-close-icon disclose-cardimage-close-icon-${urgency}")))
+
+      (box :class "disclose-cardimage-separator disclose-cardimage-separator-${urgency}"
+           :space-evenly false)
+
+      (box :class "disclose-cardimage-body-box disclose-cardimage-body-box-${urgency}"
+           :space-evenly false
+        (box :halign "center"
+             :valign "center"
+             :class "disclose-cardimage-image-box disclose-cardimage-image-box-${urgency}"
+          (box :style "background-image: url('${image}')"
+               :hexpand false
+               :vexpand false
+               :width image_width
+               :height image_height
+               :space-evenly false
+               :class "disclose-cardimage-image disclose-cardimage-image-${urgency}"))
+
+        (box :hexpand true
+             :vexpand true
+             :valign "center"
+             :orientation "vertical"
+             :spacing 5
+             :class "disclose-cardimage-body-outer disclose-cardimage-body-outer-${urgency}"
+             :space-evenly false
+          (label :text summary
+                 :limit-width "${limit_summary != "" ? limit_summary : 25}"
+                 :halign "start"
+                 :class "disclose-cardimage-summary-label disclose-cardimage-summary-label-${urgency}")
+          (label :text body
+                 :halign "start"
+                 :limit-width "${limit_body != "" ? limit_body : 110}"
+                 :xalign 0.0
+                 :wrap true
+                 :class "disclose-cardimage-body-label disclose-cardimage-body-${urgency}")
+          (label :text timestamp
+                 :halign "end"
+                 :class "disclose-cardimage-timestamp disclose-cardimage-timestamp-${urgency}"))))))
+
+;; vim:ft=yuck

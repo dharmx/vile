@@ -1,0 +1,50 @@
+(defwidget _cardscr [
+    summary
+    ?limit_summary
+    close
+    ?close_action
+    image
+    image_width
+    image_height
+    timestamp
+    urgency
+    delete
+    open
+  ]
+  (eventbox :class "disclose-cardscr-eventbox disclose-cardscr-eventbox-${urgency}"
+    (box :orientation "vertical" 
+         :space-evenly false
+         :class "disclose-cardscr-container-box disclose-cardscr-container-box-${urgency}"
+      (box :space-evenly false 
+           :class "disclose-cardscr-summary-box disclose-cardscr-summary-box-${urgency}"
+        (label :hexpand true
+               :limit-width "${limit_summary != "" ? limit_summary : 25}"
+               :halign "start" 
+               :class "disclose-cardscr-summary-label disclose-cardscr-summary-label-${urgency}" 
+               :text summary)
+        (label :class "disclose-cardscr-timestamp disclose-cardscr-timestamp-${urgency}" 
+               :text timestamp)
+        (button :class "disclose-cardscr-close-button disclose-cardscr-close-button-${urgency}"
+                :onclick close_action
+          (label :text close 
+                 :class "disclose-cardscr-close-icon disclose-cardscr-close-icon-${urgency}")))
+      (box :class "disclose-cardscr-image" 
+           :style "background-image: url('${image}')"
+           :width image_width 
+           :height image_height 
+           :space-evenly false)
+      (box :spacing 20 
+           :space-evenly true 
+           :class "disclose-cardscr-action-box disclose-cardscr-action-box-${urgency}" 
+           :hexpand true 
+           :halign "center"
+        (button :class "disclose-cardscr-open-button disclose-cardscr-open-button-${urgency}" 
+                :onclick open
+          (label :text "Open" 
+                 :class "disclose-cardscr-open-label disclose-cardscr-open-label-${urgency}"))
+        (button :class "disclose-cardscr-delete-button disclose-cardscr-delete-button-${urgency}" 
+                :onclick delete
+          (label :text "Delete" 
+                 :class "disclose-cardscr-delete-label disclose-cardscr-delete-label-${urgency}"))))))
+
+;; vim:ft=yuck

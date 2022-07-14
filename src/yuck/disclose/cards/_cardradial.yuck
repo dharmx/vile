@@ -1,0 +1,63 @@
+(defwidget _cardradial [
+    summary 
+    body 
+    ?limit_summary
+    ?limit_body
+    appname 
+    close 
+    ?close_action
+    timestamp 
+    urgency 
+    progress 
+    thickness 
+    total 
+    done
+  ]
+  (eventbox :class "disclose-cardradial-eventbox disclose-cardradial-eventbox-${urgency}"
+    (box :orientation "vertical"
+         :space-evenly false
+         :class "disclose-cardradial-container-box disclose-cardradial-container-box-${urgency}"
+      (box :class "disclose-cardradial-summary-box disclose-cardradial-summary-box-${urgency}" 
+           :space-evenly false
+        (label :text appname 
+               :hexpand true 
+               :halign "start" 
+               :class "disclose-cardradial-appname-label disclose-cardradial-appname-label-${urgency}")
+        (button :class "disclose-cardradial-close-button disclose-cardradial-close-button-${urgency}"
+                :onclick close_action
+          (label :text close 
+                 :class "disclose-cardradial-close-icon disclose-cardradial-close-icon-${urgency}")))
+      (box :class "disclose-cardradial-separator disclose-cardradial-separator-${urgency}" 
+           :space-evenly false)
+      (box :class "disclose-cardradial-body-box disclose-cardradial-body-box-${urgency}" 
+           :space-evenly false
+        (box :halign "center" 
+             :valign "center" 
+             :class "disclose-cardradial-circle-box disclose-cardradial-circle-box-${urgency}"
+          (circular-progress :value progress 
+                             :thickness thickness
+                             :class "disclose-cardradial-circle disclose-cardradial-circle-${urgency}"
+            (label :class "disclose-cardradial-tasks disclose-cardradial-tasks-${urgency}" 
+                   :text "${done}/${total}")))
+        (box :hexpand true 
+             :vexpand true 
+             :valign "center" 
+             :spacing 5 
+             :orientation "vertical" 
+             :class "disclose-cardradial-body-outer disclose-cardradial-body-outer-${urgency}" 
+             :space-evenly false
+          (label :limit-width "${limit_summary != "" ? limit_summary : 25}"
+                 :text summary
+                 :halign "start" 
+                 :class "disclose-cardradial-summary-label disclose-cardradial-summary-label-${urgency}")
+          (label :limit-width "${limit_body != "" ? limit_body : 110}"
+                 :text body 
+                 :xalign 0.0
+                 :halign "start" 
+                 :wrap true 
+                 :class "disclose-cardradial-body-label disclose-cardradial-body-${urgency}")
+          (label :text timestamp 
+                 :halign "end" 
+                 :class "disclose-cardradial-timestamp disclose-cardradial-timestamp-${urgency}"))))))
+
+;; vim:ft=yuck

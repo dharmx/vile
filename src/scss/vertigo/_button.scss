@@ -1,6 +1,6 @@
 .vertigo-layout-box {
   background-color: $base00;
-  font-family: "feather", "Iosevka Nerd Font", sans-serif;
+  font-family: "feather", Dosis, sans-serif;
   padding: 0.8em 0.8em 0 0.8em;
 }
 
@@ -31,21 +31,21 @@
 .vertigo-workspace:first-child { padding-top: 0.3em; }
 .vertigo-workspace:last-child { border-radius: 0 0 50% 0; }
 
-.vertigo-workspace label { 
+.vertigo-workspace label {
   font-size: 25;
-  padding: 0.57em 0 0.57em 0; 
+  padding: 0.57em 0 0.57em 0;
 }
 
 .vertigo-workspace:hover { background-color: $base03; }
 .vertigo-workspace-urgent { color: $base11; }
 .vertigo-workspace-occupied { color: $base13; }
-.vertigo-workspace-local { color: $base04; }
-.vertigo-workspace-focused { 
-  color: $base14; 
+.vertigo-workspace-local { color: $shade01; }
+.vertigo-workspace-focused {
+  color: $base14;
   background-color: $base02;
+  border-right: 3px solid $base14;
 }
 
-.vertigo-workspace-focused { border-right: 3px solid $base14; }
 .vertigo-workspace-occupied:hover { border-left: 3px solid $base13; }
 .vertigo-workspace-urgent:hover { border-left: 3px solid $base11; }
 .vertigo-workspace-local:hover { border-left: 3px solid $base04; }
@@ -56,6 +56,7 @@
   font-size: 25;
   padding: 0.57em 0 0.57em 0;
   color: $base01;
+  font-weight: bold;
 }
 
 .vertigo-battery-button:hover { opacity: 0.85; }
@@ -64,6 +65,7 @@
   font-size: 26;
   background-color: $base01;
   padding: 0.4em 0 0.4em 0;
+  font-family: "Iosevka Nerd Font", sans-serif;
 }
 
 .vertigo-time-format-first { font-weight: bold; color: $base15; }

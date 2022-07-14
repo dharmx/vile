@@ -1,0 +1,85 @@
+(defwidget _cardprog [
+    summary 
+    body 
+    ?limit_summary
+    ?limit_body
+    appname 
+    icon 
+    icon_width 
+    icon_height 
+    close 
+    ?close_action
+    image 
+    image_width 
+    image_height 
+    timestamp 
+    urgency 
+    progress
+  ]
+  (eventbox :class "disclose-cardprog-eventbox disclose-cardprog-eventbox-${urgency}"
+    (box :orientation "vertical"
+         :space-evenly false
+         :class "disclose-cardprog-container-box disclose-cardprog-container-box-${urgency}"
+      (box :class "disclose-cardprog-summary-box disclose-cardprog-summary-box-${urgency}" 
+           :space-evenly false
+        (box :style "background-image: url('${icon}')" 
+             :width icon_width 
+             :height icon_height 
+             :space-evenly false
+             :class "disclose-cardprog-icon disclose-cardprog-icon-${urgency}")
+        (label :text appname 
+               :hexpand true 
+               :halign "start" 
+               :class "disclose-cardprog-appname-label disclose-cardprog-appname-label-${urgency}")
+        (button :class "disclose-cardprog-close-button disclose-cardprog-close-button-${urgency}"
+                :onclick close_action
+          (label :text close 
+                 :class "disclose-cardprog-close-icon disclose-cardprog-close-icon-${urgency}")))
+      (box :class "disclose-cardprog-separator disclose-cardprog-separator-${urgency}" 
+           :space-evenly false)
+      (box :class "disclose-cardprog-body-box disclose-cardprog-body-box-${urgency}" 
+           :space-evenly false
+        (box :halign "center" 
+             :valign "center" 
+             :class "disclose-cardprog-image-box disclose-cardprog-image-box-${urgency}"
+          (box :style "background-image: url('${image}')" 
+               :hexpand false 
+               :vexpand false
+               :width image_width 
+               :height image_height 
+               :space-evenly false
+               :class "disclose-cardprog-image disclose-cardprog-image-${urgency}"))
+        (box :spacing 1 
+             :hexpand true 
+             :vexpand true 
+             :valign "center" 
+             :orientation "vertical" 
+             :class "disclose-cardprog-body-outer disclose-cardprog-body-outer-${urgency}" 
+             :space-evenly false
+          (box :class "disclose-cardprog-summary-body-box disclose-cardprog-summary-body-box-${urgency}"
+            (label :limit-width "${limit_summary != "" ? limit_summary : 25}"
+                   :text summary 
+                   :halign "start" 
+                   :class "disclose-cardprog-summary-label disclose-cardprog-summary-label-${urgency}")
+            (label :text timestamp 
+                   :halign "end"
+                   :class "disclose-cardprog-timestamp disclose-cardprog-timestamp-${urgency}"))
+          (label :limit-width "${limit_body != "" ? limit_body : 110}"
+                 :text body 
+                 :halign "start"
+                 :wrap true 
+                 :xalign 0.0
+                 :class "disclose-cardprog-body-label disclose-cardprog-body-${urgency}")
+          (box :spacing 15 
+               :class "disclose-cardprog-scale-box disclose-cardprog-scale-box-${urgency}" 
+               :space-evenly false
+            (scale :hexpand true 
+                   :class "disclose-cardprog-scale disclose-cardprog-scale-${urgency}" 
+                   :min 0 
+                   :max 100 
+                   :active false 
+                   :value progress)
+            (label :class "disclose-cardprog-value-label disclose-cardprog-value-label-${urgency}" 
+                   :text progress)))))))
+
+;; vim:ft=yuck
