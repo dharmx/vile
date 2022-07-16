@@ -53,7 +53,7 @@ function _make_box() {
 }
 
 function _make_label() {
-  print "(button :onmiddleclick 'bspc desktop --layout next' :class 'vertigo-button vertigo-logo-button vertigo-logo-button-"$3"' :tooltip 'node: "$2"' (label :text '"$1"' :limit-width 2))"
+  print "(button :onmiddleclick 'bspc desktop --layout next' :class 'vertigo-button vertigo-node-button vertigo-node-button-"$3"' :tooltip 'node: "$2"' (label :text '"$1"' :limit-width 2))"
 }
 
 function _wrap_node_yuck() {

@@ -1,0 +1,14 @@
+(defwidget _label [vexpand text ?tooltip ?valign ?button-class ?label-class ?M ?L ?R]
+  (button :onmiddleclick M
+          :onclick L
+          :onrightclick R
+          :vexpand vexpand
+          :valign "${valign == "" ? "start" : valign}"
+          :class "vertigo-button ${button-class}" 
+          :tooltip tooltip
+
+    (label :text text 
+           :limit-width 2 
+           :class "vertigo-label ${label-class}")))
+
+;; vim:ft=yuck

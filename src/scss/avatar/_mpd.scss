@@ -1,0 +1,64 @@
+.avatar-mpd-box {
+  font-family: feather, Dosis, "Iosevka Nerd Font", sans-serif;
+  border-radius: 1em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  padding: 1.5em;
+}
+
+.avatar-mpd-icon {
+  font-size: 30;
+  margin-right: 0.6em;
+}
+
+.avatar-mpd-icon,
+.avatar-mpd-name { font-weight: 500; }
+
+.avatar-mpd-separator {
+  font-size: 15;
+  padding: 0 0.5em 0 0.5em; 
+}
+
+.avatar-mpd-artist,
+.avatar-mpd-title { font-size: 20; }
+.avatar-mpd-title { font-weight: bold; }
+.avatar-mpd-controls { font-size: 25; }
+
+.avatar-mpd-button-playback:hover { color: $base10; }
+.avatar-mpd-button-prev:hover { color: $base09; }
+.avatar-mpd-button-next:hover { color: $base09; }
+
+.avatar-mpd-button-like {
+  padding-left: 0.5em;
+  font-size: 30;
+}
+
+.avatar-mpd-button-like:hover { color: $base11; }
+.avatar-mpd-minimal { font-size: 20; }
+.avatar-mpd-footer { font-size: 17; }
+
+.avatar-mpd-progress {
+  trough {
+    background-color: darken($base05, 25%);
+    min-height: 0.3em;
+    border-radius: 0.2em;
+
+    highlight {
+      background-color: lighten($base05, 15%);
+      border-radius: 0.2em;
+    }
+
+    slider {
+      background: lighten($base05, 25%);
+      border-radius: 100%;
+      margin: -8px;
+    }
+  }
+}
+
+.avatar-mpd-button-playback {
+  font-size: 50;
+}
+
+// vim:ft=scss

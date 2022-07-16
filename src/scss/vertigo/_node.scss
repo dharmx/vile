@@ -1,0 +1,16 @@
+.vertigo-node-button {
+  padding: 0.57em 0 0.58em 0;
+  margin-bottom: 0.5em;
+  font-size: 25;
+  color: $base02;
+}
+
+.vertigo-node-button-tiled { background-color: $base14; }
+.vertigo-node-button-monocle { background-color: $base11; }
+.vertigo-node-button-float { background-color: $base13; }
+.vertigo-node-button-pseudo { background-color: $base15; }
+.vertigo-node-button-full { background-color: $base09; }
+.vertigo-node-button-other { background-color: $base08; }
+.vertigo-node-button:hover { opacity: 0.8; }
+
+// vim:ft=scss

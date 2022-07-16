@@ -1,0 +1,38 @@
+.avatar-pctl-box {
+  font-family: feather, Lato, "Iosevka Nerd Font", sans-serif;
+  border-radius: 1em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  padding: 1.5em;
+  color: $base05;
+}
+
+.avatar-pctl-icon {
+  font-size: 30;
+  margin-right: 0.6em;
+}
+
+.avatar-pctl-icon,
+.avatar-pctl-name { font-weight: 500; }
+
+.avatar-pctl-separator {
+  font-size: 15;
+  padding: 0 0.5em 0 0.5em;
+}
+
+.avatar-pctl-artist,
+.avatar-pctl-title { font-size: 20; }
+.avatar-pctl-title { font-weight: bold; }
+.avatar-pctl-controls { font-size: 30; }
+
+.avatar-pctl-button-playback {
+  font-size: 50;
+}
+
+.avatar-pctl-button-playback:hover { color: $base10; }
+.avatar-pctl-button-prev:hover { color: $base09; }
+.avatar-pctl-button-next:hover { color: $base09; }
+.avatar-pctl-minimal { font-size: 20; }
+
+// vim:ft=scss

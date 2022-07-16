@@ -1,0 +1,86 @@
+.disclose-cardscr-eventbox {
+  background: linear-gradient(45deg, $base02 20%, $base01 100%);
+  border-radius: 0.5em;
+}
+
+.disclose-cardscr-eventbox:hover {
+  background: linear-gradient(170deg, $shade01 20%, $base01 100%);
+}
+
+.disclose-cardscr-summary-box {
+  padding: 0.5em 0 0 1em;
+  border-radius: 0.3em 0.3em 0 0;
+  color: $base02;
+}
+
+.disclose-cardscr-close-button {
+  margin: 0.6em 1em 0.6em 0;
+  padding: 0.2em;
+  background-color: $base11;
+  color: $base01;
+  border-radius: 50%;
+  box-shadow: -0.4px -0.3px 4px -1.8px $shade09;
+}
+
+.disclose-cardscr-close-button:hover {
+  background-color: $base01;
+  color: $base11;
+}
+
+.disclose-cardscr-summary-label {
+  font-size: 20;
+  font-weight: bold;
+  color: $base05;
+}
+
+.disclose-cardscr-body-label {
+  font-size: 16;
+  color: $base05;
+}
+
+.disclose-cardscr-timestamp {
+  color: $base10;
+  font-weight: bold;
+}
+
+.disclose-cardscr-image {
+  margin: 1em;
+  border-radius: 0.5em;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.disclose-cardscr-timestamp {
+  padding-right: 1em;
+}
+
+.disclose-cardscr-open-button,
+.disclose-cardscr-delete-button {
+  font-size: 20;
+  font-weight: bold;
+  padding: 0.6em 3.72em 0.6em 3.72em;
+  margin-bottom: 0.7em;
+  border-radius: 0.2em;
+  color: $base02;
+}
+
+.disclose-cardscr-open-button {
+  background-color: darken($base09, 10%);
+}
+
+.disclose-cardscr-open-button:hover {
+  color: $base09;
+  background-color: $shade02;
+}
+
+.disclose-cardscr-delete-button {
+  background-color: $shade02;
+  color: $base11;
+}
+
+.disclose-cardscr-delete-button:hover {
+  background-color: $base11;
+  color: $shade02;
+}
+
+// vim:ft=scss

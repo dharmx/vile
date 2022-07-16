@@ -1,0 +1,44 @@
+.avatar-profile-user-box {
+  background: linear-gradient(45deg, rgba(16, 19, 23, 1.0) 20%, $base01 100%);
+  padding: 2em 2.5em 0 2.5em;
+  margin: 2em;
+  border-radius: 0.5em;
+  box-shadow: 1px 1px 3px 2px $shade09;
+}
+
+.avatar-profile-username {
+  color: $base09;
+  font-size: 25;
+  font-weight: bold;
+  padding-top: 0.5em;
+}
+
+.avatar-profile-hostname {
+  color: $base11;
+  padding-top: 0.2em;
+}
+
+.avatar-icon { padding-right: 0.7em; }
+.avatar-quick-settings {
+  padding: 1em;
+  margin-top: 3em;
+  color: $base04;
+}
+
+.avatar-profile-bluetooth-on .avatar-icon { color: $base14; }
+.avatar-profile-bluetooth-off .avatar-icon { color: $base11; }
+
+.avatar-icon-connected { color: $base14; }
+.avatar-icon-disconnected { color: $base11; }
+.avatar-icon-connecting { color: $base13; }
+.avatar-icon-unavailable { color: $base03; }
+.avatar-icon-unmanaged { color: $base09; }
+.avatar-icon-deactivating { color: $base10; }
+.avatar-icon-using { color: $base12; }
+
+.avatar-updates-has .avatar-icon { color: $base13; }
+.avatar-updates-none .avatar-icon { color: $base14; }
+
+.avatar-box-inner { padding: 1em; }
+
+// vim:ft=scss

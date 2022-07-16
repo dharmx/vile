@@ -1,0 +1,84 @@
+.disclose-cardradial-eventbox {
+  background: linear-gradient(45deg, $base02 20%, $base01 100%);
+  border-radius: 0.5em;
+}
+
+.disclose-cardradial-eventbox:hover {
+  background: linear-gradient(170deg, $base01 20%, $shade01 100%);
+}
+
+.disclose-cardradial-separator {
+  background-color: $shade02;
+  font-size: 1;
+  padding: 3.4em 0 0 0;
+  margin: 0 10em 0 10em;
+}
+
+.disclose-cardradial-body-box {
+  font-size: 15;
+  padding: 1em 0 1em 0;
+}
+
+.disclose-cardradial-summary-box {
+  padding: 0.5em 0 0.5em 0.9em;
+  background-color: darken($base09, 10%);
+  border-radius: 0.3em 0.3em 0 0;
+  color: $base02;
+}
+
+.disclose-cardradial-appname-label {
+  font-size: 16;
+  font-weight: bold;
+}
+
+.disclose-cardradial-close-button {
+  margin: 0.6em 1em 0.6em 0;
+  padding: 0.2em;
+  background-color: $base11;
+  color: $base01;
+  border-radius: 50%;
+  box-shadow: -0.4px -0.3px 4px -1.8px $shade09;
+}
+
+.disclose-cardradial-close-button:hover {
+  background-color: $base01;
+  color: $base11;
+}
+
+.disclose-cardradial-body-outer {
+  padding: 0 1em 0 0;
+}
+
+.disclose-cardradial-summary-label {
+  font-size: 20;
+  font-weight: bold;
+  color: $base05;
+}
+
+.disclose-cardradial-body-label {
+  font-size: 16;
+  color: $base05;
+}
+
+.disclose-cardradial-timestamp {
+  color: $base10;
+  font-weight: bold;
+}
+
+.disclose-cardradial-circle-box {
+  padding: 0 1em 0 1em;
+}
+
+.disclose-cardradial-circle {
+  font-size: 25;
+  color: $base09;
+  background-color: $shade01;
+}
+
+.disclose-cardradial-tasks {
+  padding: 1.4em;
+  font-weight: bolder;
+  color: $base10;
+}
+
+// vim:ft=scss

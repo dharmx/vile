@@ -1,5 +1,8 @@
 (include "./src/yuck/vertigo/_env.yuck")
-(include "./src/yuck/vertigo/_modules.yuck")
+(include "./src/yuck/vertigo/_label.yuck")
+(include "./src/yuck/vertigo/_reveal.yuck")
+(include "./src/yuck/vertigo/_time.yuck")
+(include "./src/yuck/vertigo/_profile.yuck")
 
 (defwindow vertigo
   :stacking "bg"
@@ -17,7 +20,7 @@
             :tooltip "find"
             :vexpand false
             :button-class "vertigo-search-button" 
-            :L `pushd ~;rofi -show;popd`)
+            :L "pushd ~;rofi -show;popd")
     (literal :content vertigo_workspaces 
              :vexpand true)
     (_label :text vertigo_battery

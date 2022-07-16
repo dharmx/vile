@@ -1,0 +1,32 @@
+.vertigo-search-button {
+  padding: 0.57em 0 0.57em 0;
+  background-color: $base09;
+  font-size: 25;
+  color: $base02;
+}
+
+.vertigo-search-button:hover { background-color: $base07; }
+.vertigo-workspace { background-color: $base01; }
+.vertigo-workspace:first-child { padding-top: 0.3em; }
+.vertigo-workspace:last-child { border-radius: 0 0 50% 0; }
+
+.vertigo-workspace label {
+  font-size: 25;
+  padding: 0.57em 0 0.57em 0;
+}
+
+.vertigo-workspace:hover { background-color: $base03; }
+.vertigo-workspace-urgent { color: $base11; }
+.vertigo-workspace-occupied { color: $base13; }
+.vertigo-workspace-local { color: $shade01; }
+.vertigo-workspace-focused {
+  color: $base14;
+  background-color: $base02;
+  border-right: 3px solid $base14;
+}
+
+.vertigo-workspace-occupied:hover { border-left: 3px solid $base13; }
+.vertigo-workspace-urgent:hover { border-left: 3px solid $base11; }
+.vertigo-workspace-local:hover { border-left: 3px solid $base04; }
+
+// vim:ft=scss

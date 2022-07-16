@@ -1,0 +1,121 @@
+.disclose-cardprog-eventbox {
+  background: linear-gradient(45deg, $base02 20%, $base01 100%);
+  border-radius: 0.5em;
+}
+
+.disclose-cardprog-eventbox:hover {
+  background: linear-gradient(170deg, $base01 20%, $shade01 100%);
+}
+
+.disclose-cardprog-icon {
+  margin: 0 0 0 -0.21em;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.disclose-cardprog-image-box {
+  padding: 0 1em 0 1em;
+}
+
+.disclose-cardprog-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: -0.4px -0.3px 4px 4px $shade08;
+  border-radius: 50%;
+  border: 0.25em solid $base09;
+}
+
+.disclose-cardprog-separator {
+  background-color: $shade02;
+  font-size: 1;
+  padding: 3.4em 0 0 0;
+  margin: 0 10em 0 10em;
+}
+
+.disclose-cardprog-body-box {
+  font-size: 15;
+  padding: 1em 0 1em 0;
+}
+
+.disclose-cardprog-summary-box {
+  padding: 0.5em 0 0.5em 0.9em;
+  background-color: darken($base09, 10%);
+  border-radius: 0.3em 0.3em 0 0;
+  color: $base02;
+}
+
+.disclose-cardprog-appname-label {
+  font-size: 16;
+  font-weight: bold;
+}
+
+.disclose-cardprog-close-button {
+  margin: 0.6em 1em 0.6em 0;
+  padding: 0.2em;
+  background-color: $base11;
+  color: $base01;
+  border-radius: 50%;
+  box-shadow: -0.4px -0.3px 4px -1.8px $shade09;
+}
+
+.disclose-cardprog-close-button:hover {
+  background-color: $base01;
+  color: $base11;
+}
+
+.disclose-cardprog-body-outer {
+  padding: 0 1em 0 0;
+}
+
+.disclose-cardprog-summary-label {
+  font-size: 20;
+  font-weight: bold;
+  color: $base05;
+}
+
+.disclose-cardprog-body-label {
+  font-size: 16;
+  color: $base05;
+}
+
+.disclose-cardprog-timestamp {
+  color: $base10;
+  font-weight: bold;
+}
+
+.disclose-cardprog-scale {
+  background-color: $shade01;
+  border-radius: 0.2em;
+  margin: 0.5em 0 0.5em;
+
+  contents {
+    trough {
+      border-radius: 0.2em;
+
+      // Uncomment to enable slider pointer
+      // slider {
+      //   margin: -8px;
+      //   background-color: $base15;
+      //   box-shadow: -0.4px -0.3px 4px -1.8px $shade09;
+      //   border-radius: 20%;
+      // }
+
+      highlight {
+        background-color: $base09;
+        padding: 0.7em;
+        border-radius: 0.2em;
+      }
+    }
+  }
+}
+
+.disclose-cardprog-value-label {
+  padding: 0 0.5em 0 0.5em;
+  margin: 0.2em 0 0.2em 0;
+  color: $base02;
+  font-weight: 700;
+  background-color: $base10;
+  border-radius: 10%;
+}
+
+// vim:ft=scss

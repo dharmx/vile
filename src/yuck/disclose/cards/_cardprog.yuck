@@ -22,6 +22,7 @@
          :class "disclose-cardprog-container-box disclose-cardprog-container-box-${urgency}"
       (box :class "disclose-cardprog-summary-box disclose-cardprog-summary-box-${urgency}" 
            :space-evenly false
+           :spacing 6
         (box :style "background-image: url('${icon}')" 
              :width icon_width 
              :height icon_height 

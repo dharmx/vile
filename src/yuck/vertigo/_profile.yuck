@@ -1,0 +1,12 @@
+(defwidget _profile [path size ?tooltip ?button-class ?image-class ?M ?L ?R]
+  (button :onmiddleclick M 
+          :onclick L 
+          :onrightclick R 
+          :timeout "2s" 
+          :tooltip tooltip
+          :class "vertigo-button ${button-class}"
+    (image :path path 
+           :image-width size 
+           :class "vertigo-image ${image-class}")))
+
+;; vim:ft=yuck
