@@ -1,0 +1,21 @@
+(defwidget lumin_layout []
+  (box :space-evenly false :class "lumin-layout-box" :spacing 35
+    (_luminapps
+      :one "$BROWSER https://www.youtube.com &" :icon_one ""
+      :two "$BROWSER https://open.spotify.com &" :icon_two ""
+      :three "$BROWSER https://web.whatsapp.com &" :icon_three ""
+      :four "$BROWSER https://www.reddit.com &" :icon_four ""
+      :five "$BROWSER https://github.com &" :icon_five ""
+      :six "$BROWSER https://discord.com/app &" :icon_six "")
+    (box :orientation "vertical" :space-evenly false :spacing 20
+      (_sundialinfo :class "lumin" :halign "start")
+      (label :class "lumin-day-label" :text {vertigo_time.day} :halign "start")
+      (box :space-evenly false :spacing 10
+        (_lumininfo)
+        (label :width 2 :class "lumin-separator" "")
+        (label :class "lumin-date-label"
+               :halign "end"
+               :text "${vertigo_time.dom} ${vertigo_time.month} ${vertigo_time.year} / ${vertigo_time.hour}:${vertigo_time.min}"))
+      (_luminquote :icon "" :quote "All the space without you in it, is empty." :auth " Iain Thomas"))))
+
+;; vim:ft=yuck

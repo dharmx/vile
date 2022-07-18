@@ -1,0 +1,68 @@
+(defwidget _luminapps [one two three four five six icon_one icon_two icon_three icon_four icon_five icon_six]
+  (box :space-evenly false
+       :class "lumin-apps-box"
+       :orientation "vertical"
+       :spacing 30
+    (button :onclick one
+            :class "lumin-app-btn lumin-app-btn-one" icon_one)
+    (button :onclick two
+            :class "lumin-app-btn lumin-app-btn-two" icon_two)
+    (button :onclick three
+            :class "lumin-app-btn lumin-app-btn-three" icon_three)
+    (button :onclick four
+            :class "lumin-app-btn lumin-app-btn-four" icon_four)
+    (button :onclick five
+            :class "lumin-app-btn lumin-app-btn-five" icon_five)
+    (button :onclick six
+            :class "lumin-app-btn lumin-app-btn-six" icon_six)))
+
+(defwidget _lumininfo []
+  (box :space-evenly false
+       :spacing 10
+       :class "lumin-info-box"
+    (_infobatnolbl :battery {EWW_BATTERY.BAT0.capacity}
+                   :status {EWW_BATTERY.BAT0.status}
+                   :charge ""
+                   :one ""
+                   :two ""
+                   :three ""
+                   :four ""
+                   :five ""
+                   :six ""
+                   :seven "")
+    (_infonetnolbl :strength ocular_net
+                   :offline ""
+                   :excellent ""
+                   :good ""
+                   :okay ""
+                   :slow "")))
+
+(defwidget _luminquote [icon quote auth]
+  (box :space-evenly false :class "lumin-quote-box" :spacing 10
+    (label :text icon :class "lumin-quote-icon")
+    (box :orientation "vertical" :class "lumin-quote-box-inner"
+      (label :text quote :class "lumin-quote")
+      (label :halign "start" :text auth :class "lumin-quote-auth"))))
+
+(defwidget _infobatnolbl [battery status one two three four five six seven charge ?class]
+  (box :class "lumin-battery-box ${class}"
+       :space-evenly false
+       :spacing 8
+    (label :class "lumin-battery-icon ${class}" :text {status == 'Charging' ? charge :
+      battery < 15 ? seven :
+        battery < 30 ? six :
+          battery < 45 ? five :
+            battery < 60 ? four :
+              battery < 75 ? three :
+                battery < 95 ? two : one})))
+
+(defwidget _infonetnolbl [strength offline excellent good okay slow ?class]
+  (box :class "lumin-network-box ${class}"
+       :space-evenly false
+       :spacing 8
+    (label :class "lumin-network-icon ${class}" :text {strength == "" ? offline :
+      strength < 26 ? slow :
+        strength < 51 ? okay :
+          strength < 76 ? good : excellent})))
+
+;; vim:ft=yuck

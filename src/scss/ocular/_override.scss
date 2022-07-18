@@ -1,0 +1,24 @@
+// exclude eww-ocular in picom shadows exclude section
+// this is an example to override the default ocular style
+// and make the widget text labels all white. Enjoy.
+
+// .ocular-layout-box {
+//   font-family: Phosphor, "Poiret One";
+//   background-color: rgba(#000, 0.0);
+//   color: $base06;
+// }
+
+// .ocular-battery-icon,
+// .ocular-battery-label,
+// .ocular-network-icon,
+// .ocular-generic-icon,
+// .ocular-temp-icon {
+//   color: $base06;
+// }
+
+// .ocular-sundial-label {
+//   background-color: $base09;
+//   color: $base02;
+// }
+
+// vim:ft=scss

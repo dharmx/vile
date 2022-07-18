@@ -1,5 +1,79 @@
+// exclude eww-vertigo in picom shadows exclude section
+// this is an example to override the default vertigo style
+// and make the bar transparent. Enjoy.
+
 // .vertigo-layout-box {
 //   background-color: rgb(0, 0, 0, 0.0);
 // }
+
+// .vertigo-node-button-tiled { color: $base14; }
+// .vertigo-node-button-monocle { color: $base11; }
+// .vertigo-node-button-float { color: $base13; }
+// .vertigo-node-button-pseudo { color: $base15; }
+// .vertigo-node-button-full { color: $base09; }
+// .vertigo-node-button-other { color: $base08; }
+// .vertigo-node-button:hover { opacity: 0.8; }
+
+// .vertigo-node-button-tiled,
+// .vertigo-node-button-monocle,
+// .vertigo-node-button-float,
+// .vertigo-node-button-pseudo,
+// .vertigo-node-button-full,
+// .vertigo-node-button-other {
+//   background-color: rgb(0, 0, 0, 0.0);
+// }
+
+// .vertigo-battery-button {
+//   background-color: rgb(0, 0, 0, 0.0);
+//   color: $base11;
+// }
+
+// .vertigo-time-button {
+//   background-color: rgb(0, 0, 0, 0.0);
+// }
+
+// .vertigo-volume-on { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-volume-off { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-volume-on:hover { background-color: $base13; }
+// .vertigo-volume-off:hover { background-color: $base11; }
+
+// .vertigo-nightmode-on { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-nightmode-off { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-nightmode-on:hover { background-color: $base09; color: $shade01; }
+// .vertigo-nightmode-off:hover { background-color: $base13; color: $shade01; }
+
+// .vertigo-notify-on { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-notify-off { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-notify-on:hover { background-color: $base15; color: $base02; }
+// .vertigo-notify-off:hover { background-color: $base11; color: $base02; }
+
+// .vertigo-todo-button { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-todo-button:hover { background-color: $base07; color: $base01; }
+// .vertigo-workspace-plus-button { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-workspace-plus-button:hover { background-color: $base11; color: $base02; }
+
+// .vertigo-time-button:hover { background-color: rgb(0, 0, 0, 0.0); }
+
+// .vertigo-separator {
+//   opacity: 0.0;
+// }
+
+// .vertigo-search-button {
+//   color: $base09;
+//   background-color: rgb(0, 0, 0, 0.0);
+// }
+
+// .vertigo-search-button:hover { background-color: rgb(0, 0, 0, 0.0); color: $base07; }
+// .vertigo-workspace { background-color: rgb(0, 0, 0, 0.0); }
+
+// .vertigo-workspace:hover { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-workspace-focused {
+//   background-color: rgb(0, 0, 0, 0.0);
+//   border-right-color: rgb(0, 0, 0, 0.0);
+// }
+
+// .vertigo-workspace-occupied:hover { border-left-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-workspace-urgent:hover { border-left-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-workspace-local:hover { border-left-color: rgb(0, 0, 0, 0.0); }
 
 // vim:ft=scss

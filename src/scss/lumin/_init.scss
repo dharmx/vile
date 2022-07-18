@@ -1,0 +1,92 @@
+.lumin-layout-box {
+  font-family: Phosphor, Dosis;
+  background-color: rgba(#000, 0.0);
+  color: rgba($base05, 0.75);
+}
+
+.lumin-apps-box {
+  font-size: 30;
+}
+
+.lumin-app-btn-one,
+.lumin-app-btn-two,
+.lumin-app-btn-three,
+.lumin-app-btn-four,
+.lumin-app-btn-five,
+.lumin-app-btn-six {
+  border-radius: 1em;
+  padding: 0.2em;
+  color: $base02;
+}
+
+.lumin-app-btn-one,
+.lumin-app-btn-two,
+.lumin-app-btn-three,
+.lumin-app-btn-four,
+.lumin-app-btn-five,
+.lumin-app-btn-six { background-color: rgba($base08, 0.6); }
+
+.lumin-app-btn-one:hover,
+.lumin-app-btn-two:hover,
+.lumin-app-btn-three:hover,
+.lumin-app-btn-four:hover,
+.lumin-app-btn-five:hover,
+.lumin-app-btn-six:hover { background-color: $base08; }
+
+.lumin-day-label {
+  font-family: Modum;
+  font-size: 150;
+  font-weight: bold;
+}
+
+.lumin-date-label {
+  font-size: 20;
+  font-family: Koulen;
+}
+
+.lumin-quote-box {
+  font-size: 18;
+}
+
+.lumin-quote-icon {
+  font-size: 48;
+  margin-left: -0.08em;
+  color: rgba($base14, 0.7);
+}
+
+.lumin-quote-auth {
+  font-weight: bold;
+  font-size: 15;
+}
+
+.lumin-battery-box {
+  font-size: 20;
+  color: rgb($base12, 0.8);
+}
+
+.lumin-network-box {
+  font-size: 24;
+  color: rgb($base12, 0.8);
+}
+
+.lumin-separator {
+  font-size: 1;
+  background-color: rgb($base05, 0.6);
+  margin-top: 7em;
+  margin-bottom: 8em;
+}
+
+.lumin-sundial-label {
+  margin-top: 0.3em;
+  margin-left: 0.4em;
+  background-color: rgba($base09, 0.7);
+  padding: 0.3em 0.8em 0.3em 0.8em;
+  color: $base02;
+  border-radius: 0.2em;
+  font-family: "Poiret One";
+  font-weight: bold;
+}
+
+@import "./_override.scss";
+
+// vim:ft=scss
