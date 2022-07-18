@@ -11,10 +11,19 @@
   (box :orientation "vertical"
        :space-evenly false
        :class "puppet-layout-box"
-    (box :space-evenly false
-      (_puppetcfgbtn :name "${puppet_cfg_sub.presel_feedback}"
-                     :value "${puppet_cfg_sub.presel_feedback}"
-                     :class "presel-feedback"
-                     :action "bspc config presel_feedback ${!puppet_cfg_sub.presel_feedback}"))))
+    (_puppetheader :name "Puppetmaster"
+                   :label "WM Settings" 
+                   :image "./assets/layout.png" 
+                   :image_width 100 
+                   :image_height 100)
+    (scroll :hscroll false 
+            :vscroll true 
+            :hexpand true 
+            :vexpand true
+      (box :space-evenly false
+        (_puppetcfgbtn :name "${puppet_cfg_sub.presel_feedback}"
+                       :value "${puppet_cfg_sub.presel_feedback}"
+                       :class "presel-feedback"
+                       :action "bspc config presel_feedback ${!puppet_cfg_sub.presel_feedback}")))))
 
 ;; vim:ft=yuck

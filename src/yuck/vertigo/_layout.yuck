@@ -1,0 +1,28 @@
+(defwidget vertigo_layout []
+  (box :orientation "vertical"
+       :space-evenly false
+       :class "vertigo-layout-box"
+    (literal :content vertigo_nodes)
+    (_label :text ""
+            :tooltip "find"
+            :vexpand false
+            :button-class "vertigo-search-button"
+            :L "pushd ~;rofi -show;popd")
+    (literal :content vertigo_workspaces
+             :vexpand true)
+    (_vertigobat :critical "暑" :full "" :battery {EWW_BATTERY.BAT0.capacity})
+    (_time :time vertigo_time
+           :tooltip "time ${vertigo_time.hour}:${vertigo_time.sec}"
+           :button-class "vertigo-time-button")
+    (_revealex :revealon vertigo_revealex)
+    (label :text ""
+           :class "vertigo-separator")
+    (_profile :M "eww update vertigo_revealex=${!vertigo_revealex}"
+              :L "eww open --toggle avatar"
+              :path vertigo_profile
+              :image-class "vertigo-profile-image"
+              :button-class "vertigo-profile-button"
+              :size "50"
+              :tooltip "profile")))
+
+;; vim:ft=yuck

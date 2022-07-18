@@ -1,0 +1,23 @@
+(defwidget _time [time ?tooltip ?M ?L ?R ?button-class]
+  (button :onmiddleclick M 
+          :onclick L 
+          :onrightclick R
+          :class "vertigo-button ${button-class}" 
+          :tooltip tooltip
+
+    (box :orientation "vertical" 
+      (label :text {time.hour}
+             :class "vertigo-time-format-first") 
+      (label :text {time.min}
+             :class "vertigo-time-format-second"))))
+
+(defwidget _vertigobat [critical full battery]
+  (_label :text {battery < 16 ? critical :
+    (battery > 94 ? full :
+      battery)}
+          :tooltip "capacity: ${battery}"
+          :vexpand false
+          :valign "end"
+          :button-class "vertigo-battery-button"))
+
+;; vim:ft=yuck

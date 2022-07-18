@@ -1,0 +1,3 @@
+(defpoll ocular_net :interval "100s" `nmcli -terse -fields SIGNAL,ACTIVE device wifi | awk --field-separator ':' '{if($2=="yes")print$1}'`)
+
+;; vim:ft=yuck

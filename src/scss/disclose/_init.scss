@@ -1,6 +1,6 @@
 .disclose-layout-box {
   background-color: $shade10;
-  font-family: Dosis, feather, "Iosevka Nerd Font", sans-serif;
+  font-family: Dosis, Phosphor, "Iosevka Nerd Font", sans-serif;
   padding-bottom: 1em;
 }
 
@@ -46,6 +46,7 @@
 @import "./_cardimage.scss";
 @import "./_cardradial.scss";
 
+@import "./_urgency.scss";
 @import "./_stats.scss";
 @import "./_dnd.scss";
 @import "./_override.scss";

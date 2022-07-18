@@ -1,0 +1,57 @@
+(defwidget ocular_layout []
+  (box :space-evenly false
+       :class "ocular-layout-box"
+       :halign "center"
+       :orientation "vertical"
+       :spacing 10
+    (box :class "ocular-date-sundial-box"
+         :space-evenly false
+         :spacing 15
+         :halign "center"
+      (label :class "ocular-sundial-label"
+             :text {vertigo_time.hour >= 2 && vertigo_time.hour <= 4 ? "Early Morning" :
+               vertigo_time.hour >= 5 ? "Dawn" :
+               vertigo_time.hour >= 6 && (vertigo_time.hour <= 8 && vertigo_time.min <= 59) ? "Morning" :
+               vertigo_time.hour >= 9 && (vertigo_time.hour <= 11 && vertigo_time.min <= 59) ? "Late Morning" :
+               vertigo_time.hour == 12 && vertigo_time.min <= 29 ? "Midday" :
+               vertigo_time.hour >= 12 && vertigo_time.hour <= 16 ? "Afternoon" :
+               vertigo_time.hour > 16 && vertigo_time.hour <= 17 ? "Late Afternoon" :
+               (vertigo_time.hour >= 17 && vertigo_time.min <= 1) || (vertigo_time.hour <= 18 && vertigo_time.min <= 20) ? "Early Evening" :
+               vertigo_time.hour >= 18 && vertigo_time.hour <= 19 ? "Dusk" :
+               vertigo_time.hour > 19 && vertigo_time.hour <= 21 ? "Late Evening" :
+               vertigo_time.hour > 21 ? "Night" : "Midnight"})
+      (label :class "ocular-date-label"
+             :text {vertigo_time.pretty}))
+    (box :space-evenly false
+         :spacing 45
+      (_radialtime
+        :hour {vertigo_time.hour}
+        :min {vertigo_time.min}
+        :sec {vertigo_time.sec})
+      (box :space-evenly false
+           :orientation "vertical"
+           :spacing 15
+        (_infobattery :battery {EWW_BATTERY.BAT0.capacity}
+                      :status {EWW_BATTERY.BAT0.status}
+                      :charge ""
+                      :one ""
+                      :two ""
+                      :three ""
+                      :four ""
+                      :five ""
+                      :six ""
+                      :seven "")
+        (_infonetwork :strength ocular_net
+                      :offline ""
+                      :excellent ""
+                      :good ""
+                      :okay ""
+                      :slow "")
+        (_infogeneric :level {EWW_RAM.used_mem_perc}
+                      :icon "")
+        (_infogeneric :level {EWW_CPU.avg}
+                      :icon "")
+        (_infotemp :level {EWW_TEMPS.COMPOSITE}
+                      :icon "")))))
+
+;; vim:ft=yuck

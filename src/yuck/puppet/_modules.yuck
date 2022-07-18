@@ -4,4 +4,24 @@
     (label :class "puppet-btn-label puppet-btn-label-${class}"
            :text name)))
 
+(defwidget _puppetheader [label name image image_width image_height]
+  (box :class "puppet-header-box"
+       :space-evenly false
+       :halign "start"
+       :hexpand true
+    (box :class "puppet-header-image"
+         :width image_width
+         :height image_height
+         :style "background-image: url('./assets/layout.png')"
+         :space-evenly false)
+    (box :class "puppet-header-box-inner"
+         :space-evenly false
+         :orientation "vertical"
+      (label :class "puppet-header-name"
+             :halign "start"
+             :text name)
+      (label :class "puppet-header-label"
+             :halign "start"
+             :text label))))
+
 ;; vim:ft=yuck

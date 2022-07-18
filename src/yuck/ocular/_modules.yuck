@@ -1,0 +1,45 @@
+(defwidget _infobattery [battery status one two three four five six seven charge]
+  (box :class "ocular-battery-box"
+       :space-evenly false
+       :spacing 8
+    (label :class "ocular-battery-icon" :text {status == 'Charging' ? charge :
+      battery < 15 ? seven :
+        battery < 30 ? six :
+          battery < 45 ? five :
+            battery < 60 ? four :
+              battery < 75 ? three :
+                battery < 95 ? two : one})
+    (label :class "ocular-battery-label" :text "${battery}%")))
+
+(defwidget _infonetwork [strength offline excellent good okay slow]
+  (box :class "ocular-network-box"
+       :space-evenly false
+       :spacing 8
+    (label :class "ocular-network-icon" :text {strength == "" ? offline :
+      strength < 26 ? slow :
+        strength < 51 ? okay :
+          strength < 76 ? good : excellent})
+    (label :class "ocular-network-label" :text "${strength == "" ? 0 : strength}%")))
+
+(defwidget _infogeneric [level icon ?class]
+  (box :class "ocular-generic-box"
+       :space-evenly false
+       :spacing 8
+    (label :class "ocular-generic-icon ${class}" :text icon)
+    (label :class "ocular-generic-label ${class}" :text "${round(level, 0)}%")))
+
+(defwidget _infotemp [level icon]
+  (box :class "ocular-temp-box"
+       :space-evenly false
+       :spacing 8
+    (label :class "ocular-temp-icon" :text icon)
+    (label :class "ocular-temp-label" :text "${round(level, 0)}°C")))
+
+(defwidget _radialtime [hour min sec]
+  (circular-progress :value {sec * 100 / 60}
+                     :valign "center"
+                     :vexpand true
+                     :thickness 25
+                     :class "ocular-time-radial" "${hour}:${min}"))
+
+;; vim:ft=yuck

@@ -9,8 +9,8 @@
              :class "disclose-headers-label"
              :halign "start"
              :hexpand true)
-      (button :onclick "./src/shell/logger.py cls" :class "disclose-headers-clear" "")
-      (button :onclick "eww close disclose" :class "disclose-headers-close" ""))
+      (button :onclick "./src/shell/logger.py cls" :class "disclose-headers-clear" "")
+      (button :onclick "eww close disclose" :class "disclose-headers-close" "署"))
     (scroll :hscroll false
             :vscroll true
             :vexpand true
@@ -20,11 +20,11 @@
     (label :class "disclose-separator" :text "")
     (box :space-evenly false :class "disclose-misc-box"
       (_dstats :critical "${disclose_stats.critical}"
-               :criticon ""
+               :criticon ""
                :low "${disclose_stats.low}"
-               :normicon ""
+               :normicon ""
                :normal "${disclose_stats.normal}"
-               :lowicon ""
+               :lowicon "靖"
                :level "2"
                :thickness 10)
       (_dnd :total "${disclose_stats.total}"

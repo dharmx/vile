@@ -1,0 +1,61 @@
+.ocular-layout-box {
+  font-family: Phosphor, "Poiret One";
+  background-color: rgba(#000, 0.0);
+  color: $base12;
+}
+
+.ocular-battery-icon {
+  font-size: 35;
+  color: $base12;
+}
+
+.ocular-battery-label {
+  font-size: 18;
+}
+
+.ocular-network-icon {
+  font-size: 35;
+  color: $base14;
+}
+
+.ocular-network-label {
+  font-size: 18;
+}
+
+.ocular-generic-icon {
+  font-size: 35;
+  color: $base11;
+}
+
+.ocular-generic-label {
+  font-size: 18;
+}
+
+.ocular-time-radial label {
+  padding: 2em;
+  font-size: 40;
+  font-weight: bold;
+}
+
+.ocular-date-label {
+  font-size: 20;
+}
+
+.ocular-temp-icon {
+  font-size: 30;
+  color: $base13;
+}
+
+.ocular-temp-label {
+  font-size: 20;
+}
+
+.ocular-sundial-label {
+  background-color: $base09;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  color: $base02;
+  border-radius: 0.2em;
+  font-weight: bold;
+}
+
+// vim:ft=scss

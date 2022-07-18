@@ -6,10 +6,10 @@
   },
   "desktops": {
     "states": {
-      "focused": "\ue956",
-      "occupied": "\ue9e7",
-      "urgent": "\ue902",
-      "empty": "\ue97d"
+      "focused": "北",
+      "occupied": "",
+      "urgent": "梅",
+      "empty": ""
     },
     "tags": {
       "hidden": "\ue95f",
@@ -20,20 +20,13 @@
       "empty": "\ue998"
     },
     "layouts": {
-      "monocle": "\ue951",
-      "tiled": "\ue963",
-      "fullscreen": "\ue9f5",
-      "pseudo_tiled": "\ue964",
-      "floating": "\ue96f",
-      "empty": "\ue943"
+      "monocle": "",
+      "tiled": "",
+      "fullscreen": "",
+      "pseudo_tiled": "",
+      "floating": "",
+      "empty": ""
     }
-  },
-  "battery": {
-    "interface": "BAT0",
-    "full": "\uea16",
-    "full_at": 95,
-    "crit": "\ue902",
-    "crit_at": 20
   },
   "network": {
     "interface": "wlp0s20f3"

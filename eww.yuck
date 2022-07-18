@@ -2,5 +2,6 @@
 (include "./src/yuck/disclose/_init.yuck")
 (include "./src/yuck/avatar/_init.yuck")
 (include "./src/yuck/puppet/_init.yuck")
+(include "./src/yuck/ocular/_init.yuck")
 
 ;; vim:ft=yuck

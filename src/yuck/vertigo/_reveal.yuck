@@ -1,35 +1,35 @@
 (defwidget _revealex [revealon]
-  (revealer :reveal revealon 
-            :transition "slidedown" 
+  (revealer :reveal revealon
+            :transition "slidedown"
             :class "vertigo-revealer"
 
-    (box :orientation "vertical" 
-         :class "vertigo-reveal-box" 
+    (box :orientation "vertical"
+         :class "vertigo-reveal-box"
          :space-evenly false
 
-      (_label :text vertigo_volume_status 
+      (_label :text vertigo_volume_status
               :L vertigo_volume_toggle
               :tooltip "volume: ${vertigo_volume_level}"
               :vexpand false
               :button-class "vertigo-volume-button ${vertigo_volume_status == "" ? "vertigo-volume-on" : "vertigo-volume-off"}")
-      (_label :text vertigo_redshift 
+      (_label :text vertigo_redshift
               :tooltip "nightmode"
               :vexpand false
               :L "[ $(pidof redshift) ] && pkill redshift || redshift &"
-              :button-class "vertigo-nightmode-button ${vertigo_redshift == "" ? "vertigo-nightmode-on" : "vertigo-nightmode-off"}")
-      (_label :text "" 
-              :tooltip "node" 
+              :button-class "vertigo-nightmode-button ${vertigo_redshift == "" ? "vertigo-nightmode-on" : "vertigo-nightmode-off"}")
+      (_label :text "賂"
+              :tooltip "node"
               :button-class "vertigo-workspace-plus-button"
               :vexpand false
-              :L vertigo_create 
+              :L vertigo_create
               :R vertigo_remove)
-      (_label :text vertigo_dunst 
+      (_label :text vertigo_dunst
               :tooltip "notify"
               :vexpand false
-              :button-class "vertigo-notify-button ${vertigo_dunst == "" ? "vertigo-notify-on" : "vertigo-notify-off"}"
+              :button-class "vertigo-notify-button ${vertigo_dunst == "" ? "vertigo-notify-on" : "vertigo-notify-off"}"
               :L "[ $(dunstctl is-paused) = false ] && dunstctl set-paused true || dunstctl set-paused false"
               :M "eww open --toggle disclose")
-      (_label :text "" 
+      (_label :text "朗"
               :vexpand false
               :tooltip "todo"
               :button-class "vertigo-todo-button"))))
