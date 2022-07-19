@@ -1,0 +1,14 @@
+(defwidget origin_layout []
+  (box :space-evenly false
+       :class "origin-layout-box"
+       :spacing 20
+    (_profile :path "./assets/profile.png"
+              :size 50
+              :tooltip "profile"
+              :button-class "origin-profile-button"
+              :image-class "origin-profile-image")
+    (box :valign "center" :orientation "vertical" :space-evenly false :class "origin-info-box"
+      (label :halign "start" :class "origin-greet" :text "Hey, ${avatar_username}.")
+      (label :halign "start" :class "origin-hostname" :text "${avatar_username}@${avatar_hostname}"))))
+
+;; vim:ft=yuck

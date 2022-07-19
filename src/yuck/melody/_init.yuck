@@ -1,0 +1,10 @@
+(include "./src/yuck/melody/_modules.yuck")
+(include "./src/yuck/melody/_layout.yuck")
+
+(defwindow melody :stacking "bg"
+  :windowtype "normal"
+  :wm-ignore true
+  :geometry (geometry :x -20 :y 40 :width "25%" :height "25%" :anchor "bottom right")
+  (melody_layout))
+
+;; vim:ft=yuck

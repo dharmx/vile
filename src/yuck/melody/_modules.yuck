@@ -1,0 +1,18 @@
+(defwidget _melodyapps [
+  one two three four five six
+  one_icon two_icon three_icon four_icon five_icon six_icon
+]
+  (box :space-evenly false :class "melody-apps-box" :spacing 50
+    (button :class "melody-apps-box-one" :onclick one one_icon)
+    (button :class "melody-apps-box-two" :onclick two two_icon)
+    (button :class "melody-apps-box-three" :onclick three three_icon)
+    (button :class "melody-apps-box-four" :onclick four four_icon)
+    (button :class "melody-apps-box-five" :onclick five five_icon)
+    (button :class "melody-apps-box-six" :onclick six six_icon)))
+
+(defwidget _melodyplayer [title artist]
+  (box :class "melody-player" :space-evenly false :orientation "vertical" :spacing 5
+    (label :halign "start" :limit-width 20 :class "melody-artist" :text artist)
+    (label :halign "start" :limit-width 40 :class "melody-title" :text title)))
+
+;; vim:ft=yuck

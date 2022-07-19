@@ -1,0 +1,38 @@
+.melody-layout-box {
+  font-family: Phosphor, Dosis;
+  background-color: rgba(#000, 0.0);
+  color: rgba($base05, 0.75);
+}
+
+.melody-apps-box-one,
+.melody-apps-box-two,
+.melody-apps-box-three,
+.melody-apps-box-four,
+.melody-apps-box-five,
+.melody-apps-box-six {
+  color: rgba($base05, 0.6);
+  font-size: 25;
+}
+
+.melody-apps-box-one:hover,
+.melody-apps-box-two:hover,
+.melody-apps-box-three:hover,
+.melody-apps-box-four:hover,
+.melody-apps-box-five:hover,
+.melody-apps-box-six:hover {
+  color: $base05;
+}
+
+.melody-artist {
+  font-size: 20;
+  font-family: "Poiret One";
+  font-weight: bold;
+}
+
+.melody-title {
+  font-size: 15;
+}
+
+@import "./_override.scss";
+
+// vim:ft=scss

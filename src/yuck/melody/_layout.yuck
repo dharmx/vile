@@ -1,0 +1,21 @@
+(defwidget melody_layout []
+  (box :space-evenly false
+       :class "melody-layout-box"
+       :spacing 30
+       :orientation "vertical"
+    (_melodyplayer :title {pctl_sub['xesam:title']}
+                   :artist {pctl_sub['xesam:artist']})
+    (_melodyapps :one "pushd ~;neovide;popd &"
+                 :two "pushd ~;shotwell;popd &"
+                 :three "pushd ~;nemo;popd &"
+                 :four "pushd ~;gimp;popd &"
+                 :five "pushd ~;st;popd &"
+                 :six "qalculate-gtk &"
+                 :one_icon ""
+                 :two_icon ""
+                 :three_icon ""
+                 :four_icon ""
+                 :five_icon ""
+                 :six_icon "")))
+
+;; vim:ft=yuck

@@ -1,0 +1,23 @@
+.origin-layout-box {
+  font-family: Phosphor;
+  background-color: rgba(#000, 0.0);
+  color: rgba($base05, 0.7);
+}
+
+.origin-greet {
+  font-family: "Poiret One";
+  font-weight: bold;
+  font-size: 20;
+}
+
+.origin-hostname {
+  font-family: monoMMM_5;
+  color: rgba($base09, 0.7);
+}
+
+.origin-profile-button {
+}
+
+@import "./_override.scss";
+
+// vim:ft=scss
