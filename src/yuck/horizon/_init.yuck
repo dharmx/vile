@@ -1,0 +1,10 @@
+(include "./src/yuck/lumin/_modules.yuck")
+(include "./src/yuck/lumin/_layout.yuck")
+
+(defwindow horizon :stacking "bg"
+  :windowtype "normal"
+  :wm-ignore true
+  :geometry (geometry :x 200 :y 50 :width "30%" :height "25%" :anchor "left center")
+  (horizon_layout))
+
+;; vim:ft=yuck

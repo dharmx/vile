@@ -6,5 +6,6 @@
 (include "./src/yuck/lumin/_init.yuck")
 (include "./src/yuck/melody/_init.yuck")
 (include "./src/yuck/origin/_init.yuck")
+(include "./src/yuck/horizon/_init.yuck")
 
 ;; vim:ft=yuck

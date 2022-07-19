@@ -12,9 +12,7 @@
              :class "vertigo-time-format-second"))))
 
 (defwidget _vertigobat [critical full battery]
-  (_label :text {battery < 16 ? critical :
-    (battery > 94 ? full :
-      battery)}
+  (_label :text {battery < 16 ? critical : battery > 94 ? full : battery}
           :tooltip "capacity: ${battery}"
           :vexpand false
           :valign "end"
