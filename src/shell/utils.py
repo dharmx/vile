@@ -1,4 +1,3 @@
-import datetime
 import os
 import pathlib
 import random
@@ -36,7 +35,7 @@ class PangoStripper(HTMLParser):
 
 
 def contains_pango(string: str) -> bool:
-    return any(item in string for item in ["<span>", "</span>"])
+    return any(item in string for item in ["<span>", "</a>", "</span>"])
 
 
 def strip_pango_tags(pango: str) -> str:
@@ -167,46 +166,6 @@ def has_non_english_chars(string: str) -> dict:
     }
 
 
-def get_and_parse_env() -> dict:
-    DUNST_VARS = [
-        "DUNST_APP_NAME",
-        "DUNST_SUMMARY",
-        "DUNST_BODY",
-        "DUNST_ICON_PATH",
-        "DUNST_URGENCY",
-        "DUNST_ID",
-        "DUNST_PROGRESS",
-        "DUNST_CATEGORY",
-        "DUNST_STACK_TAG",
-        "DUNST_URLS",
-        "DUNST_TIMEOUT",
-        "DUNST_TIMESTAMP",
-        "DUNST_DESKTOP_ENTRY",
-        "DUNST_STACK_TAG",
-    ]
-
-    return {
-        DUNST_VARS[0]: os.getenv(DUNST_VARS[0].strip()) or "Unknown",
-        DUNST_VARS[1]: (
-            os.getenv(DUNST_VARS[1].strip()) or "Summary Unavailable."
-        ).replace("'", "\\'"),
-        DUNST_VARS[2]: (
-            os.getenv(DUNST_VARS[2].strip()) or "Body Unavailable."
-        ).replace("'", "\\'"),
-        DUNST_VARS[3]: os.getenv(DUNST_VARS[3].strip()) or "./assets/browser.png",
-        DUNST_VARS[4]: os.getenv(DUNST_VARS[4].strip()) or "Normal",
-        DUNST_VARS[5]: os.getenv(DUNST_VARS[5].strip()) or "N/A",
-        DUNST_VARS[6]: os.getenv(DUNST_VARS[6].strip()) or "N/A",
-        DUNST_VARS[7]: os.getenv(DUNST_VARS[7].strip()) or "N/A",
-        DUNST_VARS[8]: os.getenv(DUNST_VARS[8].strip()) or "N/A",
-        DUNST_VARS[9]: os.getenv(DUNST_VARS[9].strip()) or "N/A",
-        DUNST_VARS[10]: os.getenv(DUNST_VARS[10].strip()) or 5,
-        DUNST_VARS[11]: datetime.datetime.now().strftime("%H:%M"),
-        DUNST_VARS[12]: os.getenv(DUNST_VARS[12].strip()) or "notify-send",
-        DUNST_VARS[13]: os.getenv(DUNST_VARS[13].strip()) or "notify-send",
-    }
-
-
 def unwrap(value):
     # Try to trivially translate a dictionary's elements into nice string
     # formatting.
@@ -230,9 +189,7 @@ def unwrap(value):
     return value
 
 
-def save_img_byte(px_args):
-    # gets image data and saves it to file
-    save_path = f"/tmp/image-{datetime.datetime.now().strftime('%s')}.png"
+def save_img_byte(px_args, save_path):
     # https://specifications.freedesktop.org/notification-spec/latest/ar01s08.html
     # https://specifications.freedesktop.org/notification-spec/latest/ar01s05.html
     GdkPixbuf.Pixbuf.new_from_bytes(
@@ -244,15 +201,17 @@ def save_img_byte(px_args):
         rowstride=px_args[2],
         bits_per_sample=px_args[4],
     ).savev(save_path, "png")
-    return save_path
 
 
 def get_gtk_icon_path(icon_name: str, size: int = 128) -> str:
-    info = Gtk.IconTheme.get_default().lookup_icon(icon_name, size, 0)
-    return info.get_filename() if info else os.path.expandvars("$XDG_CONFIG_HOME/eww/assets/bell.png")
+    if size < 32:
+        return os.path.expandvars("$XDG_CONFIG_HOME/eww/assets/bell.png")
+    if info := Gtk.IconTheme.get_default().lookup_icon(icon_name, size, 0):
+        return info.get_filename()
+    return get_gtk_icon_path(icon_name, size - 1)
 
 
-def get_mime_icon_path(mimetype: str, size: int = 128):
+def get_mime_icon_path(mimetype: str, size: int = 32):
     icon = Gio.content_type_get_icon(mimetype)
     theme = Gtk.IconTheme.get_default()
     if info := theme.choose_icon(icon.get_names(), size, 0):

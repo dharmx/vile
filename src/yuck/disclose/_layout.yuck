@@ -32,6 +32,9 @@
             :total_label "Total"
             :action "dunstctl set-paused toggle"
             :state "${disclose_dnd_state == "true" ? "ON" : "OFF"}"
-            :label "Don't Disturb."))))
+            :label "Don't Disturb."
+            :waiting_icon_on ""
+            :waiting_icon_off ""
+            :waiting dunst_waiting))))
 
 ;; vim:filetype=yuck

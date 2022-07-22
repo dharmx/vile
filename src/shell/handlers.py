@@ -1,86 +1,99 @@
+import datetime
 import utils
+import cache
 
+def redir_to_handlers(formats, attributes: dict) -> str:
+    attributes["TIMESTAMP"] = datetime.datetime.now().strftime(attributes["TIMESTAMP_FORMAT"])
 
-def redir_to_handlers(formats, dunst_envs: dict) -> str:
-    if utils.contains_pango(dunst_envs["DUNST_BODY"]):
-        dunst_envs["DUNST_BODY"] = utils.strip_pango_tags(dunst_envs["DUNST_BODY"])
-    if utils.contains_pango(dunst_envs["DUNST_SUMMARY"]):
-        dunst_envs["DUNST_SUMMARY"] = utils.strip_pango_tags(
-            dunst_envs["DUNST_SUMMARY"]
+    match attributes["urgency"]:
+        case cache.Urgency.LOW:
+            attributes["URGENCY"] = "LOW"
+        case cache.Urgency.NORMAL:
+            attributes["URGENCY"] = "NORMAL"
+        case cache.Urgency.CRITICAL:
+            attributes["URGENCY"] = "CRITICAL"
+        case _:
+            attributes["URGENCY"] = "NORMAL"
+
+    if utils.contains_pango(attributes["body"]):
+        attributes["body"] = utils.strip_pango_tags(attributes["body"])
+    if utils.contains_pango(attributes["summary"]):
+        attributes["summary"] = utils.strip_pango_tags(
+            attributes["summary"]
         )
 
-    dunst_envs["SUMMARY_LIMITER"] = ""
+    attributes["SUMMARY_LIMITER"] = ""
     summary_lang_char_check = utils.has_non_english_chars(
-        dunst_envs["DUNST_SUMMARY"][:15]
+        attributes["summary"][:15]
     )
     if summary_lang_char_check["CJK"]:
-        dunst_envs["SUMMARY_LIMITER"] = 14
+        attributes["SUMMARY_LIMITER"] = 14
     elif summary_lang_char_check["CYR"]:
-        dunst_envs["SUMMARY_LIMITER"] = 30
+        attributes["SUMMARY_LIMITER"] = 30
 
-    dunst_envs["BODY_LIMITER"] = ""
-    body_lang_char_check = utils.has_non_english_chars(dunst_envs["DUNST_BODY"][:70])
+    attributes["BODY_LIMITER"] = ""
+    body_lang_char_check = utils.has_non_english_chars(attributes["body"][:70])
     if body_lang_char_check["CJK"]:
-        dunst_envs["BODY_LIMITER"] = 80
+        attributes["BODY_LIMITER"] = 80
     elif body_lang_char_check["CYR"]:
-        dunst_envs["BODY_LIMITER"] = 110
+        attributes["BODY_LIMITER"] = 110
     else:
-        dunst_envs["BODY_LIMITER"] = 100
+        attributes["BODY_LIMITER"] = 100
 
-    match dunst_envs["DUNST_APP_NAME"]:
+    match attributes["appname"]:
         case "notify-send":
-            return notify_send_handler(formats, dunst_envs)
+            return notify_send_handler(formats, attributes)
         case "volume":
-            return volume_handler(formats, dunst_envs)
+            return volume_handler(formats, attributes)
         case "brightness":
-            return brightness_handler(formats, dunst_envs)
+            return brightness_handler(formats, attributes)
         case "shot":
-            return shot_handler(formats, dunst_envs)
+            return shot_handler(formats, attributes)
         case "todo":
-            return todo_handler(formats, dunst_envs)
+            return todo_handler(formats, attributes)
         case _:
-            return default_handler(formats, dunst_envs)
+            return default_handler(formats, attributes)
 
 
 def shot_handler(formats, attributes: dict) -> str:
     # TODO: Make this better
-    attributes["DELETE"] = f"rm --force \\'{attributes['DUNST_ICON_PATH']}\\'"
-    attributes["OPEN"] = f"xdg-open \\'{attributes['DUNST_ICON_PATH']}\\'"
-    attributes["DUNST_APP_NAME"] = utils.prettify_name(attributes["DUNST_APP_NAME"])
+    attributes["DELETE"] = f"rm --force \\'{attributes['iconpath']}\\'"
+    attributes["OPEN"] = f"xdg-open \\'{attributes['iconpath']}\\'"
+    attributes["appname"] = utils.prettify_name(attributes["appname"])
     return formats["shot"] % attributes
 
 
 def default_handler(formats, attributes: dict) -> str:
-    attributes["DUNST_APP_NAME"] = utils.prettify_name(attributes["DUNST_APP_NAME"])
+    attributes["appname"] = utils.prettify_name(attributes["appname"])
     return formats["default"] % attributes
 
 
 def notify_send_handler(formats, attributes: dict) -> str:
-    attributes["DUNST_APP_NAME"] = utils.prettify_name(attributes["DUNST_APP_NAME"])
+    attributes["appname"] = utils.prettify_name(attributes["appname"])
     return formats["notify-send"] % attributes
 
 
 def brightness_handler(formats, attributes: dict) -> str:
-    attributes["DUNST_APP_NAME"] = utils.prettify_name(attributes["DUNST_APP_NAME"])
+    attributes["appname"] = utils.prettify_name(attributes["appname"])
     return formats["brightness"] % attributes
 
 
 def volume_handler(formats, attributes: dict) -> str:
-    attributes["DUNST_APP_NAME"] = utils.prettify_name(attributes["DUNST_APP_NAME"])
+    attributes["appname"] = utils.prettify_name(attributes["appname"])
     return formats["volume"] % attributes
 
 
 def todo_handler(formats, attributes: dict) -> str:
-    splitted = attributes["DUNST_BODY"].split(" ")
+    splitted = attributes["body"].split(" ")
     attributes["TOTAL"] = int(splitted[4])
     attributes["DONE"] = int(splitted[0])
     attributes["PERC"] = (attributes["DONE"] / attributes["TOTAL"]) * 100
-    attributes["DUNST_APP_NAME"] = utils.prettify_name(attributes["DUNST_APP_NAME"])
+    attributes["appname"] = utils.prettify_name(attributes["appname"])
     return formats["todo"] % attributes
 
 
 def shot_icon_handler(formats, attributes: dict) -> str:
-    attributes["DUNST_APP_NAME"] = utils.prettify_name(attributes["DUNST_APP_NAME"])
+    attributes["appname"] = utils.prettify_name(attributes["appname"])
     return formats["shot_icon"] % attributes
 
 

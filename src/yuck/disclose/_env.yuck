@@ -2,4 +2,8 @@
 (deflisten disclose_sub "./src/shell/logger.py subscribe")
 (defpoll disclose_dnd_state :interval "1s" "dunstctl is-paused")
 
+(defpoll dunst_displayed :interval "10s" "dunstctl count displayed")
+(defpoll dunst_history :interval "10s" "dunstctl count history")
+(defpoll dunst_waiting :interval "10s" "dunstctl count waiting")
+
 ;; vim:ft=yuck
