@@ -17,7 +17,7 @@ import gi
 gi.require_version("Gtk", "3.0")
 gi.require_version("GdkPixbuf", "2.0")
 
-from gi.repository import GdkPixbuf, GLib, Gtk
+from gi.repository import GdkPixbuf, GLib, Gio, Gtk
 
 
 class PangoStripper(HTMLParser):
@@ -247,16 +247,16 @@ def save_img_byte(px_args):
     return save_path
 
 
-def get_gtk_icon_path(icon_name: str, size: int, fallback_path: str) -> str:
+def get_gtk_icon_path(icon_name: str, size: int = 128) -> str:
     info = Gtk.IconTheme.get_default().lookup_icon(icon_name, size, 0)
-    return info.get_filename() if info else fallback_path
+    return info.get_filename() if info else os.path.expandvars("$XDG_CONFIG_HOME/eww/assets/bell.png")
 
 
-def get_mime_icon_path(mimetype, size=32):
+def get_mime_icon_path(mimetype: str, size: int = 128):
     icon = Gio.content_type_get_icon(mimetype)
     theme = Gtk.IconTheme.get_default()
     if info := theme.choose_icon(icon.get_names(), size, 0):
-        print(info.get_filename())
+        return info.get_filename()
 
 
 # vim:filetype=python
