@@ -29,9 +29,12 @@ class Eavesdropper:
             "appname": args_list[0].strip() or "Unknown",
             "summary": args_list[3].strip() or "Summary Unavailable.",
             "body": args_list[4].strip() or "Body Unavailable.",
-            "urgency": args_list[6]["urgency"],
             "id": datetime.datetime.now().strftime("%s"),
+            "urgency": "unknown"
         }
+
+        if "urgency" in args_list[6]:
+            details["urgency"] = args_list[6]["urgency"]
 
         if args_list[2].strip():
             if "/" in args_list[2] or "." in args_list[2]:
