@@ -1,4 +1,4 @@
-(defwidget _dnd [total total_label label footer state action]
+(defwidget _dnd [total total_label label footer state action waiting_icon_off waiting_icon_on waiting]
   (box :vexpand true
        :hexpand true
        :class "disclose-dnd-box"
@@ -23,10 +23,15 @@
                :text total)
         (label :class "disclose-dnd-total-label"
                :text total_label))
-      (button :onclick action
-              :vexpand true
-              :halign "start"
-              :valign "end"
-              :class "disclose-dnd-toggle disclose-dnd-toggle-${state}" state))))
+      (box :space-evenly false :class "disclose-dnd-waiting-toggle"
+        (button :onclick action
+                :hexpand true
+                :halign "start"
+                :valign "end"
+                :class "disclose-dnd-toggle disclose-dnd-toggle-${state}" state)
+        (box :space-evenly false :class "disclose-dnd-waiting-icon-label ${waiting == 0 ? "" : "disclose-dnd-waiting-padding"}"
+          (label :class "disclose-dnd-waiting-icon ${waiting == 0 ? "" : "disclose-dnd-waiting-margin"}"
+                 :text {waiting == 0 ? waiting_icon_off : waiting_icon_on})
+          (label :class "disclose-dnd-waiting-label" :text {waiting == 0 ? "" : waiting}))))))
 
 ;; vim:filetype=yuck

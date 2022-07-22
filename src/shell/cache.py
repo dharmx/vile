@@ -1,6 +1,5 @@
-#!/usr/bin/env python
-
-import contextlib
+import datetime
+import sys
 import typing
 
 import dbus
@@ -9,40 +8,55 @@ from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
 
 
+class Urgency:
+    LOW = b'\x00'
+    NORMAL = b'\x01'
+    CRITICAL = b'\x02'
+
+
 class Eavesdropper:
-    def __init__(
-        self,
-        callback: typing.Callable
-        or None = (lambda *args, **kwargs: print(f"{args}::::{kwargs}")),
-        timeout: bool or int = False,
-        timeout_callback: typing.Callable
-        or None = (lambda *args, **kwargs: print(f"{args}::::{kwargs}")),
-    ):
-        self.timeout = timeout
+    def __init__(self, callback: typing.Callable = print):
         self.callback = callback
-        self.timeout_callback = timeout_callback
 
     def _message_callback(self, _, message):
         if type(message) != dbus.lowlevel.MethodCallMessage:
             return
+
         args_list = message.get_args_list()
         args_list = [utils.unwrap(item) for item in args_list]
+
         details = {
-            "appname": args_list[0],
-            "summary": args_list[3],
-            "body": args_list[4],
-            "urgency": args_list[6]["urgency"],
-            "iconpath": None,
+            "appname": args_list[0].strip() or "Unknown",
+            "summary": args_list[3].strip() or "Summary Unavailable.",
+            "body": args_list[4].strip() or "Body Unavailable.",
+            "id": datetime.datetime.now().strftime("%s"),
+            "urgency": "unknown"
         }
-        if args_list[2]:
-            details["iconpath"] = args_list[2]
-        with contextlib.suppress(KeyError):
-            details["iconpath"] = utils.save_img_byte(args_list[6]["image-data"])
 
-        if self.callback:
-            self.callback(details)
+        if "urgency" in args_list[6]:
+            details["urgency"] = args_list[6]["urgency"]
 
-    def eavesdrop(self):
+        if args_list[2].strip():
+            if "/" in args_list[2] or "." in args_list[2]:
+                details["iconpath"] = args_list[2]
+            else:
+                details["iconpath"] = utils.get_gtk_icon_path(args_list[2])
+        else:
+            details["iconpath"] = utils.get_gtk_icon_path("custom-notification")
+
+        if "image-data" in args_list[6]:
+            details["iconpath"] = f"/tmp/image-{details['id']}.png"
+            utils.save_img_byte(args_list[6]["image-data"], details["iconpath"])
+
+        if "value" in args_list[6]:
+            print(args_list[6]["value"])
+            details["progress"] = args_list[6]["value"]
+
+        self.callback(details)
+
+    def eavesdrop(
+        self, timeout: int or bool = False, timeout_callback: typing.Callable = print
+    ):
         DBusGMainLoop(set_as_default=True)
 
         rules = {
@@ -59,13 +73,12 @@ class Eavesdropper:
 
         try:
             loop = GLib.MainLoop()
-            if self.timeout:
-                GLib.set_timeout(self.timeout, self.timeout_callback)
+            if timeout:
+                GLib.set_timeout(timeout, timeout_callback)
             loop.run()
-        except KeyboardInterrupt:
+        except (KeyboardInterrupt, Exception) as excep:
+            sys.stderr.write(str(excep) + "\n")
             bus.close()
 
-
-Eavesdropper().eavesdrop()
 
 # vim:filetype=python

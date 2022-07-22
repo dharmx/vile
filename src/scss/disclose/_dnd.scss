@@ -57,4 +57,31 @@
   background-color: $base11;
 }
 
+.disclose-dnd-waiting-icon-label {
+  background-color: $base03;
+  border-radius: 2em;
+  opacity: 0.5;
+}
+
+.disclose-dnd-waiting-padding {
+  padding: 0 0.8em 0 0;
+}
+
+.disclose-dnd-waiting-margin {
+  margin: 0.3em;
+}
+
+.disclose-dnd-waiting-icon {
+  background-color: $base13;
+  margin: 0.3em;
+  padding: 0.2em;
+  border-radius: 1em;
+  font-size: 20;
+  color: $base04;
+}
+
+.disclose-dnd-waiting-label {
+  font-weight: 600;
+}
+
 // vim:filetype=scss
