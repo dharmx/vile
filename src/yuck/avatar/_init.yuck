@@ -50,8 +50,6 @@
                     :minimal "playerctld shift"
                     :minimal_icon ""
                     :pause_icon ""
-                    :play_icon "")))
-    (avatar_profile :path "./assets/profile.png" 
-                    :size 120)))
+                    :play_icon "")))))
 
 ;; vim:ft=yuck
