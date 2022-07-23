@@ -1,13 +1,9 @@
-(deflisten avatar_network "./src/shell/network.bash sub2wifi")
 (deflisten mpd_sub "./src/shell/mpdaemon.py")
 (deflisten pctl_sub "./src/shell/playerctl.py")
 
 (defpoll mpd_progress :interval "1s" `mpc | grep "%)" | awk '{print $4}' | tr -d '(%)'`)
 (defpoll mpd_current :interval "1s" `mpc | grep "#" | awk '{print $3}' | sed 's|/.*||g'`)
 (defpoll mpd_duration :interval "10s" `mpc --format=%time% current`)
-
-(defpoll avatar_bluetooth_state :interval "3s" "bluetooth | awk '{print $3}'")
-(defpoll avatar_updates_state :interval "5h" "./src/shell/update.bash")
 
 (defpoll avatar_hostname :interval "1000s" "hostnamectl hostname")
 (defpoll avatar_username :interval "1000s" "echo $USER")
