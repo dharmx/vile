@@ -14,7 +14,9 @@
     icon_height
     close
     ?close_action
+
     ?style
+    ?class
 
     image
     image_width
@@ -56,7 +58,7 @@
                :width image_width
                :height image_height
                :space-evenly false
-               :class "disclose-cardimage-image disclose-cardimage-image-${urgency} disclose-cardimage-image-${appname}"))
+               :class "disclose-cardimage-image disclose-cardimage-image-${urgency} disclose-cardimage-image-${appname} ${class}"))
 
         (box :hexpand true
              :vexpand true
