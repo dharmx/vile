@@ -1,0 +1,4 @@
+dbus-python==1.2.18
+PyGObject==3.42.2
+python-mpd2==3.0.5
+requests==2.27.1
