@@ -1,63 +1,68 @@
 (defwidget _cardradial [
-    summary 
-    body 
+    summary
+    body
+
     ?limit_summary
     ?limit_body
-    appname 
-    close 
+
+    appname
+    timestamp
+    urgency
+
+    close
     ?close_action
-    timestamp 
-    urgency 
-    progress 
-    thickness 
-    total 
+
+    progress
+    thickness
+
+    total
     done
   ]
-  (eventbox :class "disclose-cardradial-eventbox disclose-cardradial-eventbox-${urgency}"
+  (eventbox :class "disclose-cardradial-eventbox disclose-cardradial-eventbox-${urgency} disclose-cardradial-eventbox-${appname}"
     (box :orientation "vertical"
          :space-evenly false
-         :class "disclose-cardradial-container-box disclose-cardradial-container-box-${urgency}"
-      (box :class "disclose-cardradial-summary-box disclose-cardradial-summary-box-${urgency}" 
+         :class "disclose-cardradial-container-box disclose-cardradial-container-box-${urgency} disclose-cardradial-container-box-${appname}"
+      (box :class "disclose-cardradial-summary-box disclose-cardradial-summary-box-${urgency} disclose-cardradial-summary-box-${appname}"
            :space-evenly false
-        (label :text appname 
-               :hexpand true 
-               :halign "start" 
-               :class "disclose-cardradial-appname-label disclose-cardradial-appname-label-${urgency}")
-        (button :class "disclose-cardradial-close-button disclose-cardradial-close-button-${urgency}"
+        (label :text appname
+               :hexpand true
+               :halign "start"
+               :class "disclose-cardradial-appname-label disclose-cardradial-appname-label-${urgency} disclose-cardradial-appname-label-${appname}")
+        (button :class "disclose-cardradial-close-button disclose-cardradial-close-button-${urgency} disclose-cardradial-close-button-${appname}"
                 :onclick close_action
-          (label :text close 
-                 :class "disclose-cardradial-close-icon disclose-cardradial-close-icon-${urgency}")))
-      (box :class "disclose-cardradial-separator disclose-cardradial-separator-${urgency}" 
+          (label :text close
+                 :class "disclose-cardradial-close-icon disclose-cardradial-close-icon-${urgency} disclose-cardradial-close-icon-${appname}")))
+      (box :class "disclose-cardradial-separator disclose-cardradial-separator-${urgency} disclose-cardradial-separator-${appname}"
            :space-evenly false)
-      (box :class "disclose-cardradial-body-box disclose-cardradial-body-box-${urgency}" 
+      (box :class "disclose-cardradial-body-box disclose-cardradial-body-box-${urgency} disclose-cardradial-body-box-${appname}"
            :space-evenly false
-        (box :halign "center" 
-             :valign "center" 
-             :class "disclose-cardradial-circle-box disclose-cardradial-circle-box-${urgency}"
-          (circular-progress :value progress 
+        (box :halign "center"
+             :valign "center"
+             :class "disclose-cardradial-circle-box disclose-cardradial-circle-box-${urgency} disclose-cardradial-circle-box-${appname}"
+          (circular-progress :value progress
                              :thickness thickness
-                             :class "disclose-cardradial-circle disclose-cardradial-circle-${urgency}"
-            (label :class "disclose-cardradial-tasks disclose-cardradial-tasks-${urgency}" 
+                             :class "disclose-cardradial-circle disclose-cardradial-circle-${urgency} disclose-cardradial-circle-${appname}"
+            (label :class "disclose-cardradial-tasks disclose-cardradial-tasks-${urgency} disclose-cardradial-tasks-${appname}"
                    :text "${done}/${total}")))
-        (box :hexpand true 
-             :vexpand true 
-             :valign "center" 
-             :spacing 5 
-             :orientation "vertical" 
-             :class "disclose-cardradial-body-outer disclose-cardradial-body-outer-${urgency}" 
+        (box :hexpand true
+             :vexpand true
+             :valign "center"
+             :spacing 5
+             :orientation "vertical"
+             :class "disclose-cardradial-body-outer disclose-cardradial-body-outer-${urgency} disclose-cardradial-body-outer-${appname}"
              :space-evenly false
-          (label :limit-width "${limit_summary != "" ? limit_summary : 25}"
+          (label :limit-width {limit_summary != "" ? limit_summary : 25}
                  :text summary
-                 :halign "start" 
-                 :class "disclose-cardradial-summary-label disclose-cardradial-summary-label-${urgency}")
-          (label :limit-width "${limit_body != "" ? limit_body : 110}"
-                 :text body 
+                 :halign "start"
+                 :class "disclose-cardradial-summary-label disclose-cardradial-summary-label-${urgency} disclose-cardradial-summary-label-${appname}")
+          (label :limit-width {limit_body != "" ? limit_body : 110}
+                 :text body
                  :xalign 0.0
-                 :halign "start" 
-                 :wrap true 
-                 :class "disclose-cardradial-body-label disclose-cardradial-body-${urgency}")
-          (label :text timestamp 
-                 :halign "end" 
-                 :class "disclose-cardradial-timestamp disclose-cardradial-timestamp-${urgency}"))))))
+                 :halign "start"
+                 :wrap true
+                 :class "disclose-cardradial-body-label disclose-cardradial-body-${urgency} disclose-cardradial-body-${appname}")
+          (label :text timestamp
+                 :halign "end"
+                 :class "disclose-cardradial-timestamp disclose-cardradial-timestamp-${urgency} disclose-cardradial-timestamp-${appname}"))))))
 
 ;; vim:ft=yuck

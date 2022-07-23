@@ -1,86 +1,91 @@
 (defwidget _cardprog [
-    summary 
-    body 
+    summary
+    body
+
     ?limit_summary
     ?limit_body
-    appname 
-    icon 
-    icon_width 
-    icon_height 
-    close 
-    ?close_action
-    image 
-    image_width 
-    image_height 
-    timestamp 
-    urgency 
+
+    appname
+    timestamp
+    urgency
     progress
+
+    icon
+    icon_width
+    icon_height
+    close
+    ?close_action
+
+    ?style
+    image
+    image_width
+    image_height
   ]
-  (eventbox :class "disclose-cardprog-eventbox disclose-cardprog-eventbox-${urgency}"
+  (eventbox :class "disclose-cardprog-eventbox disclose-cardprog-eventbox-${urgency} disclose-cardprog-eventbox-${appname}"
     (box :orientation "vertical"
          :space-evenly false
-         :class "disclose-cardprog-container-box disclose-cardprog-container-box-${urgency}"
-      (box :class "disclose-cardprog-summary-box disclose-cardprog-summary-box-${urgency}" 
+         :class "disclose-cardprog-container-box disclose-cardprog-container-box-${urgency} disclose-cardprog-container-box-${appname}"
+      (box :class "disclose-cardprog-summary-box disclose-cardprog-summary-box-${urgency} disclose-cardprog-summary-box-${appname}"
            :space-evenly false
            :spacing 6
-        (box :style "background-image: url('${icon}')" 
-             :width icon_width 
-             :height icon_height 
+        (box :style "background-image: url('${icon}')"
+             :width icon_width
+             :height icon_height
              :space-evenly false
-             :class "disclose-cardprog-icon disclose-cardprog-icon-${urgency}")
-        (label :text appname 
-               :hexpand true 
-               :halign "start" 
-               :class "disclose-cardprog-appname-label disclose-cardprog-appname-label-${urgency}")
-        (button :class "disclose-cardprog-close-button disclose-cardprog-close-button-${urgency}"
+             :class "disclose-cardprog-icon disclose-cardprog-icon-${urgency} disclose-cardprog-icon-${appname}")
+        (label :text appname
+               :hexpand true
+               :halign "start"
+               :class "disclose-cardprog-appname-label disclose-cardprog-appname-label-${urgency} disclose-cardprog-appname-label-${appname}")
+        (button :class "disclose-cardprog-close-button disclose-cardprog-close-button-${urgency} disclose-cardprog-close-button-${appname}"
                 :onclick close_action
-          (label :text close 
-                 :class "disclose-cardprog-close-icon disclose-cardprog-close-icon-${urgency}")))
-      (box :class "disclose-cardprog-separator disclose-cardprog-separator-${urgency}" 
+          (label :text close
+                 :class "disclose-cardprog-close-icon disclose-cardprog-close-icon-${urgency} disclose-cardprog-close-icon-${appname}")))
+      (box :class "disclose-cardprog-separator disclose-cardprog-separator-${urgency} disclose-cardprog-separator-${appname}"
            :space-evenly false)
-      (box :class "disclose-cardprog-body-box disclose-cardprog-body-box-${urgency}" 
+      (box :class "disclose-cardprog-body-box disclose-cardprog-body-box-${urgency} disclose-cardprog-body-box-${appname}"
            :space-evenly false
-        (box :halign "center" 
-             :valign "center" 
-             :class "disclose-cardprog-image-box disclose-cardprog-image-box-${urgency}"
-          (box :style "background-image: url('${image}')" 
-               :hexpand false 
+        (box :halign "center"
+             :valign "center"
+             :class "disclose-cardprog-image-box disclose-cardprog-image-box-${urgency} disclose-cardprog-image-box-${appname}"
+          (box :style "background-image: url('${image}');${style}"
+               :hexpand false
                :vexpand false
-               :width image_width 
-               :height image_height 
+               :width image_width
+               :height image_height
                :space-evenly false
-               :class "disclose-cardprog-image disclose-cardprog-image-${urgency}"))
-        (box :spacing 1 
-             :hexpand true 
-             :vexpand true 
-             :valign "center" 
-             :orientation "vertical" 
-             :class "disclose-cardprog-body-outer disclose-cardprog-body-outer-${urgency}" 
+               :class "disclose-cardprog-image disclose-cardprog-image-${urgency} disclose-cardprog-image-${appname}"))
+        (box :spacing 1
+             :hexpand true
+             :vexpand true
+             :valign "center"
+             :orientation "vertical"
+             :class "disclose-cardprog-body-outer disclose-cardprog-body-outer-${urgency} disclose-cardprog-body-outer-${appname}"
              :space-evenly false
-          (box :class "disclose-cardprog-summary-body-box disclose-cardprog-summary-body-box-${urgency}"
-            (label :limit-width "${limit_summary != "" ? limit_summary : 25}"
-                   :text summary 
-                   :halign "start" 
-                   :class "disclose-cardprog-summary-label disclose-cardprog-summary-label-${urgency}")
-            (label :text timestamp 
+          (box :class "disclose-cardprog-summary-body-box disclose-cardprog-summary-body-box-${urgency} disclose-cardprog-summary-body-box-${appname}"
+            (label :limit-width {limit_summary != "" ? limit_summary : 25}
+                   :text summary
+                   :halign "start"
+                   :class "disclose-cardprog-summary-label disclose-cardprog-summary-label-${urgency} disclose-cardprog-summary-label-${appname}")
+            (label :text timestamp
                    :halign "end"
-                   :class "disclose-cardprog-timestamp disclose-cardprog-timestamp-${urgency}"))
-          (label :limit-width "${limit_body != "" ? limit_body : 110}"
-                 :text body 
+                   :class "disclose-cardprog-timestamp disclose-cardprog-timestamp-${urgency} disclose-cardprog-timestamp-${appname}"))
+          (label :limit-width {limit_body != "" ? limit_body : 110}
+                 :text body
                  :halign "start"
-                 :wrap true 
+                 :wrap true
                  :xalign 0.0
-                 :class "disclose-cardprog-body-label disclose-cardprog-body-${urgency}")
-          (box :spacing 15 
-               :class "disclose-cardprog-scale-box disclose-cardprog-scale-box-${urgency}" 
+                 :class "disclose-cardprog-body-label disclose-cardprog-body-${urgency} disclose-cardprog-body-${appname}")
+          (box :spacing 15
+               :class "disclose-cardprog-scale-box disclose-cardprog-scale-box-${urgency} disclose-cardprog-scale-box-${appname}"
                :space-evenly false
-            (scale :hexpand true 
-                   :class "disclose-cardprog-scale disclose-cardprog-scale-${urgency}" 
-                   :min 0 
-                   :max 100 
-                   :active false 
+            (scale :hexpand true
+                   :class "disclose-cardprog-scale disclose-cardprog-scale-${urgency} disclose-cardprog-scale-${appname}"
+                   :min 0
+                   :max 100
+                   :active false
                    :value progress)
-            (label :class "disclose-cardprog-value-label disclose-cardprog-value-label-${urgency}" 
+            (label :class "disclose-cardprog-value-label disclose-cardprog-value-label-${urgency} disclose-cardprog-value-label-${appname}"
                    :text progress)))))))
 
 ;; vim:ft=yuck
