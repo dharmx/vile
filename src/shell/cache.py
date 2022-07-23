@@ -1,4 +1,6 @@
 import datetime
+import os
+import pathlib
 import sys
 import typing
 
@@ -9,14 +11,20 @@ from gi.repository import GLib
 
 
 class Urgency:
-    LOW = b'\x00'
-    NORMAL = b'\x01'
-    CRITICAL = b'\x02'
+    LOW = b"\x00"
+    NORMAL = b"\x01"
+    CRITICAL = b"\x02"
 
 
 class Eavesdropper:
-    def __init__(self, callback: typing.Callable = print):
+    def __init__(
+        self,
+        callback: typing.Callable = print,
+        cache_dir: str = "/tmp"
+    ):
         self.callback = callback
+        self.cache_dir = f"{os.path.expandvars(cache_dir)}/image-data"
+        pathlib.PosixPath(self.cache_dir).mkdir(parents=True, exist_ok=True)
 
     def _message_callback(self, _, message):
         if type(message) != dbus.lowlevel.MethodCallMessage:
@@ -30,7 +38,7 @@ class Eavesdropper:
             "summary": args_list[3].strip() or "Summary Unavailable.",
             "body": args_list[4].strip() or "Body Unavailable.",
             "id": datetime.datetime.now().strftime("%s"),
-            "urgency": "unknown"
+            "urgency": "unknown",
         }
 
         if "urgency" in args_list[6]:
@@ -45,7 +53,7 @@ class Eavesdropper:
             details["iconpath"] = utils.get_gtk_icon_path("custom-notification")
 
         if "image-data" in args_list[6]:
-            details["iconpath"] = f"/tmp/image-{details['id']}.png"
+            details["iconpath"] = f"{self.cache_dir}/{details['appname']}-{details['id']}.png"
             utils.save_img_byte(args_list[6]["image-data"], details["iconpath"])
 
         if "value" in args_list[6]:
@@ -55,7 +63,9 @@ class Eavesdropper:
         self.callback(details)
 
     def eavesdrop(
-        self, timeout: int or bool = False, timeout_callback: typing.Callable = print
+        self,
+        timeout: int or bool = False,
+        timeout_callback: typing.Callable = print
     ):
         DBusGMainLoop(set_as_default=True)
 
