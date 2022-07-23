@@ -54,8 +54,12 @@ def redir_to_handlers(formats, attributes: dict) -> str:
             return brightness_handler(formats, attributes)
         case "shot":
             return shot_handler(formats, attributes)
+        case "shot_icon":
+            return shot_icon_handler(formats, attributes)
         case "todo":
             return todo_handler(formats, attributes)
+        case "Spotify":
+            return Spotify_handler(formats, attributes)
         case _:
             return default_handler(formats, attributes)
 
@@ -66,6 +70,10 @@ def shot_handler(formats, attributes: dict) -> str:
     attributes["OPEN"] = f"xdg-open \\'{attributes['iconpath']}\\'"
     attributes["appname"] = utils.prettify_name(attributes["appname"])
     return formats["shot"] % attributes
+
+
+def Spotify_handler(formats, attributes: dict) -> str:
+    return formats["Spotify"] % attributes
 
 
 def default_handler(formats, attributes: dict) -> str:
