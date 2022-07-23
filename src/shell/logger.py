@@ -36,6 +36,7 @@ if __name__ == "__main__":
 
     HISTORY_LIMIT = config["limit"]
     CACHE_PATH = os.path.expandvars(config["cache_path"])
+    CACHE_DIR = os.path.dirname(CACHE_PATH)
     QUOTE_PATH = os.path.expandvars(config["quote_path"])
     DEFAULT_QUOTE = config["default_quote"]
     INTERVAL = config["interval"]
@@ -89,6 +90,6 @@ if __name__ == "__main__":
                     HISTORY_LIMIT,
                 )
 
-            cache.Eavesdropper(master_callback).eavesdrop()
+            cache.Eavesdropper(master_callback, CACHE_DIR).eavesdrop()
 
 # vim:filetype=python
