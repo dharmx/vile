@@ -22,6 +22,11 @@ def redir_to_handlers(formats, attributes: dict) -> str:
             attributes["summary"]
         )
 
+    if "'" in attributes["body"]:
+        attributes["body"] = attributes["body"].replace("'", "\\'")
+    if "'" in attributes["summary"]:
+        attributes["summary"] = attributes["summary"].replace("'", "\\'")
+
     attributes["SUMMARY_LIMITER"] = ""
     summary_lang_char_check = utils.has_non_english_chars(
         attributes["summary"][:15]
