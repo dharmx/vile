@@ -5,7 +5,7 @@ This is created mainly to cache the raw image data that is
 sent by stupid applications like Spotify, Discord, etc.
 Now that I think about it all of the electron clients do this.
 
-Usually any application, if they had to they'd send the 
+Usually any application, if they had to they'd send the
 notifications as a path i.e. caching the image themselves
 and then returning the path to it.
 
@@ -43,6 +43,7 @@ from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
 
 
+# TODO: Use actual enumerations by using the enum module from the standard library.
 class Urgency:
     """Acts as an Enum for indicating the urgency levels as per
     the notifications specification.
@@ -73,11 +74,13 @@ class Eavesdropper:
     icon then it will be saved into the cache directory.
 
     Attributes:
-        callback: 
+        callback:
             The arbitrary subroutine that will executed on getting a notification.
-        cache_dir: 
+        cache_dir:
             The directory path that all of those image-data would be saved.
     """
+
+    # TODO: Segregate more.
     def __init__(
         self,
         callback: typing.Callable = print,
@@ -94,15 +97,21 @@ class Eavesdropper:
         # translation: mkdir --parents cache_dir
         pathlib.PosixPath(self.cache_dir).mkdir(parents=True, exist_ok=True)
 
-    def _message_callback(self, proxy_bus: dbus.SessionBus, message):
+    def _message_callback(
+        self, _,
+        message: dbus.lowlevel.MethodReturnMessage
+        or dbus.lowlevel.MethodCallMessage
+    ):
         """A filter callback for parsing the specific messages that are received from the DBus interface.
 
         Arguments:
             proxy_bus:
                 The bus that sent the message.
             message:
-                In this case a message is sent when the 
-                Notify method is called AND when the Notify method return something.
+                In this case a message is sent when the
+                Notify method is called AND when the Notify method returns something.
+
+        If the message is of type dbus.lowlevel.MethodCallMessage then this will NOT call the passed callback.
         """
 
         # we will be filtering this out as we only need the value that the method call returns
@@ -141,19 +150,23 @@ class Eavesdropper:
                 details["iconpath"] = utils.get_gtk_icon_path(args_list[2])
         else:
             # if there are no icon hints then use fallback (generic bell)
-            details["iconpath"] = utils.get_gtk_icon_path("custom-notification")
+            details["iconpath"] = utils.get_gtk_icon_path(
+                "custom-notification")
 
         if "image-data" in args_list[6]:
             # capture the raw image bytes and save them to the cache_dir/x.png path
             details["iconpath"] = f"{self.cache_dir}/{details['appname']}-{details['id']}.png"
-            utils.save_img_byte(args_list[6]["image-data"], details["iconpath"])
+            utils.save_img_byte(
+                args_list[6]["image-data"], details["iconpath"])
 
         if "value" in args_list[6]:
             print(args_list[6]["value"])
             details["progress"] = args_list[6]["value"]
 
-        self.callback(details) # execute arbitrary callback and passing details about the current notification.
+        # execute arbitrary callback and passing details about the current notification.
+        self.callback(details)
 
+    # TODO: Segregate more.
     def eavesdrop(
         self,
         timeout: int or bool = False,
@@ -181,7 +194,8 @@ class Eavesdropper:
         # not meant for you.
         # removing the eavesdrop key from rules will not send the Notify method's
         # contents to you (you can try and see what happens)
-        bus.add_match_string(",".join([f"{key}={value}" for key, value in rules.items()]))
+        bus.add_match_string(
+            ",".join([f"{key}={value}" for key, value in rules.items()]))
         bus.add_message_filter(self._message_callback)
 
         try:

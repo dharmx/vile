@@ -23,7 +23,7 @@
 
 # TODO: Utilize JSON instead of YUCK Literals.
 # WARN: This script is under active development and is subject to frequent changes.
-# WARN: Currently this script is quite inefficient. You have be warned.
+# WARN: Currently this script is quite inefficient. So, you have been warned.
 
 # read these https://specifications.freedesktop.org/wm-spec/wm-spec-1.3.html#idm46435614881776
 # although you could guess what these mean by their prefixes and names
