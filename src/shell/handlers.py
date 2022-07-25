@@ -9,7 +9,7 @@ the called handler function will evaluate the YUCK literal and replace all
 of the items on the format string with the passed attributes and then return it.
 """
 
-# Authored By pagankeymaster <pagankeymaster@gmail.com> under:
+# Authored By dharmx <dharmx@gmail.com> under:
 # GNU GENERAL PUBLIC LICENSE
 # Version 3, 29 June 2007
 #
@@ -24,7 +24,7 @@ of the items on the format string with the passed attributes and then return it.
 # preserved. Contributors provide an express grant of patent rights.
 #
 # Read the complete license here:
-# <https://github.com/pagankeymaster/vile/blob/main/LICENSE.txt>
+# <https://github.com/dharmx/vile/blob/main/LICENSE.txt>
 
 import datetime
 

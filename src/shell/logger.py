@@ -12,7 +12,7 @@ Note, if you still have not guessed already, if you make any changes to the
 log file then the list of notifications will be re-rendered again.
 """
 
-# Authored By pagankeymaster <pagankeymaster@gmail.com> under:
+# Authored By dharmx <dharmx@gmail.com> under:
 # GNU GENERAL PUBLIC LICENSE
 # Version 3, 29 June 2007
 #
@@ -27,7 +27,7 @@ log file then the list of notifications will be re-rendered again.
 # preserved. Contributors provide an express grant of patent rights.
 #
 # Read the complete license here:
-# <https://github.com/pagankeymaster/vile/blob/main/LICENSE.txt>
+# <https://github.com/dharmx/vile/blob/main/LICENSE.txt>
 
 # TODO: Utilize JSON instead of YUCK Literals.
 # WARN: This script is under active development and is subject to frequent changes.

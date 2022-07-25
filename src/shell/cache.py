@@ -13,7 +13,7 @@ Also, <https://specifications.freedesktop.org/notification-spec/latest/>
 is a really nice manual. Give it a read.
 """
 
-# Authored By pagankeymaster <pagankeymaster@gmail.com> under:
+# Authored By dharmx <dharmx@gmail.com> under:
 # GNU GENERAL PUBLIC LICENSE
 # Version 3, 29 June 2007
 #
@@ -28,7 +28,7 @@ is a really nice manual. Give it a read.
 # preserved. Contributors provide an express grant of patent rights.
 #
 # Read the complete license here:
-# <https://github.com/pagankeymaster/vile/blob/main/LICENSE.txt>
+# <https://github.com/dharmx/vile/blob/main/LICENSE.txt>
 
 import datetime
 import os

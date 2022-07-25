@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=2154,1091
 
-# Authored By pagankeymaster <pagankeymaster@gmail.com> under:
+# Authored By dharmx <dharmx@gmail.com> under:
 # GNU GENERAL PUBLIC LICENSE
 # Version 3, 29 June 2007
 #
@@ -16,7 +16,7 @@
 # preserved. Contributors provide an express grant of patent rights.
 #
 # Read the complete license here:
-# <https://github.com/pagankeymaster/vile/blob/main/LICENSE.txt>
+# <https://github.com/dharmx/vile/blob/main/LICENSE.txt>
 
 # Gist
 # Script that checks and notifies if a 'bspc config' option has been changed.
