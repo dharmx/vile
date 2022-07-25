@@ -105,6 +105,11 @@ def redir_to_handlers(formats, attributes: dict) -> str:
         case _:
             attributes["URGENCY"] = "NORMAL"
 
+    # handle next lines (especially discord code blocks)
+    # NOTE: may make this only discord / firefox specific
+    attributes["body"] = attributes["body"].replace("\n", " ")
+    attributes["summary"] = attributes["summary"].replace("\n", " ")
+
     # check if there are any pango tags on the body and summary and if so
     # it will then remove it.
     if utils.contains_pango(attributes["body"]):
@@ -193,7 +198,7 @@ def Spotify_handler(formats, attributes: dict) -> str:
     Arguments:
         formats: See redir_to_handlers.
         attributes: See redir_to_handlers.
-    
+
     Returns:
         See redir_to_handlers
     """
