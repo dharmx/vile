@@ -159,8 +159,9 @@ class Eavesdropper:
             utils.save_img_byte(
                 args_list[6]["image-data"], details["iconpath"])
 
+        # BUG: add a print statement -> init logger.py and disown the process
+        # BUG: then you'll notice the notifications with value (progress) hint does not get logged
         if "value" in args_list[6]:
-            print(args_list[6]["value"])
             details["progress"] = args_list[6]["value"]
 
         # execute arbitrary callback and passing details about the current notification.
