@@ -35,6 +35,8 @@ export XDG_PICTURES_DIR="$HOME/Pictures"
 # SEE: https://wiki.archlinux.org/title/Environment_variables
 ```
 
+---
+
 <samp>vertigo deps</samp>
 
 ```sh
@@ -87,4 +89,58 @@ yay -S gobject-introspection python python-pip playerctl --needed
 ```
 - recheck and verify all vile/.config.json values.
 - recheck and verify all _layout.yuck values.
+```
+
+---
+
+<samp>sample .config.json</samp>
+
+```json
+{
+  "player": {
+    "mpd_cache": "$XDG_CACHE_HOME/mpd",
+    "pctl_cache": "$XDG_CACHE_HOME/pctl",
+    "default_art": "$XDG_CONFIG_HOME/eww/assets/cover.png"
+  },
+  "desktops": {
+    "states": {
+      "focused": "\uf963",
+      "occupied": "\uf75a",
+      "urgent": "\ufa44",
+      "empty": "\uf75b"
+    },
+    "tags": {
+      "hidden": "\ue95f",
+      "sticky": "\ue9ad",
+      "private": "\uea08",
+      "locked": "\ue98f",
+      "marked": "\ue9da",
+      "empty": "\ue998"
+    },
+    "layouts": {
+      "monocle": "\uf70d",
+      "tiled": "\uf817",
+      "fullscreen": "\uf749",
+      "pseudo_tiled": "\uf752",
+      "floating": "\uf70e",
+      "empty": "\uf849"
+    }
+  },
+  "network": {
+    "interface": "wlp0s20f3"
+  },
+  "notify": {
+    "limit": 50,
+    "interval": 0.5,
+    "cache_path": "$XDG_CACHE_HOME/dunst/notifications.txt",
+    "quote_path": "$XDG_CACHE_HOME/dunst/quotes.txt",
+    "default_quote": "To fake it is to stand guard over emptiness. \u2500\u2500 Arthur Herzog",
+    "timestamp": "%H:%M"
+  },
+  "tokens": {
+    "gmail": "TOKEN",
+    "openweather": "TOKEN",
+    "github": "TOKEN",
+  }
+}
 ```
