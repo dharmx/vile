@@ -1,3 +1,11 @@
+<details>
+  <summary><samp>screenshots and demo</samp></summary>
+  <img src="./assets/.trash/montage.png" alt="montage"/>
+  <img src="./assets/.trash/disclose.png" alt="disclose"/>
+</details>
+
+---
+
 <samp>assumptions</samp>
 
 ```
@@ -73,7 +81,6 @@ none
 ```sh
 yay -S gobject-introspection python python-pip playerctl --needed
 ```
-
 
 <samp>some important notes</samp>
 
