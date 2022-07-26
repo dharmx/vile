@@ -93,7 +93,7 @@ yay -S gobject-introspection python python-pip playerctl --needed
 
 ---
 
-<samp>sample .config.json</samp>
+<samp>sample .config.json (goes into ~/.config/eww)</samp>
 
 ```json
 {
