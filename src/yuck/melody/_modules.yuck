@@ -15,4 +15,15 @@
     (label :halign "start" :limit-width 20 :class "melody-artist" :text artist)
     (label :halign "start" :limit-width 40 :class "melody-title" :text title)))
 
+(defwidget _melodycover [cover_path status bright dark]
+  (box :space-evenly false
+       :class "melody-cover-box"
+       :orientation "vertical"
+    (box :space-evenly false
+         :class "melody-cover melody-cover-${status}"
+         :style `background-image: url("${cover_path}")`)
+    (label :class "melody-cover-label"
+           :text {status}
+           :style "color: ${bright}; background-color: ${dark}")))
+
 ;; vim:ft=yuck

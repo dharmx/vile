@@ -21,7 +21,9 @@
             (button :class {workspace.class}
                     :tooltip {workspace.tooltip}
                     :onclick {workspace.onclick} {workspace.label})))))
-    (_vertigobat :critical "暑" :full "" :battery {EWW_BATTERY.BAT0.capacity})
+    (_vertigobat :critical "暑"
+                 :full ""
+                 :battery {EWW_BATTERY.BAT0.capacity})
     (_time :time vertigo_time
            :tooltip "time ${vertigo_time.hour}:${vertigo_time.sec}"
            :button-class "vertigo-time-button")
