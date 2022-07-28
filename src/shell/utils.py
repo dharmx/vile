@@ -17,6 +17,7 @@
 # Read the complete license here:
 # <https://github.com/dharmx/vile/blob/main/LICENSE.txt>
 
+from datetime import datetime
 import os
 import pathlib
 import random
@@ -25,6 +26,7 @@ import sys
 import time
 import typing
 import unicodedata
+
 from html.parser import HTMLParser
 from io import StringIO
 
@@ -35,7 +37,9 @@ import gi
 gi.require_version("Gtk", "3.0")
 gi.require_version("GdkPixbuf", "2.0")
 
+import requests
 from gi.repository import GdkPixbuf, Gio, GLib, Gtk
+
 
 class PangoStripper(HTMLParser):
     def __init__(self):
@@ -391,6 +395,20 @@ def get_mime_icon_path(mimetype: str, size: int = 32) -> str:
     theme = Gtk.IconTheme.get_default()
     if info := theme.choose_icon(icon.get_names(), size, 0):
         return info.get_filename()
+
+
+def get_location():
+    response = requests.get('https://api64.ipify.org?format=json').json()
+    ip_address = response["ip"]
+    response = requests.get(f'https://ipapi.co/{ip_address}/json/').json()
+
+    return {
+        "latitude": response.get("latitude"),
+        "longitude": response.get("longitude"),
+        "city": response.get("city"), 
+        "country": response.get("country_name"),
+        "lang": response.get("languages").split(",")[0],
+    }
 
 
 # vim:filetype=python

@@ -8,6 +8,7 @@ from datetime import datetime
 
 import requests
 
+import utils
 
 def prepare_link(options: dict, token: str) -> str | None:
     link = f"https://api.openweathermap.org/data/2.5/weather?appid={token}"
@@ -49,7 +50,10 @@ def check_cache_and_get(cache: str, fallback: str, token: str, icon_dir: str) ->
     date_path = pathlib.PosixPath(f"{cache}/weather-{now.strftime('%F')}.json")
 
     if now.hour > 15 and now.hour < 5:
-        date_path.unlink(date_path)
+        date_path.unlink(date_path, missing_ok=True)
+
+    if config["weather"]["method"] == "automatic":
+        config["weather"] |= auto_fetch_location(config["weather"]["cache_dir"])
     prepared_link = prepare_link(config["weather"], token)
 
     if not date_path.is_file() and not fetch_save_str(prepared_link, str(date_path)):
@@ -66,11 +70,19 @@ def overwrite_weather_icon_timed(metadata: dict, icon_dir: str) -> dict:
             if 'n' in metadata['weather'][0]['icon']
             else f"{icon_dir}/{metadata['weather'][0]['icon']}.png")
     elif 'd' in metadata['weather'][0]['icon']:
-        metadata["weather"][0]["icon"] = \
-            f"{icon_dir}/{metadata['weather'][0]['icon'].replace('d', 'n')}.png"
+        metadata["weather"][0]["icon"] = f"{icon_dir}/{metadata['weather'][0]['icon'].replace('d', 'n')}.png"
     else:
         metadata["weather"][0]["icon"] = f"{icon_dir}/{metadata['weather'][0]['icon']}.png"
     return metadata
+
+
+def auto_fetch_location(cache_dir: str) -> dict:
+    cache_posix_path = pathlib.PosixPath(f"{cache_dir}/location.json")
+    if not cache_posix_path.is_file(): # assuming the directory exists
+        fetched_location = utils.get_location()
+        cache_posix_path.write_text(json.dumps(fetched_location))
+        return fetched_location
+    return json.loads(cache_posix_path.read_text())
 
 
 if __name__ == "__main__":
@@ -105,8 +117,6 @@ if __name__ == "__main__":
                 config["weather"]["icon_dir"],
             )
             print(json.dumps(_metadata))
-        case "link":
-            print(prepare_link(config["weather"],
-                  config["tokens"]["openweather"]))
+
 
 # vim:filetype=python
