@@ -14,7 +14,7 @@
 (defwidget _vertigobat [critical full battery]
   (_label :text {battery < 16 ? critical : battery > 94 ? full : battery}
           :tooltip "capacity: ${battery}"
-          :vexpand false
+          :vexpand true
           :valign "end"
           :button-class "vertigo-battery-button"))
 

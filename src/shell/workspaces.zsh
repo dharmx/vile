@@ -144,6 +144,8 @@ function subscribe_node() {
   _wrap_node_yuck && bspc subscribe \
     desktop_layout  \
     node_state      \
+    node_remove     \
+    node_add        \
     desktop_focus | while read -r _ do; _wrap_node_yuck done
 }
 

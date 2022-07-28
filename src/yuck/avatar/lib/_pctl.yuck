@@ -61,7 +61,7 @@
       (button :onclick "playerctl play-pause &"
               :class "avatar-pctl-button-playback"
         (label :class "avatar-pctl-label-playback" 
-               :text "${pctl_sub.status == "Playing" ? play_icon : pause_icon}"))
+               :text {pctl_sub.status == "Playing" ? play_icon : pause_icon}))
       (button :onclick next 
               :class "avatar-pctl-button-next" 
         (label :class "avatar-pctl-label-next" 
