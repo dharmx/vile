@@ -21,10 +21,6 @@
 # Controller script (from MVC pattern) for the vertigo widget.
 # Gives out node_state (window_state?) and desktop_state (workspace_state?)
 
-# TODO: Utilize JSON instead of YUCK Literals.
-# WARN: This script is under active development and is subject to frequent changes.
-# WARN: Currently this script is quite inefficient. So, you have been warned.
-
 # read these https://specifications.freedesktop.org/wm-spec/wm-spec-1.3.html#idm46435614881776
 # although you could guess what these mean by their prefixes and names
 # Types:
@@ -36,8 +32,10 @@ names=(STATE_FOCUSED STATE_OCCUPIED STATE_URGENT STATE_EMPTY TAG_HIDDEN TAG_STIC
 # NOTE: the STATE_* indicates desktop_state and LAYOUT_* indicates node_state hence the following todo.
 # TODO: Clarify the diff between node_state and desktop_state items in the names array (rename).
 
+pushd "$XDG_CONFIG_HOME/eww"
+
 index=1 # IKR? ZSH arrays start with 1
-jq --raw-output --compact-output '.desktops|values[][]' < "./.config.json" | while read -r icon
+jq --raw-output --compact-output '.desktops|values[][]' "./.config.json" | while read -r icon
 do
   # load the glyphs from the config and eval them into env vars
   eval "${names[$index]}='$icon'"
@@ -54,12 +52,12 @@ function _make_button() {
   # param $1: workspace label eg 1 / 2 / 3 ...
   # param $2: states out of urgent / occupied / focused / empty
   # param $3: actual workspace value as defined by the WM
-  echo "(button :class 'vertigo-button vertigo-workspace vertigo-workspace-"$2"' :tooltip 'workspace: "$1" state: "$2"' :onclick 'bspc desktop --focus "$3"' '"$1"')"
+  echo "{\"class\":\"vertigo-button vertigo-workspace vertigo-workspace-$2\",\"tooltip\":\"workspace: $1 state: $2\",\"onclick\":\"bspc desktop --focus $3\",\"label\":\"$1\"}"
 }
 
 function _wrap_desktop_yuck() {
   # combined 
-  local buffered=""
+  local buffered='['
   alias query="bspc query --names --desktops --desktop"
   # newlined str -> spaced str -> array, eg: "1\n2\n3" -> "1 2 3" -> (1 2 3)
   local _focused=(${$(query .focused)//$'\n'/ })
@@ -90,15 +88,11 @@ function _wrap_desktop_yuck() {
       _local[$index]="$STATE_EMPTY" && state="local"
     fi
     buffered+=$(_make_button $_local[$index] $state $index)
+    buffered+=","
   done
-  echo $buffered
+  buffered="${buffered::-1}]"
+  echo "$buffered"
   unalias query
-}
-
-function _make_box() {
-  # combines all of the button literals into a box as, described in _make_button
-  # see: _wrap_desktop_yuck
-  echo "(eventbox :onscroll '[ \{\} = up ] || bspc desktop -f next; [ \{\} = down ] || bspc desktop -f prev' (scroll :height 370 (box :orientation 'vertical' :class 'vertigo-box vertigo-desktop' :space-evenly false :tooltip 'workspaces' "$(_wrap_desktop_yuck)")))"
 }
 
 function _make_label() {
@@ -107,7 +101,7 @@ function _make_label() {
   # param $1: node_label
   # param $2: node_state
   # param $3: node_state
-  echo "(button :onmiddleclick 'bspc desktop --layout next' :class 'vertigo-button vertigo-node-button vertigo-node-button-"$3"' :tooltip 'node: "$2"' (label :text '"$1"' :limit-width 2))"
+  echo "{\"onmiddleclick\":\"bspc desktop --layout next\",\"class\":\"vertigo-button vertigo-node-button vertigo-node-button-$3\",\"tooltip\":\"node: $2\",\"label\":\"$1\"}"
 }
 
 function _wrap_node_yuck() {
@@ -147,13 +141,21 @@ function subscribe_node() {
   # (meaning focus to another desktop / close a window / open a window)
   # i.e. it continuously feeds the current state of the focused node / window into
   # a listener variable in a yuck file.
-  _wrap_node_yuck && bspc subscribe report | while read -r _ do; _wrap_node_yuck done
+  _wrap_node_yuck && bspc subscribe \
+    desktop_layout  \
+    node_state      \
+    desktop_focus | while read -r _ do; _wrap_node_yuck done
 }
 
 function subscribe_desktop() {
   # similar to subscribe_node this feeds the current desktop states
-  # AND! if any desktop number has been increased / decreased
-  _make_box && bspc subscribe report | while read -r _ do; _make_box done
+  # if any desktop number has been increased / decreased
+  # if any node / window has been moved to a different desktop
+  _wrap_desktop_yuck && bspc subscribe \
+    desktop_add     \
+    desktop_remove  \
+    desktop_focus   \
+    node_transfer | while read -r _ do; _wrap_desktop_yuck done
 }
 
 function create() {
@@ -179,6 +181,8 @@ case $1 in
   *) echo "Invalid option!" ;;
 esac
 
+popd
 unset index ${names[*]} names # redundant but clean ^_^
+
 
 # vim:ft=zsh
