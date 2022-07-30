@@ -5,7 +5,8 @@
           :class "vertigo-button ${button-class}" 
           :tooltip tooltip
 
-    (box :orientation "vertical" 
+    (box :orientation "vertical"
+         :space-evenly false
       (label :text {time.hour}
              :class "vertigo-time-format-first") 
       (label :text {time.min}

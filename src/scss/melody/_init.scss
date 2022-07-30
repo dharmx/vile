@@ -4,15 +4,12 @@
   color: rgba($base05, 0.75);
 }
 
-.melody-cover-box { 
-  opacity: 0.5;
-}
+.melody-cover-box { opacity: 0.5; }
 
 .melody-cover {
   padding: 3em;
   background-size: cover;
   background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .melody-cover-label {

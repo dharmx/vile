@@ -11,9 +11,13 @@
     (button :class "melody-apps-box-six" :onclick six six_icon)))
 
 (defwidget _melodyplayer [title artist]
-  (box :class "melody-player" :space-evenly false :orientation "vertical" :spacing 5
-    (label :halign "start" :limit-width 20 :class "melody-artist" :text artist)
-    (label :halign "start" :limit-width 40 :class "melody-title" :text title)))
+  (box :class "melody-player" 
+       :space-evenly false 
+       :orientation "vertical" 
+       :spacing 5
+       :halign "end"
+    (label :halign "end" :limit-width 20 :class "melody-artist" :text artist)
+    (label :halign "end" :limit-width 40 :class "melody-title" :text title)))
 
 (defwidget _melodycover [cover_path status bright dark]
   (box :space-evenly false

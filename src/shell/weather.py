@@ -37,46 +37,65 @@ def prepare_link(options: dict, token: str) -> str | None:
     return f"{link}{link_fragment}" if link_fragment else None
 
 
-def fetch_save_str(link: str, save_path: str) -> bool:
-    data = requests.get(link)
-    if data.status_code == 200:
-        pathlib.PosixPath(save_path).write_text(data.text)
-        return True
-    return False
+def fetch_save(link: str, save_path: str) -> bool:
+    try:
+        data = requests.get(link)
+        if data.status_code == 200:
+            metadata = data.json()
+            metadata["weather"][0]["glyph"] = assign_glyph(metadata["weather"][0]["icon"])
+            pathlib.PosixPath(save_path).write_text(json.dumps(metadata))
+            return True
+        return False
+    except requests.exceptions.ConnectionError:
+        return False
 
 
-def check_cache_and_get(cache: str, fallback: str, token: str, icon_dir: str) -> str:
+# Depends on phosphor
+def assign_glyph(icon_name: str) -> str:
+    match icon_name[:-1]:
+        case "01":
+            icon_name = ""
+        case "02":
+            icon_name = ""
+        case "03":
+            icon_name = ""
+        case "04":
+            icon_name = ""
+        case "09":
+            icon_name = ""
+        case "10":
+            icon_name = ""
+        case "11":
+            icon_name = ""
+        case "13":
+            icon_name = ""
+        case "50":
+            icon_name = ""
+        case _:
+            icon_name = ""
+    return icon_name
+
+
+def day_night(path_frag: str, time_of_day: str, date_time: datetime) -> pathlib.PosixPath:
+    return pathlib.PosixPath(f"{path_frag}/weather-{date_time.strftime('%F')}-{time_of_day}.json")
+
+
+def cache_and_get(cache: str, fallback: str, token: str) -> pathlib.PosixPath:
     now = datetime.now()
-    date_path = pathlib.PosixPath(f"{cache}/weather-{now.strftime('%F')}.json")
-
-    if now.hour > 15 and now.hour < 5:
-        date_path.unlink(date_path, missing_ok=True)
+    date_path = day_night(cache, "day", now)
+    if now.hour > 15 or now.hour < 4:
+        date_path = day_night(cache, "night", now)
 
     if config["weather"]["method"] == "automatic":
-        config["weather"] |= auto_fetch_location(config["weather"]["cache_dir"])
+        config["weather"] |= auto_locate(config["weather"]["cache_dir"])
     prepared_link = prepare_link(config["weather"], token)
 
-    if not date_path.is_file() and not fetch_save_str(prepared_link, str(date_path)):
-        fallback_metadata = json.loads(pathlib.PosixPath(fallback).read_text())
-        return overwrite_weather_icon_timed(fallback_metadata, icon_dir)
-    return overwrite_weather_icon_timed(json.loads(date_path.read_text()), icon_dir)
+    if not date_path.is_file() and not fetch_save(prepared_link, str(date_path)):
+        return json.loads(pathlib.PosixPath(fallback).read_text())
+    return json.loads(date_path.read_text())
 
 
-def overwrite_weather_icon_timed(metadata: dict, icon_dir: str) -> dict:
-    now = datetime.now()
-    if now.hour > 4 and now.hour < 16:
-        metadata["weather"][0]["icon"] = (
-            f"{icon_dir}/{metadata['weather'][0]['icon'].replace('n', 'd')}.png"
-            if 'n' in metadata['weather'][0]['icon']
-            else f"{icon_dir}/{metadata['weather'][0]['icon']}.png")
-    elif 'd' in metadata['weather'][0]['icon']:
-        metadata["weather"][0]["icon"] = f"{icon_dir}/{metadata['weather'][0]['icon'].replace('d', 'n')}.png"
-    else:
-        metadata["weather"][0]["icon"] = f"{icon_dir}/{metadata['weather'][0]['icon']}.png"
-    return metadata
-
-
-def auto_fetch_location(cache_dir: str) -> dict:
+def auto_locate(cache_dir: str) -> dict:
     cache_posix_path = pathlib.PosixPath(f"{cache_dir}/location.json")
     if not cache_posix_path.is_file(): # assuming the directory exists
         fetched_location = utils.get_location()
@@ -97,24 +116,15 @@ if __name__ == "__main__":
 
     config["weather"]["cache_dir"] = os.path.expandvars(
         config["weather"]["cache_dir"])
-    config["weather"]["icon_dir"] = os.path.expandvars(
-        config["weather"]["icon_dir"])
     pathlib.PosixPath(config["weather"]["cache_dir"]).mkdir(
         parents=True, exist_ok=True)
 
     match sys.argv[1]:
         case "fetch":
-            _metadata = json.loads(
-                pathlib.PosixPath(FALLBACK_PATH).read_text())
-            _metadata = overwrite_weather_icon_timed(
-                _metadata, config["weather"]["icon_dir"])
-            print(json.dumps(_metadata))  # fallback print
-
-            _metadata = check_cache_and_get(
+            _metadata = cache_and_get(
                 config["weather"]["cache_dir"],
                 FALLBACK_PATH,
                 config["tokens"]["openweather"],
-                config["weather"]["icon_dir"],
             )
             print(json.dumps(_metadata))
 

@@ -2,27 +2,27 @@
   (box :class "melody-layout-box"
        :space-evenly false
        :spacing 20
-    (_melodycover :status {pctl_sub.status}
-                  :bright {pctl_sub.bright}
-                  :dark {pctl_sub.dark}
-                  :cover_path {pctl_sub['mpris:artUrl']})
     (box :space-evenly false
          :class "melody-layout-box"
          :orientation "vertical"
          :spacing 30
       (_melodyplayer :title {pctl_sub['xesam:title']}
                      :artist {pctl_sub['xesam:artist']})
-      (_melodyapps :one "pushd ~;neovide;popd &"
-                   :two "pushd ~;shotwell;popd &"
-                   :three "pushd ~;nemo;popd &"
-                   :four "pushd ~;gimp;popd &"
-                   :five "pushd ~;st;popd &"
+      (_melodyapps :one "pushd ~;neovide;popd"
+                   :two "pushd ~;shotwell;popd"
+                   :three "pushd ~;nemo;popd"
+                   :four "pushd ~;gimp;popd"
+                   :five "pushd ~;st;popd"
                    :six "qalculate-gtk &"
                    :one_icon ""
                    :two_icon ""
                    :three_icon ""
                    :four_icon ""
                    :five_icon ""
-                   :six_icon ""))))
+                   :six_icon ""))
+    (_melodycover :status {pctl_sub.status}
+                  :bright {pctl_sub.bright}
+                  :dark {pctl_sub.dark}
+                  :cover_path {pctl_sub['mpris:artUrl']})))
 
 ;; vim:ft=yuck

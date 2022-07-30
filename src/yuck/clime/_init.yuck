@@ -1,0 +1,11 @@
+(include "./src/yuck/clime/_env.yuck")
+(include "./src/yuck/clime/_modules.yuck")
+(include "./src/yuck/clime/_layout.yuck")
+
+(defwindow clime :stacking "bg"
+  :windowtype "normal"
+  :wm-ignore true
+  :geometry (geometry :x -70 :y 20 :width "12%" :height "5%" :anchor "top right")
+  (clime_layout))
+
+;; vim:ft=yuck

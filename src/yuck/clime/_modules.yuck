@@ -1,0 +1,58 @@
+(defwidget _miniweather [min max feels category unit temp city country 
+  icon min_text max_text]
+  (box :space-evenly false
+       :orientation "vertical"
+       :spacing 20
+       :class "clime-layout-box"
+
+    (box :space-evenly false
+         :class "clime-upper-box"
+         :spacing 30
+      (label :text icon
+             :hexpand true
+             :halign "start"
+             :class "clime-img")
+      (label :text "${round(temp,0)}${unit}"
+             :class "clime-temp"
+             :halign "end"))
+
+    (box :space-evenly false
+         :orientation "vertical"
+         :halign "start"
+         :class "clime-middle-box"
+      (label :halign "start"
+             :text "${city}, ${country}"
+             :class "clime-city")
+      (label :halign "start"
+             :text category
+             :class "clime-category")
+      (label :halign "start"
+             :text "Feels like ${round(feels,0)}${unit}"
+             :class "clime-feels"))
+
+    (box :space-evenly false
+         :class "clime-lower-box"
+      (box :space-evenly false
+           :class "clime-max-box"
+           :orientation "vertical"
+           :hexpand true
+        (label :hexpand true
+               :halign "start"
+               :text max_text
+               :class "clime-max-label")
+        (label :hexpand true
+               :halign "start" 
+               :text "${round(max,0)}${unit}"
+               :class "clime-max"))
+      (box :space-evenly false
+           :class "clime-max-box"
+           :orientation "vertical"
+        (label :hexpand true
+               :halign "end"
+               :text min_text
+               :class "clime-max-label")
+        (label :halign "start" 
+               :text "${round(min,0)}${unit}"
+               :class "clime-min")))))
+
+;; vim:ft=yuck

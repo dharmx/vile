@@ -6,7 +6,6 @@
     (box :orientation "vertical"
          :class "vertigo-reveal-box"
          :space-evenly false
-
       (_label :text vertigo_volume_status
               :L vertigo_volume_toggle
               :tooltip "volume: ${vertigo_volume_level}"

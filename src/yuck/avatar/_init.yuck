@@ -19,6 +19,7 @@
            :vexpand true
            :hexpand true
            :spacing 15
+
         (avatar_mpd :current mpd_current
                     :duration mpd_duration
                     :progress mpd_progress
@@ -38,18 +39,18 @@
                     :pause_icon ""
                     :play_icon "")
         (avatar_pctl :icon ""
-                    :separator ""
-                    :album "${pctl_sub['xesam:album']}"
-                    :title "${pctl_sub['xesam:title']}"
-                    :artist "${pctl_sub['xesam:artist']}"
-                    :prev "playerctl previous"
-                    :prev_icon ""
-                    :next "playerctl next"
-                    :next_icon ""
-                    :player "${pctl_sub.player}"
-                    :minimal "playerctld shift"
-                    :minimal_icon ""
-                    :pause_icon ""
-                    :play_icon "")))))
+                     :separator ""
+                     :album "${pctl_sub['xesam:album']}"
+                     :title "${pctl_sub['xesam:title']}"
+                     :artist "${pctl_sub['xesam:artist']}"
+                     :prev "playerctl previous"
+                     :prev_icon ""
+                     :next "playerctl next"
+                     :next_icon ""
+                     :player "${pctl_sub.player}"
+                     :minimal "playerctld shift"
+                     :minimal_icon ""
+                     :pause_icon ""
+                     :play_icon "")))))
 
 ;; vim:ft=yuck

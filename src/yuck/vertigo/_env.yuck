@@ -3,6 +3,7 @@
 
 (defvar vertigo_open false)
 (defvar vertigo_revealex false)
+
 (defvar vertigo_remove "./src/shell/workspaces.zsh remove")
 (defvar vertigo_create "./src/shell/workspaces.zsh create")
 (defvar vertigo_volume_toggle "pamixer --toggle-mute")
