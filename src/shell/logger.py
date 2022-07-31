@@ -75,6 +75,7 @@ if __name__ == "__main__":
     match sys.argv[1]:
         case "subscribe":
             utils.create_parents_file(CACHE_PATH) # mkdir --parents
+            utils.create_parents_file(QUOTE_PATH) # mkdir --parents
             utils.watcher(
                 CACHE_PATH,
                 lambda contents: sys.stdout.write(

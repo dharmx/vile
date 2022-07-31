@@ -16,6 +16,11 @@
         (label :class "lumin-date-label"
                :halign "end"
                :text "${vertigo_time.dom} ${vertigo_time.month} ${vertigo_time.year} / ${vertigo_time.hour}:${vertigo_time.min}"))
-      (_luminquote :icon "" :quote "All the space without you in it, is empty." :auth " Iain Thomas"))))
+      (_search :engine "$BROWSER https://duckduckgo.com &"
+               :command "$BROWSER https://duckduckgo.com/?q={} &"
+               :placeholder "Search..."
+               :timeout "5s"
+               :icon "") ; 
+      (_luminquote :icon "" :quote "All the space without you in it, is empty." :auth " Iain Thomas"))))
 
 ;; vim:ft=yuck

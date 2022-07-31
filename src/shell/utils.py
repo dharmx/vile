@@ -17,7 +17,7 @@
 # Read the complete license here:
 # <https://github.com/dharmx/vile/blob/main/LICENSE.txt>
 
-from datetime import datetime
+import json
 import os
 import pathlib
 import random
@@ -397,18 +397,46 @@ def get_mime_icon_path(mimetype: str, size: int = 32) -> str:
         return info.get_filename()
 
 
-def get_location():
-    response = requests.get('https://api64.ipify.org?format=json').json()
-    ip_address = response["ip"]
-    response = requests.get(f'https://ipapi.co/{ip_address}/json/').json()
+def get_location() -> dict | None:
+    try:
+        response = requests.get('https://api64.ipify.org?format=json').json()
+        ip_address = response["ip"]
+        response = requests.get(f'https://ipapi.co/{ip_address}/json/').json()
+        return {
+            "latitude": response.get("latitude"),
+            "longitude": response.get("longitude"),
+            "city": response.get("city"), 
+            "country": response.get("country_name"),
+            "lang": response.get("languages").split(",")[0],
+        }
+    except requests.exceptions.ConnectionError:
+        return None
 
-    return {
-        "latitude": response.get("latitude"),
-        "longitude": response.get("longitude"),
-        "city": response.get("city"), 
-        "country": response.get("country_name"),
-        "lang": response.get("languages").split(",")[0],
-    }
+
+def auto_locate(cache_dir: str) -> dict | None:
+    cache_posix_path = pathlib.PosixPath(f"{cache_dir}/location.json")
+    if not cache_posix_path.is_file():  # assuming the directory exists
+        fetched_location = get_location()
+        if not fetched_location:
+            return None
+
+        cache_posix_path.write_text(json.dumps(fetched_location))
+        return fetched_location
+    return json.loads(cache_posix_path.read_text())
+
+
+def fetch_save(link: str, save_path: str, callback: typing.Callable = None) -> bool:
+    try:
+        data = requests.get(link)
+        if data.status_code == 200:
+            metadata = data.json()
+            if metadata:
+                metadata = callback(metadata)
+            pathlib.PosixPath(save_path).write_text(json.dumps(metadata))
+            return True
+        return False
+    except requests.exceptions.ConnectionError:
+        return False
 
 
 # vim:filetype=python

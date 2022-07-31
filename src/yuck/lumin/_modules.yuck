@@ -65,4 +65,16 @@
         strength < 51 ? okay :
           strength < 76 ? good : excellent})))
 
+(defwidget _search [engine command placeholder timeout icon]
+  (box :space-evenly false 
+       :class "lumin-search-box"
+    (input :onaccept command
+           :class "lumin-search"
+           :hexpand true
+           :timeout timeout
+           :value placeholder)
+    (button :onclick engine
+            :class "lumin-search-button"
+            :timeout timeout icon)))
+
 ;; vim:ft=yuck
