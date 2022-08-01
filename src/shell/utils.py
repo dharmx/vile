@@ -1,6 +1,6 @@
 """Utility module. Shared across almost all of the python scripts / modules."""
 
-# Authored By dharmx <dharmx@gmail.com> under:
+# Authored By dharmx <dharmx.dev@gmail.com> under:
 # GNU GENERAL PUBLIC LICENSE
 # Version 3, 29 June 2007
 #
@@ -27,6 +27,7 @@ import time
 import typing
 import unicodedata
 
+from wand.image import COLORSPACE_TYPES, Image
 from html.parser import HTMLParser
 from io import StringIO
 
@@ -430,13 +431,24 @@ def fetch_save(link: str, save_path: str, callback: typing.Callable = None) -> b
         data = requests.get(link)
         if data.status_code == 200:
             metadata = data.json()
-            if metadata:
+            if callback:
                 metadata = callback(metadata)
             pathlib.PosixPath(save_path).write_text(json.dumps(metadata))
             return True
         return False
     except requests.exceptions.ConnectionError:
         return False
+
+
+def img_dark_bright_col(filepath: str, colors: int = 10) -> tuple:
+    with Image(filename=filepath) as image:
+        image.quantize(
+            number_colors=colors, 
+            colorspace_type=COLORSPACE_TYPES[21], 
+            dither=True, measure_error=False, treedepth=8)
+        return tuple(
+            "#%02X%02X%02X" % (item.red_int8, item.green_int8, item.blue_int8) 
+            for item in image.histogram)
 
 
 # vim:filetype=python

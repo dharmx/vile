@@ -1,7 +1,7 @@
 #!/usr/bin/env --split-string=python -u
 """Script to cache and fetch the current track details for MPD"""
 
-# Authored By dharmx <dharmx@gmail.com> under:
+# Authored By dharmx <dharmx.dev@gmail.com> under:
 # GNU GENERAL PUBLIC LICENSE
 # Version 3, 29 June 2007
 #
@@ -21,13 +21,11 @@
 import json
 import os
 import pathlib
-import subprocess
+import utils
 import time
 
 import mpd
 from mpd.base import CommandError
-
-# WARN: A full rewrite of this script is underway.
 
 class MPDHandler:
     """A class that represents the MPD daemon."""
@@ -139,38 +137,12 @@ class MPDHandler:
         metadata["current"]["file"] = self.get(metadata["current"]["file"])
         metadata["current"]["status"] = self._client.status()["state"]
 
-        # TODO: Use mutagen / imagemagik python bindings instead.
         # simplify image + apply dither for handling gradients + get histogram -> it will yield 8 hex codes
-        colors = [
-            *map(
-                lambda item: item.strip().split(" ")[2][:7],
-                (
-                    subprocess.check_output(
-                        " ".join(
-                            [
-                                "convert",
-                                f"\"{metadata['current']['file']}\"",
-                                "-depth",
-                                "8",
-                                "+dither",
-                                "-colors",
-                                "8",
-                                "-format",
-                                "%c",
-                                "histogram:info:",
-                            ]
-                        ),
-                        shell=True
-                    )
-                    .decode("utf8")
-                    .splitlines()
-                ),
-            )
-        ]
+        colors = utils.img_dark_bright_col(metadata['current']['file'])
 
         # pick out the brightest and the darkest color and use that as foreground | background.
-        metadata["current"]["bright"] = colors[0]
-        metadata["current"]["dark"] = colors[5]
+        metadata["current"]["bright"] = colors[3]
+        metadata["current"]["dark"] = colors[9]
         return json.dumps(metadata) if tojson else metadata
 
 
@@ -188,7 +160,6 @@ class MPDHandler:
             if "directory" not in todict:
                 self.create(todict["file"])
 
-    # TODO: Use utils.watcher instead from utils.py
     def subscribe(self, interval: float = 1.0) -> str:
         """A simple watcher that monitors track changes. And prints
         the current track info on track change in JSON format.

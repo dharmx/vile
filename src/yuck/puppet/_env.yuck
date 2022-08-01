@@ -1,3 +1,0 @@
-(deflisten puppet_cfg_sub "./src/shell/bspwm.bash -ss 1")
-
-;; vim:ft=yuck

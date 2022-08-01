@@ -109,8 +109,8 @@ yay -S gobject-introspection python python-pip playerctl --needed
 ```json
 {
   "player": {
-    "mpd_cache": "$XDG_CACHE_HOME/mpd",
-    "pctl_cache": "$XDG_CACHE_HOME/pctl",
+    "mpd_cache": "$XDG_CACHE_HOME/eww/mpd",
+    "pctl_cache": "$XDG_CACHE_HOME/eww/pctl",
     "default_art": "$XDG_CONFIG_HOME/eww/assets/cover.png"
   },
   "desktops": {
@@ -143,26 +143,72 @@ yay -S gobject-introspection python python-pip playerctl --needed
   "notify": {
     "limit": 50,
     "interval": 0.5,
-    "cache_path": "$XDG_CACHE_HOME/dunst/notifications.txt",
-    "quote_path": "$XDG_CACHE_HOME/dunst/quotes.txt",
+    "cache_path": "$XDG_CACHE_HOME/eww/dunst/notifications.txt",
+    "quote_path": "$XDG_CACHE_HOME/eww/dunst/quotes.txt",
     "default_quote": "To fake it is to stand guard over emptiness. \u2500\u2500 Arthur Herzog",
-    "timestamp": "%H:%M"
+    "timestamp": "%H:%M",
+    "excluded_appnames": ["volume"]
+  },
+  "location": {
+    "method": "automatic",
+    "cache_dir": "$XDG_CACHE_HOME/eww/location",
+    "latitude": null,
+    "longitude": null,
+    "city": null,
+    "country_code": null,
+    "lang": null,
+    "zip": null
   },
   "tokens": {
-    "openweather": "CURRENTLY_NOT_IN_USE",
-    "github": "CURRENTLY_NOT_IN_USE",
+    "openweather": "TOKEN",
     "gmail": "CURRENTLY_NOT_IN_USE"
   },
   "weather": {
-    "latitude": null,
-    "longitude": null,
     "units": "metric",
-    "city": "Wonderland",
-    "country_code": "lo",
-    "lang": "en",
-    "zip": "420699",
-    "cache_dir": "$XDG_CACHE_HOME/weather",
-    "icon_dir": "$XDG_CONFIG_HOME/eww/assets/weather"
+    "cache_dir": "$XDG_CACHE_HOME/eww/weather",
+    "icons": {
+        "01d": "",
+        "02d": "",
+        "03d": "",
+        "04d": "",
+        "09d": "",
+        "10d": "",
+        "11d": "",
+        "13d": "",
+        "50d": "",
+        "01n": "",
+        "02n": "",
+        "03n": "",
+        "04n": "",
+        "09n": "",
+        "10n": "",
+        "11n": "",
+        "13n": "",
+        "50n": "",
+        "default": ""
+    }
+  },
+  "covid": {
+    "cache_dir": "$XDG_CACHE_HOME/eww/covid",
+    "icons": {
+      "country": "",
+      "confirmed": "",
+      "deaths": ""
+    }
+  },
+  "pollution": {
+    "cache_dir": "$XDG_CACHE_HOME/eww/pollution",
+    "icons": {
+      "good": "",
+      "fair": "",
+      "moderate": "",
+      "poor": "",
+      "very_poor": ""
+    }
+  },
+  "github": {
+    "cache_dir": "$XDG_CACHE_HOME/eww/github",
+    "username": "dharmx"
   }
 }
 ```

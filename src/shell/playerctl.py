@@ -4,7 +4,7 @@ Here it is mostly being used for getting the current track metadata and feeding 
 to an YUCK listener variable.
 """
 
-# Authored By dharmx <dharmx@gmail.com> under:
+# Authored By dharmx <dharmx.dev@gmail.com> under:
 # GNU GENERAL PUBLIC LICENSE
 # Version 3, 29 June 2007
 #
@@ -25,7 +25,7 @@ import json
 import os
 import pathlib
 import shutil
-import subprocess
+import utils
 
 # supress GIO warnings.
 import gi
@@ -241,38 +241,12 @@ def get_bright_dark_from_cover(image_path: str) -> dict:
         return json.loads(color_cached.read_text())
 
     # generate the brightest and darkest color out of the image
-    # TODO: use python bindings rather than parsing STDOUT.
-    colors = [
-        *map(
-            lambda item: item.strip().split(" ")[2][:7],
-            (
-                subprocess.check_output(
-                    " ".join(
-                        [
-                            "convert",
-                            f'"{image_path}"',
-                            "-depth",
-                            "8",
-                            "+dither",
-                            "-colors",
-                            "8",
-                            "-format",
-                            "%c",
-                            "histogram:info:",
-                        ]
-                    ),
-                    shell=True,
-                )
-                .decode("utf8")
-                .splitlines()
-            ),
-        )
-    ]
+    colors = utils.img_dark_bright_col(image_path)
 
     # since Firefox only caches one thumbnail at a time and overwrites it
     # we need to keep on regenerating the colors and return them without 
     # caching them.
-    parsed_colors = {"bright": colors[0], "dark": colors[5]}
+    parsed_colors = {"bright": colors[3], "dark": colors[9]}
     if "firefox-mpris" in image_path:
         return parsed_colors
 
@@ -297,7 +271,7 @@ if __name__ == "__main__":
 
     # if there are no player on the first run then print fallback / dummy metadata.
     # WARN: Note that a really bad error is thrown when this check is not done.
-    # WARN: IIRC it is from the underlying C library so, you can really try-except that.
+    # WARN: IIRC it is from the underlying C library so, you can't really try-except that.
     if player_null_check(manager):
         player = Playerctl.Player()
         on_metadata(player, player.props.metadata)

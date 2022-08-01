@@ -45,7 +45,19 @@ import utils
 # presetted notification format strings i.e. they are just utility items that help reducing the size of code
 # another reason is convenience i.e. it would be easier to have all the formats in one place and defining them
 # would be less cumbersome.
-FORMATS = json.loads(pathlib.PosixPath(os.path.expandvars("$XDG_CONFIG_HOME/eww/src/shell/formats.json")).read_text())
+FORMATS = {
+    "spotifyd": "(_cardimage :identity ':::###::::XXXWWW%(id)s===::' :close_action './src/shell/logger.py rmid %(id)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(summary)s' :body '%(body)s' :close '繁' :image_height 100 :image_width 100 :image '%(iconpath)s' :appname '%(appname)s' :icon '%(iconpath)s' :icon_height 32 :icon_width 32 :timestamp '%(TIMESTAMP)s' :urgency '%(URGENCY)s')",
+    "ncspot": "(_cardimage :identity ':::###::::XXXWWW%(id)s===::' :close_action './src/shell/logger.py rmid %(id)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(summary)s' :body '%(body)s' :close '繁' :image_height 100 :image_width 100 :image '%(iconpath)s' :appname '%(appname)s' :icon '%(iconpath)s' :icon_height 32 :icon_width 32 :timestamp '%(TIMESTAMP)s' :urgency '%(URGENCY)s')",
+    "Spotify": "(_cardimage :class 'Spotify-rectangle' :identity ':::###::::XXXWWW%(id)s===::' :close_action './src/shell/logger.py rmid %(id)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(summary)s' :body '%(body)s' :close '繁' :image_height 100 :image_width 100 :image '%(iconpath)s' :appname '%(appname)s' :icon '%(iconpath)s' :icon_height 32 :icon_width 32 :timestamp '%(TIMESTAMP)s' :urgency '%(URGENCY)s')",
+    "shot_icon": "(_cardimage :class 'shot-image-bord-dashed' :identity ':::###::::XXXWWW%(id)s===::' :close_action './src/shell/logger.py rmid %(id)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(summary)s' :body '%(body)s' :close '繁' :image_height 100 :image_width 100 :image '%(iconpath)s' :appname '%(appname)s' :icon '%(iconpath)s' :icon_height 32 :icon_width 32 :timestamp '%(TIMESTAMP)s' :urgency '%(URGENCY)s')",
+    "shot": "(_cardscr :identity ':::###::::XXXWWW%(id)s===::' :close_action './src/shell/logger.py rmid %(id)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :delete '%(DELETE)s' :open '%(OPEN)s' :summary '%(summary)s' :image '%(iconpath)s' :image_height 250 :image_width 100 :urgency '%(URGENCY)s' :close '繁' :timestamp '%(TIMESTAMP)s')",
+    "default": "(_cardimage :identity ':::###::::XXXWWW%(id)s===::' :close_action './src/shell/logger.py rmid %(id)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(summary)s' :body '%(body)s' :close '繁' :image_height 100 :image_width 100 :image '%(iconpath)s' :appname '%(appname)s' :icon '%(iconpath)s' :icon_height 32 :icon_width 32 :timestamp '%(TIMESTAMP)s' :urgency '%(URGENCY)s')",
+    "notify-send": "(_cardimage :identity ':::###::::XXXWWW%(id)s===::' :close_action './src/shell/logger.py rmid %(id)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(summary)s' :body '%(body)s' :close '繁' :image_height 100 :image_width 100 :image '%(iconpath)s' :appname '%(appname)s' :icon './assets/browser.png' :icon_height 32 :icon_width 32 :timestamp '%(TIMESTAMP)s' :urgency '%(URGENCY)s')",
+    "empty": "(box :class 'disclose-empty-box' :height 750 :orientation 'vertical' :space-evenly false (image :class 'disclose-empty-banner' :valign 'end' :vexpand true :path './assets/wedding-bells.png' :image-width 250 :image-height 250) (label :vexpand true :valign 'start' :wrap true :class 'disclose-empty-label' :text '%(QUOTE)s'))",
+    "brightness": "(_cardprog :identity ':::###::::XXXWWW%(id)s===::' :close_action './src/shell/logger.py rmid %(id)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(summary)s' :body '%(body)s' :close '繁' :image_height 100 :image_width 100 :image '%(iconpath)s' :appname '%(appname)s' :icon '%(iconpath)s' :icon_height 32 :icon_width 32 :timestamp '%(TIMESTAMP)s' :urgency '%(URGENCY)s' :progress '%(progress)s')",
+    "todo": "(_cardradial :identity ':::###::::XXXWWW%(id)s===::' :close_action './src/shell/logger.py rmid %(id)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(summary)s' :body '%(body)s' :close '繁' :appname '%(appname)s' :progress %(PERC)s :thickness 20.0 :total %(TOTAL)s :done %(DONE)s :timestamp '%(TIMESTAMP)s' :urgency '%(URGENCY)s')",
+    "volume": "(_cardprog :identity ':::###::::XXXWWW%(id)s===::' :close_action './src/shell/logger.py rmid %(id)s' :limit_body '%(BODY_LIMITER)s' :limit_summary '%(SUMMARY_LIMITER)s' :summary '%(summary)s' :body '%(body)s' :close '繁' :image_height 100 :image_width 100 :image '%(iconpath)s' :appname '%(appname)s' :icon '%(iconpath)s' :icon_height 32 :icon_width 32 :timestamp '%(TIMESTAMP)s' :urgency '%(URGENCY)s' :progress '%(progress)s')"
+}
 
 if __name__ == "__main__":
     # load only notification related options from the config JSON
@@ -74,8 +86,8 @@ if __name__ == "__main__":
         sys.argv = ("dummy", "dummy")
     match sys.argv[1]:
         case "subscribe":
-            utils.create_parents_file(CACHE_PATH) # mkdir --parents
-            utils.create_parents_file(QUOTE_PATH) # mkdir --parents
+            utils.create_parents_file(CACHE_PATH)  # mkdir --parents
+            utils.create_parents_file(QUOTE_PATH)  # mkdir --parents
             utils.watcher(
                 CACHE_PATH,
                 lambda contents: sys.stdout.write(
@@ -124,14 +136,10 @@ if __name__ == "__main__":
                     }
                 """
                 details["TIMESTAMP_FORMAT"] = config["timestamp"]
-                saved_path = handlers.redir_to_handlers(FORMATS, details)
-
-                # actual point where the notification is being logged.
-                utils.file_add_line(
-                    CACHE_PATH,
-                    saved_path,
-                    HISTORY_LIMIT,
-                )
+                if not config["excluded_appnames"] or details["appname"] not in config["excluded_appnames"]:
+                    saved_path = handlers.redir_to_handlers(FORMATS, details)
+                    # actual point where the notification is being logged.
+                    utils.file_add_line(CACHE_PATH, saved_path, HISTORY_LIMIT)
 
             # start eavesdropping on the org.freedesktop.Notifications interface and log the notification info
             cache.Eavesdropper(master_callback, CACHE_DIR).eavesdrop()
