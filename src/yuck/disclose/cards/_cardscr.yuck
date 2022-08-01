@@ -29,6 +29,7 @@
                :text timestamp)
         (button :class "disclose-cardscr-close-button disclose-cardscr-close-button-${urgency}"
                 :onclick close_action
+                :timeout "2s"
           (label :text close
                  :class "disclose-cardscr-close-icon disclose-cardscr-close-icon-${urgency}")))
       (box :class "disclose-cardscr-image"

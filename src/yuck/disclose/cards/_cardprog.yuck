@@ -39,6 +39,7 @@
                :class "disclose-cardprog-appname-label disclose-cardprog-appname-label-${urgency} disclose-cardprog-appname-label-${appname}")
         (button :class "disclose-cardprog-close-button disclose-cardprog-close-button-${urgency} disclose-cardprog-close-button-${appname}"
                 :onclick close_action
+                :timeout "2s"
           (label :text close
                  :class "disclose-cardprog-close-icon disclose-cardprog-close-icon-${urgency} disclose-cardprog-close-icon-${appname}")))
       (box :class "disclose-cardprog-separator disclose-cardprog-separator-${urgency} disclose-cardprog-separator-${appname}"

@@ -41,6 +41,7 @@
                :class "disclose-cardimage-appname-label disclose-cardimage-appname-label-${urgency} disclose-cardimage-appname-label-${appname}")
         (button :class "disclose-cardimage-close-button disclose-cardimage-close-button-${urgency} disclose-cardimage-close-button-${appname}"
                 :onclick close_action
+                :timeout "2s"
           (label :text close
                  :class "disclose-cardimage-close-icon disclose-cardimage-close-icon-${urgency} disclose-cardimage-close-icon-${appname}")))
 

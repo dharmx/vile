@@ -195,8 +195,7 @@ class Eavesdropper:
         # not meant for you.
         # removing the eavesdrop key from rules will not send the Notify method's
         # contents to you (you can try and see what happens)
-        bus.add_match_string(
-            ",".join([f"{key}={value}" for key, value in rules.items()]))
+        bus.add_match_string(",".join([f"{key}={value}" for key, value in rules.items()]))
         bus.add_message_filter(self._message_callback)
 
         try:

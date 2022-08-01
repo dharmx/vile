@@ -1,0 +1,16 @@
+(defwidget _powermenu [shutdown shutdown_icon reboot reboot_icon logout 
+                       logout_icon lock lock_icon sleep sleep_icon]
+  (box :vexpand true 
+       :hexpand true
+       :space-evenly false 
+       :class "power-box" 
+       :valign "end"
+       :halign "end"
+       :spacing 10
+    (button :class "power-shutdown-button" :onclick "${shutdown} && eww close power" shutdown_icon)
+    (button :class "power-reboot-button" :onclick "${reboot} && eww close power" reboot_icon)
+    (button :class "power-logout-button" :onclick "${logout} && eww close power" logout_icon)
+    (button :class "power-lock-button" :onclick "${lock} && eww close power" lock_icon)
+    (button :class "power-sleep-button" :onclick "${sleep} && eww close power" sleep_icon)))
+
+; vim:filetype=yuck

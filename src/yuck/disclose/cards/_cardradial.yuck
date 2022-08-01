@@ -30,6 +30,7 @@
                :class "disclose-cardradial-appname-label disclose-cardradial-appname-label-${urgency} disclose-cardradial-appname-label-${appname}")
         (button :class "disclose-cardradial-close-button disclose-cardradial-close-button-${urgency} disclose-cardradial-close-button-${appname}"
                 :onclick close_action
+                :timeout "2s"
           (label :text close
                  :class "disclose-cardradial-close-icon disclose-cardradial-close-icon-${urgency} disclose-cardradial-close-icon-${appname}")))
       (box :class "disclose-cardradial-separator disclose-cardradial-separator-${urgency} disclose-cardradial-separator-${appname}"

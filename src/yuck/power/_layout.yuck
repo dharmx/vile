@@ -1,0 +1,30 @@
+(defvar power_reveal false)
+
+(defwidget power_layout []
+  (box :class "power-layout-box"
+       :space-evenly false
+       :orientation "vertical"
+       :style "background-image: url('./assets/ocean.png')"
+    (box :class "power-option-box" :spacing 15 :space-evenly false :valign "start" :halign "start"
+      (label :text "" :class "power-label-icon")
+      (label :text "P O W E R" 
+             :class "power-label"))
+    (box :space-evenly false
+         :hexpand true
+         :vexpand true
+      (box :spacing 15 :space-evenly false :valign "end" :halign "start"
+        (label :text "" :class "power-label-icon")
+        (label :text "${vertigo_time.hour} : ${vertigo_time.min}" 
+               :class "power-label power-label-time"))
+      (_powermenu :shutdown "sudo -A poweroff" 
+                  :reboot "sudo -A reboot" 
+                  :logout "sudo -A loginctl kill-session self" 
+                  :lock "~/.bin/notify/i3lock.sh maker" 
+                  :sleep "sudo -A systemctl suspend"
+                  :shutdown_icon ""
+                  :reboot_icon ""
+                  :logout_icon ""
+                  :lock_icon ""
+                  :sleep_icon ""))))
+
+; vim:filetype=yuck
