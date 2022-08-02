@@ -16,7 +16,7 @@
     (button :onclick six
             :class "lumin-app-btn lumin-app-btn-six" icon_six)))
 
-(defwidget _lumininfo []
+(defwidget _lumininfo [?class]
   (box :space-evenly false
        :spacing 10
        :class "lumin-info-box"

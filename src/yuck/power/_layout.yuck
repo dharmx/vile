@@ -1,14 +1,30 @@
-(defvar power_reveal false)
-
 (defwidget power_layout []
   (box :class "power-layout-box"
        :space-evenly false
        :orientation "vertical"
        :style "background-image: url('./assets/ocean.png')"
-    (box :class "power-option-box" :spacing 15 :space-evenly false :valign "start" :halign "start"
-      (label :text "" :class "power-label-icon")
-      (label :text "P O W E R" 
-             :class "power-label"))
+    (box :valign "start" :space-evenly false :spacing 25
+      (_sundialinfo :class "power" :halign "end" :hexpand true)
+      (_infobatnolbl :battery {EWW_BATTERY.BAT0.capacity}
+                     :status {EWW_BATTERY.BAT0.status}
+                     :charge ""
+                     :one ""
+                     :two ""
+                     :three ""
+                     :four ""
+                     :five ""
+                     :six ""
+                     :seven ""
+                     :class "power-info-bat")
+      (_infonetnolbl :strength ocular_net
+                     :offline ""
+                     :excellent ""
+                     :good ""
+                     :okay ""
+                     :slow ""
+                     :class "power-info-net")
+      (label :text "|" :class "power-separator")
+      (button :onclick "eww close power" :class "power-close-button" ""))
     (box :space-evenly false
          :hexpand true
          :vexpand true

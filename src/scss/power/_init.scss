@@ -17,13 +17,19 @@
   font-size: 25;
 }
 
-// .power-option-box {
-//   padding-left: 5em;
-// }
-
 .power-label-icon {
   font-size: 30;
   padding-bottom: 0.06em;
+  color: rgba($base03, 0.6);
+}
+
+.power-close-button {
+  font-size: 30;
+  color: rgba($base03, 0.6);
+}
+
+.power-close-button:hover {
+  color: $base11;
 }
 
 .power-box {
@@ -43,29 +49,43 @@
 }
 
 .power-shutdown-button label {
-  // background-color: rgba($base11, 0.6);
   color: rgba($base11, 0.8);
 }
 
-// .power-reboot-button {
-//   background-color: rgba($base09, 0.6);
-//   color: darken($base09, 50%);
-// }
+.power-info-net {
+  font-size: 25;
+  color: rgba($base03, 0.6);
+}
 
-// .power-lock-button {
-//   background-color: rgba($base14, 0.6);
-//   color: darken($base14, 50%);
-// }
+.power-info-bat {
+  font-size: 30;
+  color: rgba($base03, 0.6);
+}
 
-// .power-sleep-button {
-//   background-color: rgba($base13, 0.6);
-//   color: darken($base13, 50%);
-// }
+.power-info-bat label {
+  font-size: 30;
+  color: rgba($base03, 0.6);
+}
 
-// .power-logout-button {
-//   background-color: rgba($base15, 0.6);
-//   color: darken($base15, 50%);
-// }
+.power-separator {
+  color: rgba($base03, 0.6);
+  font-size: 15;
+  padding-top: 0.15em;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  font-family: "Iosevka Nerd Font";
+  font-weight: 200;
+}
+
+.power-sundial-label {
+  font-size: 20;
+  font-weight: bold;
+  border-radius: 0.2em;
+  padding: 0.4em;
+  padding-bottom: 0.5em;
+  font-family: "Poiret One";
+  color: rgba($base03, 0.8);
+}
 
 @import "./_override.scss";
 

@@ -43,8 +43,8 @@
                      :thickness 25
                      :class "ocular-time-radial" "${hour}:${min}"))
 
-(defwidget _sundialinfo [class halign ?prefix]
-  (label :class "${class}-sundial-label" :halign halign
+(defwidget _sundialinfo [class halign ?hexpand ?prefix]
+  (label :class "${class}-sundial-label" :halign halign :hexpand hexpand
              :text "${prefix}${vertigo_time.hour >= 2 && vertigo_time.hour <= 4 ? "Early Morning" :
                vertigo_time.hour <= 5 ? "Dawn" :
                vertigo_time.hour >= 6 && (vertigo_time.hour <= 8 && vertigo_time.min <= 59) ? "Morning" :
