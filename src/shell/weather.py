@@ -39,9 +39,9 @@ def prepare_link(options: dict, token: str) -> str | None:
 
 def assign_glyph(icon_name: str, icons: dict) -> str:
     try:
-        return icons[icon_name]
+        return os.path.expandvars(icons[icon_name])
     except KeyError:
-        return icons["default"]
+        return os.path.expandvars(icons["default"])
 
 
 def day_night(path_frag: str, time_of_day: str, date_time: datetime) -> pathlib.PosixPath:
@@ -61,6 +61,7 @@ def cache_and_get(config: dict, fallback: str) -> pathlib.PosixPath:
 
     def callback(metadata: dict) -> dict:
         metadata["weather"][0]["glyph"] = assign_glyph(metadata["weather"][0]["icon"], config["weather"]["icons"])
+        metadata["weather"][0]["image"] = assign_glyph(metadata["weather"][0]["icon"], config["weather"]["images"])
         return metadata
     if not date_path.is_file() and not utils.fetch_save(prepared_link, str(date_path), callback):
         return fallback
