@@ -10,19 +10,19 @@
   font-family: Phosphor, Koulen;
   font-size: 25;
   background-color: rgba(#000, 0.0);
-  color: $shade00;
+  color: rgba($shade00, 0.8);
 }
 
 .power-label-time {
-  font-size: 30;
+  font-size: 25;
 }
 
-.power-option-box {
-  padding-left: 5em;
-}
+// .power-option-box {
+//   padding-left: 5em;
+// }
 
 .power-label-icon {
-  font-size: 40;
+  font-size: 30;
   padding-bottom: 0.06em;
 }
 
@@ -31,39 +31,41 @@
 }
 
 .power-box button:hover {
-  background-color: rgba($base05, 0.6);
+  background-color: rgba($base03, 0.6);
   transition: 200ms linear background-color;
 }
 
 .power-box button {
   padding: 0.4em;
+  background-color: rgba($shade00, 0.6);
+  color: rgba($base04, 0.6);
   box-shadow: 1px 1px 4px 4px $shade01;
 }
 
-.power-shutdown-button {
-  background-color: rgba($base11, 0.6);
-  color: darken($base11, 50%);
+.power-shutdown-button label {
+  // background-color: rgba($base11, 0.6);
+  color: rgba($base11, 0.8);
 }
 
-.power-reboot-button {
-  background-color: rgba($base09, 0.6);
-  color: darken($base09, 50%);
-}
+// .power-reboot-button {
+//   background-color: rgba($base09, 0.6);
+//   color: darken($base09, 50%);
+// }
 
-.power-lock-button {
-  background-color: rgba($base14, 0.6);
-  color: darken($base14, 50%);
-}
+// .power-lock-button {
+//   background-color: rgba($base14, 0.6);
+//   color: darken($base14, 50%);
+// }
 
-.power-sleep-button {
-  background-color: rgba($base13, 0.6);
-  color: darken($base13, 50%);
-}
+// .power-sleep-button {
+//   background-color: rgba($base13, 0.6);
+//   color: darken($base13, 50%);
+// }
 
-.power-logout-button {
-  background-color: rgba($base15, 0.6);
-  color: darken($base15, 50%);
-}
+// .power-logout-button {
+//   background-color: rgba($base15, 0.6);
+//   color: darken($base15, 50%);
+// }
 
 @import "./_override.scss";
 

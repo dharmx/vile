@@ -6,7 +6,7 @@
        :class "power-box" 
        :valign "end"
        :halign "end"
-       :spacing 10
+       :spacing 5
     (button :class "power-shutdown-button" :onclick "${shutdown} && eww close power" shutdown_icon)
     (button :class "power-reboot-button" :onclick "${reboot} && eww close power" reboot_icon)
     (button :class "power-logout-button" :onclick "${logout} && eww close power" logout_icon)

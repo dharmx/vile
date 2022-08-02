@@ -14,7 +14,7 @@
          :vexpand true
       (box :spacing 15 :space-evenly false :valign "end" :halign "start"
         (label :text "" :class "power-label-icon")
-        (label :text "${vertigo_time.hour} : ${vertigo_time.min}" 
+        (label :text "${vertigo_time.hour}  ${vertigo_time.min}" 
                :class "power-label power-label-time"))
       (_powermenu :shutdown "sudo -A poweroff" 
                   :reboot "sudo -A reboot" 
