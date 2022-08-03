@@ -1,5 +1,201 @@
 .chrono-layout-box {
-  font-family: Phosphor;
+  font-family: Phosphor, "Caviar Dreams";
+  background-color: $shade10;
+  padding-top: 0.7em;
+  font-size: 16;
+}
+
+.chrono-weather-box {
+  padding: 0 2.8em 0 2.8em;
+  background-size: 120%;
+  background-repeat: no-repeat;
+  border-radius: 0.5em;
+  background-blend-mode: exclusion;
+}
+
+.chrono-weather-glyph {
+  font-size: 100;
+  padding-top: 0.2em;
+}
+
+.chrono-weather-main {
+  font-size: 30;
+  font-weight: bold;
+  font-family: "Caviar Dreams";
+}
+
+.chrono-sundial-prefix,
+.chrono-sundial-label {
+  padding: 0;
+  margin: 0;
+  font-size: 15;
+  font-family: Phosphor, "Caviar Dreams";
+  font-weight: 500;
+}
+
+.chrono-weather-info-box {
+  border-radius: 0.5em;
+  opacity: 0.8;
+  font-size: 15;
+}
+
+.chrono-sundial-prefix,
+.chrono-weather-min-icon,
+.chrono-weather-pressure-icon,
+.chrono-weather-location-icon,
+.chrono-weather-max-icon,
+.chrono-weather-humid-icon {
+  padding-bottom: 0.1em;
+  font-size: 20;
+}
+
+.chrono-sundial-prefix {
+  color: darken($base15, 30%);
+}
+
+.chrono-weather-max-icon {
+  color: $base11;
+}
+
+.chrono-weather-min-icon {
+  color: darken($base09, 20%);
+}
+
+.chrono-weather-location-icon {
+  color: lighten($base07, 20%);
+}
+
+.chrono-weather-pressure-icon {
+  color: lighten($base13, 10%);
+}
+
+.chrono-sundial-label,
+.chrono-weather-min-label,
+.chrono-weather-location-label,
+.chrono-weather-pressure-label,
+.chrono-weather-max-label {
+  font-weight: bold;
+}
+
+.chrono-weather-temp {
+  font-size: 70;
+  font-weight: bold;
+}
+
+.chrono-calen-box {
+  font-size: 15;
+  background-image: linear-gradient(100deg, $shade02, $shade06);
+  color: $base05;
+  padding: 3em 0 0 0;
+  border-radius: 0.5em;
+}
+
+.chrono-calen-label {
+  font-weight: bold;
+  font-family: "Caviar Dreams";
+}
+
+.chrono-calen {
+  font-family: Dosis;
+  font-weight: bold;
+  padding: 1em 0.5em 0;
+
+  &:selected {
+    color: $base15;
+    font-weight: bolder;
+    border-radius: 50%;
+  }
+
+  &:indeterminate {
+    color: rgba($shade03, 0.3);
+  }
+}
+
+.chrono-calen.button {
+  color: $shade00;
+}
+
+.chrono-calen.highlight {
+  color: $base09;
+  font-weight: bold;
+}
+
+.chrono-time-box {
+  background-image: linear-gradient(100deg, $shade02, $shade06);
+  border-radius: 0.5em;
+  padding: 1.5em;
+  color: $base05;
+}
+
+.chrono-time-label {
+  font-size: 70;
+  font-weight: bolder;
+  color: $base09;
+  font-family: Modum;
+}
+
+.chrono-prog {
+  background-color: $shade00;
+  color: darken(lighten($base11, 11%), 15%);
+}
+
+.chrono-prog label {
+  padding: 1.8em;
+  background-color: $shade02;
+  color: $base09;
+  font-weight: bold;
+  font-family: Iosevka;
+}
+
+.chrono-sep {
+  background-color: $shade00;
+  padding-left: 0.18em;
+}
+
+.chrono-uptime-label {
+  font-size: 18;
+  font-family: Modum;
+}
+
+.chrono-weather-extra {
+  font-family: Phosphor, Dosis;
+  background-image: linear-gradient(100deg, $shade02, $shade06);
+  border-radius: 0.5em;
+  padding: 2em 0 2em 0;
+  font-size: 16;
+  color: $base05
+}
+
+.chrono-weather-extra-header {
+  color: $base15;
+  font-size: 20;
+  font-weight: bold;
+}
+
+.chrono-weather-extra-description {
+  font-size: 10;
+}
+
+.chrono-weather-humid-text,
+.chrono-weather-visible-text,
+.chrono-weather-wind-text,
+.chrono-weather-cloud-text {
+  color: $base09;
+  font-weight: bold;
+}
+
+.chrono-weather-humid-label,
+.chrono-weather-visible-label,
+.chrono-weather-wind-label,
+.chrono-weather-cloud-label {
+  color: $base04;
+}
+
+.chrono-weather-humid-icon,
+.chrono-weather-visible-icon,
+.chrono-weather-wind-icon,
+.chrono-weather-cloud-icon {
+  font-size: 20;
 }
 
 @import "./_override.scss";

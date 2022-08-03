@@ -43,11 +43,11 @@
            :hexpand true
            :halign "center"
         (button :class "disclose-cardscr-open-button disclose-cardscr-open-button-${urgency}"
-                :onclick open
+                :onclick open :timeout "2s"
           (label :text "Open"
                  :class "disclose-cardscr-open-label disclose-cardscr-open-label-${urgency}"))
         (button :class "disclose-cardscr-delete-button disclose-cardscr-delete-button-${urgency}"
-                :onclick delete
+                :onclick delete :timeout "2s"
           (label :text "Delete"
                  :class "disclose-cardscr-delete-label disclose-cardscr-delete-label-${urgency}"))))))
 

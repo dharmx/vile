@@ -6,7 +6,6 @@ import pathlib
 import sys
 from datetime import datetime
 
-import requests
 import utils
 
 
@@ -60,8 +59,10 @@ def cache_and_get(config: dict, fallback: str) -> pathlib.PosixPath:
     prepared_link = prepare_link(config["weather"], config["tokens"]["openweather"])
 
     def callback(metadata: dict) -> dict:
-        metadata["weather"][0]["glyph"] = assign_glyph(metadata["weather"][0]["icon"], config["weather"]["icons"])
-        metadata["weather"][0]["image"] = assign_glyph(metadata["weather"][0]["icon"], config["weather"]["images"])
+        for index in range(len(metadata["weather"])):
+            metadata["weather"][index]["glyph"] = assign_glyph(metadata["weather"][0]["icon"], config["weather"]["icons"])
+            metadata["weather"][index]["image"] = assign_glyph(metadata["weather"][0]["icon"], config["weather"]["images"])
+            metadata["weather"][index]["image_colors"] = utils.img_dark_bright_col(metadata["weather"][index]["image"])
         return metadata
     if not date_path.is_file() and not utils.fetch_save(prepared_link, str(date_path), callback):
         return fallback
@@ -80,6 +81,7 @@ if __name__ == "__main__":
             {
                 "main": "NA",
                 "glyph": "",
+                "image": "$XDG_CONFIG_HOME/eww/assets/01.jpg",
                 "icon": "03d"
             }
         ],
@@ -108,6 +110,12 @@ if __name__ == "__main__":
         case "fetch":
             _metadata = cache_and_get(CONFIG, FALLBACK)
             print(json.dumps(_metadata))
+        case "gist":
+            _metadata = cache_and_get(CONFIG, FALLBACK)
+            _box = []
+            for index in range(len(_metadata["weather"])):
+                _box += [_metadata["weather"][index][sys.argv[2]]]
+            print(", ".join(_box) if len(_box) > 2 else " and ".join(_box))
 
 
 # vim:filetype=python

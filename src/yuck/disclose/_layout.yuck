@@ -9,7 +9,7 @@
              :class "disclose-headers-label"
              :halign "start"
              :hexpand true)
-      (button :onclick "./src/shell/logger.py cls" :class "disclose-headers-clear" "")
+      (button :onclick "./src/shell/logger.py cls" :timeout "2s" :class "disclose-headers-clear" "")
       (button :onclick "eww close disclose" :class "disclose-headers-close" "署"))
     (scroll :hscroll false
             :vscroll true
