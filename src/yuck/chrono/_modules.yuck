@@ -1,0 +1,242 @@
+(defwidget _psundial [halign ?hexpand prefix]
+  (box :space-evenly false :class "chrono-sundial-box" :spacing 5
+    (label :text prefix :class "chrono-sundial-prefix")
+    (label :class "chrono-sundial-label" :halign halign :hexpand hexpand
+               :text {vertigo_time.hour >= 2 && vertigo_time.hour <= 4 ? "Early Morning" :
+                 vertigo_time.hour <= 5 ? "Dawn" :
+                 vertigo_time.hour >= 6 && (vertigo_time.hour <= 8 && vertigo_time.min <= 59) ? "Morning" :
+                 vertigo_time.hour >= 9 && (vertigo_time.hour <= 11 && vertigo_time.min <= 59) ? "Late Morning" :
+                 vertigo_time.hour == 12 && vertigo_time.min <= 29 ? "Midday" :
+                 vertigo_time.hour >= 12 && vertigo_time.hour <= 16 ? "Afternoon" :
+                 vertigo_time.hour > 16 && vertigo_time.hour <= 17 ? "Late Afternoon" :
+                 (vertigo_time.hour >= 17 && vertigo_time.min <= 1) || (vertigo_time.hour <= 18 && vertigo_time.min <= 20) ? "Early Evening" :
+                 vertigo_time.hour >= 18 && vertigo_time.hour <= 19 ? "Dusk" :
+                 vertigo_time.hour > 19 && vertigo_time.hour <= 21 ? "Late Evening" :
+                 vertigo_time.hour > 21 ? "Night" : "Midnight"})))
+
+
+(defwidget _weather [glyph main temp feels sundial unit image max min
+                     max_icon min_icon overlay textcol bright_col info_label
+                     pressure pressure_icon rain rain_icon]
+  (box :space-evenly false
+       :class "chrono-weather-box"
+       :style "
+         background-image: radial-gradient(circle farthest-side at bottom, ${overlay} 100%), url('${image}');
+         color: ${textcol};
+       "
+       :halign "center"
+       :valign "start"
+       :height 300
+       :width 450
+    (box :space-evenly false
+         :orientation "vertical"
+         :class "chrono-weather-main-sundial-glyph"
+         :halign "start"
+         :hexpand true
+         :valign "center"
+         :vexpand true
+         :spacing 60
+      (label :text glyph :class "chrono-weather-glyph")
+      (box :halign "start" 
+           :orientation "vertical" 
+           :class "chrono-weather-main-sundial" 
+           :spacing -10
+        (label :class "chrono-weather-main" 
+               :valign "end" 
+               :halign "start" 
+               :text main)
+        (_psundial :halign "start" 
+                   :prefix sundial)))
+    (box :space-evenly false 
+         :orientation "vertical" 
+         :class "chrono-weather-info-box"
+         :valign "center"
+         :spacing 80
+         :hexpand true
+         :halign "end"
+      (box :orientation "vertical" 
+           :class "chrono-weather-temp-feels"
+           :spacing -15 
+           :space-evenly false
+        (label :text "${temp}${unit}" 
+               :halign "end"
+               :class "chrono-weather-temp")
+        (label :halign "end" 
+               :text "Feels like ${feels}${unit}" 
+               :class "chrono-weather-feels"))
+      (box :space-evenly false 
+           :spacing 20 
+           :halign "end" 
+           :class "chrono-weather-info-box"
+        (label :vexpand true 
+               :text info_label 
+               :class "chrono-weather-info-label")
+        (box :orientation "vertical" 
+             :class "chrono-weather-cloud-pressure-rain"
+             :halign "end" 
+             :spacing 10
+          (box :space-evenly false 
+               :class "chrono-weather-rain"
+               :spacing 5
+            (label :text rain_icon 
+                   :class "chrono-weather-rain-icon")
+            (label :text rain 
+                   :class "chrono-weather-rain-label"))
+          (box :space-evenly false 
+               :class "chrono-weather-pressure"
+               :spacing 5
+            (label :text pressure_icon 
+                   :class "chrono-weather-pressure-icon")
+            (label :text pressure 
+                   :class "chrono-weather-pressure-label")))
+        (box :orientation "vertical" 
+             :class "chrono-weather-max-min-humid"
+             :halign "end"
+             :spacing 10
+          (box :space-evenly false 
+               :class "chrono-weather-max"
+               :spacing 5
+            (label :text max_icon 
+                   :class "chrono-weather-max-icon")
+            (label :text max 
+                   :class "chrono-weather-max-label"))
+          (box :space-evenly false 
+               :class "chrono-weather-min"
+               :spacing 5
+            (label :text min_icon 
+                   :class "chrono-weather-min-icon")
+            (label :text min 
+                   :class "chrono-weather-min-label")))))))
+
+(defwidget _weatherextras [wind wind_icon cloud cloud_icon visibility visibility_icon humidity humidity_icon
+                           wind_label cloud_label visibility_label humidity_label header]
+  (box :space-evenly false
+       :class "chrono-weather-extra"
+       :width 450
+       :halign "center"
+       :orientation "vertical"
+       :spacing 15
+    (label :text header 
+           :class "chrono-weather-extra-header")
+    (box :class "chrono-weather-visible-humid"
+         :valign "center"
+         :vexpand true
+         :spacing 20
+      (box :space-evenly false 
+           :class "chrono-weather-humid"
+           :spacing 5 
+           :orientation "vertical" 
+        (box :space-evenly false 
+             :class "chrono-weather-humid-label-icon"
+             :spacing 5 
+             :halign "center"
+          (label :text humidity_icon 
+                 :class "chrono-weather-humid-icon")
+          (label :text humidity_label 
+                 :class "chrono-weather-humid-text"))
+        (label :text humidity 
+               :class "chrono-weather-humid-label"))
+      (box :space-evenly false 
+           :class "chrono-weather-visible"
+           :spacing 5 
+           :orientation "vertical" 
+        (box :space-evenly false 
+             :class "chrono-weather-visible-label-icon"
+             :spacing 5 
+             :halign "center"
+          (label :text visibility_icon 
+                 :class "chrono-weather-visible-icon")
+          (label :text visibility_label 
+                 :class "chrono-weather-visible-text"))
+        (label :text visibility 
+               :class "chrono-weather-visible-label")))
+    (box :class "chrono-weather-wind-cloud"
+         :valign "center"
+         :vexpand true
+         :spacing 20
+      (box :space-evenly false 
+           :class "chrono-weather-cloud"
+           :spacing 5 
+           :orientation "vertical" 
+        (box :space-evenly false 
+             :class "chrono-weather-cloud-label-icon"
+             :spacing 5 
+             :halign "center"
+          (label :text cloud_icon 
+                 :class "chrono-weather-cloud-icon")
+          (label :text cloud_label 
+                 :class "chrono-weather-cloud-text"))
+        (label :text cloud 
+               :class "chrono-weather-cloud-label"))
+      (box :space-evenly false 
+           :class "chrono-weather-wind"
+           :spacing 5 
+           :orientation "vertical"
+        (box :space-evenly false 
+             :class "chrono-weather-wind-label-icon"
+             :spacing 5 
+             :halign "center"
+          (label :text wind_icon 
+                 :class "chrono-weather-wind-icon")
+          (label :text wind_label 
+                 :class "chrono-weather-wind-text"))
+        (label :text wind 
+               :class "chrono-weather-wind-label")))))
+
+(defwidget _pcalen [day month year]
+  (box :space-evenly false 
+       :orientation "vertical" 
+       :class "chrono-calen-box"
+       :width 450
+       :halign "center"
+    (label :class "chrono-calen-label" 
+           :text {vertigo_time.pretty})
+    (calendar :class "chrono-calen" 
+              :halign "center"
+              :active false
+              :day day
+              :month month
+              :year year
+              :show-details false
+              :show-heading false
+              :show-day-names true)))
+
+(defwidget _ptime [hour minute uptime secs]
+  (box :space-evenly false 
+       :class "chrono-time-box"
+       :width 450
+       :height 150
+       :halign "center"
+       :spacing 25
+    (box :class "chrono-time-radial-box" 
+         :space-evenly false
+         :hexpand true
+         :halign "center"
+         :spacing 20
+      (circular-progress :value {minute * 100 / 60}
+                         :valign "center"
+                         :vexpand true
+                         :thickness 15
+                         :class "chrono-prog" minute)
+      (circular-progress :value {secs * 100 / 60}
+                         :valign "center"
+                         :vexpand true
+                         :thickness 15
+                         :class "chrono-prog" secs))
+    (label :text "" 
+           :class "chrono-sep" 
+           :halign "center")
+    (box :space-evenly false 
+         :orientation "vertical" 
+         :class "chrono-time-label-box" 
+         :spacing 5 
+         :hexpand true 
+         :halign "center"
+      (label :halign "end" 
+             :text "${hour}:${minute}" 
+             :class "chrono-time-label")
+      (label :halign "end" 
+             :text uptime 
+             :class "chrono-uptime-label"))))
+
+; vim:filetype=yuck

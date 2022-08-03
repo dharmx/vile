@@ -1,7 +1,43 @@
 (defwidget chrono_layout []
   (box :space-evenly false
        :class "chrono-layout-box"
-       :spacing 20
-    "LOL"))
+       :spacing 10
+       :orientation "vertical"
+    (_ptime :hour {vertigo_time.hour} :minute {vertigo_time.min} :secs {vertigo_time.sec} :uptime vertigo_uptime)
+    (_weather :glyph {clime_weather.weather[0].glyph}
+              :main {clime_weather.weather[0].main}
+              :image {clime_weather.weather[0].image}
+              :temp {round(clime_weather.main.temp, 0)}
+              :feels {round(clime_weather.main.feels_like, 0)}
+              :info_label "Info."
+              :bright_col {clime_weather.weather[0].image_colors[8]}
+              :sundial ""
+              :overlay {clime_weather.weather[0].image_colors[2]}
+              :textcol {clime_weather.weather[0].image_colors[2]}
+              :unit "°" 
+              :pressure {clime_weather.main.pressure}
+              :pressure_icon ""
+              :rain {clime_weather.rain["1h"]}
+              :rain_icon ""
+              :max {round(clime_weather.main.temp_max, 0)}
+              :max_icon ""
+              :min {round(clime_weather.main.temp_min, 0)}
+              :min_icon "")
+    (_weatherextras :header "Weather Info."
+                    :humidity {clime_weather.main.humidity}
+                    :humidity_icon ""
+                    :humidity_label "Humidity"
+                    :visibility {clime_weather.visibility}
+                    :visibility_icon ""
+                    :visibility_label "Visibility"
+                    :wind "${clime_weather.wind.speed} and ${clime_weather.wind.deg}"
+                    :wind_icon ""
+                    :wind_label "Wind Speed"
+                    :cloud {clime_weather.clouds.all}
+                    :cloud_icon ""
+                    :cloud_label "Clouds")
+    (_pcalen :day {vertigo_time.day_icon} 
+             :month {vertigo_time.month_icon} 
+             :year {vertigo_time.year})))
 
 ;; vim:ft=yuck

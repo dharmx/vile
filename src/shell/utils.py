@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """Utility module. Shared across almost all of the python scripts / modules."""
 
 # Authored By dharmx <dharmx.dev@gmail.com> under:
@@ -450,5 +452,12 @@ def img_dark_bright_col(filepath: str, colors: int = 10) -> tuple:
             "#%02X%02X%02X" % (item.red_int8, item.green_int8, item.blue_int8) 
             for item in image.histogram)
 
+
+if __name__ == "__main__":
+    match sys.argv[1]:
+        case "histogram":
+            image_path = sys.argv[2]
+            histogram_colors = int(sys.argv[3])
+            print(json.dumps(img_dark_bright_col(image_path, histogram_colors)))
 
 # vim:filetype=python
