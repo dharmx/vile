@@ -1,7 +1,7 @@
 <details>
   <summary><samp>screenshots and demo</samp></summary>
   <img src="./assets/.trash/powermenu.png" alt="three"/>
-  <img src="./assets/.trash/montage.png" alt="montage"/>
+  <img src="./assets/.trash/weather.png" alt="weather"/>
   <img src="./assets/.trash/disclose.png" alt="disclose"/>
   <img src="./assets/.trash/one.png" alt="one"/>
   <img src="./assets/.trash/two.png" alt="two"/>
