@@ -20,12 +20,52 @@ function rand_quote() {
 }
 
 function empty_format() {
-  echo "(box :class 'disclose-empty-box' :height 750 :orientation 'vertical' :space-evenly false (image :class 'disclose-empty-banner' :valign 'end' :vexpand true :path './assets/wedding-bells.png' :image-width 250 :image-height 250) (label :vexpand true :valign 'start' :wrap true :class 'disclose-empty-label' :text '$(rand_quote)'))"
+  local format
+  format=(
+    "(box"
+    ":class"
+    "'disclose-empty-box'"
+    ":height"
+    "750"
+    ":orientation"
+    "'vertical'"
+    ":space-evenly"
+    "false"
+    "(image"
+    ":class"
+    "'disclose-empty-banner'"
+    ":valign"
+    "'end'"
+    ":vexpand"
+    "true"
+    ":path"
+    "'./assets/wedding-bells.png'"
+    ":image-width"
+    "250"
+    ":image-height"
+    "250)"
+    "(label"
+    ":vexpand"
+    "true"
+    ":valign"
+    "'start'"
+    ":wrap"
+    "true"
+    ":class"
+    "'disclose-empty-label'" 
+    ":text"
+    "'$(rand_quote)'))"
+  )
+  echo "${format[@]}"
 }
 
 function not_empty() {
   echo -n "(box :spacing 20 :orientation 'vertical' :space-evenly false"
-  [[ "$(echo "$1" | tr -d ' ')" != "" ]] && echo -n "$1" || echo -n "$(empty_format)"
+  if [[ "$(echo "$1" | tr -d ' ')" != "" ]]; then
+    echo -n "$1"
+  else
+    echo -n "$(empty_format)"
+  fi
   echo ")"
 }
 
