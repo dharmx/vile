@@ -1,15 +1,7 @@
 .avatar-layout-box {
   font-family: feather, Dosis, "Iosevka Nerd Font", sans-serif;
   background-color: $shade10;
-}
-
-.avatar-profile-top-box {
-  // TODO: Make this look prettier.
-  background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 1.0), rgba(30, 33, 40, 0.95)), url("./assets/banner.jpg");
-  background-size: cover;
-  border-radius: 1em;
-  margin: 1em;
-  background-repeat: no-repeat;
+  padding: 0.5em;
 }
 
 @import "./_mpd.scss";

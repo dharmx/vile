@@ -46,6 +46,8 @@
       (label :class "avatar-mpd-title"
              :halign "start"
              :text title
+             :wrap true
+             :xalign 0.0
              :limit-width 30)
       (label :class "avatar-mpd-artist"
              :text artist

@@ -1,12 +1,12 @@
 (defwidget clime_layout []
-  (_miniweather :min {clime_weather.main.temp_min}
-                :max {clime_weather.main.temp_max}
+  (_miniweather :min {weather.main.temp_min}
+                :max {weather.main.temp_max}
                 :min_text "Min temp."
                 :max_text "Max temp."
-                :feels {clime_weather.main.feels_like}
-                :category {clime_weather.weather[0].main}
+                :feels {weather.main.feels_like}
+                :category {weather.weather[0].main}
                 :unit "°"
-                :temp {clime_weather.main.temp}
-                :city {clime_weather.name}
-                :country {clime_weather.sys.country}
-                :icon {clime_weather.weather[0].glyph}))
+                :temp {weather.main.temp}
+                :city {weather.name}
+                :country {weather.sys.country}
+                :icon {weather.weather[0].glyph}))

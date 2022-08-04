@@ -2,17 +2,17 @@
   (box :space-evenly false :class "chrono-sundial-box" :spacing 5
     (label :text prefix :class "chrono-sundial-prefix")
     (label :class "chrono-sundial-label" :halign halign :hexpand hexpand
-               :text {vertigo_time.hour >= 2 && vertigo_time.hour <= 4 ? "Early Morning" :
-                 vertigo_time.hour <= 5 ? "Dawn" :
-                 vertigo_time.hour >= 6 && (vertigo_time.hour <= 8 && vertigo_time.min <= 59) ? "Morning" :
-                 vertigo_time.hour >= 9 && (vertigo_time.hour <= 11 && vertigo_time.min <= 59) ? "Late Morning" :
-                 vertigo_time.hour == 12 && vertigo_time.min <= 29 ? "Midday" :
-                 vertigo_time.hour >= 12 && vertigo_time.hour <= 16 ? "Afternoon" :
-                 vertigo_time.hour > 16 && vertigo_time.hour <= 17 ? "Late Afternoon" :
-                 (vertigo_time.hour >= 17 && vertigo_time.min <= 1) || (vertigo_time.hour <= 18 && vertigo_time.min <= 20) ? "Early Evening" :
-                 vertigo_time.hour >= 18 && vertigo_time.hour <= 19 ? "Dusk" :
-                 vertigo_time.hour > 19 && vertigo_time.hour <= 21 ? "Late Evening" :
-                 vertigo_time.hour > 21 ? "Night" : "Midnight"})))
+               :text {time.hour >= 2 && time.hour <= 4 ? "Early Morning" :
+                 time.hour <= 5 ? "Dawn" :
+                 time.hour >= 6 && (time.hour <= 8 && time.min <= 59) ? "Morning" :
+                 time.hour >= 9 && (time.hour <= 11 && time.min <= 59) ? "Late Morning" :
+                 time.hour == 12 && time.min <= 29 ? "Midday" :
+                 time.hour >= 12 && time.hour <= 16 ? "Afternoon" :
+                 time.hour > 16 && time.hour <= 17 ? "Late Afternoon" :
+                 (time.hour >= 17 && time.min <= 1) || (time.hour <= 18 && time.min <= 20) ? "Early Evening" :
+                 time.hour >= 18 && time.hour <= 19 ? "Dusk" :
+                 time.hour > 19 && time.hour <= 21 ? "Late Evening" :
+                 time.hour > 21 ? "Night" : "Midnight"})))
 
 
 (defwidget _weather [glyph main temp feels sundial unit image max min
@@ -28,7 +28,7 @@
        :halign "center"
        :valign "start"
        :height 300
-       :width 470
+       :width 455
     (box :space-evenly false
          :orientation "vertical"
          :class "chrono-weather-main-sundial-glyph"
@@ -113,7 +113,7 @@
   cloud cloud_icon cloud_label cloud_unit]
   (box :space-evenly false
        :class "chrono-weather-extra"
-       :width 470
+       :width 455
        :halign "center"
        :orientation "vertical"
        :spacing 15
@@ -189,10 +189,10 @@
   (box :space-evenly false
        :orientation "vertical" 
        :class "chrono-calen-box"
-       :width 470
+       :width 455
        :halign "center"
     (label :class "chrono-calen-label" 
-           :text {vertigo_time.pretty})
+           :text {time.pretty})
     (calendar :class "chrono-calen" 
               :halign "center"
               :active false
@@ -206,7 +206,7 @@
 (defwidget _ptime [hour minute uptime secs]
   (box :space-evenly false 
        :class "chrono-time-box"
-       :width 470
+       :width 455
        :height 150
        :halign "center"
        :spacing 25

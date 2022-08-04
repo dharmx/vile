@@ -8,7 +8,7 @@
               :button-class "origin-profile-button"
               :image-class "origin-profile-image")
     (box :valign "center" :orientation "vertical" :space-evenly false :class "origin-info-box"
-      (label :halign "start" :class "origin-greet" :text "Hey, ${avatar_username}.")
-      (label :halign "start" :class "origin-hostname" :text "${avatar_username}@${avatar_hostname}"))))
+      (label :halign "start" :class "origin-greet" :text "Hey, ${username}.")
+      (label :halign "start" :class "origin-hostname" :text "${username}@${hostname}"))))
 
 ;; vim:ft=yuck

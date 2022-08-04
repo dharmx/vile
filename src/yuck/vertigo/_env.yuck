@@ -6,14 +6,5 @@
 
 (defvar vertigo_remove "./src/shell/workspaces.zsh remove")
 (defvar vertigo_create "./src/shell/workspaces.zsh create")
-(defvar vertigo_volume_toggle "pamixer --toggle-mute")
-(defvar vertigo_profile "./assets/profile.png")
-
-(defpoll vertigo_dunst :interval "1s" "[ $(dunstctl is-paused) = false ] && echo  || echo ")
-(defpoll vertigo_redshift :interval "1s" "[ $(pidof redshift) ] && echo  || echo ")
-(defpoll vertigo_volume_status :interval "1s" "[ $(pamixer --get-volume-human) = muted ] && echo 了 || echo 醴")
-(defpoll vertigo_volume_level :interval "1s" "pamixer --get-volume")
-(defpoll vertigo_time :interval "1s" `date +'{"hour":"%H","min":"%M","sec":"%S","pretty":"%a, %e %b","day":"%A","month":"%B","dom":"%e","year":"%Y","day_num":"%d","month_num":"%m","year_num":"%y"}'`)
-(defpoll vertigo_uptime :interval "1h" "uptime --since")
 
 ;; vim:ft=yuck

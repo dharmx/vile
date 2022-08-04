@@ -2,7 +2,6 @@
 (include "./src/yuck/vertigo/_label.yuck")
 (include "./src/yuck/vertigo/_reveal.yuck")
 (include "./src/yuck/vertigo/_modules.yuck")
-(include "./src/yuck/vertigo/_profile.yuck")
 (include "./src/yuck/vertigo/_layout.yuck")
 
 (defwindow vertigo

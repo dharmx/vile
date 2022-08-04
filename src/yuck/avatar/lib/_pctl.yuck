@@ -43,6 +43,8 @@
       (label :class "avatar-pctl-title"
              :halign "start"
              :text title
+             :wrap true
+             :xalign 0.0
              :limit-width 30)
       (label :class "avatar-pctl-artist"
              :text artist
