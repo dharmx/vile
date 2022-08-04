@@ -9,13 +9,13 @@
       :six "$BROWSER https://discord.com/app &" :icon_six "")
     (box :orientation "vertical" :space-evenly false :spacing 20
       (_sundialinfo :class "lumin" :halign "start")
-      (label :class "lumin-day-label" :text {vertigo_time.day} :halign "start")
+      (label :class "lumin-day-label" :text {time.day} :halign "start")
       (box :space-evenly false :spacing 10
         (_lumininfo)
         (label :width 2 :class "lumin-separator" "")
         (label :class "lumin-date-label"
                :halign "end"
-               :text "${vertigo_time.dom} ${vertigo_time.month} ${vertigo_time.year} / ${vertigo_time.hour}:${vertigo_time.min}"))
+               :text "${time.dom} ${time.month} ${time.year} / ${time.hour}:${time.min}"))
       (_search :engine "$BROWSER https://duckduckgo.com &"
                :command "$BROWSER https://duckduckgo.com/?q={} &"
                :placeholder "Search..."

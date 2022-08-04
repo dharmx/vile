@@ -1,4 +1,3 @@
-(include "./src/yuck/avatar/_env.yuck")
 (include "./src/yuck/avatar/lib/_init.yuck")
 (include "./src/yuck/avatar/_layout.yuck")
 

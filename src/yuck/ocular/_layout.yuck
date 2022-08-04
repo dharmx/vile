@@ -10,13 +10,13 @@
          :halign "center"
       (_sundialinfo :class "ocular" :halign "center")
       (label :class "ocular-date-label"
-             :text {vertigo_time.pretty}))
+             :text {time.pretty}))
     (box :space-evenly false
          :spacing 45
       (_radialtime
-        :hour {vertigo_time.hour}
-        :min {vertigo_time.min}
-        :sec {vertigo_time.sec})
+        :hour {time.hour}
+        :min {time.min}
+        :sec {time.sec})
       (box :space-evenly false
            :orientation "vertical"
            :spacing 15
@@ -30,7 +30,7 @@
                       :five ""
                       :six ""
                       :seven "")
-        (_infonetwork :strength ocular_net
+        (_infonetwork :strength net
                       :offline ""
                       :excellent ""
                       :good ""

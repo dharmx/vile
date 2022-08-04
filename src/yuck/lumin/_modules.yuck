@@ -30,7 +30,7 @@
                    :five ""
                    :six ""
                    :seven "")
-    (_infonetnolbl :strength ocular_net
+    (_infonetnolbl :strength net
                    :offline ""
                    :excellent ""
                    :good ""
@@ -43,27 +43,6 @@
     (box :orientation "vertical" :class "lumin-quote-box-inner"
       (label :text quote :class "lumin-quote")
       (label :halign "start" :text auth :class "lumin-quote-auth"))))
-
-(defwidget _infobatnolbl [battery status one two three four five six seven charge ?class]
-  (box :class "lumin-battery-box ${class}"
-       :space-evenly false
-       :spacing 8
-    (label :class "lumin-battery-icon ${class}" :text {status == 'Charging' ? charge :
-      battery < 15 ? seven :
-        battery < 30 ? six :
-          battery < 45 ? five :
-            battery < 60 ? four :
-              battery < 75 ? three :
-                battery < 95 ? two : one})))
-
-(defwidget _infonetnolbl [strength offline excellent good okay slow ?class]
-  (box :class "lumin-network-box ${class}"
-       :space-evenly false
-       :spacing 8
-    (label :class "lumin-network-icon ${class}" :text {strength == "" ? offline :
-      strength < 26 ? slow :
-        strength < 51 ? okay :
-          strength < 76 ? good : excellent})))
 
 (defwidget _search [engine command placeholder timeout icon]
   (box :space-evenly false 

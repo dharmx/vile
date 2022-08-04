@@ -1,0 +1,47 @@
+(defwidget _sundialinfo [class halign ?hexpand ?prefix]
+  (label :class "${class}-sundial-label" :halign halign :hexpand hexpand
+             :text "${prefix}${time.hour >= 2 && time.hour <= 4 ? "Early Morning" :
+               time.hour <= 5 ? "Dawn" :
+               time.hour >= 6 && (time.hour <= 8 && time.min <= 59) ? "Morning" :
+               time.hour >= 9 && (time.hour <= 11 && time.min <= 59) ? "Late Morning" :
+               time.hour == 12 && time.min <= 29 ? "Midday" :
+               time.hour >= 12 && time.hour <= 16 ? "Afternoon" :
+               time.hour > 16 && time.hour <= 17 ? "Late Afternoon" :
+               (time.hour >= 17 && time.min <= 1) || (time.hour <= 18 && time.min <= 20) ? "Early Evening" :
+               time.hour >= 18 && time.hour <= 19 ? "Dusk" :
+               time.hour > 19 && time.hour <= 21 ? "Late Evening" :
+               time.hour > 21 ? "Night" : "Midnight"}"))
+
+(defwidget _profile [path size ?tooltip ?button-class ?image-class ?M ?L ?R]
+  (button :onmiddleclick M 
+          :onclick L 
+          :onrightclick R 
+          :timeout "2s" 
+          :tooltip tooltip
+          :class "vertigo-button ${button-class}"
+    (image :path path 
+           :image-width size 
+           :class "vertigo-image ${image-class}")))
+
+(defwidget _infobatnolbl [battery status one two three four five six seven charge ?class]
+  (box :class "lumin-battery-box ${class}"
+       :space-evenly false
+       :spacing 8
+    (label :class "lumin-battery-icon ${class}" :text {status == 'Charging' ? charge :
+      battery < 15 ? seven :
+        battery < 30 ? six :
+          battery < 45 ? five :
+            battery < 60 ? four :
+              battery < 75 ? three :
+                battery < 95 ? two : one})))
+
+(defwidget _infonetnolbl [strength offline excellent good okay slow ?class]
+  (box :class "lumin-network-box ${class}"
+       :space-evenly false
+       :spacing 8
+    (label :class "lumin-network-icon ${class}" :text {strength == "" ? offline :
+      strength < 26 ? slow :
+        strength < 51 ? okay :
+          strength < 76 ? good : excellent})))
+
+; vim:filetype=yuck
