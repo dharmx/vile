@@ -37,7 +37,6 @@ import json
 import os
 import pathlib
 import sys
-from threading import main_thread
 
 import cache
 import handlers
