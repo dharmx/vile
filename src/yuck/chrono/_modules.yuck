@@ -27,7 +27,7 @@
        "
        :halign "center"
        :valign "start"
-       :height 300
+       :height 350
        :width 455
     (box :space-evenly false
          :orientation "vertical"
@@ -36,7 +36,7 @@
          :hexpand true
          :valign "center"
          :vexpand true
-         :spacing 60
+         :spacing 80
       (label :text glyph :class "chrono-weather-glyph")
       (box :halign "start" 
            :orientation "vertical" 

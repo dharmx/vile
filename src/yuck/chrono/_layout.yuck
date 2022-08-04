@@ -1,48 +1,56 @@
 (defwidget chrono_layout []
-  (box :space-evenly false
-       :class "chrono-layout-box"
-       :spacing 14
-       :orientation "vertical"
-    (_ptime :hour {time.hour} :minute {time.min} :secs {time.sec} :uptime uptime)
-    (_weather :glyph {weather.weather[0].glyph}
-              :main {weather.weather[0].main}
-              :image {weather.weather[0].image}
-              :temp {round(weather.main.temp, 0)}
-              :feels {round(weather.main.feels_like, 0)}
-              :bright_col {weather.weather[0].image_colors[8]}
-              :sundial ""
-              :overlay {weather.weather[0].image_colors[2]}
-              :textcol {weather.weather[0].image_colors[2]}
-              :unit "°"
-              :pressure {weather.main.pressure}
-              :pressure_icon ""
-              :pressure_unit "hPa" ; hecto-Pascal (Pressure Unit)
-              :location "${weather.name}, ${weather.sys.country}"
-              :location_icon ""
-              :max {round(weather.main.temp_max, 0)}
-              :max_icon ""
-              :min {round(weather.main.temp_min, 0)}
-              :min_icon "")
-    (_weatherextras :header "Weather Info."
-                    :description "${weather_gist}."
-                    :humidity {weather.main.humidity}
-                    :humidity_icon ""
-                    :humidity_label "Humidity"
-                    :humidity_unit "%"
-                    :visibility {weather.visibility}
-                    :visibility_icon ""
-                    :visibility_label "Visibility"
-                    :visibility_unit "meters"
-                    :wind "${weather.wind.speed}m / ${weather.wind.deg}s"
-                    :wind_icon ""
-                    :wind_label "Wind Speed"
-                    :wind_unit ""
-                    :cloud {weather.clouds.all}
-                    :cloud_icon ""
-                    :cloud_label "Clouds"
-                    :cloud_unit "%")
-    (_pcalen :day {time.day_icon} 
-             :month {time.month_icon} 
-             :year {time.year})))
+  (scroll
+    (box :space-evenly false
+         :class "chrono-layout-box"
+         :spacing 20
+         :orientation "vertical"
+      (box :space-evenly false
+           :class "chrono-headers"
+        (label :text "CHRONO"
+               :class "chrono-headers-label"
+               :halign "start"
+               :hexpand true)
+        (button :onclick "eww close chrono" :class "chrono-headers-close" "署"))
+      (_ptime :hour {time.hour} :minute {time.min} :secs {time.sec} :uptime uptime)
+      (_pcalen :day {time.day_icon} 
+               :month {time.month_icon} 
+               :year {time.year})
+      (_weather :glyph {weather.weather[0].glyph}
+                :main {weather.weather[0].main}
+                :image {weather.weather[0].image}
+                :temp {round(weather.main.temp, 0)}
+                :feels {round(weather.main.feels_like, 0)}
+                :bright_col {weather.weather[0].image_colors[8]}
+                :sundial ""
+                :overlay {weather.weather[0].image_colors[2]}
+                :textcol {weather.weather[0].image_colors[2]}
+                :unit "°"
+                :pressure {weather.main.pressure}
+                :pressure_icon ""
+                :pressure_unit "hPa" ; hecto-Pascal (Pressure Unit)
+                :location "${weather.name}, ${weather.sys.country}"
+                :location_icon ""
+                :max {round(weather.main.temp_max, 0)}
+                :max_icon ""
+                :min {round(weather.main.temp_min, 0)}
+                :min_icon "")
+      (_weatherextras :header "Weather Info."
+                      :description "${weather_gist}."
+                      :humidity {weather.main.humidity}
+                      :humidity_icon ""
+                      :humidity_label "Humidity"
+                      :humidity_unit "%"
+                      :visibility {weather.visibility}
+                      :visibility_icon ""
+                      :visibility_label "Visibility"
+                      :visibility_unit "meters"
+                      :wind "${weather.wind.speed}m / ${weather.wind.deg}s"
+                      :wind_icon ""
+                      :wind_label "Wind Speed"
+                      :wind_unit ""
+                      :cloud {weather.clouds.all}
+                      :cloud_icon ""
+                      :cloud_label "Clouds"
+                      :cloud_unit "%"))))
 
 ;; vim:ft=yuck
