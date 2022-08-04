@@ -5,6 +5,10 @@
   font-size: 16;
 }
 
+.chrono-layout-box:last-child {
+  padding-bottom: 1em;
+}
+
 .chrono-weather-box {
   padding: 0 2.8em 0 2.8em;
   background-size: 120%;
@@ -14,12 +18,12 @@
 }
 
 .chrono-weather-glyph {
-  font-size: 100;
+  font-size: 120;
   padding-top: 0.2em;
 }
 
 .chrono-weather-main {
-  font-size: 30;
+  font-size: 35;
   font-weight: bold;
   font-family: "Caviar Dreams";
 }
@@ -49,6 +53,14 @@
   font-size: 20;
 }
 
+.chrono-weather-temp-feels {
+  padding-top: 1em;
+}
+
+.chrono-weather-feels {
+  font-size: 17;
+}
+
 .chrono-sundial-prefix {
   color: darken($base15, 30%);
 }
@@ -62,7 +74,7 @@
 }
 
 .chrono-weather-location-icon {
-  color: lighten($base07, 20%);
+  color: darken($base07, 20%);
 }
 
 .chrono-weather-pressure-icon {
@@ -78,12 +90,12 @@
 }
 
 .chrono-weather-temp {
-  font-size: 70;
+  font-size: 100;
   font-weight: bold;
 }
 
 .chrono-calen-box {
-  font-size: 15;
+  font-size: 16;
   background-image: linear-gradient(100deg, $shade02, $shade06);
   color: $base05;
   padding: 3em 0 0 0;
@@ -98,7 +110,7 @@
 .chrono-calen {
   font-family: Dosis;
   font-weight: bold;
-  padding: 1em 0.5em 0;
+  padding: 1.3em 0.5em 0;
 
   &:selected {
     color: $base15;
@@ -123,7 +135,7 @@
 .chrono-time-box {
   background-image: linear-gradient(100deg, $shade02, $shade06);
   border-radius: 0.5em;
-  padding: 1.5em;
+  padding: 2.5em 1.5em 2.5em 1.5em;
   color: $base05;
 }
 
@@ -136,15 +148,25 @@
 
 .chrono-prog {
   background-color: $shade00;
-  color: $base09;
+  color: $base15;
 }
 
 .chrono-prog label {
-  padding: 1.8em;
+  padding: 1em;
   background-color: $shade02;
   color: $base05;
   font-weight: bold;
+  font-size: 25;
   font-family: Iosevka;
+}
+
+.chrono-prog-minute label {
+  padding: 1.55em;
+}
+
+.chrono-prog-minute {
+  background-color: $shade04;
+  color: $base09;
 }
 
 .chrono-sep {
@@ -173,7 +195,7 @@
 }
 
 .chrono-weather-extra-description {
-  font-size: 10;
+  font-size: 12;
 }
 
 .chrono-weather-humid-text,
@@ -196,6 +218,147 @@
 .chrono-weather-wind-icon,
 .chrono-weather-cloud-icon {
   font-size: 20;
+}
+
+.chrono-headers-label {
+  color: $base05;
+}
+
+.chrono-headers-close {
+  color: $base11;
+}
+
+.chrono-headers-close:hover {
+  color: $base09;
+}
+
+.chrono-headers {
+  padding: 1em 1.5em 0.5em 1.5em;
+  font-size: 25;
+}
+
+.chrono-air-box {
+  background-image: linear-gradient(100deg, $shade02, $shade06);
+  border-radius: 0.5em;
+  font-family: Phosphor, Dosis;
+  padding: 1.5em;
+  padding-bottom: 2em;
+}
+
+.chrono-aqi-box {
+  padding: 1em;
+}
+
+.chrono-aqi-radial label {
+  padding: 1em;
+  font-size: 40;
+  background-color: $shade05;
+}
+
+.chrono-aqi-radial {
+  background-color: $shade01;
+}
+
+.chrono-air-radial-1 {
+  color: $base14;
+}
+
+.chrono-air-radial-2 {
+  color: $base09;
+}
+
+.chrono-air-radial-3 {
+  color: $base13;
+}
+
+.chrono-air-radial-4 {
+  color: lighten($base11, 0.5);
+}
+
+.chrono-air-radial-5 {
+  color: $base11;
+}
+
+.chrono-aqi-inner {
+  font-size: 20;
+  border-radius: 0.3em;
+  padding: 2em;
+}
+
+.chrono-aqi-inner-1 {
+  background-image: linear-gradient(100deg, $shade01, rgba($base14, 0.5));
+}
+
+.chrono-aqi-inner-2 {
+  background-image: linear-gradient(100deg, $shade01, rgba($base09, 0.5));
+}
+
+.chrono-aqi-inner-3 {
+  background-image: linear-gradient(100deg, $shade01, rgba($base13, 0.5));
+}
+
+.chrono-aqi-inner-4 {
+  background-image: linear-gradient(100deg, $shade01, rgba(lighten($base11, 10%), 0.5));
+}
+
+.chrono-aqi-inner-5 {
+  background-image: linear-gradient(100deg, $shade01, rgba($base11, 0.5));
+}
+
+.chrono-air-aqi-label {
+  color: $base15;
+  font-weight: bold;
+}
+
+.chrono-air-aqi-quality {
+  font-size: 16;
+  color: $base05;
+}
+
+.chrono-air-separator {
+  background-color: $shade00;
+  padding-left: 0.18em;
+  font-size: 2;
+}
+
+.chrono-info-label {
+  color: $base15;
+  font-weight: bold;
+  font-size: 20;
+}
+
+.chrono-air-co-box,
+.chrono-air-o3-box,
+.chrono-air-no-box,
+.chrono-air-no2-box,
+.chrono-air-so2-box,
+.chrono-air-pm2_5-box,
+.chrono-air-pm10-box,
+.chrono-air-nh3-box {
+  font-size: 16;
+}
+
+.chrono-air-co-label,
+.chrono-air-o3-label,
+.chrono-air-no-label,
+.chrono-air-no2-label,
+.chrono-air-so2-label,
+.chrono-air-pm2_5-label,
+.chrono-air-pm10-label,
+.chrono-air-nh3-label {
+  color: $base09;
+  font-weight: bold;
+}
+
+.chrono-air-co-value,
+.chrono-air-o3-value,
+.chrono-air-no-value,
+.chrono-air-no2-value,
+.chrono-air-so2-value,
+.chrono-air-pm2_5-value,
+.chrono-air-pm10-value,
+.chrono-air-nh3-value {
+  color: $base04;
 }
 
 @import "./_override.scss";

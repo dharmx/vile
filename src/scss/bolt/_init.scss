@@ -1,0 +1,188 @@
+.bolt-layout-box {
+  font-family: Phosphor, Iosevka;
+  background-color: $shade08;
+  color: $base05;
+  padding: 2em;
+  border-radius: 0.5em;
+  color: $base05;
+}
+
+.bolt-date-box {
+  padding: 1.5em 2em 1.6em 1.5em;
+  background-image: linear-gradient(100deg, $shade05, $shade06);
+  border-radius: 0.5em;
+}
+
+.bolt-date-pretty {
+  font-size: 16;
+  color: $base04;
+}
+
+.bolt-date-day {
+  font-size: 23;
+}
+
+.bolt-bat-overlay {
+  color: $base03;
+}
+
+.bolt-bat-prog {
+  border-radius: 0.5em;
+  trough {
+    padding: 3em 0 3em 0;
+    background-color: $low;
+    border-radius: 0.5em;
+
+    progress {
+      padding: 3em 1em 3em 1em;
+      background-color: rgba(darken($base14, 10%), 0.8);
+      border-radius: 0.5em;
+    }
+  }
+}
+
+.bolt-bat-label {
+  font-size: 16;
+  padding-left: 1em;
+}
+
+.bolt-bat-status-label {
+  font-size: 20;
+  font-weight: bold;
+  padding-left: 0.8em;
+}
+
+.bolt-bat-icon {
+  padding-right: 1em;
+  font-size: 30;
+}
+
+.bolt-bat-full {
+  trough {
+    background-color: $low;
+    progress {
+      background-color: rgba(darken($base14, 10%), 0.8);
+    }
+  }
+}
+
+.bolt-bat-norm {
+  trough {
+    background-color: $normal;
+    progress {
+      background-color: rgba(darken($base09, 10%), 0.8);
+    }
+  }
+}
+
+.bolt-bat-warn {
+  trough {
+    background-color: $other;
+    progress {
+      background-color: rgba(darken($base13, 10%), 0.8);
+    }
+  }
+}
+
+.bolt-bat-crit {
+  trough {
+    background-color: $critical;
+    progress {
+      background-color: rgba(darken($base11, 10%), 0.8);
+    }
+  }
+}
+
+.bolt-pctl-box {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.bolt-pctl-label {
+  font-size: 16;
+  color: $base04;
+}
+
+.bolt-pctl-title {
+  font-size: 20;
+  font-weight: bold;
+  color: $base05;
+}
+
+.bolt-pctl-artist {
+  font-size: 16;
+  color: $base04;
+}
+
+.bolt-pctl-volume-icon {
+  font-size: 25;
+}
+
+.bolt-pctl-volume-label {
+  font-size: 18;
+  padding-top: 0.25em;
+}
+
+.bolt-pctl-status {
+  font-size: 30;
+}
+
+.bolt-pctl-status:hover {
+  color: $base15;
+}
+
+.bolt-uptime-box {
+  background-color: $shade05;
+  padding: 1.2em;
+  border-radius: 0.5em;
+}
+
+.bolt-uptime-label {
+  color: $base04;
+  font-size: 16;
+}
+
+.bolt-uptime-value {
+  font-size: 18;
+  color: $base05;
+}
+
+.bolt-uptime-hl {
+  background-color: $base09;
+  font-size: 1;
+  padding: 2em;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  border-radius: 0.1rem;
+}
+
+.bolt-wifi-box {
+  background-color: $shade05;
+  padding: 1.2em;
+  border-radius: 0.5em;
+}
+
+.bolt-wifi-label {
+  font-size: 16;
+  color: $base04;
+}
+
+.bolt-wifi-ssid {
+  font-size: 18;
+  color: $base05;
+}
+
+.bolt-wifi-icon {
+  font-size: 25;
+  background-color: $shade08;
+  padding: 0.8em;
+  border-radius: 0.2em;
+  color: $base09;
+}
+
+@import "./_override.scss";
+
+// vim:ft=scss

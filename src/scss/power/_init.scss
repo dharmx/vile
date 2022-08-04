@@ -38,13 +38,14 @@
 
 .power-box button:hover {
   background-color: rgba($base03, 0.6);
-  transition: 200ms linear background-color;
+  border-radius: 0.1em; 
+  transition: 200ms linear background-color, border-radius;
 }
 
 .power-box button {
   padding: 0.4em;
   background-color: rgba($shade00, 0.6);
-  color: rgba($base04, 0.6);
+  color: rgba($base04, 1.0);
   box-shadow: 1px 1px 4px 4px $shade01;
 }
 

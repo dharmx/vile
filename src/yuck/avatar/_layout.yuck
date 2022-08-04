@@ -2,6 +2,14 @@
   (box :orientation "vertical"
        :space-evenly false
        :class "avatar-layout-box"
+    (box :space-evenly false
+         :class "avatar-headers"
+      (label :text "AVATAR"
+             :class "avatar-headers-label"
+             :halign "start"
+             :hexpand true)
+      (button :onclick "eww close avatar" 
+              :class "avatar-headers-close" "署"))
     (scroll :class "avatar-scroll"
             :height 760
             :hscroll false

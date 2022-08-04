@@ -5,7 +5,7 @@
     (box :space-evenly false
          :class "disclose-headers"
          :spacing 6
-      (label :text "Notifications"
+      (label :text "DISCLOSE"
              :class "disclose-headers-label"
              :halign "start"
              :hexpand true)
