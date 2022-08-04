@@ -6,6 +6,7 @@
   <img src="./assets/.trash/one.png" alt="one"/>
   <img src="./assets/.trash/two.png" alt="two"/>
   <img src="./assets/.trash/three.png" alt="three"/>
+  <img src="./assets/.trash/bar.png" alt="bar"/>
 </details>
 
 ---
