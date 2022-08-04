@@ -110,6 +110,12 @@ if __name__ == "__main__":
         case "fetch":
             _metadata = cache_and_get(CONFIG, FALLBACK)
             print(json.dumps(_metadata))
+        case "gist":
+            _metadata = cache_and_get(CONFIG, FALLBACK)
+            _box = []
+            for index in range(len(_metadata["weather"])):
+                _box += [_metadata["weather"][index][sys.argv[2]]]
+            print(", ".join(_box) if len(_box) > 2 else " and ".join(_box))
 
 
 # vim:filetype=python

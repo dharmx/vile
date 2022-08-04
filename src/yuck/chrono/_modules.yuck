@@ -16,8 +16,9 @@
 
 
 (defwidget _weather [glyph main temp feels sundial unit image max min
-                     max_icon min_icon overlay textcol bright_col info_label
-                     pressure pressure_icon rain rain_icon]
+                     max_icon min_icon overlay textcol bright_col
+                     pressure pressure_icon pressure_unit location 
+                     location_icon]
   (box :space-evenly false
        :class "chrono-weather-box"
        :style "
@@ -68,28 +69,25 @@
            :spacing 20 
            :halign "end" 
            :class "chrono-weather-info-box"
-        (label :vexpand true 
-               :text info_label 
-               :class "chrono-weather-info-label")
         (box :orientation "vertical" 
-             :class "chrono-weather-cloud-pressure-rain"
+             :class "chrono-weather-cloud-pressure-location"
              :halign "end" 
              :spacing 10
           (box :space-evenly false 
-               :class "chrono-weather-rain"
+               :class "chrono-weather-location"
                :spacing 5
-            (label :text rain_icon 
-                   :class "chrono-weather-rain-icon")
-            (label :text rain 
-                   :class "chrono-weather-rain-label"))
+            (label :text location_icon 
+                   :class "chrono-weather-location-icon")
+            (label :text location 
+                   :class "chrono-weather-location-label"))
           (box :space-evenly false 
                :class "chrono-weather-pressure"
                :spacing 5
             (label :text pressure_icon 
                    :class "chrono-weather-pressure-icon")
-            (label :text pressure 
+            (label :text "${pressure} ${pressure_unit}"
                    :class "chrono-weather-pressure-label")))
-        (box :orientation "vertical" 
+        (box :orientation "vertical"
              :class "chrono-weather-max-min-humid"
              :halign "end"
              :spacing 10
@@ -98,35 +96,39 @@
                :spacing 5
             (label :text max_icon 
                    :class "chrono-weather-max-icon")
-            (label :text max 
+            (label :text "${max}${unit}"
                    :class "chrono-weather-max-label"))
           (box :space-evenly false 
                :class "chrono-weather-min"
                :spacing 5
             (label :text min_icon 
                    :class "chrono-weather-min-icon")
-            (label :text min 
+            (label :text "${min}${unit}"
                    :class "chrono-weather-min-label")))))))
 
-(defwidget _weatherextras [wind wind_icon cloud cloud_icon visibility visibility_icon humidity humidity_icon
-                           wind_label cloud_label visibility_label humidity_label header]
+(defwidget _weatherextras [header description
+  visibility visibility_icon visibility_label visibility_unit
+  humidity humidity_icon humidity_label humidity_unit
+  wind wind_icon wind_label wind_unit
+  cloud cloud_icon cloud_label cloud_unit]
   (box :space-evenly false
        :class "chrono-weather-extra"
        :width 450
        :halign "center"
        :orientation "vertical"
        :spacing 15
-    (label :text header 
-           :class "chrono-weather-extra-header")
+    (box :space-evenly false :orientation "vertical"
+      (label :text header :class "chrono-weather-extra-header")
+      (label :text "Description: ${description}" :class "chrono-weather-extra-description"))
     (box :class "chrono-weather-visible-humid"
          :valign "center"
          :vexpand true
          :spacing 20
-      (box :space-evenly false 
+      (box :space-evenly false
            :class "chrono-weather-humid"
-           :spacing 5 
-           :orientation "vertical" 
-        (box :space-evenly false 
+           :spacing 5
+           :orientation "vertical"
+        (box :space-evenly false
              :class "chrono-weather-humid-label-icon"
              :spacing 5 
              :halign "center"
@@ -134,13 +136,13 @@
                  :class "chrono-weather-humid-icon")
           (label :text humidity_label 
                  :class "chrono-weather-humid-text"))
-        (label :text humidity 
+        (label :text "${humidity}${humidity_unit}"
                :class "chrono-weather-humid-label"))
-      (box :space-evenly false 
+      (box :space-evenly false
            :class "chrono-weather-visible"
            :spacing 5 
            :orientation "vertical" 
-        (box :space-evenly false 
+        (box :space-evenly false
              :class "chrono-weather-visible-label-icon"
              :spacing 5 
              :halign "center"
@@ -148,17 +150,17 @@
                  :class "chrono-weather-visible-icon")
           (label :text visibility_label 
                  :class "chrono-weather-visible-text"))
-        (label :text visibility 
+        (label :text "${visibility} ${visibility_unit}"
                :class "chrono-weather-visible-label")))
     (box :class "chrono-weather-wind-cloud"
          :valign "center"
          :vexpand true
          :spacing 20
-      (box :space-evenly false 
+      (box :space-evenly false
            :class "chrono-weather-cloud"
            :spacing 5 
            :orientation "vertical" 
-        (box :space-evenly false 
+        (box :space-evenly false
              :class "chrono-weather-cloud-label-icon"
              :spacing 5 
              :halign "center"
@@ -166,25 +168,25 @@
                  :class "chrono-weather-cloud-icon")
           (label :text cloud_label 
                  :class "chrono-weather-cloud-text"))
-        (label :text cloud 
+        (label :text "${cloud}${cloud_unit}"
                :class "chrono-weather-cloud-label"))
-      (box :space-evenly false 
+      (box :space-evenly false
            :class "chrono-weather-wind"
            :spacing 5 
            :orientation "vertical"
-        (box :space-evenly false 
+        (box :space-evenly false
              :class "chrono-weather-wind-label-icon"
              :spacing 5 
              :halign "center"
           (label :text wind_icon 
                  :class "chrono-weather-wind-icon")
-          (label :text wind_label 
+          (label :text wind_label
                  :class "chrono-weather-wind-text"))
-        (label :text wind 
+        (label :text "${wind} ${wind_unit}"
                :class "chrono-weather-wind-label")))))
 
 (defwidget _pcalen [day month year]
-  (box :space-evenly false 
+  (box :space-evenly false
        :orientation "vertical" 
        :class "chrono-calen-box"
        :width 450

@@ -1,3 +1,4 @@
 (defpoll clime_weather :interval "500s" "./src/shell/weather.py fetch")
+(defpoll clime_weather_gist :interval "20h" :run-while false "./src/shell/weather.py gist description")
 
 ;; vim:ft=yuck
