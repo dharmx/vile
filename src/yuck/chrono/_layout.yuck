@@ -1,7 +1,7 @@
 (defwidget chrono_layout []
   (box :space-evenly false
        :class "chrono-layout-box"
-       :spacing 10
+       :spacing 14
        :orientation "vertical"
     (_ptime :hour {vertigo_time.hour} :minute {vertigo_time.min} :secs {vertigo_time.sec} :uptime vertigo_uptime)
     (_weather :glyph {clime_weather.weather[0].glyph}

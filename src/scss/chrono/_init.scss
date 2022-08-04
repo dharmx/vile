@@ -1,7 +1,7 @@
 .chrono-layout-box {
   font-family: Phosphor, "Caviar Dreams";
   background-color: $shade10;
-  padding-top: 1em;
+  padding-top: 0.7em;
   font-size: 16;
 }
 
@@ -121,7 +121,7 @@
 }
 
 .chrono-time-box {
-  background-image: linear-gradient(100deg, $shade06, $shade02);
+  background-image: linear-gradient(100deg, $shade02, $shade06);
   border-radius: 0.5em;
   padding: 1.5em;
   color: $base05;
@@ -136,13 +136,13 @@
 
 .chrono-prog {
   background-color: $shade00;
-  color: $base15;
+  color: rgba($base09, 10);
 }
 
 .chrono-prog label {
   padding: 1.8em;
   background-color: $shade02;
-  color: $base11;
+  color: $base05;
   font-weight: bold;
   font-family: Iosevka;
 }
@@ -159,7 +159,7 @@
 
 .chrono-weather-extra {
   font-family: Phosphor, Dosis;
-  background-image: linear-gradient(100deg, $shade06, $shade02);
+  background-image: linear-gradient(100deg, $shade02, $shade06);
   border-radius: 0.5em;
   padding: 2em 0 2em 0;
   font-size: 16;

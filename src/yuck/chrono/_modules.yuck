@@ -28,7 +28,7 @@
        :halign "center"
        :valign "start"
        :height 300
-       :width 450
+       :width 470
     (box :space-evenly false
          :orientation "vertical"
          :class "chrono-weather-main-sundial-glyph"
@@ -113,7 +113,7 @@
   cloud cloud_icon cloud_label cloud_unit]
   (box :space-evenly false
        :class "chrono-weather-extra"
-       :width 450
+       :width 470
        :halign "center"
        :orientation "vertical"
        :spacing 15
@@ -189,7 +189,7 @@
   (box :space-evenly false
        :orientation "vertical" 
        :class "chrono-calen-box"
-       :width 450
+       :width 470
        :halign "center"
     (label :class "chrono-calen-label" 
            :text {vertigo_time.pretty})
@@ -206,7 +206,7 @@
 (defwidget _ptime [hour minute uptime secs]
   (box :space-evenly false 
        :class "chrono-time-box"
-       :width 450
+       :width 470
        :height 150
        :halign "center"
        :spacing 25
