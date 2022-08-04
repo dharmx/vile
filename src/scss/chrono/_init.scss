@@ -136,13 +136,13 @@
 
 .chrono-prog {
   background-color: $shade00;
-  color: rgba($base09, 10);
+  color: darken(lighten($base11, 11%), 15%);
 }
 
 .chrono-prog label {
   padding: 1.8em;
   background-color: $shade02;
-  color: $base05;
+  color: $base09;
   font-weight: bold;
   font-family: Iosevka;
 }
