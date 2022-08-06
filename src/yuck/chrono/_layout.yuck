@@ -51,6 +51,31 @@
                       :cloud {weather.clouds.all}
                       :cloud_icon ""
                       :cloud_label "Clouds"
-                      :cloud_unit "%"))))
+                      :cloud_unit "%")
+      (_airpollution :aqi {air.list[0].main.aqi} 
+                     :aqi_label "Air Quality Index"
+                     :aqi_icon {
+                       air.list[0].main.aqi == 1 ? air.icons.good : 
+                       air.list[0].main.aqi == 2 ? air.icons.fair : 
+                       air.list[0].main.aqi == 3 ? air.icons.moderate : 
+                       air.list[0].main.aqi == 4 ? air.icons.poor : air.icons.very_poor}
+                     :comp_label "Components"
+                     :co {air.list[0].components.co}
+                     :co_label "Carbon Monoxide"
+                     :no_label "Nitrogen Monoxide"
+                     :no {air.list[0].components.no}
+                     :no2_label "Nitrogen Dioxide"
+                     :no2 {air.list[0].components.no2}
+                     :o3_label "Ozone"
+                     :o3 {air.list[0].components.o3}
+                     :so2_label "Sulphur Dioxide"
+                     :so2 {air.list[0].components.so2}
+                     :pm2_5_label "Fine particles matter (2.5)"
+                     :pm2_5 {air.list[0].components.pm2_5}
+                     :pm10_label "Coarse particulate matter (10)"
+                     :pm10 {air.list[0].components.pm10}
+                     :nh3_label "Ammonia"
+                     :nh3 {air.list[0].components.nh3}
+                     :unit "μg/m³"))))
 
 ;; vim:ft=yuck

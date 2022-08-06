@@ -241,4 +241,103 @@
              :text uptime 
              :class "chrono-uptime-label"))))
 
+(defwidget _airpollution [aqi aqi_label aqi_icon comp_label co co_label no_label no 
+                          no2_label no2 o3_label o3 so2_label so2 pm2_5_label pm2_5 
+                          pm10_label pm10 nh3_label nh3 unit]
+  (box :orientation "vertical"
+       :halign "center"
+       :class "chrono-air-box"
+       :space-evenly false
+       :spacing 20
+       :width 455
+       :height 250
+    (box :space-evenly false 
+         :halign "center"
+         :class "chrono-aqi-box"
+         :spacing 20
+      (circular-progress :class "chrono-aqi-radial chrono-air-radial-${aqi}" 
+                         :thickness 20 
+                         :value {
+                           aqi == 1 ? 100 :
+                           aqi == 2 ? 80 :
+                           aqi == 3 ? 60 :
+                           aqi == 4 ? 40 : 20} aqi_icon)
+      (box :orientation "vertical" 
+           :class "chrono-aqi-inner chrono-aqi-inner-${aqi}"
+           :valign "center"
+           :spacing 5
+           :space-evenly false
+        (label :class "chrono-air-aqi-label" 
+               :text aqi_label)
+        (label :class "chrono-air-aqi-quality" 
+               :text {
+          aqi == 1 ? "Good" :
+          aqi == 2 ? "Fair" :
+          aqi == 3 ? "Moderate" :
+          aqi == 4 ? "Poor" : "Very Poor"})))
+    (label :text ""
+           :class "chrono-air-separator")
+    (label :text comp_label :halign "center"
+           :class "chrono-info-label")
+    (box :class "chrono-air-info" 
+         :space-evenly false
+         :halign "center"
+         :spacing 40
+      (box :orientation "vertical" 
+           :class "chrono-air-col-one" 
+           :space-evenly false
+           :spacing 10
+        (box :orientation "vertical" 
+             :class "chrono-air-co-box"
+          (label :text co_label 
+                 :class "chrono-air-co-label")
+          (label :text "${co} ${unit}" 
+                 :class "chrono-air-co-value"))
+        (box :orientation "vertical" 
+             :class "chrono-air-no-box"
+          (label :text no_label 
+                 :class "chrono-air-no-label")
+          (label :text "${no} ${unit}"
+                 :class "chrono-air-no-value"))
+        (box :orientation "vertical"
+             :class "chrono-air-no2-box"
+          (label :text no2_label
+                 :class "chrono-air-no2-label")
+          (label :text "${no2} ${unit}"
+                 :class "chrono-air-no2-value"))
+        (box :orientation "vertical"
+             :class "chrono-air-o3-box"
+          (label :text co_label 
+                 :class "chrono-air-o3-label")
+          (label :text "${co} ${unit}"
+                 :class "chrono-air-o3-value")))
+      (box :orientation "vertical" 
+           :class "chrono-air-col-one" 
+           :space-evenly false
+           :spacing 10
+        (box :orientation "vertical" 
+             :class "chrono-air-so2-box"
+          (label :text so2_label 
+                 :class "chrono-air-so2-label")
+          (label :text "${so2} ${unit}"
+                 :class "chrono-air-so2-value"))
+        (box :orientation "vertical" 
+             :class "chrono-air-pm2_5-box"
+          (label :text pm2_5_label 
+                 :class "chrono-air-pm2_5-label")
+          (label :text "${pm2_5} ${unit}"
+                 :class "chrono-air-pm2_5-value"))
+        (box :orientation "vertical" 
+             :class "chrono-air-pm10-box"
+          (label :text pm10_label
+                 :class "chrono-air-pm10-label")
+          (label :text "${pm10} ${unit}"
+                 :class "chrono-air-pm10-value"))
+        (box :orientation "vertical" 
+             :class "chrono-air-nh3-box"
+          (label :text nh3_label
+                 :class "chrono-air-nh3-label")
+          (label :text "${nh3} ${unit}"
+                 :class "chrono-air-nh3-value"))))))
+
 ; vim:filetype=yuck

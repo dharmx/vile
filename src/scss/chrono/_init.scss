@@ -227,6 +227,130 @@
   font-size: 25;
 }
 
+.chrono-air-box {
+  background-image: linear-gradient(100deg, $shade02, $shade06);
+  border-radius: 0.5em;
+  font-family: Phosphor, Dosis;
+  padding: 1.5em;
+  padding-bottom: 2em;
+}
+
+.chrono-aqi-box {
+  padding: 1em;
+}
+
+.chrono-aqi-radial label {
+  padding: 1em;
+  font-size: 40;
+  background-color: $shade05;
+}
+
+.chrono-aqi-radial {
+  background-color: $shade01;
+}
+
+.chrono-air-radial-1 {
+  color: $base14;
+}
+
+.chrono-air-radial-2 {
+  color: $base09;
+}
+
+.chrono-air-radial-3 {
+  color: $base13;
+}
+
+.chrono-air-radial-4 {
+  color: lighten($base11, 0.5);
+}
+
+.chrono-air-radial-5 {
+  color: $base11;
+}
+
+.chrono-aqi-inner {
+  font-size: 20;
+  border-radius: 0.3em;
+  padding: 2em;
+}
+
+.chrono-aqi-inner-1 {
+  background-image: linear-gradient(100deg, $shade01, rgba($base14, 0.5));
+}
+
+.chrono-aqi-inner-2 {
+  background-image: linear-gradient(100deg, $shade01, rgba($base09, 0.5));
+}
+
+.chrono-aqi-inner-3 {
+  background-image: linear-gradient(100deg, $shade01, rgba($base13, 0.5));
+}
+
+.chrono-aqi-inner-4 {
+  background-image: linear-gradient(100deg, $shade01, rgba(lighten($base11, 10%), 0.5));
+}
+
+.chrono-aqi-inner-5 {
+  background-image: linear-gradient(100deg, $shade01, rgba($base11, 0.5));
+}
+
+.chrono-air-aqi-label {
+  color: $base15;
+  font-weight: bold;
+}
+
+.chrono-air-aqi-quality {
+  font-size: 16;
+  color: $base05;
+}
+
+.chrono-air-separator {
+  background-color: $shade00;
+  padding-left: 0.18em;
+  font-size: 2;
+}
+
+.chrono-info-label {
+  color: $base15;
+  font-weight: bold;
+  font-size: 20;
+}
+
+.chrono-air-co-box,
+.chrono-air-o3-box,
+.chrono-air-no-box,
+.chrono-air-no2-box,
+.chrono-air-so2-box,
+.chrono-air-pm2_5-box,
+.chrono-air-pm10-box,
+.chrono-air-nh3-box {
+  font-size: 16;
+}
+
+.chrono-air-co-label,
+.chrono-air-o3-label,
+.chrono-air-no-label,
+.chrono-air-no2-label,
+.chrono-air-so2-label,
+.chrono-air-pm2_5-label,
+.chrono-air-pm10-label,
+.chrono-air-nh3-label {
+  color: $base09;
+  font-weight: bold;
+}
+
+.chrono-air-co-value,
+.chrono-air-o3-value,
+.chrono-air-no-value,
+.chrono-air-no2-value,
+.chrono-air-so2-value,
+.chrono-air-pm2_5-value,
+.chrono-air-pm10-value,
+.chrono-air-nh3-value {
+  color: $base04;
+}
+
 @import "./_override.scss";
 
 // vim:ft=scss

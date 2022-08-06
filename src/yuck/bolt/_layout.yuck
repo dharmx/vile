@@ -1,0 +1,7 @@
+(defwidget bolt_layout []
+  (box :space-evenly false
+       :class "bolt-layout-box"
+       :spacing 20
+    "LOL"))
+
+;; vim:ft=yuck
