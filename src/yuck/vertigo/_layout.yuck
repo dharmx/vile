@@ -29,7 +29,8 @@
                      :battery {EWW_BATTERY.BAT0.capacity})
         (_time :time time
                :tooltip "time ${time.hour}:${time.min}"
-               :button-class "vertigo-time-button")
+               :button-class "vertigo-time-button"
+               :L "eww open --toggle bolt")
         (_revealex :revealon vertigo_revealex)
         (label :text ""
                :class "vertigo-separator"))) 

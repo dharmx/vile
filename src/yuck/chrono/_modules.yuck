@@ -215,16 +215,19 @@
          :hexpand true
          :halign "center"
          :spacing 20
+    (overlay
       (circular-progress :value {minute * 100 / 60}
                          :valign "center"
                          :vexpand true
                          :thickness 15
-                         :class "chrono-prog" minute)
+                         :start-at 40
+                         :class "chrono-prog chrono-prog-minute" minute)
       (circular-progress :value {secs * 100 / 60}
                          :valign "center"
                          :vexpand true
+                         :start-at 90
                          :thickness 15
-                         :class "chrono-prog" secs))
+                         :class "chrono-prog chrono-prog-second" secs)))
     (label :text "" 
            :class "chrono-sep" 
            :halign "center")

@@ -148,15 +148,25 @@
 
 .chrono-prog {
   background-color: $shade00;
-  color: $base09;
+  color: $base15;
 }
 
 .chrono-prog label {
-  padding: 1.8em;
+  padding: 1em;
   background-color: $shade02;
   color: $base05;
   font-weight: bold;
+  font-size: 25;
   font-family: Iosevka;
+}
+
+.chrono-prog-minute label {
+  padding: 1.55em;
+}
+
+.chrono-prog-minute {
+  background-color: $shade04;
+  color: $base09;
 }
 
 .chrono-sep {

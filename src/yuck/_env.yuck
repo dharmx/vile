@@ -12,6 +12,7 @@
 (defpoll weather_gist :interval "20h" :run-while false "./src/shell/weather.py gist description")
 
 (defpoll net :interval "100s" `nmcli -terse -fields SIGNAL,ACTIVE device wifi | awk --field-separator ':' '{if($2=="yes")print$1}'`)
+(defpoll ssid :interval "100s" `nmcli -terse -fields SSID,ACTIVE device wifi | awk --field-separator ':' '{if($2=="yes")print$1}'`)
 
 (defvar vertigo_volume_toggle "pamixer --toggle-mute")
 (defvar profile "./assets/profile.png")
@@ -23,6 +24,7 @@
 (defpoll volume_level :interval "1s" "pamixer --get-volume")
 
 (defpoll time :interval "1s" `date +'{"hour":"%H","min":"%M","sec":"%S","pretty":"%a, %e %b","day":"%A","month":"%B","dom":"%e","year":"%Y","day_num":"%d","month_num":"%m","year_num":"%y"}'`)
-(defpoll uptime :interval "1h" "uptime --since")
+(defpoll uptime :interval "48h" "uptime --since")
+(defpoll uptime_pretty :interval "1h" "uptime --since | awk '{print $1}'")
 
 ; vim:filetype=yuck
