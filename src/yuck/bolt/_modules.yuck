@@ -4,9 +4,9 @@
     (label :halign "start" :text short_pretty :class "bolt-date-pretty")
     (label :halign "start" :text day :class "bolt-date-day")))
 
-(defwidget _fluidbat [label icon_full icon_crit icon_norm]
+(defwidget _fluidbat [label icon_full icon_crit icon_norm class]
   (overlay :class "bolt-bat-overlay"
-    (progress :width 180 :class "bolt-bat-prog" :value {EWW_BATTERY.BAT0.capacity > 95 ? 100 : EWW_BATTERY.BAT0.capacity})
+    (progress :width 180 :class "bolt-bat-prog ${class}" :value {EWW_BATTERY.BAT0.capacity > 95 ? 100 : EWW_BATTERY.BAT0.capacity})
     (box :valign "center" :spacing 5 :space-evenly false :class "bolt-bat-prog-box"
       (box :halign "start" :hexpand true :orientation "vertical" :space-evenly false :class "bolt-bat-label-box"
         (label :halign "start" :text label :class "bolt-bat-label")

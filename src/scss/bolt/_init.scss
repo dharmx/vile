@@ -54,6 +54,42 @@
   font-size: 30;
 }
 
+.bolt-bat-full {
+  trough {
+    background-color: $low;
+    progress {
+      background-color: $base14;
+    }
+  }
+}
+
+.bolt-bat-norm {
+  trough {
+    background-color: $normal;
+    progress {
+      background-color: $base09;
+    }
+  }
+}
+
+.bolt-bat-warn {
+  trough {
+    background-color: $other;
+    progress {
+      background-color: $base15;
+    }
+  }
+}
+
+.bolt-bat-crit {
+  trough {
+    background-color: $critical;
+    progress {
+      background-color: $base11;
+    }
+  }
+}
+
 .bolt-pctl-box {
   background-repeat: no-repeat;
   background-size: contain;
