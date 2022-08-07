@@ -36,7 +36,7 @@ def cache_pollution_get(config: dict) -> dict:
 
 
 if __name__ == "__main__":
-    CONFIG = json.loads(pathlib.PosixPath(os.path.expandvars("$XDG_CONFIG_HOME/eww/.config.json")).read_text())
+    CONFIG = json.loads(pathlib.PosixPath(os.path.expandvars("$XDG_CONFIG_HOME/eww/ewwrc")).read_text())
     CONFIG["pollution"]["cache_dir"] = os.path.expandvars(CONFIG["pollution"]["cache_dir"])
     CONFIG["location"]["cache_dir"] = os.path.expandvars(CONFIG["location"]["cache_dir"])
     pathlib.PosixPath(CONFIG["pollution"]["cache_dir"]).mkdir(parents=True, exist_ok=True)

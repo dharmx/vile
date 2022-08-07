@@ -22,9 +22,9 @@
 # Gives out random quotes
 
 # load config values
-DUNST_QUOTE_DIR="$(jq --compact-output --raw-output --monochrome-output .logger.quote_dir < "$XDG_CONFIG_HOME/eww/.config.json")"
-DUNST_QUOTE="$(jq --compact-output --raw-output --monochrome-output .logger.quote_name < "$XDG_CONFIG_HOME/eww/.config.json")"
-DEFAULT_QUOTE="$(jq --compact-output --raw-output --monochrome-output .logger.default_quote < "$XDG_CONFIG_HOME/eww/.config.json")"
+DUNST_QUOTE_DIR="$(jq --compact-output --raw-output --monochrome-output .logger.quote_dir < "$XDG_CONFIG_HOME/eww/ewwrc")"
+DUNST_QUOTE="$(jq --compact-output --raw-output --monochrome-output .logger.quote_name < "$XDG_CONFIG_HOME/eww/ewwrc")"
+DEFAULT_QUOTE="$(jq --compact-output --raw-output --monochrome-output .logger.default_quote < "$XDG_CONFIG_HOME/eww/ewwrc")"
 
 eval "DUNST_QUOTE_DIR=\"$DUNST_QUOTE_DIR\" && DUNST_QUOTE=\"$DUNST_QUOTE\""
 DUNST_QUOTE_FULL="$DUNST_QUOTE_DIR/$DUNST_QUOTE"

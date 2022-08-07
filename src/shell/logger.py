@@ -63,7 +63,7 @@ if __name__ == "__main__":
     # load only notification related options from the config JSON
     config = json.loads(
         pathlib.PosixPath(
-            os.path.expandvars("$XDG_CONFIG_HOME/eww/.config.json")
+            os.path.expandvars("$XDG_CONFIG_HOME/eww/ewwrc")
         ).read_text()
     )["notify"]
 

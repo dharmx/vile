@@ -74,7 +74,7 @@ if __name__ == "__main__":
         sys.stderr.write("No such option!")
 
     # NOTE: Change these only if you know what you are doing.
-    CONFIG_PATH = os.path.expandvars("$XDG_CONFIG_HOME/eww/.config.json")
+    CONFIG_PATH = os.path.expandvars("$XDG_CONFIG_HOME/eww/ewwrc")
 
     FALLBACK = {
         "weather": [

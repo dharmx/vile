@@ -35,7 +35,7 @@ names=(STATE_FOCUSED STATE_OCCUPIED STATE_URGENT STATE_EMPTY TAG_HIDDEN TAG_STIC
 pushd "$XDG_CONFIG_HOME/eww"
 
 index=1 # IKR? ZSH arrays start with 1
-jq --raw-output --compact-output '.desktops|values[][]' "./.config.json" | while read -r icon
+jq --raw-output --compact-output '.desktops|values[][]' "./ewwrc" | while read -r icon
 do
   # load the glyphs from the config and eval them into env vars
   eval "${names[$index]}='$icon'"

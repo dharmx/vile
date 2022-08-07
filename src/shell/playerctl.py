@@ -257,7 +257,7 @@ def get_bright_dark_from_cover(image_path: str) -> dict:
 
 
 if __name__ == "__main__":
-    with open(os.path.expandvars("$XDG_CONFIG_HOME/eww/.config.json"), encoding="utf8") as file:
+    with open(os.path.expandvars("$XDG_CONFIG_HOME/eww/ewwrc"), encoding="utf8") as file:
         config: dict = json.loads(file.read())["player"]
         default_cover = os.path.expandvars(config["default_art"])
         pctl_cache = os.path.expandvars(config["pctl_cache"])

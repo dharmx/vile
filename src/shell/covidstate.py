@@ -9,7 +9,7 @@ import covid
 import requests
 import utils
 
-_config = json.loads(pathlib.PosixPath(os.path.expandvars("$XDG_CONFIG_HOME/eww/.config.json")).read_text())
+_config = json.loads(pathlib.PosixPath(os.path.expandvars("$XDG_CONFIG_HOME/eww/ewwrc")).read_text())
 _config["covid"]["cache_dir"] = os.path.expandvars(_config["covid"]["cache_dir"])
 _config["location"]["cache_dir"] = os.path.expandvars(_config["location"]["cache_dir"])
 
