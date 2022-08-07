@@ -1,0 +1,81 @@
+(defwidget chrono_layout []
+  (scroll
+    (box :space-evenly false
+         :class "chrono-layout-box"
+         :spacing 20
+         :orientation "vertical"
+      (box :space-evenly false
+           :class "chrono-headers"
+        (label :text "CHRONO"
+               :class "chrono-headers-label"
+               :halign "start"
+               :hexpand true)
+        (button :onclick "eww close chrono" :class "chrono-headers-close" "署"))
+      (_ptime :hour {time.hour} :minute {time.min} :secs {time.sec} :uptime uptime)
+      (_pcalen :day {time.day_icon} 
+               :month {time.month_icon} 
+               :year {time.year})
+      (_weather :glyph {weather.weather[0].glyph}
+                :main {weather.weather[0].main}
+                :image {weather.weather[0].image}
+                :temp {round(weather.main.temp, 0)}
+                :feels {round(weather.main.feels_like, 0)}
+                :bright_col {weather.weather[0].image_colors[8]}
+                :sundial ""
+                :overlay {weather.weather[0].image_colors[2]}
+                :textcol {weather.weather[0].image_colors[2]}
+                :unit "°"
+                :pressure {weather.main.pressure}
+                :pressure_icon ""
+                :pressure_unit "hPa" ; hecto-Pascal (Pressure Unit)
+                :location "${weather.name}, ${weather.sys.country}"
+                :location_icon ""
+                :max {round(weather.main.temp_max, 0)}
+                :max_icon ""
+                :min {round(weather.main.temp_min, 0)}
+                :min_icon "")
+      (_weatherextras :header "Weather Info."
+                      :description "${weather_gist}."
+                      :humidity {weather.main.humidity}
+                      :humidity_icon ""
+                      :humidity_label "Humidity"
+                      :humidity_unit "%"
+                      :visibility {weather.visibility}
+                      :visibility_icon ""
+                      :visibility_label "Visibility"
+                      :visibility_unit "meters"
+                      :wind "${weather.wind.speed}m / ${weather.wind.deg}s"
+                      :wind_icon ""
+                      :wind_label "Wind Speed"
+                      :wind_unit ""
+                      :cloud {weather.clouds.all}
+                      :cloud_icon ""
+                      :cloud_label "Clouds"
+                      :cloud_unit "%")
+      (_airpollution :aqi {air.list[0].main.aqi} 
+                     :aqi_label "Air Quality Index"
+                     :aqi_icon {
+                       air.list[0].main.aqi == 1 ? air.icons.good : 
+                       air.list[0].main.aqi == 2 ? air.icons.fair : 
+                       air.list[0].main.aqi == 3 ? air.icons.moderate : 
+                       air.list[0].main.aqi == 4 ? air.icons.poor : air.icons.very_poor}
+                     :comp_label "Components"
+                     :co {air.list[0].components.co}
+                     :co_label "Carbon Monoxide"
+                     :no_label "Nitrogen Monoxide"
+                     :no {air.list[0].components.no}
+                     :no2_label "Nitrogen Dioxide"
+                     :no2 {air.list[0].components.no2}
+                     :o3_label "Ozone"
+                     :o3 {air.list[0].components.o3}
+                     :so2_label "Sulphur Dioxide"
+                     :so2 {air.list[0].components.so2}
+                     :pm2_5_label "Fine particles matter (2.5)"
+                     :pm2_5 {air.list[0].components.pm2_5}
+                     :pm10_label "Coarse particulate matter (10)"
+                     :pm10 {air.list[0].components.pm10}
+                     :nh3_label "Ammonia"
+                     :nh3 {air.list[0].components.nh3}
+                     :unit "μg/m³"))))
+
+;; vim:ft=yuck

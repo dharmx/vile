@@ -1,0 +1,58 @@
+(defwidget avatar_layout []
+  (box :orientation "vertical"
+       :space-evenly false
+       :class "avatar-layout-box"
+    (box :space-evenly false
+         :class "avatar-headers"
+      (label :text "AVATAR"
+             :class "avatar-headers-label"
+             :halign "start"
+             :hexpand true)
+      (button :onclick "eww close avatar" 
+              :class "avatar-headers-close" "署"))
+    (scroll :class "avatar-scroll"
+            :height 760
+            :hscroll false
+            :vscroll true
+      (box :space-evenly false
+           :class "avatar-box-inner"
+           :orientation "vertical"
+           :vexpand true
+           :hexpand true
+           :spacing 20
+
+        (avatar_mpd :current mpd_current
+                    :duration mpd_duration
+                    :progress mpd_progress
+                    :icon ""
+                    :separator ""
+                    :album "${mpd_sub.album}"
+                    :title "${mpd_sub.title}"
+                    :artist "${mpd_sub.artist}"
+                    :like "dunstify MPD Liked"
+                    :like_icon ""
+                    :prev "mpc prev"
+                    :prev_icon ""
+                    :next "mpc next"
+                    :next_icon ""
+                    :minimal "dunstify MPD minimal"
+                    :minimal_icon ""
+                    :pause_icon ""
+                    :play_icon "")
+
+        (avatar_pctl :icon ""
+                     :separator ""
+                     :album "${pctl_sub['xesam:album']}"
+                     :title "${pctl_sub['xesam:title']}"
+                     :artist "${pctl_sub['xesam:artist']}"
+                     :prev "playerctl previous"
+                     :prev_icon ""
+                     :next "playerctl next"
+                     :next_icon ""
+                     :player "${pctl_sub.player}"
+                     :minimal "playerctld shift"
+                     :minimal_icon ""
+                     :pause_icon ""
+                     :play_icon "")))))
+
+; vim:filetype=yuck

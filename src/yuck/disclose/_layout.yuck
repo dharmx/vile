@@ -1,0 +1,40 @@
+(defwidget disclose_layout []
+  (box :orientation "vertical"
+       :space-evenly false
+       :class "disclose-layout-box"
+    (box :space-evenly false
+         :class "disclose-headers"
+         :spacing 6
+      (label :text "DISCLOSE"
+             :class "disclose-headers-label"
+             :halign "start"
+             :hexpand true)
+      (button :onclick "./src/shell/combine.bash cls" :class "disclose-headers-clear" "")
+      (button :onclick "eww close disclose" :class "disclose-headers-close" "署"))
+    (scroll :hscroll false
+            :vscroll true
+            :vexpand true
+            :hexpand true
+            :class "disclose-scroll"
+      (literal :content disclose_sub))
+    (label :class "disclose-separator" :text "")
+    (box :space-evenly false :class "disclose-misc-box"
+      (_dstats :critical "${disclose_stats.critical}"
+               :criticon ""
+               :low "${disclose_stats.low}"
+               :normicon ""
+               :normal "${disclose_stats.normal}"
+               :lowicon "靖"
+               :level "2"
+               :thickness 10)
+      (_dnd :total "${disclose_stats.total}"
+            :footer "Dunst Bell"
+            :total_label "Total"
+            :action "dunstctl set-paused toggle"
+            :state "${disclose_dnd_state == "true" ? "ON" : "OFF"}"
+            :label "Don't Disturb."
+            :waiting_icon_on ""
+            :waiting_icon_off ""
+            :waiting dunst_waiting))))
+
+;; vim:filetype=yuck

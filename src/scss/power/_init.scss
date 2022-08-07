@@ -1,0 +1,93 @@
+.power-layout-box {
+  font-family: Phosphor;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 5em;
+}
+
+.power-label,
+.power-label-icon {
+  font-family: Phosphor, Koulen;
+  font-size: 25;
+  background-color: rgba(#000, 0.0);
+  color: rgba($shade00, 0.8);
+}
+
+.power-label-time {
+  font-size: 25;
+}
+
+.power-label-icon {
+  font-size: 30;
+  padding-bottom: 0.06em;
+  color: rgba($base03, 0.6);
+}
+
+.power-close-button {
+  font-size: 30;
+  color: rgba($base03, 0.6);
+}
+
+.power-close-button:hover {
+  color: $base11;
+}
+
+.power-box {
+  font-size: 35;
+}
+
+.power-box button:hover {
+  background-color: rgba($base03, 0.6);
+  border-radius: 0.1em; 
+  transition: 200ms linear background-color, border-radius;
+}
+
+.power-box button {
+  padding: 0.4em;
+  background-color: rgba($shade00, 0.6);
+  color: rgba($base04, 1.0);
+  box-shadow: 1px 1px 4px 4px $shade01;
+}
+
+.power-shutdown-button label {
+  color: rgba($base11, 0.8);
+}
+
+.power-info-net {
+  font-size: 25;
+  color: rgba($base03, 0.6);
+}
+
+.power-info-bat {
+  font-size: 30;
+  color: rgba($base03, 0.6);
+}
+
+.power-info-bat label {
+  font-size: 30;
+  color: rgba($base03, 0.6);
+}
+
+.power-separator {
+  color: rgba($base03, 0.6);
+  font-size: 15;
+  padding-top: 0.15em;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  font-family: "Iosevka Nerd Font";
+  font-weight: 200;
+}
+
+.power-sundial-label {
+  font-size: 20;
+  font-weight: bold;
+  border-radius: 0.2em;
+  padding: 0.4em;
+  padding-bottom: 0.5em;
+  font-family: "Poiret One";
+  color: rgba($base03, 0.8);
+}
+
+@import "./_override.scss";
+
+// vim:ft=scss

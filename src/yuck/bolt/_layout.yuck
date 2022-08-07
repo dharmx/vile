@@ -1,0 +1,41 @@
+(defwidget bolt_layout []
+  (box :space-evenly false
+       :class "bolt-layout-box"
+       :spacing 20
+       :orientation "vertical"
+    (box :hexpand true 
+         :space-evenly false 
+         :class "bolt-date-bat-pctl" 
+         :spacing 25
+      (box :orientation "vertical" 
+           :space-evenly false 
+           :class "bolt-date-bat" 
+           :spacing 10
+        (_boltdate :day {time.day} 
+                   :short_pretty "${time.day_num} ${time.month}, ${time.year}")
+        (_fluidbat :class {EWW_BATTERY.BAT0.capacity > 95 ? "bolt-bat-full" :
+                           EWW_BATTERY.BAT0.capacity > 50 ? "bolt-bat-norm" :
+                           EWW_BATTERY.BAT0.capacity > 20 ? "bolt-bat-warn" : "bolt-bat-crit"} 
+                   :label "Battery" 
+                   :icon_full "" 
+                   :icon_norm "" 
+                   :icon_crit ""))
+      (_boltpctl :cover {pctl_sub["mpris:artUrl"]} 
+                 :label {pctl_sub["status"]} 
+                 :title {pctl_sub["xesam:title"]} 
+                 :artist {pctl_sub["xesam:artist"]} 
+                 :volume "45" 
+                 :volume_icon ""
+                 :status_cmd "playerctl play-pause"
+                 :status_icon {pctl_sub["status"] == "Playing" ? "" : ""}))
+    (box :hexpand true 
+         :space-evenly false 
+         :class "bolt-uptime-wifi" 
+         :spacing 20
+      (_boltuptime :label "Uptime" 
+                   :uptime uptime)
+      (_boltwifi :label "WiFi" 
+                 :icon  {net == "" ? "" : net < 26 ? "" : net < 51 ? "" : net < 76 ? "" : ""} 
+                 :ssid ssid))))
+
+;; vim:ft=yuck
