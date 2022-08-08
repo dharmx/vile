@@ -95,34 +95,12 @@ This structure will seem familiar to webdevs.
 ```
 src
 ├── scss
-│   ├── _base.scss
-│   ├── _override.scss
-│   ├── avatar
-│   ├── bolt
-│   ├── chrono
-│   ├── clime
-│   ├── disclose
-│   ├── horizon
-│   ├── lumin
-│   ├── melody
-│   ├── ocular
-│   ├── origin
-│   ├── power
-│   └── vertigo
+│   ├── bolt
+│   ├── lumin
+│   └── vertigo
 └── yuck
-    ├── _env.yuck
-    ├── _lib.yuck
-    ├── avatar
     ├── bolt
-    ├── chrono
-    ├── clime
-    ├── disclose
-    ├── horizon
     ├── lumin
-    ├── melody
-    ├── ocular
-    ├── origin
-    ├── power
     └── vertigo
 ```
 
@@ -175,11 +153,4 @@ Then run the following command in your terminal while in `vile's` root.
 pip install --requirement=requirements.txt
 ```
 
-<br>
-<br>
-
-<div align="center">
-
-# ⚠ UNDER CONSTRUCTION ⚠
-
-<div>
+Configuration
