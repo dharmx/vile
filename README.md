@@ -9,8 +9,6 @@
 
 </div>
 
----
-
 # 👋 Introduction
 
 Greetings, visitors. This is a repository of various useless GUI [widgets](https://www.merriam-webster.com/dictionary/widget) that may or, may not enchance the look of your current desktop interface.
@@ -32,6 +30,7 @@ A brief explanation of explanation (explanception!). This section is optional bu
  - Configuration. The main shit.
  - Hacking. Advanced configuration.
  - Gallery.
+ - Samples.
  - End Goals.
  - Not Goals.
  - Tips. Useless shit.
@@ -39,8 +38,6 @@ A brief explanation of explanation (explanception!). This section is optional bu
  - Credits. Acknowledgements.
  - TODOs.
  - License.
-
----
 
 ## 🖼 Showcase
 
@@ -68,8 +65,6 @@ So, following are roughly some assumptions that I will follow:
 This is an important section for those who want to borrow some piece of functionality for use in their projets.
 This section will paint a general idea of how stuff is being linked to one another so, you can have a general idea
 for handling or, understanding a bug if one appears (which it will at some point).
-
----
 
 ### 🌿 General structure
 
@@ -121,8 +116,6 @@ There is a `_layout.yuck` in every widget module (eg: `src/yuck/lumin/_layout.yu
 
 The above is the transparent version of the bar which is different to that shown in the showcase.
 
----
-
 ## 🔽 Dependencies
 
 This section is divided into 2 parts:
@@ -173,7 +166,22 @@ Now, right after doing that you need to make the scripts executable.
 chmod +x ~/Downloads/vile/src/shell/*
 ```
 
----
+You need to install the fonts that are being used in this repo. Which can be found [here](https://github.com/dharmx/dots.sh/tree/main/local/share/fonts).
+Lastly, do not forget to update the font caches after you do install them `fc-cache -frv`.
+
+```
+Caviar Dreams
+Sagetarius
+Phosphor
+Dosis
+Poiret One
+monoMMM_5
+Iosevka
+Modum
+Koulen
+Feather
+Lato
+```
 
 This is a very very very important section. As the previous one, this section is also divided into various parts.
 
@@ -451,14 +459,507 @@ Now, go to the root of the vile repo. Then change the directory to where all of 
  - <samp>uptime.awk</samp>: Run this by `uptime --pretty | ./uptime.awk`. 
    Output should be `2d, 4h` for uptime of `up 2 days, 4 hours, 35 minutes`.
 
-#### Caveats
+### Note
 
-If any of these do not work then consult the Troubleshooting, FAQ and Tips sections.
+ - If any of these do not work then consult the Troubleshooting, FAQ and Tips sections.
+ - The notification manager (disclose) depends on my custom made icon theme that can be found [here](https://github.com/dharmx/dots.sh/tree/main/home/.icons/custom.bak).
+ - With dunst you may need to remove its dbus service file `/usr/share/dbus-1/services/org.knopwob.dunst.service`. Then kill all dunst instances and start again with a new instance.
+ - There may be some difficulties with the `mpdaemon.py` script if your default mpd Music storage is not as same as `XDG_MUSIC_DIR` i.e. `~/Music`.
 
----
+
+## Hacking
+
+Coming Soon...
+
+## Gallery
+
+|  Avatar  |
+|---------|
+| ![avatar](./.github/screenie/avatar.png)  |
+| **Description**: Adaptive and dynamic music player daemon and playerctl frontends. |
+| Note that this is still incomplete. |
+
+|   Bolt   |
+|---------|
+| ![bolt](./.github/screenie/bolt.png)  |
+| **Description**: Beautiful integrated bar mini-dashboard. |
+
+|   Disclose   |
+|---------|
+| ![disclose](./.github/screenie/disclose.png)  |
+| **Description**: Feature-Rich and Hacky notification manager. |
+
+|   Vertigo   |
+|---------|
+| ![vertigo](./.github/screenie/vertigo.png)  |
+| **Description**: BSPWM Specific bar. See the Hacking section to add support for your WM. |
+
+|  Chrono One  |  Chrono Two  |
+|---------|---------|
+| ![chrono one](./.github/screenie/chrono-one.png)  | ![chrono two](./.github/screenie/chrono-two.png)  |
+| **Description**: Calendar, Cool radial clock and a beautiful weather card. | **Description**: Extensive weather information and Air pollution information. |
+
+|   Lumin   |
+|---------|
+| ![lumin](./.github/screenie/lumin.png)  |
+| **Description**: Shows time and searches searches stuff on [duckduckgo](duckduckgo.com). |
+
+|   Clime   |
+|---------|
+| ![clime](./.github/screenie/clime.png)  |
+| **Description**: Minimal weather info. |
+
+|   Origin   |
+|---------|
+| ![origin](./.github/screenie/origin.png)  |
+| **Description**: Shows current logged username and hostname. |
+
+|   Melody   |
+|---------|
+| ![melody](./.github/screenie/melody.png)  |
+| **Description**: Shows current playing audio track with essential application icons. |
+
+|   Ocular   |
+|---------|
+| ![ocular](./.github/screenie/ocular.png)  |
+| **Description**: A moving seconds clock with added Ram, CPU, Temperatue and Battery monitor. |
+
+## Samples
+
+<details>
+<summary>A sample <code>dunstrc</code> configuration.</summary>
+
+```ini
+[global]
+background = "#11161b"
+foreground = "#d4d4d5"
+monitor = 0
+follow = mouse
+width = 480
+height = 380
+progress_bar = true
+progress_bar_height = 25
+progress_bar_frame_width = 3
+progress_bar_min_width = 460
+progress_bar_max_width = 480
+highlight = "#79dcaa"
+dmenu = /usr/bin/dmenu
+indicate_hidden = true
+shrink = true
+transparency = 5
+separator_height = 5
+padding = 10
+horizontal_padding = 10
+frame_width = 3
+frame_color = "#151a1f"
+sort = true
+idle_threshold = 0
+font = Dosis,Iosevka Nerd Font 14
+line_height = 2
+markup = full
+origin = "top-right"
+offset = "50x50"
+format = "<b>%s</b>\n%b"
+alignment = left
+show_age_threshold = 60
+word_wrap = false
+ignore_newline = true
+stack_duplicates = true
+hide_duplicate_count = true
+show_indicators = true
+icon_position = left
+max_icon_size = 128
+min_icon_size = 104
+icon_theme = "custom,Reversal-green-dark,McMuse-green,Zafiro,McMuse,Papirus"
+enable_recursive_icon_lookup = true
+sticky_history = true
+history_length = 50
+browser = firefox
+always_run_script = true
+title = Dunst
+class = Dunst
+corner_radius = 0
+notification_limit = 5
+mouse_left_click = do_action
+mouse_middle_click = close_current
+mouse_right_click = context_all
+ignore_dbusclose = true
+ellipsize = end
+
+[urgency_low]
+timeout = 4
+background = "#11161b"
+frame_color = "#1f2429"
+foreground = "#79dcaa"
+
+[urgency_normal]
+timeout = 8
+background = "#11161b"
+frame_color = "#1f2429"
+foreground = "#7ab0df"
+
+[urgency_critical]
+timeout = 30
+background = "#11161b"
+frame_color = "#1f2429"
+foreground = "#f87070"
+
+[fullscreen_show_critical]
+msg_urgency = critical
+fullscreen = pushback
+
+[volume]
+appname = "volume"
+summary = "*"
+set_stack_tag = "volume"
+format = "<b>%s</b>\n%b"
+
+[microphone]
+appname = "microphone"
+summary = "*"
+set_stack_tag = "microphone"
+format = "<b>%s</b>\n%b"
+
+[audiojack]
+appname = "audiojack"
+summary = "*"
+set_stack_tag = "audiojack"
+format = "<b>%s</b>\n%b"
+
+[brightness]
+appname = "brightness"
+summary = "*"
+set_stack_tag = "brightness"
+format = "<b>%s</b>\n%b"
+
+[shot]
+appname = "shot"
+summary = "*"
+set_stack_tag = "shot"
+format = "<b>%s</b>\n%b"
+
+[shot_icon]
+appname = "shot_icon"
+summary = "*"
+set_stack_tag = "shot_icon"
+format = "<b>%s</b>\n%b"
+
+[bar]
+appname = "bar"
+summary = "*"
+set_stack_tag = "bar"
+format = "<b>%s</b>\n%b"
+
+[nightmode]
+appname = "nightmode"
+summary = "*"
+set_stack_tag = "nightmode"
+format = "<b>%s</b>\n%b"
+
+[sxhkd]
+appname = "sxhkd"
+summary = "*"
+set_stack_tag = "sxhkd"
+format = "<b>%s</b>\n%b"
+
+[layouts]
+appname = "layouts"
+summary = "*"
+set_stack_tag = "layouts"
+format = "<b>%s</b>\n%b"
+
+[bspwm]
+appname = "bspwm"
+summary = "*"
+set_stack_tag = "bspwm"
+format = "<b>%s</b>\n%b"
+
+[todo]
+appname = "todo"
+summary = "*"
+set_stack_tag = "todo"
+format = "<b>%s</b>\n%b"
+new_icon = custom-to-do
+background = "#161b20"
+foreground = "#c397d8"
+
+[picom]
+appname = "picom"
+summary = "*"
+set_stack_tag = "picom"
+format = "<b>%s</b>\n%b"
+
+[spotify]
+appname = "spotify"
+summary = "*"
+set_stack_tag = "spotify"
+format = "<span size='x-large' font_desc='Cooper Hewitt 12' weight='bold' foreground='#79dcaa'>%s</span>\n%b"
+
+[mpd]
+appname = "mpd"
+summary = "*"
+set_stack_tag = "mpd"
+format = "<span size='x-large' font_desc='Cooper Hewitt 12' weight='bold' foreground='#c397d8'>%s</span>\n%b"
+
+[firefox]
+appname = firefox
+new_icon = firefox-default
+
+[network]
+appname = network
+new_icon = network
+summary = "*"
+format = "<span size='x-large' weight='bold'>%s</span>\n<span font_desc='Cooper Hewitt,Iosevka Nerd Font 12'>%b</span>"
+
+# vim:filetype=dosini
+```
+</details>
+
+<details>
+<summary>A sample <code>eww.yuck</code> configuration.</summary>
+
+```lisp
+(include "./src/yuck/_env.yuck")
+(include "./src/yuck/_lib.yuck")
+
+;; (include "./src/yuck/vertigo/_init.yuck")
+;; (include "./src/yuck/disclose/_init.yuck")
+;; (include "./src/yuck/avatar/_init.yuck")
+;; (include "./src/yuck/melody/_init.yuck")
+;; (include "./src/yuck/lumin/_init.yuck")
+;; (include "./src/yuck/origin/_init.yuck")
+;; (include "./src/yuck/ocular/_init.yuck")
+;; (include "./src/yuck/clime/_init.yuck")
+;; (include "./src/yuck/power/_init.yuck")
+;; (include "./src/yuck/chrono/_init.yuck")
+;; (include "./src/yuck/bolt/_init.yuck")
+
+; vim:filetype=yuck
+```
+</details>
+
+<details>
+<summary>A sample <code>ewwrc</code> configuration.</summary>
+
+```json
+{
+  "player": {
+    "mpd_cache": "$XDG_CACHE_HOME/eww/mpd",
+    "pctl_cache": "$XDG_CACHE_HOME/eww/pctl",
+    "default_art": "$XDG_CONFIG_HOME/eww/assets/cover.png"
+  },
+  "desktops": {
+    "states": {
+      "focused": "\uf963",
+      "occupied": "\uf75a",
+      "urgent": "\ufa44",
+      "empty": "\uf75b"
+    },
+    "tags": {
+      "hidden": "\ue95f",
+      "sticky": "\ue9ad",
+      "private": "\uea08",
+      "locked": "\ue98f",
+      "marked": "\ue9da",
+      "empty": "\ue998"
+    },
+    "layouts": {
+      "monocle": "\uf70d",
+      "tiled": "\uf817",
+      "fullscreen": "\uf749",
+      "pseudo_tiled": "\uf752",
+      "floating": "\uf70e",
+      "empty": "\uf849"
+    }
+  },
+  "network": {
+    "interface": "CURRENTLY_NOT_IN_USE"
+  },
+  "notify": {
+    "limit": 50,
+    "interval": 0.5,
+    "cache_path": "$XDG_CACHE_HOME/eww/dunst/notifications.txt",
+    "quote_path": "$XDG_CACHE_HOME/eww/dunst/quotes.txt",
+    "default_quote": "To fake it is to stand guard over emptiness. \u2500\u2500 Arthur Herzog",
+    "timestamp": "%H:%M",
+    "excluded_appnames": null
+  },
+  "location": {
+    "method": "automatic",
+    "cache_dir": "$XDG_CACHE_HOME/eww/location",
+    "latitude": null,
+    "longitude": null,
+    "city": null,
+    "country_code": null,
+    "lang": null,
+    "zip": null
+  },
+  "tokens": {
+    "openweather": "641f54ef8b6cc337c7ea7e6d3881730d",
+    "gmail": "CURRENTLY_NOT_IN_USE"
+  },
+  "weather": {
+    "units": "metric",
+    "cache_dir": "$XDG_CACHE_HOME/eww/weather",
+    "icons": {
+        "01d": "",
+        "02d": "",
+        "03d": "",
+        "04d": "",
+        "09d": "",
+        "10d": "",
+        "11d": "",
+        "13d": "",
+        "50d": "",
+        "01n": "",
+        "02n": "",
+        "03n": "",
+        "04n": "",
+        "09n": "",
+        "10n": "",
+        "11n": "",
+        "13n": "",
+        "50n": "",
+        "default": ""
+    },
+    "images": {
+        "01d": "$XDG_CONFIG_HOME/eww/assets/01.jpg",
+        "02d": "$XDG_CONFIG_HOME/eww/assets/02.jpg",
+        "03d": "$XDG_CONFIG_HOME/eww/assets/03.jpg",
+        "04d": "$XDG_CONFIG_HOME/eww/assets/04.jpg",
+        "09d": "$XDG_CONFIG_HOME/eww/assets/09.jpg",
+        "10d": "$XDG_CONFIG_HOME/eww/assets/10.jpg",
+        "11d": "$XDG_CONFIG_HOME/eww/assets/11.jpg",
+        "13d": "$XDG_CONFIG_HOME/eww/assets/13.jpg",
+        "50d": "$XDG_CONFIG_HOME/eww/assets/50.jpg",
+        "01n": "$XDG_CONFIG_HOME/eww/assets/01.jpg",
+        "02n": "$XDG_CONFIG_HOME/eww/assets/02.jpg",
+        "03n": "$XDG_CONFIG_HOME/eww/assets/03.jpg",
+        "04n": "$XDG_CONFIG_HOME/eww/assets/04.jpg",
+        "09n": "$XDG_CONFIG_HOME/eww/assets/09.jpg",
+        "10n": "$XDG_CONFIG_HOME/eww/assets/10.jpg",
+        "11n": "$XDG_CONFIG_HOME/eww/assets/11.jpg",
+        "13n": "$XDG_CONFIG_HOME/eww/assets/13.jpg",
+        "50n": "$XDG_CONFIG_HOME/eww/assets/50.jpg",
+        "default": "$XDG_CONFIG_HOME/eww/assets/01.jpg"
+    }
+  },
+  "covid": {
+    "cache_dir": "$XDG_CACHE_HOME/eww/covid",
+    "icons": {
+      "country": "",
+      "confirmed": "",
+      "deaths": ""
+    }
+  },
+  "pollution": {
+    "cache_dir": "$XDG_CACHE_HOME/eww/pollution",
+    "icons": {
+      "good": "",
+      "fair": "",
+      "moderate": "",
+      "poor": "",
+      "very_poor": ""
+    }
+  },
+  "github": {
+    "cache_dir": "$XDG_CACHE_HOME/eww/github",
+    "username": "dharmx"
+  }
+}
+```
+</details>
+
+<details>
+<summary>A sample <code>_override.scss</code> configuration.</summary>
+
+```scss
+// exclude eww-vertigo in picom shadows exclude section
+// this is an example to override the default vertigo style
+// and make the bar transparent. Enjoy.
+
+// .vertigo-layout-box {
+//   background-color: rgb(0, 0, 0, 0.0);
+// }
+
+// .vertigo-node-button-tiled { color: $base14; }
+// .vertigo-node-button-monocle { color: $base11; }
+// .vertigo-node-button-float { color: $base13; }
+// .vertigo-node-button-pseudo { color: $base15; }
+// .vertigo-node-button-full { color: $base09; }
+// .vertigo-node-button-other { color: $base08; }
+// .vertigo-node-button:hover { opacity: 0.8; }
+
+// .vertigo-node-button-tiled,
+// .vertigo-node-button-monocle,
+// .vertigo-node-button-float,
+// .vertigo-node-button-pseudo,
+// .vertigo-node-button-full,
+// .vertigo-node-button-other {
+//   background-color: rgb(0, 0, 0, 0.0);
+// }
+
+// .vertigo-battery-button {
+//   background-color: rgb(0, 0, 0, 0.0);
+//   color: $base11;
+// }
+
+// .vertigo-time-button {
+//   background-color: rgb(0, 0, 0, 0.0);
+// }
+
+// .vertigo-volume-on { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-volume-off { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-volume-on:hover { background-color: $base13; }
+// .vertigo-volume-off:hover { background-color: $base11; }
+
+// .vertigo-nightmode-on { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-nightmode-off { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-nightmode-on:hover { background-color: $base09; color: $shade01; }
+// .vertigo-nightmode-off:hover { background-color: $base13; color: $shade01; }
+
+// .vertigo-notify-on { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-notify-off { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-notify-on:hover { background-color: $base15; color: $base02; }
+// .vertigo-notify-off:hover { background-color: $base11; color: $base02; }
+
+// .vertigo-todo-button { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-todo-button:hover { background-color: $base07; color: $base01; }
+// .vertigo-workspace-plus-button { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-workspace-plus-button:hover { background-color: $base11; color: $base02; }
+
+// .vertigo-time-button:hover { background-color: rgb(0, 0, 0, 0.0); }
+
+// .vertigo-separator {
+//   opacity: 0.0;
+// }
+
+// .vertigo-search-button {
+//   color: $base09;
+//   background-color: rgb(0, 0, 0, 0.0);
+// }
+
+// .vertigo-search-button:hover { background-color: rgb(0, 0, 0, 0.0); color: $base07; }
+// .vertigo-workspace { background-color: rgb(0, 0, 0, 0.0); }
+
+// .vertigo-workspace:hover { background-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-workspace-focused {
+//   background-color: rgb(0, 0, 0, 0.0);
+//   border-right-color: rgb(0, 0, 0, 0.0);
+// }
+
+// .vertigo-workspace-occupied:hover { border-left-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-workspace-urgent:hover { border-left-color: rgb(0, 0, 0, 0.0); }
+// .vertigo-workspace-local:hover { border-left-color: rgb(0, 0, 0, 0.0); }
+
+// vim:ft=scss
+```
+
+![transparent vertigo](./.github/screenie/trans-vertigo.png) 
+</details>
 
 <div align="center">
 
-# ⚠ UNDER CONSTRUCTION ⚠
+# ⚠  UNDER CONSTRUCTION ⚠
 
 <div>
