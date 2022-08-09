@@ -6,6 +6,8 @@
   sub("seconds", "s", $0);
   sub("months", "m", $0);
   sub("years", "y", $0);
+  sub("days", "d", $0);
+  gsub(",", "", $5)
   print $2$3" "$4$5
 }
 

@@ -4,7 +4,7 @@
 (defwindow bolt :stacking "bg"
   :windowtype "normal"
   :wm-ignore true
-  :geometry (geometry :x 85 :y -50 :width "23%" :height "30%" :anchor "left bottom") 
+  :geometry (geometry :x 90 :y -15 :width "23%" :height "30%" :anchor "left bottom") 
   (bolt_layout))
 
 ;; vim:ft=yuck

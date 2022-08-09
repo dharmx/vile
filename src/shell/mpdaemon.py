@@ -186,7 +186,7 @@ class MPDHandler:
 
 
 if __name__ == "__main__":
-    with open("./ewwrc", encoding="utf8") as file:
+    with open(os.path.expandvars("$XDG_CONFIG_HOME/eww/ewwrc"), encoding="utf8") as file:
         # load config values
         config: dict = json.loads(file.read())["player"]
         config["default_art"] = os.path.expandvars(config["default_art"])

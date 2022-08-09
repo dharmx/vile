@@ -2,7 +2,7 @@
   (box :class "power-layout-box"
        :space-evenly false
        :orientation "vertical"
-       :style "background-image: url('/home/maker/Pictures/wallpapers/outrun/od_wallhaven-j5lk95.jpg')"
+       :style "background-image: url('/home/maker/Pictures/wallpapers/radium/output-1659958155.png')"
     (box :valign "start" :space-evenly false :spacing 25
       (_sundialinfo :class "power" :halign "end" :hexpand true)
       (_infobatnolbl :battery {EWW_BATTERY.BAT0.capacity}

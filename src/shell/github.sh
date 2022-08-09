@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG="$XDG_CONFIG_HOME/eww/.config.json"
+CONFIG="$XDG_CONFIG_HOME/eww/ewwrc"
 CACHE_DIR=$(jq --raw-output .github.cache_dir "$CONFIG")
 eval "CACHE_DIR=${CACHE_DIR}"
 USER_NAME=$(jq --raw-output .github.username "$CONFIG")
