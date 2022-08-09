@@ -175,7 +175,7 @@ chmod +x ~/Downloads/vile/src/shell/*
 
 ---
 
-This is a very very very important section. As the previous one, this section also divided into various parts.
+This is a very very very important section. As the previous one, this section is also divided into various parts.
 
  - Environment Variables.
  - API Setups
@@ -211,15 +211,15 @@ See more info on what these variables do [here](https://wiki.archlinux.org/title
 
 ### API Setups
 
-Starting with the easiest. Firstly you need to the [OpenWeather](https://home.openweathermap.org/users/sign_in) website and grab your [API key](https://rapidapi.com/blog/api-glossary/api-key/).
-Do this by creating an account and logging into the site. Then go to the [`api_keys`](https://home.openweathermap.org/api_keys) tab and press on the generate button with a given name.
+Starting with the easiest. Firstly you need to go to the [OpenWeather](https://home.openweathermap.org/users/sign_in) website and grab your [API key](https://rapidapi.com/blog/api-glossary/api-key/).
+Do this by creating an account and logging into the site. Then go to the [`api_keys`](https://home.openweathermap.org/api_keys) tab and press the generate button after typing a name in the textfield.
 And if you already have a default key then use that instead.
 
 Anyways, take a note of that key value as we will need it later.
 
 ### JSON and Script Configurations
 
-Copy the ewwrc from the samples section and remove all of the comments. Then the first thing you'd need to do is add the tokens that you noted from the previous section.
+Copy the `ewwrc` from the samples section and remove all of the comments. Then the first thing you'd need to do is add the tokens that you noted from the previous section.
 For example the `tokens.openweather` field. 
 
 > Note: You may skip this if you do not plan to use `clime and chrono` see the Galley section.
@@ -233,7 +233,7 @@ Then customize, change and tweak the values to you liking.
 Now, open `src/shell/combine.bash` then edit and match the `CACHE_PATH`, `QUOTE_PATH`, `INTERVAL` and `DEFAULT_QUOTE` with the fields `notify.cache_path`, `notify.quote_path`,
 `notify.default_quote` and `notify.interval` from `ewwrc`.
 
-> Note: `combine.bash` is created to be an alternative for `logger.py` functions since it is quite slow.
+> Note: `combine.bash` is created to be an alternative for some `logger.py` functions since it is quite slow.
 
 ### Layout Configurations
 
@@ -266,8 +266,9 @@ For example in the `bolt` widget if you change the `:volume_icon` field i.e. `ï‘
 
 #### Disclose: Notification Manager
 
-There are some very specific things that you would need to do for setting up thee notification manager.
-Firstly, grab or, inspect the sample `dunstrc` from the Samples section. Take a good look at the rulesets:
+There are some very specific things that you would need to do for setting this up.
+Firstly, grab or, inspect the sample `dunstrc` from the Samples section. 
+Take a good look at the rulesets:
 
 ```ini
 [volume]
@@ -289,18 +290,20 @@ We take that value and match it to these ruleset's `appname` field. And if you h
 rule called `[firefox]` and within it there is a field called `appname` whose value is `firefox`.
 Now, whenever Firefox browser sends us a notification it will be redirected to that ruleset.
 
-Secondly, there is another field called `new_icon` which signifies that when Firefox sends a notification the notification icon will be replaced with an icon 
+Secondly, there is another field called `new_icon` which signifies that when Firefox sends a notification, the notification icon will be replaced with an icon 
 from your icon theme named `firefox-default.svg` (Yes, the extension will be truncated).
 
 ![firefox card](./.github/readme/firefox.png)
 
 ### Testing
 
-This section will describe how you would know that the script work (trial-run). Since, if the scripts work then most probably the will work too.
+This section will describe how you would know if the script actually works. Since, if the scripts work then most probably the widgets will work as well.
 These (might) be automated later in the near future with unit testing.
 
 Before we begin I would urge you to recheck and verify if all the XDG variables have been set or not. Source the `~/.zshenv` again if you are not confident.
-Go to the root of the vile repo. Then change the directory to where all of the scripts are located at `cd src/shell`.
+
+Now, go to the root of the vile repo. Then change the directory to where all of the scripts are located at `cd src/shell`.
+
  - <samp>logger.py</samp>: Run this using `./logger.py init` which will initialize the [dbus](https://www.freedesktop.org/wiki/Software/dbus) eavesdropper.
    Now, open another terminal and run `./logger.py subscribe` then open another terminal and type `notfy-send hello`. Now, if something appears in the second 
    terminal then the script is working.
