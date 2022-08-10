@@ -1,4 +1,0 @@
-(defwidget _util []
-  (box :space-evenly false))
-
-; vim:filetype=yuck

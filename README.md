@@ -14,7 +14,7 @@
 Greetings, visitors. This is a repository of various useless GUI [widgets](https://www.merriam-webster.com/dictionary/widget) that may or, may not enchance the look of your current desktop interface.
 I will walk you through each and every step of the installation process so, make sure to hit that lik- follow everything in a step-by-step fashion.
 
-And if are here to borrow code then you may skip this README <samp>Obviously</samp>.
+And if you are here to borrow code then you may skip this README <samp>Obviously</samp>.
 
 ## 🚒 Procedure
 
