@@ -17,14 +17,19 @@
 }
 
 .avatar-headers {
-  padding: 1em 1.5em 0.5em 1.5em;
+  padding: 1.2em 1.5em 0.8em 1.5em;
   font-size: 25;
   font-family: Phosphor, "Caviar Dreams";
+}
+
+.avatar-box-inner:last-child {
+  margin-bottom: 0.6em;
 }
 
 @import "./_mpd.scss";
 @import "./_pctl.scss";
 @import "./_userinfo.scss";
+@import "./_quick.scss";
 @import "./_override.scss";
 
 // vim:ft=scss

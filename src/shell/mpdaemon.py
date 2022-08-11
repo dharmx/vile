@@ -136,6 +136,10 @@ class MPDHandler:
         metadata["stats"] = self._client.stats()
         metadata["current"]["file"] = self.get(metadata["current"]["file"])
         metadata["current"]["status"] = self._client.status()["state"]
+        metadata["current"]["x"] = self._client.status()
+
+        if "xfade" not in metadata["current"]["x"]:
+            metadata["current"]["x"]["xfade"] = 0
 
         # simplify image + apply dither for handling gradients + get histogram -> it will yield 8 hex codes
         colors = utils.img_dark_bright_col(metadata['current']['file'])
@@ -169,11 +173,10 @@ class MPDHandler:
         """
         old = self.metadatajson(tojson=False)["current"]
         print(json.dumps(old))
-
         while not time.sleep(interval):
             new = self.metadatajson(tojson=False)["current"]
-            old_formatted = f"{old['artist']}-{old['title']}-{old['album']}-{old['status']}"
-            new_formatted = f"{new['artist']}-{new['title']}-{new['album']}-{new['status']}"
+            old_formatted = f"{old['artist']}-{old['title']}-{old['album']}-{old['status']}-{old['x']['repeat']}-{old['x']['volume']}-{old['x']['random']}-{old['x']['single']}-{old['x']['consume']}-{old['x']['xfade']}"
+            new_formatted = f"{new['artist']}-{new['title']}-{new['album']}-{new['status']}-{new['x']['repeat']}-{new['x']['volume']}-{new['x']['random']}-{new['x']['single']}-{new['x']['consume']}-{new['x']['xfade']}"
 
             if old_formatted != new_formatted:
                 print(json.dumps(new))

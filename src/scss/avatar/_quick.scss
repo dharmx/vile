@@ -1,0 +1,138 @@
+.ava-quick-box {
+  font-family: Phosphor, monoMMM_5;
+  background-color: $shade09;
+  font-size: 15;
+  border-radius: 1em;
+  padding: 1.5em;
+}
+
+.ava-main-label {
+  color: $base15;
+}
+
+.ava-quick-vol {
+  trough {
+    background-color: $base02;
+    min-height: 0.3em;
+    border-radius: 3em;
+
+    highlight {
+      padding: 2.5em;
+      background-color: $base11;
+      border-radius: 3em;
+    }
+  }
+}
+
+.ava-quick-mic {
+  trough {
+    background-color: $base02;
+    min-height: 0.3em;
+    border-radius: 3em;
+
+    highlight {
+      padding: 2.5em;
+      background-color: $base09;
+      border-radius: 3em;
+    }
+  }
+}
+
+.ava-btn-mi,
+.ava-btn-all,
+.ava-btn-au {
+  background-color: $shade03;
+  border-radius: 2em;
+  padding: 4em;
+  label {
+    font-size: 50;
+  }
+}
+
+.ava-mpd-ebox {
+  background-color: $shade03;
+  border-radius: 2em;
+  padding: 4em;
+  label {
+    font-size: 50;
+  }
+}
+
+.ava-btn-mi {
+  label {
+    color: $base11;
+  }
+}
+
+.ava-btn-au {
+  label {
+    color: $base14;
+  }
+}
+
+.ava-btn-all {
+  label {
+    color: $base15;
+  }
+}
+
+.ava-btn-au:hover,
+.ava-btn-all:hover,
+.ava-btn-mi:hover,
+.ava-mpd-ebox:hover {
+  background-color: $shade02;
+}
+
+.ava-mpd-radial {
+  margin: 1.2em;
+  color: $base09;
+  background-color: $shade01;
+  label {
+    color: $base09;
+    padding: 0.8em;
+  }
+}
+
+.ava-au-btn-box,
+.ava-mi-btn-box,
+.ava-all-btn-box,
+.ava-mp-btn-box {
+  background-color: $shade07;
+  border-radius: 2em;
+  padding-bottom: 1.2em;
+}
+
+.ava-au-head,
+.ava-all-head,
+.ava-mi-head,
+.ava-mp-head {
+  padding: 1em 0 1em 1.5em;
+  color: $base04;
+}
+
+.ava-mi-scale-lbl,
+.ava-au-scale-lbl {
+  font-size: 20;
+  font-weight: bold;
+  border-radius: 4em;
+  font-family: Dosis;
+  padding: 0 1.4em 0 1.4em;
+}
+
+.ava-mi-scale-lbl {
+  color: $base02;
+  background-color: $base09;
+}
+
+.ava-au-scale-lbl {
+  color: $base02;
+  background-color: $base11;
+}
+
+.ava-sep {
+  font-size: 5;
+  border-radius: 1em;
+  background-color: $base03;
+}
+
+// vim:filetype=scss

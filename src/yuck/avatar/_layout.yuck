@@ -11,7 +11,7 @@
       (button :onclick "eww close avatar" 
               :class "avatar-headers-close" "署"))
     (scroll :class "avatar-scroll"
-            :height 760
+            :height 1000
             :hscroll false
             :vscroll true
       (box :space-evenly false
@@ -20,7 +20,39 @@
            :vexpand true
            :hexpand true
            :spacing 20
-
+        (_avaquick :ocvol "pamixer --set-volume $(printf %d {})"
+                   :ocmic "pamixer --source 1 --set-volume $(printf %d {})"
+                   :allhead "All"
+                   :alllbl ""
+                   :allcmd "pamixer --toggle-mute; pamixer --source 1 --toggle-mute; mpc volume 0"
+                   :auhead "Sink"
+                   :aucmd "pamixer --toggle-mute"
+                   :aulbl volume_status
+                   :mihead "Source"
+                   :micmd "pamixer --source 1 --toggle-mute"
+                   :milbl mic_status
+                   :scup `mpc volume $((${mpd_sub.x.volume}+5))`
+                   :scdn `mpc volume $((${mpd_sub.x.volume}-5))`
+                   :mphead "Mpd"
+                   :mpcmd {mpd_sub.x.volume == "0" ? "mpc volume 30" : "mpc volume 0"}
+                   :mplbl {mpd_sub.status == "play" ? "" : ""}
+                   :mplvl mpd_level
+                   :aulvl volume_level
+                   :milvl mic_level)
+        (avatar_pctl :icon ""
+                     :separator ""
+                     :album "${pctl_sub['xesam:album']}"
+                     :title "${pctl_sub['xesam:title']}"
+                     :artist "${pctl_sub['xesam:artist']}"
+                     :prev "playerctl previous"
+                     :prev_icon ""
+                     :next "playerctl next"
+                     :next_icon ""
+                     :player "${pctl_sub.player}"
+                     :minimal "playerctld shift"
+                     :minimal_icon ""
+                     :pause_icon ""
+                     :play_icon "")
         (avatar_mpd :current mpd_current
                     :duration mpd_duration
                     :progress mpd_progress
@@ -39,20 +71,22 @@
                     :minimal_icon ""
                     :pause_icon ""
                     :play_icon "")
-
-        (avatar_pctl :icon ""
-                     :separator ""
-                     :album "${pctl_sub['xesam:album']}"
-                     :title "${pctl_sub['xesam:title']}"
-                     :artist "${pctl_sub['xesam:artist']}"
-                     :prev "playerctl previous"
-                     :prev_icon ""
-                     :next "playerctl next"
-                     :next_icon ""
-                     :player "${pctl_sub.player}"
-                     :minimal "playerctld shift"
-                     :minimal_icon ""
-                     :pause_icon ""
-                     :play_icon "")))))
+        (_mpdx :repeatc {mpd_sub.x.repeat == "1" ? "ava-mpdx-repeat-on" : "ava-mpdx-repeat-off"}
+               :randomc {mpd_sub.x.random == "1" ? "ava-mpdx-random-on" : "ava-mpdx-random-off"}
+               :singlec {mpd_sub.x.single == "1" ? "ava-mpdx-single-on" : "ava-mpdx-single-off"}
+               :consumec {mpd_sub.x.consume == "1" ? "ava-mpdx-consume-on" : "ava-mpdx-consume-off"}
+               :xfadec {mpd_sub.x.xfade == "0" ? "ava-mpdx-xfade-off" : "ava-mpdx-xfade-on"}
+               :repeatlbl ""
+               :randomlbl ""
+               :singlelbl ""
+               :consumelbl ""
+               :xfadelbl ""
+               :shufflelbl ""
+               :shufflecmd "mpc shuffle"
+               :randomcmd "mpc random"
+               :repeatcmd "mpc repeat"
+               :singlecmd "mpc single"
+               :consumecmd "mpc consume"
+               :xfadecmd {mpd_sub.x.xfade == "0" ? "mpc crossfade 2" : "mpc crossfade 0"})))))
 
 ; vim:filetype=yuck

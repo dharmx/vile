@@ -3,6 +3,7 @@
 (defpoll mpd_duration :interval "10s" `mpc --format=%time% current`)
 
 (deflisten mpd_sub "./src/shell/mpdaemon.py")
+(defpoll mpd_level :interval "0.3s" `mpc volume 2>/dev/stdout | awk -F: '{gsub("%| ", "", $2); print $2}'`)
 (deflisten pctl_sub "./src/shell/playerctl.py")
 
 (defpoll hostname :interval "1000s" "hostnamectl hostname")
@@ -22,6 +23,9 @@
 
 (defpoll volume_status :interval "1s" "[ $(pamixer --get-volume-human) = muted ] && echo 了 || echo 醴")
 (defpoll volume_level :interval "1s" "pamixer --get-volume")
+
+(defpoll mic_level :interval "1s" `pamixer --source 1 --get-volume`)
+(defpoll mic_status :interval "1s" `[ $(pamixer --source 1 --get-volume-human) = muted ] && echo  || echo `)
 
 (defpoll time :interval "1s" `date +'{"hour":"%H","min":"%M","sec":"%S","pretty":"%a, %e %b","day":"%A","month":"%B","dom":"%e","year":"%Y","day_num":"%d","month_num":"%m","year_num":"%y"}'`)
 (defpoll uptime :interval "48h" "uptime --pretty | ./src/shell/uptime.awk")

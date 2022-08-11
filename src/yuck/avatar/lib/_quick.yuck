@@ -1,0 +1,33 @@
+(defwidget _avaquick [ocvol ocmic allhead alllbl allcmd auhead aucmd aulbl aulvl mihead micmd milbl milvl scup scdn mphead mpcmd mplbl mplvl]
+  (box :class "ava-quick-box" :space-evenly false :spacing 25 :halign "center" :orientation "vertical"
+    (box :class "ava-quick-scale-box" :orientation "vertical" :space-evenly false :spacing 25 :space-evenly false
+      (box :class "ava-quick-au-scale-box" :space-evenly false :spacing 20
+        (scale :hexpand true :width 200 :class "ava-quick-vol" :min 0.0 :max 100.0 :value aulvl :onchange ocvol)
+        (label :text aulvl :class "ava-au-scale-lbl"))
+      (box :class "ava-quick-mi-scale-box" :space-evenly false :spacing 20
+        (label :text milvl :class "ava-mi-scale-lbl")
+        (scale :hexpand true :width 200 :class "ava-quick-mic" :min 0.0 :max 100.0 :value milvl :onchange ocmic)))
+
+      (label :text "" :class "ava-sep")
+
+      (box :space-evenly false :orientation "vertical" :spacing 10
+        (box :class "ava-quick-btn-box" :space-evenly false :spacing 10
+          (box :orientation "vertical" :class "ava-au-btn-box" :space-evenly false :width 200 :height 200
+            (label :halign "start" :class "ava-au-head" :text auhead)
+            (button :vexpand true :hexpand true :halign "center" :valign "center" :onclick aucmd :class "ava-btn-au" aulbl))
+          (box :orientation "vertical" :class "ava-mi-btn-box" :space-evenly false :width 200 :height 200
+            (label :halign "start" :class "ava-mi-head" :text mihead)
+            (button :vexpand true :hexpand true :halign "center" :valign "center" :onclick micmd :class "ava-btn-mi" milbl)))
+
+        (box :class "ava-quick-btn-box" :space-evenly false :spacing 10
+          (box :orientation "vertical" :class "ava-mp-btn-box" :space-evenly false :width 200 :height 200
+            (label :halign "start" :class "ava-mp-head" :text mphead)
+            (eventbox :vexpand true :hexpand true :halign "center" :valign "center" 
+                      :class "ava-mpd-ebox" :onclick mpcmd :onscroll "[ {} = up ] && ${scup}; [ {} = down ] && ${scdn}"
+              (circular-progress :value mplvl :thickness 10 :class "ava-mpd-radial"
+                (label :text mplbl :class "ava-mpd-label"))))
+          (box :orientation "vertical" :class "ava-all-btn-box" :space-evenly false :width 200 :height 200
+            (label :halign "start" :class "ava-all-head" :text allhead)
+            (button :vexpand true :hexpand true :halign "center" :valign "center" :onclick allcmd :class "ava-btn-all" alllbl))))))
+
+; vim:ft=yuck

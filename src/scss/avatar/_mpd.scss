@@ -61,4 +61,73 @@
   font-size: 50;
 }
 
+.ava-mpdx-box {
+  background-color: $shade09;
+  font-family: Phosphor, Dosis, sans-serif;
+  border-radius: 0.5em;
+  font-size: 30;
+  padding: 1em;
+}
+
+.ava-mpdx-btn {
+  background-color: $shade05;
+  color: $base04;
+  border-radius: 2em;
+  padding: 1.3em;
+}
+
+.ava-mpdx-btn:hover {
+  background-color: $shade03;
+}
+
+.ava-mpdx-random-on,
+.ava-mpdx-consume-on,
+.ava-mpdx-single-on,
+.ava-mpdx-xfade-on,
+.ava-mpdx-repeat-on {
+  background-color: $base09;
+  color: $base02;
+}
+
+.ava-mpdx-random-on:hover,
+.ava-mpdx-consume-on:hover,
+.ava-mpdx-single-on:hover,
+.ava-mpdx-xfade-on:hover,
+.ava-mpdx-repeat-on:hover {
+  background-color: $shade05;
+  color: $base04;
+}
+
+.ava-mpdx-xfade-off,
+.ava-mpdx-repeat-off,
+.ava-mpdx-random-off,
+.ava-mpdx-single-off,
+.ava-mpdx-consume-off {
+  background-color: $shade05;
+}
+
+.ava-mpdx-xfade-off {
+  color: $base15;
+}
+
+.ava-mpdx-repeat-off {
+  color: $base13;
+}
+
+.ava-mpdx-random-off {
+  color: $base11;
+}
+
+.ava-mpdx-single-off {
+  color: $base14;
+}
+
+.ava-mpdx-consume-off {
+  color: $base08;
+}
+
+.ava-mpdx-btn-shuffle {
+  color: $base04;
+}
+
 // vim:ft=scss

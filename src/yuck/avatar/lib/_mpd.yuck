@@ -92,4 +92,17 @@
              :text duration 
              :halign "end"))))
 
+(defwidget _mpdx [shufflelbl repeatlbl randomlbl singlelbl consumelbl xfadelbl
+                  shufflecmd randomcmd repeatcmd singlecmd consumecmd xfadecmd
+                  randomc repeatc singlec consumec xfadec]
+  (box :width 450 :space-evenly false :class "ava-mpdx-box" :halign "center" :hexpand true :spacing 30 :orientation "vertical"
+    (box :space-evenly false :class "ava-mpdx-shuffle-repeat-random" :halign "center" :vexpand true :spacing 30
+      (button :onclick shufflecmd :class "ava-mpdx-btn ava-mpdx-btn-shuffle" shufflelbl)
+      (button :onclick repeatcmd :class "ava-mpdx-btn ava-mpdx-btn-repeat ${repeatc}" repeatlbl)
+      (button :onclick randomcmd :class "ava-mpdx-btn ava-mpdx-btn-random ${randomc}" randomlbl))
+    (box :space-evenly false :class "ava-mpdx-single-consume-xfade" :halign "center" :vexpand true :spacing 30
+      (button :onclick singlecmd :class "ava-mpdx-btn ava-mpdx-btn-single ${singlec}" singlelbl)
+      (button :onclick consumecmd :class "ava-mpdx-btn ava-mpdx-btn-consume ${consumec}" consumelbl)
+      (button :onclick xfadecmd :class "ava-mpdx-btn ava-mpdx-btn-xfade ${xfadec}" xfadelbl))))
+
 ; vim:filetype=yuck
