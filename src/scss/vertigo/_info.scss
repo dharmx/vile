@@ -43,6 +43,111 @@
 .vertigo-time-button:hover { background-color: $base03; color: $base01; }
 .vertigo-profile-button { margin: 0 0 1em 0; }
 
+.vertigo-tall,
+.vertigo-wide,
+.vertigo-rtall,
+.vertigo-rwide,
+.vertigo-grid,
+.vertigo-rgrid,
+.vertigo-even,
+.vertigo-tiled,
+.vertigo-monocle {
+  background-color: $shade06;
+}
+
+.vertigo-tall {
+  color: $base11;
+}
+
+.vertigo-wide {
+  color: $base12;
+}
+
+.vertigo-rtall {
+  color: $base13;
+}
+
+.vertigo-rwide {
+  color: $base14;
+}
+
+.vertigo-grid {
+  color: $base15;
+}
+
+.vertigo-rgrid {
+  color: $base10;
+}
+
+.vertigo-even {
+  color: $base09;
+}
+
+.vertigo-tiled {
+  color: $base08;
+}
+
+.vertigo-monocle {
+  color: $base07;
+}
+
+// .vertigo-tall:hover {
+//   background-color: $base11;
+//   color: $base02;
+// }
+
+// .vertigo-wide:hover {
+//   background-color: $base12;
+//   color: $base02;
+// }
+
+// .vertigo-rtall:hover {
+//   background-color: $base13;
+//   color: $base02;
+// }
+
+// .vertigo-rwide:hover {
+//   background-color: $base14;
+//   color: $base02;
+// }
+
+// .vertigo-grid:hover {
+//   background-color: $base15;
+//   color: $base02;
+// }
+
+// .vertigo-rgrid:hover {
+//   background-color: $base10;
+//   color: $base02;
+// }
+
+// .vertigo-even:hover {
+//   background-color: $base09;
+//   color: $base02;
+// }
+
+// .vertigo-tiled:hover {
+//   background-color: $base08;
+//   color: $base02;
+// }
+
+// .vertigo-monocle:hover {
+//   background-color: $base07;
+//   color: $base02;
+// }
+
+.vertigo-tall:hover,
+.vertigo-wide:hover,
+.vertigo-rtall:hover,
+.vertigo-rwide:hover,
+.vertigo-grid:hover,
+.vertigo-rgrid:hover,
+.vertigo-even:hover,
+.vertigo-tiled:hover,
+.vertigo-monocle:hover {
+  background-color: $shade04;
+}
+
 .vertigo-separator { 
   background-color: $base03; 
   margin-top: 5em;

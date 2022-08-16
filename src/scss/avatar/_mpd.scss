@@ -80,15 +80,6 @@
   background-color: $shade03;
 }
 
-.ava-mpdx-random-on,
-.ava-mpdx-consume-on,
-.ava-mpdx-single-on,
-.ava-mpdx-xfade-on,
-.ava-mpdx-repeat-on {
-  background-color: $base09;
-  color: $base02;
-}
-
 .ava-mpdx-random-on:hover,
 .ava-mpdx-consume-on:hover,
 .ava-mpdx-single-on:hover,
@@ -127,7 +118,32 @@
 }
 
 .ava-mpdx-btn-shuffle {
-  color: $base04;
+  color: $base07;
+}
+
+.ava-mpdx-random-on {
+  background-color: $base11;
+  color: $base02;
+}
+
+.ava-mpdx-consume-on {
+  background-color: $base08;
+  color: $base02;
+}
+
+.ava-mpdx-single-on {
+  background-color: $base14;
+  color: $base02;
+}
+
+.ava-mpdx-xfade-on {
+  background-color: $base15;
+  color: $base02;
+}
+
+.ava-mpdx-repeat-on {
+  background-color: $base13;
+  color: $base02;
 }
 
 // vim:ft=scss

@@ -2,7 +2,7 @@
   (box :class "ava-quick-box" :space-evenly false :spacing 25 :halign "center" :orientation "vertical"
     (box :class "ava-quick-scale-box" :orientation "vertical" :space-evenly false :spacing 25 :space-evenly false
       (box :class "ava-quick-au-scale-box" :space-evenly false :spacing 20
-        (scale :hexpand true :width 200 :class "ava-quick-vol" :min 0.0 :max 100.0 :value aulvl :onchange ocvol)
+        (scale :flipped true :hexpand true :width 200 :class "ava-quick-vol" :min 0.0 :max 100.0 :value aulvl :onchange ocvol)
         (label :text aulvl :class "ava-au-scale-lbl"))
       (box :class "ava-quick-mi-scale-box" :space-evenly false :spacing 20
         (label :text milvl :class "ava-mi-scale-lbl")

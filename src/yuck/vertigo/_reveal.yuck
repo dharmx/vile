@@ -33,4 +33,18 @@
               :tooltip "todo"
               :button-class "vertigo-todo-button"))))
 
+(defwidget _revealnd [revealon config]
+  (revealer :reveal revealon
+            :transition "slidedown"
+            :class "vertigo-revealer"
+    (scroll :height 110 :vexpand true
+      (box :vexpand true :orientation "vertical"
+           :class "vertigo-reveal-box"
+           :space-evenly false
+            (for layout in {config.layouts}
+              (_label :text {layout.icon}
+                      :vexpand false
+                      :button-class "vertigo-${layout.label}"
+                      :L {layout.command}))))))
+
 ;; vim:ft=yuck

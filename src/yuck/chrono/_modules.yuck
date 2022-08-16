@@ -234,13 +234,12 @@
     (box :space-evenly false 
          :orientation "vertical" 
          :class "chrono-time-label-box" 
-         :spacing 5 
          :hexpand true 
          :halign "center"
       (label :halign "end" 
              :text "${hour}:${minute}" 
              :class "chrono-time-label")
-      (label :halign "end" 
+      (label :halign "center" 
              :text uptime 
              :class "chrono-uptime-label"))))
 

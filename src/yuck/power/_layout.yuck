@@ -35,7 +35,7 @@
       (_powermenu :shutdown "sudo -A poweroff" 
                   :reboot "sudo -A reboot" 
                   :logout "sudo -A loginctl kill-session self" 
-                  :lock "~/.bin/notify/i3lock.sh maker" 
+                  :lock "~/.bin/util/i3lock.sh maker" 
                   :sleep "sudo -A systemctl suspend"
                   :shutdown_icon ""
                   :reboot_icon ""

@@ -3,8 +3,11 @@
 
 (defvar vertigo_open false)
 (defvar vertigo_revealex false)
+(defvar vertigo_revealnd false)
 
 (defvar vertigo_remove "./src/shell/workspaces.zsh remove")
 (defvar vertigo_create "./src/shell/workspaces.zsh create")
+
+(defpoll vertigo_config :interval "5000h" :run-while false "cat ewwrc")
 
 ;; vim:ft=yuck

@@ -2,14 +2,19 @@
   (box :orientation "vertical"
        :space-evenly false
        :class "vertigo-layout-box"
-    (button :onmiddleclick {vertigo_nodes.onmiddleclick}
-            :class {vertigo_nodes.class}
-            :tooltip {vertigo_nodes.tooltip} {vertigo_nodes.label})
-    (_label :text ""
-            :tooltip "find"
-            :vexpand false
-            :button-class "vertigo-search-button"
-            :L "pushd ~;rofi -show;popd")
+    (box :space-evenly false :orientation "vertical" :spacing 10
+      (eventbox :onhover "eww update vertigo_revealnd=true"
+                :onhoverlost "eww update vertigo_revealnd=false"
+        (box :space-evenly false :orientation "vertical" :class ""
+          (button :onmiddleclick {vertigo_nodes.onmiddleclick}
+                  :class {vertigo_nodes.class}
+                  :tooltip {vertigo_nodes.tooltip} {vertigo_nodes.label})
+          (_revealnd :revealon vertigo_revealnd :config vertigo_config)))
+      (_label :text ""
+              :tooltip "find"
+              :vexpand false
+              :button-class "vertigo-search-button"
+              :L "pushd ~;rofi -show;popd"))
     (eventbox :onscroll '[ {} = up ] || bspc desktop -f next; [ {} = down ] || bspc desktop -f prev'
               :vexpand true
       (scroll :height 370

@@ -13,6 +13,9 @@
   if ($0 ~ "days") sub("days", "d", $0)
   if ($0 ~ "day") sub("day", "d", $0)
 
+  if ($0 ~ "weeks") sub("weeks", "w", $0)
+  if ($0 ~ "week") sub("week", "w", $0)
+  
   gsub(",", "", $0)
   print $2$3" "$4$5" "$6$7
 }
