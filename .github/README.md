@@ -1,6 +1,6 @@
 <div align="center">
 
-[![banner](./.github/readme/banner.png)](https://github.com/dharmx/vile)
+[![banner](./readme/banner.png)](https://github.com/dharmx/vile)
 
 [![issues](https://img.shields.io/github/issues/dharmx/vile?color=%23f87070&style=for-the-badge)](https://github.com/dharmx/vile/issues)
 [![size](https://img.shields.io/github/repo-size/dharmx/vile?color=70c0ba&style=for-the-badge)](github.com/dharmx/vile)
@@ -45,7 +45,7 @@ but it wouldn't hurt to gloss over it.
 
 ## 🖼 Showcase
 
-![demo](./.github/readme/demo.png)
+![demo](./readme/demo.png)
 
 ## 🤔 Assumptions
 
@@ -129,7 +129,7 @@ There is a `_layout.yuck` in every widget module
 (eg: `src/yuck/lumin/_layout.yuck`) which acts like a mini-configuration.
 Tweak the values if you wish to do so 😉.
 
-![transparent](./.github/readme/trans.png)
+![transparent](./readme/trans.png)
 
 The above is the transparent version of the bar which is different to that
 shown in the showcase.
@@ -317,7 +317,7 @@ field i.e. `` to a smiley face `:)` then
            :status_icon {pctl_sub["status"] == "Playing" ? "" : ""})
 ```
 
-![smile](./.github/readme/smile.png)
+![smile](./readme/smile.png)
 
 ### Dependency Configurations
 
@@ -363,7 +363,7 @@ Secondly, there is another field called `new_icon` which signifies that when
 Firefox sends a notification, the notification icon will be replaced with an icon
 from your icon theme named `firefox-default.svg` (Yes, the extension will be truncated).
 
-![firefox card](./.github/readme/firefox.png)
+![firefox card](./readme/firefox.png)
 
 ### Testing
 
@@ -566,53 +566,53 @@ Coming Soon...
 
 |  Avatar  |
 |---------|
-| ![avatar](./.github/screenie/avatar.png)  |
+| ![avatar](./screenie/avatar.png)  |
 | **Description**: Adaptive and dynamic music player daemon and playerctl frontends. |
 | Note that this is still incomplete. |
 
 |   Bolt   |
 |---------|
-| ![bolt](./.github/screenie/bolt.png)  |
+| ![bolt](./screenie/bolt.png)  |
 | **Description**: Beautiful integrated bar mini-dashboard. |
 
 |   Disclose   |
 |---------|
-| ![disclose](./.github/screenie/disclose.png)  |
+| ![disclose](./screenie/disclose.png)  |
 | **Description**: Feature-Rich and Hacky notification manager. |
 
 |   Vertigo   |
 |---------|
-| ![vertigo](./.github/screenie/vertigo.png)  |
+| ![vertigo](./screenie/vertigo.png)  |
 | **Description**: BSPWM Specific bar. See the [**Hacking**](https://github.com/dharmx/vile#hacking) section to add support for your WM. |
 
 |  Chrono One  |  Chrono Two  |
 |---------|---------|
-| ![chrono one](./.github/screenie/chrono-one.png)  | ![chrono two](./.github/screenie/chrono-two.png)  |
+| ![chrono one](./screenie/chrono-one.png)  | ![chrono two](./screenie/chrono-two.png)  |
 | **Description**: Calendar, Cool radial clock and a beautiful weather card. | **Description**: Extensive weather information and Air pollution information. |
 
 |   Lumin   |
 |---------|
-| ![lumin](./.github/screenie/lumin.png)  |
+| ![lumin](./screenie/lumin.png)  |
 | **Description**: Shows time and searches searches stuff on [duckduckgo](duckduckgo.com). |
 
 |   Clime   |
 |---------|
-| ![clime](./.github/screenie/clime.png)  |
+| ![clime](./screenie/clime.png)  |
 | **Description**: Minimal weather info. |
 
 |   Origin   |
 |---------|
-| ![origin](./.github/screenie/origin.png)  |
+| ![origin](./screenie/origin.png)  |
 | **Description**: Shows current logged username and hostname. |
 
 |   Melody   |
 |---------|
-| ![melody](./.github/screenie/melody.png)  |
+| ![melody](./screenie/melody.png)  |
 | **Description**: Shows current playing audio track with essential application icons. |
 
 |   Ocular   |
 |---------|
-| ![ocular](./.github/screenie/ocular.png)  |
+| ![ocular](./screenie/ocular.png)  |
 | **Description**: A moving seconds clock with added Ram, CPU, Temperatue and Battery monitor. |
 
 ## Samples
@@ -1049,7 +1049,7 @@ format = "<span size='x-large' weight='bold'>%s</span>\n<span font_desc='Cooper 
 // vim:ft=scss
 ```
 
-![transparent vertigo](./.github/screenie/trans-vertigo.png)
+![transparent vertigo](./screenie/trans-vertigo.png)
 </details>
 
 <div align="center">
