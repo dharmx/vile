@@ -74,10 +74,14 @@
   color: $base04;
   border-radius: 2em;
   padding: 1.3em;
+
+  &:hover {
+    background-color: $shade03;
+  }
 }
 
-.ava-mpdx-btn:hover {
-  background-color: $shade03;
+.ava-mpdx-btn:active {
+  background-color: $shade00;
 }
 
 .ava-mpdx-random-on:hover,

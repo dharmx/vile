@@ -4,7 +4,7 @@
 (defwindow power :stacking "fg"
   :windowtype "normal"
   :wm-ignore true
-  :geometry (geometry :width "100%" :height "100%" :anchor "center")
+  :geometry (geometry :width "100%" :height "100%")
   (power_layout))
 
 ;; vim:ft=yuck
