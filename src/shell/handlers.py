@@ -9,7 +9,7 @@ the called handler function will evaluate the YUCK literal and replace all
 of the items on the format string with the passed attributes and then return it.
 """
 
-# Authored By dharmx <dharmx@gmail.com> under:
+# Authored By dharmx <dharmx.dev@gmail.com> under:
 # GNU GENERAL PUBLIC LICENSE
 # Version 3, 29 June 2007
 #

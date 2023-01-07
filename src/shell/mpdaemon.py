@@ -68,12 +68,12 @@ class MPDHandler:
         Returns:
             A str when there is no embedded cover art, bytes otherwise.
         """
-        content = self._client.readpicture(key)
-        if not content:
-            try:
-                content = self._client.albumart(key)
-            except CommandError:
-                content = {"binary": self.default}
+        content = {"binary": self.default}
+        try:
+            self._client.readpicture(key)
+            content = self._client.albumart(key)
+        except CommandError:
+            content = {"binary": self.default}
         return content["binary"]
 
     def get(self, key: str) -> str:
@@ -146,7 +146,7 @@ class MPDHandler:
 
         # pick out the brightest and the darkest color and use that as foreground | background.
         metadata["current"]["bright"] = colors[3]
-        metadata["current"]["dark"] = colors[9]
+        metadata["current"]["dark"] = colors[-1]
         return json.dumps(metadata) if tojson else metadata
 
 

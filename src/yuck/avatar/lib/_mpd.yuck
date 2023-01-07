@@ -2,7 +2,7 @@
   current duration progress icon separator album 
   title artist like like_icon prev prev_icon next 
   next_icon minimal minimal_icon play_icon 
-  pause_icon]
+  pause_icon command]
   (box :orientation "vertical" 
        :class "avatar-mpd-box" 
        :space-evenly false
@@ -78,9 +78,10 @@
 
     (scale :class "avatar-mpd-progress"
            :value progress
+           :onchange command
            :min 0
            :max 100
-           :active false)
+           :active true)
 
     (box :class "avatar-mpd-footer"
          :space-evenly false

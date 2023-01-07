@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-# Authored By dharmx <dharmx@gmail.com> under:
+# Authored By dharmx <dharmx.dev@gmail.com> under:
 # GNU GENERAL PUBLIC LICENSE
 # Version 3, 29 June 2007
 #
