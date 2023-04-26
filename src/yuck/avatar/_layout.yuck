@@ -39,39 +39,39 @@
                    :mplvl mpd_level
                    :aulvl volume_level
                    :milvl mic_level)
-        (avatar_pctl :icon ""
-                     :separator ""
+        (avatar_pctl :icon ""
+                     :separator "ﭲ"
                      :album "${pctl_sub['xesam:album']}"
                      :title "${pctl_sub['xesam:title']}"
                      :artist "${pctl_sub['xesam:artist']}"
                      :prev "playerctl previous"
-                     :prev_icon ""
+                     :prev_icon ""
                      :next "playerctl next"
-                     :next_icon ""
+                     :next_icon ""
                      :player "${pctl_sub.player}"
                      :minimal "playerctld shift"
-                     :minimal_icon ""
-                     :pause_icon ""
-                     :play_icon "")
+                     :minimal_icon ""
+                     :pause_icon ""
+                     :play_icon "")
         (avatar_mpd :current mpd_current
                     :duration mpd_duration
                     :progress mpd_progress
                     :command "mpc seek {}%"
-                    :icon ""
-                    :separator ""
+                    :icon ""
+                    :separator "ﭲ"
                     :album "${mpd_sub.album}"
                     :title "${mpd_sub.title}"
                     :artist "${mpd_sub.artist}"
                     :like "dunstify MPD Liked"
-                    :like_icon ""
+                    :like_icon ""
                     :prev "mpc prev"
-                    :prev_icon ""
+                    :prev_icon ""
                     :next "mpc next"
-                    :next_icon ""
+                    :next_icon ""
                     :minimal "dunstify MPD minimal"
-                    :minimal_icon ""
-                    :pause_icon ""
-                    :play_icon "")
+                    :minimal_icon ""
+                    :pause_icon ""
+                    :play_icon "")
         (_mpdx :repeatc {mpd_sub.x.repeat == "1" ? "ava-mpdx-repeat-on" : "ava-mpdx-repeat-off"}
                :randomc {mpd_sub.x.random == "1" ? "ava-mpdx-random-on" : "ava-mpdx-random-off"}
                :singlec {mpd_sub.x.single == "1" ? "ava-mpdx-single-on" : "ava-mpdx-single-off"}
