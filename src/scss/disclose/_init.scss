@@ -39,17 +39,17 @@
   margin: 0 1.5em 0 1.5em;
 }
 
-@import "./_empty.scss";
+@import "empty";
 
-@import "./_cardprog.scss";
-@import "./_cardscr.scss";
-@import "./_cardimage.scss";
-@import "./_cardradial.scss";
+@import "cardprog";
+@import "cardscr";
+@import "cardimage";
+@import "cardradial";
 
-@import "./_urgency.scss";
-@import "./_stats.scss";
-@import "./_dnd.scss";
-@import "./_modifiers.scss";
-@import "./_override.scss";
+@import "urgency";
+@import "stats";
+@import "dnd";
+@import "modifiers";
+@import "override";
 
 // vim:ft=scss
