@@ -147,7 +147,7 @@ Execute this in your terminal <samp>(if you dare.)</samp>.
 
 ```sh
 yay --sync base-devel rustup python python-pip eww-git  \
-  dunst bspwm sxhkd gobject-introspection imagemagick   \
+  dunst bspwm sxkhd gobject-introspection imagemagick   \
   mpd mpc playerctl pamixer rofi redshift zsh jq todo-bin --needed
 # NOTE: use paru or, a AUR helper of your choice or, do the dirty work yourself.
 ```
