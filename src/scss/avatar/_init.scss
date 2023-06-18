@@ -26,10 +26,10 @@
   margin-bottom: 0.6em;
 }
 
-@import "./_mpd.scss";
-@import "./_pctl.scss";
-@import "./_userinfo.scss";
-@import "./_quick.scss";
-@import "./_override.scss";
+@import "mpd";
+@import "pctl";
+@import "userinfo";
+@import "quick";
+@import "override";
 
 // vim:ft=scss

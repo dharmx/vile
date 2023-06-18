@@ -160,7 +160,8 @@ class Eavesdropper:
                 args_list[6]["image-data"], details["iconpath"])
 
         # BUG: add a print statement -> init logger.py and disown the process
-        # BUG: then you'll notice the notifications with value (progress) hint does not get logged
+        #      then you'll notice the notifications with value (progress) hint
+        #      does not get logged.
         if "value" in args_list[6]:
             details["progress"] = args_list[6]["value"]
 
