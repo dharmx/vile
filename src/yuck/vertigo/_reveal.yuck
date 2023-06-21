@@ -43,6 +43,7 @@
            :space-evenly false
             (for layout in {config.layouts}
               (_label :text {layout.icon}
+                      :tooltip {layout.label}
                       :vexpand false
                       :button-class "vertigo-${layout.label}"
                       :L {layout.command}))))))

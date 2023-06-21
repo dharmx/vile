@@ -843,26 +843,26 @@ format = "<span size='x-large' weight='bold'>%s</span>\n<span font_desc='Cooper 
   },
   "desktops": {
     "states": {
-      "focused": "\uf963",
-      "occupied": "\uf75a",
-      "urgent": "\ufa44",
-      "empty": "\uf75b"
+      "focused": "北",
+      "occupied": "",
+      "urgent": "梅",
+      "empty": ""
     },
     "tags": {
-      "hidden": "\ue95f",
-      "sticky": "\ue9ad",
-      "private": "\uea08",
-      "locked": "\ue98f",
-      "marked": "\ue9da",
-      "empty": "\ue998"
+      "hidden": "",
+      "sticky": "",
+      "private": "",
+      "locked": "",
+      "marked": "",
+      "empty": ""
     },
     "layouts": {
-      "monocle": "\uf70d",
-      "tiled": "\uf817",
-      "fullscreen": "\uf749",
-      "pseudo_tiled": "\uf752",
-      "floating": "\uf70e",
-      "empty": "\uf849"
+      "monocle": "",
+      "tiled": "",
+      "fullscreen": "",
+      "pseudo_tiled": "",
+      "floating": "",
+      "empty": ""
     }
   },
   "network": {
@@ -873,7 +873,7 @@ format = "<span size='x-large' weight='bold'>%s</span>\n<span font_desc='Cooper 
     "interval": 0.5,
     "cache_path": "$XDG_CACHE_HOME/eww/dunst/notifications.txt",
     "quote_path": "$XDG_CACHE_HOME/eww/dunst/quotes.txt",
-    "default_quote": "To fake it is to stand guard over emptiness. \u2500\u2500 Arthur Herzog",
+    "default_quote": "To fake it is to stand guard over emptiness. ── Arthur Herzog",
     "timestamp": "%H:%M",
     "excluded_appnames": null
   },
@@ -895,46 +895,46 @@ format = "<span size='x-large' weight='bold'>%s</span>\n<span font_desc='Cooper 
     "units": "metric",
     "cache_dir": "$XDG_CACHE_HOME/eww/weather",
     "icons": {
-        "01d": "",
-        "02d": "",
-        "03d": "",
-        "04d": "",
-        "09d": "",
-        "10d": "",
-        "11d": "",
-        "13d": "",
-        "50d": "",
-        "01n": "",
-        "02n": "",
-        "03n": "",
-        "04n": "",
-        "09n": "",
-        "10n": "",
-        "11n": "",
-        "13n": "",
-        "50n": "",
-        "default": ""
+      "01d": "",
+      "02d": "",
+      "03d": "",
+      "04d": "",
+      "09d": "",
+      "10d": "",
+      "11d": "",
+      "13d": "",
+      "50d": "",
+      "01n": "",
+      "02n": "",
+      "03n": "",
+      "04n": "",
+      "09n": "",
+      "10n": "",
+      "11n": "",
+      "13n": "",
+      "50n": "",
+      "default": ""
     },
     "images": {
-        "01d": "$XDG_CONFIG_HOME/eww/assets/01.jpg",
-        "02d": "$XDG_CONFIG_HOME/eww/assets/02.jpg",
-        "03d": "$XDG_CONFIG_HOME/eww/assets/03.jpg",
-        "04d": "$XDG_CONFIG_HOME/eww/assets/04.jpg",
-        "09d": "$XDG_CONFIG_HOME/eww/assets/09.jpg",
-        "10d": "$XDG_CONFIG_HOME/eww/assets/10.jpg",
-        "11d": "$XDG_CONFIG_HOME/eww/assets/11.jpg",
-        "13d": "$XDG_CONFIG_HOME/eww/assets/13.jpg",
-        "50d": "$XDG_CONFIG_HOME/eww/assets/50.jpg",
-        "01n": "$XDG_CONFIG_HOME/eww/assets/01.jpg",
-        "02n": "$XDG_CONFIG_HOME/eww/assets/02.jpg",
-        "03n": "$XDG_CONFIG_HOME/eww/assets/03.jpg",
-        "04n": "$XDG_CONFIG_HOME/eww/assets/04.jpg",
-        "09n": "$XDG_CONFIG_HOME/eww/assets/09.jpg",
-        "10n": "$XDG_CONFIG_HOME/eww/assets/10.jpg",
-        "11n": "$XDG_CONFIG_HOME/eww/assets/11.jpg",
-        "13n": "$XDG_CONFIG_HOME/eww/assets/13.jpg",
-        "50n": "$XDG_CONFIG_HOME/eww/assets/50.jpg",
-        "default": "$XDG_CONFIG_HOME/eww/assets/01.jpg"
+      "01d": "$XDG_CONFIG_HOME/eww/assets/01.jpg",
+      "02d": "$XDG_CONFIG_HOME/eww/assets/02.jpg",
+      "03d": "$XDG_CONFIG_HOME/eww/assets/03.jpg",
+      "04d": "$XDG_CONFIG_HOME/eww/assets/04.jpg",
+      "09d": "$XDG_CONFIG_HOME/eww/assets/09.jpg",
+      "10d": "$XDG_CONFIG_HOME/eww/assets/10.jpg",
+      "11d": "$XDG_CONFIG_HOME/eww/assets/11.jpg",
+      "13d": "$XDG_CONFIG_HOME/eww/assets/13.jpg",
+      "50d": "$XDG_CONFIG_HOME/eww/assets/50.jpg",
+      "01n": "$XDG_CONFIG_HOME/eww/assets/01.jpg",
+      "02n": "$XDG_CONFIG_HOME/eww/assets/02.jpg",
+      "03n": "$XDG_CONFIG_HOME/eww/assets/03.jpg",
+      "04n": "$XDG_CONFIG_HOME/eww/assets/04.jpg",
+      "09n": "$XDG_CONFIG_HOME/eww/assets/09.jpg",
+      "10n": "$XDG_CONFIG_HOME/eww/assets/10.jpg",
+      "11n": "$XDG_CONFIG_HOME/eww/assets/11.jpg",
+      "13n": "$XDG_CONFIG_HOME/eww/assets/13.jpg",
+      "50n": "$XDG_CONFIG_HOME/eww/assets/50.jpg",
+      "default": "$XDG_CONFIG_HOME/eww/assets/01.jpg"
     }
   },
   "covid": {
@@ -958,7 +958,54 @@ format = "<span size='x-large' weight='bold'>%s</span>\n<span font_desc='Cooper 
   "github": {
     "cache_dir": "$XDG_CACHE_HOME/eww/github",
     "username": "dharmx"
-  }
+  },
+  "layouts": [
+    {
+      "label": "tiled",
+      "icon": "",
+      "command": ""
+    },
+    {
+      "label": "monocle",
+      "icon": "",
+      "command": ""
+    },
+    {
+      "label": "even",
+      "icon": "",
+      "command": ""
+    },
+    {
+      "label": "grid",
+      "icon": "",
+      "command": ""
+    },
+    {
+      "label": "rgrid",
+      "icon": "",
+      "command": ""
+    },
+    {
+      "label": "rtall",
+      "icon": "",
+      "command": ""
+    },
+    {
+      "label": "rwide",
+      "icon": "",
+      "command": ""
+    },
+    {
+      "label": "tall",
+      "icon": "",
+      "command": ""
+    },
+    {
+      "label": "wide",
+      "icon": "",
+      "command": ""
+    }
+  ]
 }
 ```
 
