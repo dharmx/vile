@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 CACHE_PATH="$XDG_CACHE_HOME/eww/dunst/notifications.txt"
 QUOTE_PATH="$XDG_CACHE_HOME/eww/dunst/quotes.txt"

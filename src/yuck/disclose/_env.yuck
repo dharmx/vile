@@ -1,5 +1,5 @@
 (defpoll disclose_stats :interval "5s" "./src/shell/logger.py stats")
-(deflisten disclose_sub "./src/shell/combine.bash sub")
+(deflisten disclose_sub "./src/shell/combine.zsh sub")
 (defpoll disclose_dnd_state :interval "1s" "dunstctl is-paused")
 
 (defpoll dunst_displayed :interval "10s" "dunstctl count displayed")
