@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import json
 import os
 import pathlib
@@ -109,13 +107,13 @@ if __name__ == "__main__":
     match sys.argv[1]:
         case "fetch":
             _metadata = cache_and_get(CONFIG, FALLBACK)
-            print(json.dumps(_metadata))
+            sys.stdout.write(json.dumps(_metadata) + "\n")
+            sys.stdout.flush()
         case "gist":
             _metadata = cache_and_get(CONFIG, FALLBACK)
             _box = []
             for index in range(len(_metadata["weather"])):
                 _box += [_metadata["weather"][index][sys.argv[2]]]
-            print(", ".join(_box) if len(_box) > 2 else " and ".join(_box))
-
-
-# vim:filetype=python
+            sys.stdout.write(", ".join(_box) if len(_box) > 2 else " and ".join(_box))
+            sys.stdout.write("\n")
+            sys.stdout.flush()

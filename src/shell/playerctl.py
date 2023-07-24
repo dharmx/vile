@@ -1,4 +1,3 @@
-#!/usr/bin/env --split-string=python -u
 """Script that interacts with playerctl to manipulate all MPRIS players.
 Here it is mostly being used for getting the current track metadata and feeding it
 to an YUCK listener variable.
@@ -23,6 +22,7 @@ to an YUCK listener variable.
 
 import json
 import os
+import sys
 import pathlib
 import shutil
 import utils
@@ -85,7 +85,8 @@ def on_metadata(*args):
         metadata["mpris:artUrl"] = cache_and_get(metadata)
 
     metadata |= get_bright_dark_from_cover(metadata["mpris:artUrl"])
-    print(json.dumps(metadata))
+    sys.stdout.write(json.dumps(metadata) + "\n")
+    sys.stdout.flush()
 
 
 def on_play_pause(player, *_):
@@ -137,7 +138,8 @@ def player_null_check(player_manager) -> bool:
             "player": "none",
         }
         metadata |= get_bright_dark_from_cover(default_cover) # overwrite fallback
-        print(json.dumps(metadata))
+        sys.stdout.write(json.dumps(metadata) + "\n")
+        sys.stdout.flush()
         return False
     return True
 

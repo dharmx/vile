@@ -169,7 +169,12 @@ and [`sxkhd`](https://wiki.archlinux.org/title/Sxhkd) are already configured.
 Inspect the packages that you are about to install from [`requirements.txt`](https://github.com/dharmx/vile/blob/main/requirements.txt).
 Then run the following command in your terminal while in `vile's` root.
 
+But, before that we need to create a `.venv` as the [PEP 0668](https://peps.python.org/pep-0668) is clinically insane.
+
 ```sh
+cd ~/.config/eww
+python -m venv .venv
+source ./.venv/bin/activate
 pip install --requirement=requirements.txt
 ```
 

@@ -1,9 +1,8 @@
-#!/usr/bin/env python
-
 from datetime import datetime
 import utils
 import json
 import os
+import sys
 import pathlib
 
 
@@ -22,7 +21,7 @@ def cache_pollution_get(config: dict) -> dict:
     elif config["location"]["method"] == "manual":
         location = config["location"]
     else:
-        print("Unknown Method!")
+        sys.stderr.write("Unknown Method!\n")
         exit(1)
     token = config["tokens"]["openweather"]
     prepared_link = prepare_link(location, token)
@@ -40,7 +39,8 @@ if __name__ == "__main__":
     CONFIG["pollution"]["cache_dir"] = os.path.expandvars(CONFIG["pollution"]["cache_dir"])
     CONFIG["location"]["cache_dir"] = os.path.expandvars(CONFIG["location"]["cache_dir"])
     pathlib.PosixPath(CONFIG["pollution"]["cache_dir"]).mkdir(parents=True, exist_ok=True)
-    print(cache_pollution_get(CONFIG))
+    sys.stdout.write(cache_pollution_get(CONFIG) + "\n")
+    sys.stdout.flush()
 
 
 # vim:filetype=python

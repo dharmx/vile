@@ -2,15 +2,15 @@
 (defpoll mpd_current :interval "1s" `mpc | grep "#" | awk '{print $3}' | sed 's|/.*||g'`)
 (defpoll mpd_duration :interval "10s" `mpc --format=%time% current`)
 
-(deflisten mpd_sub "./src/shell/mpdaemon.py")
+(deflisten mpd_sub "./.venv/bin/python ./src/shell/mpdaemon.py")
 (defpoll mpd_level :interval "0.3s" `mpc volume 2>/dev/stdout | awk -F: '{gsub("%| ", "", $2); print $2}'`)
-(deflisten pctl_sub "./src/shell/playerctl.py")
+(deflisten pctl_sub "./.venv/bin/python ./src/shell/playerctl.py")
 
 (defpoll hostname :interval "1000s" "hostnamectl hostname")
 (defpoll username :interval "1000s" "echo $USER")
 
-(defpoll weather :interval "500s" "./src/shell/weather.py fetch")
-(defpoll weather_gist :interval "20h" :run-while false "./src/shell/weather.py gist description")
+(defpoll weather :interval "500s" "./.venv/bin/python ./src/shell/weather.py fetch")
+(defpoll weather_gist :interval "20h" :run-while false "./.venv/bin/python ./src/shell/weather.py gist description")
 
 (defpoll net :interval "100s" `nmcli -terse -fields SIGNAL,ACTIVE device wifi | awk --field-separator ':' '{if($2=="yes")print$1}'`)
 (defpoll ssid :interval "100s" `nmcli -terse -fields SSID,ACTIVE device wifi | awk --field-separator ':' '{if($2=="yes")print$1}'`)

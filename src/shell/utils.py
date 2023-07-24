@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """Utility module. Shared across almost all of the python scripts / modules."""
 
 # Authored By dharmx <dharmx.dev@gmail.com> under:
@@ -458,6 +456,7 @@ if __name__ == "__main__":
         case "histogram":
             image_path = sys.argv[2]
             histogram_colors = int(sys.argv[3])
-            print(json.dumps(img_dark_bright_col(image_path, histogram_colors)))
+            sys.stdout.write(json.dumps(img_dark_bright_col(image_path, histogram_colors)) + "\n")
+            sys.stdout.flush()
 
 # vim:filetype=python

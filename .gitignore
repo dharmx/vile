@@ -1,6 +1,6 @@
 **/.*-env
-**/__pycache__/
-**/.venv/
+src/shell/__pycache__/
+.venv/
 .config.json
 config.json
 ewwrc

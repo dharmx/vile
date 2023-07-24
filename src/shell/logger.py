@@ -1,4 +1,3 @@
-#!/usr/bin/env --split-string=python -u
 """Script for logging desktop notifications in the form of YUCK literal.
 
 General idea is to have a file log the notifications in the form of YUCK
@@ -110,9 +109,7 @@ if __name__ == "__main__":
         case "stats":
             sys.stdout.write(
                 json.dumps(
-                    utils.parse_and_print_stats(
-                        pathlib.PosixPath(CACHE_PATH).read_text()
-                    )
+                    utils.parse_and_print_stats(pathlib.PosixPath(CACHE_PATH).read_text())
                 )
                 + "\n"
             )

@@ -32,6 +32,7 @@ is a really nice manual. Give it a read.
 
 import datetime
 import os
+import sys
 import pathlib
 import sys
 import typing
@@ -61,6 +62,11 @@ class Urgency:
     CRITICAL = b"\x02"
 
 
+def console_write(string: str):
+    sys.stdout.write(string + "\n")
+    sys.stdout.flush()
+
+
 class Eavesdropper:
     """A quick and naive way of saving the image-data.
 
@@ -83,7 +89,7 @@ class Eavesdropper:
     # TODO: Segregate more.
     def __init__(
         self,
-        callback: typing.Callable = print,
+        callback: typing.Callable = console_write,
         cache_dir: str = "/tmp"
     ):
         """Assigns the CTOR parameters to the field variables (duh..)

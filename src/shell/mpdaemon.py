@@ -1,4 +1,3 @@
-#!/usr/bin/env --split-string=python -u
 """Script to cache and fetch the current track details for MPD"""
 
 # Authored By dharmx <dharmx.dev@gmail.com> under:
@@ -23,6 +22,7 @@ import os
 import pathlib
 import utils
 import time
+import sys
 
 import mpd
 from mpd.base import CommandError
@@ -172,14 +172,16 @@ class MPDHandler:
             interval: Interval between checking the current playing track for changes.
         """
         old = self.metadatajson(tojson=False)["current"]
-        print(json.dumps(old))
+        sys.stdout.write(json.dumps(old) + "\n")
+        sys.stdout.flush()
         while not time.sleep(interval):
             new = self.metadatajson(tojson=False)["current"]
             old_formatted = f"{old['artist']}-{old['title']}-{old['album']}-{old['status']}-{old['x']['repeat']}-{old['x']['volume']}-{old['x']['random']}-{old['x']['single']}-{old['x']['consume']}-{old['x']['xfade']}"
             new_formatted = f"{new['artist']}-{new['title']}-{new['album']}-{new['status']}-{new['x']['repeat']}-{new['x']['volume']}-{new['x']['random']}-{new['x']['single']}-{new['x']['consume']}-{new['x']['xfade']}"
 
             if old_formatted != new_formatted:
-                print(json.dumps(new))
+                sys.stdout.write(json.dumps(new) + "\n")
+                sys.stdout.flush()
                 old = new
 
     def close(self):
