@@ -32,14 +32,12 @@ is a really nice manual. Give it a read.
 
 import datetime
 import os
-import sys
 import pathlib
 import sys
 import typing
 
 import dbus
 import utils
-
 from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
 
@@ -57,6 +55,7 @@ class Urgency:
         NORMAL: USB unplugged, Drive mounted, etc.
         CRITICAL: Your PC is on fire, Storage Full, etc.
     """
+
     LOW = b"\x00"
     NORMAL = b"\x01"
     CRITICAL = b"\x02"
@@ -87,11 +86,7 @@ class Eavesdropper:
     """
 
     # TODO: Segregate more.
-    def __init__(
-        self,
-        callback: typing.Callable = console_write,
-        cache_dir: str = "/tmp"
-    ):
+    def __init__(self, callback: typing.Callable = console_write, cache_dir: str = "/tmp"):
         """Assigns the CTOR parameters to the field variables (duh..)
 
         Arguments:
@@ -103,11 +98,7 @@ class Eavesdropper:
         # translation: mkdir --parents cache_dir
         pathlib.PosixPath(self.cache_dir).mkdir(parents=True, exist_ok=True)
 
-    def _message_callback(
-        self, _,
-        message: dbus.lowlevel.MethodReturnMessage
-        or dbus.lowlevel.MethodCallMessage
-    ):
+    def _message_callback(self, _, message: dbus.lowlevel.MethodReturnMessage or dbus.lowlevel.MethodCallMessage):
         """A filter callback for parsing the specific messages that are received from the DBus interface.
 
         Arguments:
@@ -156,14 +147,12 @@ class Eavesdropper:
                 details["iconpath"] = utils.get_gtk_icon_path(args_list[2])
         else:
             # if there are no icon hints then use fallback (generic bell)
-            details["iconpath"] = utils.get_gtk_icon_path(
-                "custom-notification")
+            details["iconpath"] = utils.get_gtk_icon_path("custom-notification")
 
         if "image-data" in args_list[6]:
             # capture the raw image bytes and save them to the cache_dir/x.png path
             details["iconpath"] = f"{self.cache_dir}/{details['appname']}-{details['id']}.png"
-            utils.save_img_byte(
-                args_list[6]["image-data"], details["iconpath"])
+            utils.save_img_byte(args_list[6]["image-data"], details["iconpath"])
 
         # BUG: add a print statement -> init logger.py and disown the process
         #      then you'll notice the notifications with value (progress) hint
@@ -175,11 +164,7 @@ class Eavesdropper:
         self.callback(details)
 
     # TODO: Segregate more.
-    def eavesdrop(
-        self,
-        timeout: int or bool = False,
-        timeout_callback: typing.Callable = print
-    ):
+    def eavesdrop(self, timeout: int or bool = False, timeout_callback: typing.Callable = print):
         """Primes the session bus instance and starts a GLib mainloop.
 
         Arguments:
@@ -189,20 +174,9 @@ class Eavesdropper:
                 Callback that will be executed on intervals.
         """
         DBusGMainLoop(set_as_default=True)
-
-        rules = {
-            "interface": "org.freedesktop.Notifications",
-            "member": "Notify",
-            "eavesdrop": "true",  # https://bugs.freedesktop.org/show_bug.cgi?id=39450
-        }
-
         bus = dbus.SessionBus()
-        # discard all other interfaces except org.freedesktop.Notifications
-        # setting eavesdrop to true enables DBus to send the messages that are
-        # not meant for you.
-        # removing the eavesdrop key from rules will not send the Notify method's
-        # contents to you (you can try and see what happens)
-        bus.add_match_string(",".join([f"{key}={value}" for key, value in rules.items()]))
+        bus_object = bus.get_object("org.freedesktop.DBus", "/org/freedesktop/DBus")
+        bus_object.BecomeMonitor(["interface='org.freedesktop.Notifications'"], dbus.UInt32(0), interface="org.freedesktop.Notifications")
         bus.add_message_filter(self._message_callback)
 
         try:
