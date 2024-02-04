@@ -29,7 +29,7 @@ import unicodedata
 
 from wand.image import COLORSPACE_TYPES, Image
 from html.parser import HTMLParser
-from io import StringIO
+from io import StringIO, TextIOWrapper
 
 import dbus
 import gi
@@ -212,7 +212,8 @@ def prettify_name(name: str) -> str:
     )
 
 
-def file_add_line(file_path: str, write_contents: str, limit: int, top: bool = True):
+# BUG: Somehow reading/writing files causes mainloop in src/shell/cache.py to stop
+def file_add_line(file_path: str | TextIOWrapper, write_contents: str, limit: int, top: bool = True):
     """Functions like sliding window algorithm <https://towardsdev.com/sliding-window-algorithm-145f8e201a64>
 
     That is after the file hits a certain line limit, lines from the behind will be dropped (older entries)
@@ -224,14 +225,22 @@ def file_add_line(file_path: str, write_contents: str, limit: int, top: bool = T
         limit: The line limit.
         top: Adds new entry at the beginning of the file if True, at the end otherwise.
     """
-    file = pathlib.PosixPath(file_path)
-    file_contents = file.read_text().splitlines()
-    if len(file_contents) == limit:
-        file_contents = file_contents[:-1]
-    file_contents = (
-        [write_contents] + file_contents if top else file_contents + [write_contents]
-    )
-    file.write_text("\n".join(file_contents))
+    if type(file_path) is str:
+        file = pathlib.PosixPath(file_path)
+        file_contents = file.read_text().splitlines()
+        if len(file_contents) == limit:
+            file_contents = file_contents[:-1]
+        file_contents = [write_contents] + file_contents if top else file_contents + [write_contents]
+        file.write_text("\n".join(file_contents))
+    elif type(file_path) is TextIOWrapper:
+        file_contents = file_path.readlines()
+        if len(file_contents) == limit:
+            file_contents = file_contents[:-1]
+        file_contents = [write_contents] + file_contents if top else file_contents + [write_contents]
+        file_path.writelines(file_contents + ["\n"])
+        file_path.flush()
+    else:
+        raise TypeError("Only TextIOWrapper or, str types are allowed.")
 
 
 def parse_and_print_stats(file_contents: str) -> dict:

@@ -120,6 +120,13 @@ if __name__ == "__main__":
         case "cls":
             pathlib.PosixPath(CACHE_PATH).write_text("")
         case "init":
+            # BUG: Partial fix to #32.
+            # - Using w+ erases notifications.txt file contents and skips initial reading.
+            # - Appends to the file indefinitly.
+            # - Needs some combination of seek(0) and read. Will do this later.
+            cache_path = pathlib.PosixPath(CACHE_PATH)
+            cache_path.touch(exist_ok=True)
+            cache_path = cache_path.open("w+")
             def master_callback(details: dict):
                 r"""Callback function that handles fetching and logging the notification details.
 
@@ -136,9 +143,16 @@ if __name__ == "__main__":
                 if not config["excluded_appnames"] or details["appname"] not in config["excluded_appnames"]:
                     saved_path = handlers.redir_to_handlers(FORMATS, details)
                     # actual point where the notification is being logged.
-                    utils.file_add_line(CACHE_PATH, saved_path, HISTORY_LIMIT)
+                    utils.file_add_line(cache_path, saved_path, HISTORY_LIMIT)
 
             # start eavesdropping on the org.freedesktop.Notifications interface and log the notification info
-            cache.Eavesdropper(master_callback, CACHE_DIR).eavesdrop()
+            bus = None
+            try:
+                bus = cache.Eavesdropper(master_callback, CACHE_DIR).eavesdrop()
+            except (KeyboardInterrupt, Exception) as excep:
+                sys.stderr.write(str(excep) + "\n")
+                cache_path.close()
+                if bus:
+                    bus.close()
 
 # vim:filetype=python

@@ -36,10 +36,11 @@ import pathlib
 import sys
 import typing
 
-import dbus
 import utils
-from dbus.mainloop.glib import DBusGMainLoop
+import dbus
+
 from gi.repository import GLib
+from dbus.mainloop.glib import DBusGMainLoop
 
 
 # TODO: Use actual enumerations by using the enum module from the standard library.
@@ -98,7 +99,7 @@ class Eavesdropper:
         # translation: mkdir --parents cache_dir
         pathlib.PosixPath(self.cache_dir).mkdir(parents=True, exist_ok=True)
 
-    def _message_callback(self, _, message: dbus.lowlevel.MethodReturnMessage or dbus.lowlevel.MethodCallMessage):
+    def _message_callback(self, _, message: dbus.lowlevel.MethodReturnMessage | dbus.lowlevel.MethodCallMessage):
         """A filter callback for parsing the specific messages that are received from the DBus interface.
 
         Arguments:
@@ -114,6 +115,10 @@ class Eavesdropper:
         # we will be filtering this out as we only need the value that the method call returns
         # i.e. dbus.lowlevel.MethodReturnMessage
         if type(message) != dbus.lowlevel.MethodCallMessage:
+            return
+        if message.get_interface() != "org.freedesktop.Notifications":
+            return
+        if message.get_member() != "Notify":
             return
 
         args_list = message.get_args_list()
@@ -164,7 +169,7 @@ class Eavesdropper:
         self.callback(details)
 
     # TODO: Segregate more.
-    def eavesdrop(self, timeout: int or bool = False, timeout_callback: typing.Callable = print):
+    def eavesdrop(self, timeout: int | bool = False, timeout_callback: typing.Callable = print):
         """Primes the session bus instance and starts a GLib mainloop.
 
         Arguments:
@@ -179,15 +184,12 @@ class Eavesdropper:
         bus_object.BecomeMonitor(["interface='org.freedesktop.Notifications'"], dbus.UInt32(0), interface="org.freedesktop.Notifications")
         bus.add_message_filter(self._message_callback)
 
-        try:
-            loop = GLib.MainLoop()
-            if timeout:
-                # executes a callback in intervals
-                GLib.set_timeout(timeout, timeout_callback)
-            loop.run()
-        except (KeyboardInterrupt, Exception) as excep:
-            sys.stderr.write(str(excep) + "\n")
-            bus.close()
+        loop = GLib.MainLoop()
+        if timeout:
+            # executes a callback in intervals
+            GLib.set_timeout(timeout, timeout_callback)
+        loop.run()
+        return bus
 
 
 # vim:filetype=python
