@@ -55,7 +55,7 @@ This is done because I do not want to spend an extensive amount of time writing
 instructions for several Linux distributions.
 
 I will choose Archlinux as a reference frame as I have only used Archlinux,
-Manjarno and EndeavourOS in the past.
+Manjaro and EndeavourOS in the past.
 So, following are roughly some assumptions that I will follow:
 
 - You are using either Archlinux or, an Arch-based distro like Manjaro.
