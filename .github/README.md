@@ -598,7 +598,7 @@ Coming Soon...
 |   Lumin   |
 |---------|
 | ![lumin](./screenie/lumin.png)  |
-| **Description**: Shows time and searches searches stuff on [duckduckgo](duckduckgo.com). |
+| **Description**: Shows time and searches stuff on [duckduckgo](duckduckgo.com). |
 
 |   Clime   |
 |---------|
