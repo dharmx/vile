@@ -70,7 +70,7 @@ So, following are roughly some assumptions that I will follow:
 ## 🌿 Structure
 
 This is an important section for those who want to borrow some piece of
-functionality for use in their projets.
+functionality for use in their projects.
 This section will paint a general idea of how stuff is being linked to one
 another so, you can have a general idea
 for handling or, understanding a bug if one appears (which it will at some point).
@@ -598,7 +598,7 @@ Coming Soon...
 |   Lumin   |
 |---------|
 | ![lumin](./screenie/lumin.png)  |
-| **Description**: Shows time and searches searches stuff on [duckduckgo](duckduckgo.com). |
+| **Description**: Shows time and searches stuff on [duckduckgo](duckduckgo.com). |
 
 |   Clime   |
 |---------|
